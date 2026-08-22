@@ -1,0 +1,94 @@
+/* Reset general */
+*, *::before, *::after {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+/* Variables de colores y fuentes */
+:root {
+    --volcan-azul: #004b87;
+    --volcan-naranja: #f37021;
+    --volcan-claro: #f8f9fa;
+    --volcan-oscuro: #1a1a1a;
+    --volcan-texto: #333333;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--volcan-texto);
+    line-height: 1.5;
+    background-color: #ffffff;
+}
+
+/* Clases de utilidad compartidas */
+.fw-bold { font-weight: 700; }
+.texto-peligro { color: #dc3545; }
+
+.contenedor {
+    width: 100%;
+    max-width: 75rem; 
+    margin: 0 auto;
+    padding: 0 1.25rem; 
+}
+
+/* Barra superior de atención al cliente */
+.barra-superior {
+    background-color: #f1f1f1;
+    font-size: 0.85rem;
+    padding: 0.5rem 0;
+}
+
+.contenido-barra-superior {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.25rem;
+}
+
+/* Navegación principal */
+.cabecera-principal {
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04); 
+}
+
+.barra-navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    height: 5.5rem; 
+    position: relative;
+}
+
+.logo-navegacion {
+    max-height: 3.75rem;
+    width: auto;
+    max-width: 15.625rem;
+}
+
+.enlaces-navegacion {
+    display: flex;
+    list-style: none; 
+    margin: 0 0 0 auto; 
+    align-items: center; 
+    gap: 1.25rem;
+}
+
+.enlaces-navegacion a {
+    text-decoration: none;
+    color: var(--volcan-oscuro);
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.enlaces-navegacion a:hover {
+    color: var(--volcan-naranja);
+}
