@@ -13,11 +13,10 @@
         
         <!-- Hojas de estilos principales -->
         <link rel="stylesheet" href="assets/css/layout.css" />
-        <!-- ESTO LO AGREGA BENJA: -->
         <link rel="stylesheet" href="assets/css/index.css" />
     </head>
     <body>
-        <!-- Header Principal (El que hizo Jesús) -->
+        <!-- Header -->
         <header class="cabecera-principal">
             <div class="barra-superior">
                 <div class="contenedor contenido-barra-superior">
@@ -38,13 +37,14 @@
                     <li><a href="nosotros.html">NOSOTROS</a></li>
                     <li><a href="blogs.html">BLOGS</a></li>
                     <li><a href="contacto.html">CONTACTO</a></li>
+                    
                     <li><a href="carrito.html" class="icono-carrito fw-bold">CARRITO (0)</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
-            <!-- Hero principal (ESTO LO AGREGA BENJA) -->
+            <!-- Hero principal -->
             <section class="seccion-hero">
                 <div class="hero-fondo">
                     <div class="hero-contenido">
@@ -78,6 +78,109 @@
 
                 <!-- Separador visual -->
                 <div class="separador-gris"></div>
+            </section>
+
+            <!-- Listado de productos destacados -->
+            <section class="seccion-productos contenedor">
+                <h2>Nuestros Productos Destacados</h2>
+                
+                <div class="grilla-productos">
+                    <!-- Producto 5kg -->
+                    <article class="tarjeta-producto">
+                        <!-- Rutas diferenciadas para las múltiples vistas de detalle -->
+                        <a href="detalle-productos.html" class="producto-enlace-img">
+                            <img src="assets/img/productos/cilindros/cilindro-5kg.svg" alt="Cilindro GLP 5kg" class="producto-img" />
+                        </a>
+                        <span class="producto-categoria">Cilindros</span>
+                        <h3 class="producto-nombre">Cilindro GLP 5 kg</h3>
+                        <p class="producto-detalle">Para uso residencial (cocina, calefacción pequeña).</p>
+                        <div class="producto-precios">
+                            <h4 class="precio-principal">Residencial: $6.500</h4>
+                            <h5 class="precio-secundario">Comercial: $6.000</h5>
+                        </div>
+                        
+                        <!-- Controles para agregar al carrito -->
+                        <div class="producto-controles">
+                            <div class="control-cantidad">
+                                <button type="button" class="btn-restar">-</button>
+                                <input type="number" value="1" min="1" class="input-cantidad" readonly />
+                                <button type="button" class="btn-sumar">+</button>
+                            </div>
+                            <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                        </div>
+                    </article>
+
+                    <!-- Producto 11kg -->
+                    <article class="tarjeta-producto">
+                        <a href="detalle-productos.html" class="producto-enlace-img">
+                            <img src="assets/img/productos/cilindros/cilindro-11kg.svg" alt="Cilindro GLP 11kg" class="producto-img" />
+                        </a>
+                        <span class="producto-categoria">Cilindros</span>
+                        <h3 class="producto-nombre">Cilindro GLP 11 kg</h3>
+                        <p class="producto-detalle">Cilindro estándar doméstico. El más utilizado en hogares chilenos.</p>
+                        <div class="producto-precios">
+                            <h4 class="precio-principal">Residencial: $12.000</h4>
+                            <h5 class="precio-secundario">Comercial: $11.000</h5>
+                        </div>
+                        
+                        <div class="producto-controles">
+                            <div class="control-cantidad">
+                                <button type="button" class="btn-restar">-</button>
+                                <input type="number" value="1" min="1" class="input-cantidad" readonly />
+                                <button type="button" class="btn-sumar">+</button>
+                            </div>
+                            <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                        </div>
+                    </article>
+
+                    <!-- Producto 15kg -->
+                    <article class="tarjeta-producto">
+                        <a href="detalle-productos.html" class="producto-enlace-img">
+                            <img src="assets/img/productos/cilindros/cilindro-15kg.svg" alt="Cilindro GLP 15kg" class="producto-img" />
+                        </a>
+                        <span class="producto-categoria">Cilindros</span>
+                        <h3 class="producto-nombre">Cilindro GLP 15 kg</h3>
+                        <p class="producto-detalle">Cilindro de mayor capacidad para hogares de alto consumo o locales.</p>
+                        <div class="producto-precios">
+                            <h4 class="precio-principal">Residencial: $16.000</h4>
+                            <h5 class="precio-secundario">Comercial: $14.500</h5>
+                        </div>
+
+                        <div class="producto-controles">
+                            <div class="control-cantidad">
+                                <button type="button" class="btn-restar">-</button>
+                                <input type="number" value="1" min="1" class="input-cantidad" readonly />
+                                <button type="button" class="btn-sumar">+</button>
+                            </div>
+                            <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                        </div>
+                    </article>
+
+                    <!-- Producto 45kg -->
+                    <article class="tarjeta-producto">
+                        <a href="detalle-productos.html" class="producto-enlace-img">
+                            <img src="assets/img/productos/cilindros/cilindro-45kg.svg" alt="Cilindro GLP 45kg" class="producto-img" />
+                        </a>
+                        <span class="producto-categoria">Cilindros</span>
+                        <h3 class="producto-nombre">Cilindro GLP 45 kg</h3>
+                        <p class="producto-detalle">Cilindro industrial. Uso comercial: restaurantes, talleres, calefacción.</p>
+                        <div class="producto-precios">
+                            <h4 class="precio-principal">Residencial: $45.000</h4>
+                            <h5 class="precio-secundario">Comercial: $40.000</h5>
+                        </div>
+
+                        <div class="producto-controles">
+                            <div class="control-cantidad">
+                                <button type="button" class="btn-restar">-</button>
+                                <input type="number" value="1" min="1" class="input-cantidad" readonly />
+                                <button type="button" class="btn-sumar">+</button>
+                            </div>
+                            <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                        </div>
+                    </article>
+                </div>
+                
+                <a href="productos.html" class="boton boton-borde-oscuro boton-redondeado">VER MÁS PRODUCTOS</a>
             </section>
         </main>
     </body>
