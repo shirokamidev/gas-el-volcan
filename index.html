@@ -13,9 +13,11 @@
         
         <!-- Hojas de estilos principales -->
         <link rel="stylesheet" href="assets/css/layout.css" />
+        <!-- ESTO LO AGREGA BENJA: -->
+        <link rel="stylesheet" href="assets/css/index.css" />
     </head>
     <body>
-        <!-- Header Principal -->
+        <!-- Header Principal (El que hizo Jesús) -->
         <header class="cabecera-principal">
             <div class="barra-superior">
                 <div class="contenedor contenido-barra-superior">
@@ -42,6 +44,41 @@
         </header>
 
         <main>
+            <!-- Hero principal (ESTO LO AGREGA BENJA) -->
+            <section class="seccion-hero">
+                <div class="hero-fondo">
+                    <div class="hero-contenido">
+                        <h2 class="hero-titulo">¡Bienvenido a Gas El Volcán!</h2>
+                        <p class="hero-bajada limite-ancho">Llevando la energía que tu hogar necesita, con seguridad y rapidez en cada entrega.</p>
+                    </div>
+                </div>
+                
+                <!-- Contenedor de la tarjeta principal -->
+                <div class="contenedor-tarjeta-hero">
+                    <article class="tarjeta-hero limite-ancho">
+                        <div class="tarjeta-cabecera">
+                            <h1>
+                                <span class="texto-bloque">Gas confiable a tu puerta.</span>
+                                <span class="texto-bloque">Pide fácil y rápido.</span>
+                            </h1>
+                        </div>
+                        
+                        <div class="tarjeta-cuerpo">
+                            <div class="buscador-principal">
+                                <input type="text" placeholder="Busca tu Punto Volcán o inicia sesión..." />
+                                <a href="punto-volcan.html" class="boton boton-naranja">BUSCAR</a>
+                            </div>
+                            <div class="botones-hero">
+                                <a href="productos.html" class="boton boton-naranja">HACER PEDIDO RÁPIDO</a>
+                                <a href="login.html" class="boton boton-blanco">RASTREAR PEDIDO</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Separador visual -->
+                <div class="separador-gris"></div>
+            </section>
         </main>
     </body>
 </html>
