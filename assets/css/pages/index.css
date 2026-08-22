@@ -1,0 +1,162 @@
+/* Tipografía principal de la página */
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../fonts/montserrat/Montserrat-Variable.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+/* Colores y configuración inicial */
+:root {
+    --volcan-azul: #004b87;
+    --volcan-azul-oscuro: #003865;
+    --volcan-naranja: #f37021;
+    --volcan-blanco: #ffffff;
+    --volcan-oscuro: #1a1a1a;
+    --volcan-claro: #f8f9fa;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--volcan-oscuro);
+    background-color: var(--volcan-blanco);
+    font-family: "Montserrat", Arial, sans-serif;
+}
+
+a {
+    color: inherit;
+}
+
+/* Cabecera y navegación inicial */
+.barra-superior {
+    padding: 0.75rem 5%;
+    background-color: var(--volcan-azul-oscuro);
+    color: var(--volcan-blanco);
+    text-align: center;
+}
+
+.barra-superior p {
+    display: inline-block;
+    margin: 0.25rem 1rem;
+    font-size: 0.85rem;
+}
+
+.barra-navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1rem 5%;
+}
+
+.enlace-logo img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.enlaces-navegacion {
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.enlaces-navegacion a {
+    color: var(--volcan-azul);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Imagen y presentación de la portada */
+.imagen-hero {
+    display: block;
+    width: 100%;
+    max-height: 25rem;
+    object-fit: cover;
+}
+
+.hero-contenido {
+    padding: 2.5rem 5%;
+    background-color: var(--volcan-azul);
+    color: var(--volcan-blanco);
+    text-align: center;
+}
+
+.hero-contenido h1 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+.hero-contenido p {
+    line-height: 1.6;
+}
+
+.boton-naranja {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.9rem 1.5rem;
+    border-radius: 0.4rem;
+    background-color: var(--volcan-naranja);
+    color: var(--volcan-blanco);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Primera presentación de productos */
+.seccion-productos {
+    padding: 3rem 5%;
+    text-align: center;
+}
+
+.grilla-productos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.tarjeta-producto {
+    padding: 1.5rem;
+    border: 0.0625rem solid #e0e0e0;
+    border-radius: 0.5rem;
+    background-color: var(--volcan-blanco);
+}
+
+.tarjeta-producto img {
+    display: block;
+    width: 100%;
+    height: 12rem;
+    object-fit: contain;
+}
+
+.tarjeta-producto h3 {
+    color: var(--volcan-azul);
+    font-size: 1.1rem;
+}
+
+/* Información de contacto y cierre */
+.seccion-contacto {
+    padding: 3rem 5%;
+    background-color: var(--volcan-claro);
+    text-align: center;
+}
+
+.seccion-contacto a {
+    color: var(--volcan-azul);
+    font-weight: 600;
+}
+
+.pie-pagina {
+    padding: 1.5rem 5%;
+    background-color: var(--volcan-azul-oscuro);
+    color: var(--volcan-blanco);
+    text-align: center;
+    font-size: 0.875rem;
+}
