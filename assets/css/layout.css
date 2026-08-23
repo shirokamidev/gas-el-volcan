@@ -92,3 +92,82 @@ body {
 .enlaces-navegacion a:hover {
     color: var(--volcan-naranja);
 }
+
+.pie-pagina {
+    background-color: var(--volcan-oscuro);
+    color: #ffffff;
+    padding: 3rem 0 1.25rem;
+}
+
+.grilla-pie {
+    display: grid;
+    grid-template-columns: auto auto auto auto 1.5fr;
+    gap: 1.875rem;
+    margin-bottom: 2.5rem;
+}
+
+.pie-columna h6 {
+    font-size: 1.05rem;
+    margin-bottom: 1.25rem;
+    white-space: nowrap;
+}
+
+.pie-columna ul {
+    list-style: none;
+}
+
+.pie-columna ul li {
+    margin-bottom: 0.75rem;
+}
+
+.pie-columna a {
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+}
+
+.pie-columna a:hover {
+    color: #ffffff;
+}
+
+.pie-boletin {
+    min-width: 18.75rem;
+}
+
+.buscador-footer {
+    display: flex;
+    margin-bottom: 1.25rem;
+    width: 100%;
+}
+
+.buscador-footer input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 0.3125rem 0 0 0.3125rem;
+    outline: none;
+    font-family: inherit;
+}
+
+.buscador-footer .boton {
+    border-radius: 0 0.3125rem 0.3125rem 0;
+}
+
+.pie-pagos {
+    display: flex;
+    gap: 0.9375rem;
+    align-items: center;
+}
+
+.pago-icono {
+    height: 1.5rem;
+    width: auto;
+}
+
+.pie-copyright {
+    text-align: center;
+    padding-top: 1.5rem;
+    color: #888888;
+    font-size: 0.9rem;
+}

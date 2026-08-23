@@ -300,3 +300,73 @@
     -webkit-appearance: none;
     margin: 0;
 }
+
+.seccion-noticias {
+    background-color: #f8f9fa; 
+    width: 100%;
+    padding: 4rem 1.25rem; 
+    transition: padding 0.4s ease;
+}
+
+.noticias-fondo {
+    background: linear-gradient(rgba(0, 40, 70, 0.88), rgba(0, 40, 70, 0.88)), url("../img/blogs/noticia-subsidio.jpg") center/cover no-repeat;
+    width: 100%;
+    max-width: 75rem; 
+    margin: 0 auto;
+    border-radius: 1rem; 
+    padding: 4.5rem 1.25rem;
+    text-align: center;
+    color: #ffffff;
+    transition: max-width 0.4s ease, border-radius 0.4s ease, padding 0.4s ease;
+}
+
+.seccion-noticias:hover {
+    padding: 0; 
+}
+
+.seccion-noticias:hover .noticias-fondo {
+    max-width: 100%; 
+    border-radius: 0; 
+    padding: 8.5rem 1.25rem; 
+}
+
+.contenedor-interno-noticias h2 {
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+}
+
+.grilla-promociones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5rem 0;
+}
+
+.promocion-item {
+    flex: 1;
+    max-width: 25rem;
+}
+
+.promo-borde {
+    border-right: 1px solid rgba(255,255,255,0.4);
+    padding-right: 3rem; 
+}
+
+.promo-espacio {
+    padding-left: 3rem;
+}
+
+.promocion-item h1 {
+    font-size: 4.5rem;
+    margin-bottom: 0.625rem;
+    line-height: 1;
+}
+
+.noticia-fuente {
+    display: block;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    text-align: right; 
+}
