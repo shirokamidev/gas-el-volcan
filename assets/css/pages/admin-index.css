@@ -1,0 +1,176 @@
+/* Tipografía y colores iniciales del panel administrativo */
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../fonts/montserrat/Montserrat-Variable.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+:root {
+    --volcan-azul: #004b87;
+    --volcan-naranja: #f37021;
+    --volcan-blanco: #ffffff;
+    --volcan-oscuro: #1a1a1a;
+    --volcan-claro: #f5f6f7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", Arial, sans-serif;
+    color: var(--volcan-oscuro);
+    background-color: var(--volcan-claro);
+    line-height: 1.6;
+}
+
+/* Cabecera inicial del panel */
+.admin-cabecera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    background-color: var(--volcan-azul);
+    color: var(--volcan-blanco);
+    text-align: center;
+}
+
+.admin-cabecera img {
+    display: block;
+    width: 11.25rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.admin-cabecera h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Distribución inicial de navegación y contenido */
+.admin-estructura {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.admin-sidebar {
+    min-width: 0;
+    padding: 1.5rem;
+    background-color: var(--volcan-blanco);
+    border: 0.0625rem solid #e5e7eb;
+    border-radius: 0.5rem;
+}
+
+.admin-sidebar h2 {
+    margin: 0 0 1rem;
+    color: var(--volcan-azul);
+    font-size: 1.2rem;
+}
+
+.admin-sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-sidebar li {
+    padding: 0.8rem 1rem;
+    border-bottom: 0.0625rem solid #e5e7eb;
+    font-weight: 600;
+}
+
+.admin-sidebar li:last-child {
+    border-bottom: 0;
+}
+
+.admin-main {
+    min-width: 0;
+}
+
+/* Contenido y primeras tarjetas de estadísticas */
+.panel-bienvenida {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--volcan-blanco);
+    border-radius: 0.5rem;
+    border: 0.0625rem solid #e5e7eb;
+}
+
+.panel-bienvenida h2 {
+    margin: 0 0 0.75rem;
+    color: var(--volcan-azul);
+    font-size: 1.5rem;
+}
+
+.panel-bienvenida p {
+    margin: 0;
+}
+
+.grilla-estadisticas {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+}
+
+.tarjeta-stat {
+    min-width: 0;
+    padding: 1.5rem;
+    background-color: var(--volcan-blanco);
+    border: 0.0625rem solid #e5e7eb;
+    border-top: 0.25rem solid var(--volcan-naranja);
+    border-radius: 0.5rem;
+}
+
+.tarjeta-stat h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1.1rem;
+    color: var(--volcan-azul);
+}
+
+.tarjeta-stat p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (min-width: 768px) {
+    .admin-cabecera {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        padding: 1.5rem 2rem;
+    }
+
+    .admin-estructura {
+        grid-template-columns: 14rem minmax(0, 1fr);
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .grilla-estadisticas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Adaptabilidad para dispositivos grandes (Escritorio) */
+@media (min-width: 992px) {
+    .admin-cabecera h1 {
+        font-size: 1.8rem;
+    }
+
+    .panel-bienvenida {
+        padding: 2rem;
+    }
+
+    .tarjeta-stat {
+        padding: 2rem;
+    }
+}
