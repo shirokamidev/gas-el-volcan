@@ -49,8 +49,9 @@ a {
 .barra-navegacion {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
     padding: 1rem 5%;
 }
 
@@ -62,7 +63,9 @@ a {
 
 .enlaces-navegacion {
     display: flex;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.5rem;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -117,7 +120,7 @@ a {
 
 .grilla-productos {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.5rem;
     margin-top: 2rem;
 }
@@ -159,4 +162,24 @@ a {
     color: var(--volcan-blanco);
     text-align: center;
     font-size: 0.875rem;
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (min-width: 768px) {
+    .barra-navegacion {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .grilla-productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Adaptabilidad para dispositivos grandes (Escritorio) */
+@media (min-width: 992px) {
+    .grilla-productos {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
