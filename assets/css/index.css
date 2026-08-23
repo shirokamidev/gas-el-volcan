@@ -107,59 +107,12 @@
     flex: 1;
 }
 
+/* Separador para posicionar la grilla de productos debajo del hero */
 .separador-gris {
     background-color: var(--volcan-claro); 
     width: 100%;
     padding-bottom: 11rem; 
 }
-
-/* Media Queries exclusivas del Hero */
-@media (max-width: 64rem) {
-    .tarjeta-hero {
-        width: calc(100% - 4.5rem);
-    }
-}
-
-@media (max-width: 48rem) { 
-    .tarjeta-hero {
-        width: calc(100% - 0.5rem);
-    }
-    .hero-fondo {
-        min-height: 25rem; 
-        padding-bottom: 11rem;    
-    }
-    .hero-titulo {
-        font-size: 1.8rem;
-    }
-    .hero-bajada {
-        font-size: 0.95rem;
-    }
-    .tarjeta-hero {
-        margin: 0;
-        padding: 1.25rem;
-        max-width: 100%;
-    }
-    .buscador-principal {
-        flex-direction: row; 
-        width: 100%;
-    }
-    .botones-hero {
-        flex-direction: column;
-        gap: 0.9375rem;
-        width: 100%;
-    }
-    .botones-hero .boton {
-        width: 100%;
-    }
-    .separador-gris {
-        padding-bottom: 14rem; 
-    }
-    .tarjeta-cabecera h1 {
-        font-size: 1.5rem;
-    }
-}
-
-
 
 /* Grilla de productos */
 .seccion-productos {
@@ -301,6 +254,7 @@
     margin: 0;
 }
 
+/* Sección de Promociones y Noticias (Blogs) */
 .seccion-noticias {
     background-color: #f8f9fa; 
     width: 100%;
@@ -369,4 +323,92 @@
     color: rgba(255, 255, 255, 0.7);
     font-style: italic;
     text-align: right; 
+}
+
+/* Media Queries exclusivas del Index */
+@media (max-width: 64rem) {
+    .tarjeta-hero {
+        width: calc(100% - 4.5rem);
+        
+    }
+
+    .seccion-noticias {
+        padding: 4rem 0;
+    }
+    
+    .noticias-fondo {
+        max-width: 100%;
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 48rem) { 
+    .tarjeta-hero {
+        width: calc(100% - 0.5rem);
+        
+    }
+
+    .hero-fondo {
+        min-height: 25rem; 
+        padding-bottom: 11rem;    
+    }
+
+    .hero-titulo {
+        font-size: 1.8rem;
+    }
+    
+    .hero-bajada {
+        font-size: 0.95rem;
+    }
+
+    .tarjeta-hero {
+        margin: 0;
+        padding: 1.25rem;
+        max-width: 100%;
+    }
+    
+    .buscador-principal {
+        flex-direction: row; 
+        width: 100%;
+    }
+    
+    .botones-hero {
+        flex-direction: column;
+        gap: 0.9375rem;
+        width: 100%;
+    }
+
+    .botones-hero .boton {
+        width: 100%;
+    }
+
+    .separador-gris {
+        padding-bottom: 14rem; 
+    }
+
+    .grilla-promociones {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .promo-borde {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+        padding-right: 0;
+        padding-bottom: 2.5rem;
+        margin-bottom: 2.5rem; 
+    }
+
+    .promo-espacio {
+        padding-left: 0;
+    }
+    
+    .tarjeta-cabecera h1 {
+        font-size: 1.5rem;
+    }
+
+    .noticia-fuente {
+        text-align: center;
+        margin-top: 2.5rem;
+    }
 }
