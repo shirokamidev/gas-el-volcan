@@ -1,37 +1,3 @@
-/* Tipografía principal de la página */
-@font-face {
-    font-family: "Montserrat";
-    src: url("../../fonts/montserrat/Montserrat-Variable.woff2") format("woff2");
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: swap;
-}
-
-/* Colores y configuración inicial */
-:root {
-    --volcan-azul: #004b87;
-    --volcan-azul-oscuro: #003865;
-    --volcan-naranja: #f37021;
-    --volcan-blanco: #ffffff;
-    --volcan-oscuro: #1a1a1a;
-    --volcan-claro: #f8f9fa;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    color: var(--volcan-oscuro);
-    background-color: var(--volcan-blanco);
-    font-family: "Montserrat", Arial, sans-serif;
-}
-
-a {
-    color: inherit;
-}
-
 /* Cabecera y navegación inicial */
 .barra-superior {
     padding: 0.75rem 5%;
