@@ -110,6 +110,57 @@
     font-size: 1.1rem;
 }
 
+/* Primer bloque de novedades y consejos */
+.seccion-noticias {
+    padding: 3rem 5%;
+    background-color: var(--volcan-claro);
+}
+
+.contenedor-noticias {
+    width: 100%;
+    max-width: 72rem;
+    margin: 0 auto;
+}
+
+.encabezado-noticias {
+    text-align: center;
+}
+
+.encabezado-noticias h2 {
+    margin-top: 0;
+    color: var(--volcan-azul);
+    font-size: 1.7rem;
+}
+
+.encabezado-noticias p {
+    line-height: 1.6;
+}
+
+.grilla-noticias {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.tarjeta-noticia {
+    padding: 1.5rem;
+    border: 0.0625rem solid #e0e0e0;
+    border-radius: 0.5rem;
+    background-color: var(--volcan-blanco);
+}
+
+.tarjeta-noticia h3 {
+    margin-top: 0;
+    color: var(--volcan-azul);
+    font-size: 1.15rem;
+}
+
+.tarjeta-noticia p {
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
 /* Información de contacto y cierre */
 .seccion-contacto {
     padding: 3rem 5%;
@@ -132,6 +183,10 @@
 
 /* Adaptabilidad para pantallas medianas (Tablets) */
 @media (min-width: 768px) {
+    .grilla-noticias {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .barra-navegacion {
         flex-direction: row;
         justify-content: space-between;
