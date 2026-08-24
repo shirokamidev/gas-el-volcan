@@ -1,0 +1,126 @@
+/* Indicador de navegación activa */
+.enlaces-navegacion a.activo {
+    color: var(--volcan-naranja);
+}
+
+/* Fondo general de la página */
+.pagina-blogs {
+    background-color: #f9f9fa;
+    min-height: calc(100vh - 200px);
+    padding-bottom: 3rem;
+}
+
+/* Hero de noticias */
+.hero-blogs {
+    width: 100%;
+    background: linear-gradient(135deg, var(--volcan-azul) 0%, #002c52 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 1.25rem;
+}
+
+.hero-blogs h1 {
+    font-size: 3rem;
+    margin-bottom: 0.8rem;
+}
+
+.bajada-blogs {
+    font-size: 1.15rem;
+    color: #e0e0e0;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/* Barra de herramientas y filtros */
+.seccion-filtros-blogs {
+    margin-top: 3rem;
+    margin-bottom: 2.5rem;
+}
+
+.barra-filtros {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 1.5rem;
+    align-items: flex-end;
+}
+
+.grupo-filtro {
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-filtro label {
+    font-size: 0.95rem;
+    color: var(--volcan-oscuro);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+
+/* Buscador de noticias */
+.caja-buscador {
+    display: flex;
+    width: 100%;
+}
+
+.caja-buscador input {
+    flex: 1;
+    min-width: 0;
+    padding: 0.8rem 1rem;
+    border: 1px solid #d1d1d1;
+    border-right: none;
+    border-radius: 0.3125rem 0 0 0.3125rem;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+}
+
+.caja-buscador input:focus {
+    border-color: var(--volcan-naranja);
+}
+
+.boton-lupa {
+    background-color: var(--volcan-naranja);
+    color: #ffffff;
+    border: none;
+    padding: 0 1.2rem;
+    border-radius: 0 0.3125rem 0.3125rem 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.boton-lupa:hover {
+    background-color: #e06015;
+}
+
+/* Selectores de filtros */
+.grupo-filtro select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #d1d1d1;
+    border-radius: 0.3125rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--volcan-texto);
+    outline: none;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.grupo-filtro select:focus {
+    border-color: var(--volcan-naranja);
+}
+
+/* Botón de filtrado */
+.btn-filtrar {
+    height: 47px;
+    padding: 0 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
