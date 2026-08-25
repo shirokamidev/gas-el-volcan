@@ -34,15 +34,36 @@
                     <p>Desde este espacio se organizará la gestión de productos y usuarios de la sucursal virtual.</p>
                 </section>
 
-                <!-- Resumen de datos, pendiente de integración -->
+                <!-- Resumen visual de productos y usuarios -->
                 <section class="grilla-estadisticas" aria-label="Resumen del sistema">
                     <article class="tarjeta-stat">
-                        <h3>Productos registrados</h3>
-                        <p>Datos disponibles en una próxima etapa.</p>
+                        <div class="stat-info">
+                            <h3>Productos registrados</h3>
+                            <span class="stat-numero" id="stat-total-productos">—</span>
+                            <p class="stat-nota">Conteo disponible próximamente.</p>
+                        </div>
+                        <div class="stat-icono icono-naranja" aria-hidden="true">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                        </div>
                     </article>
                     <article class="tarjeta-stat">
-                        <h3>Usuarios registrados</h3>
-                        <p>Datos disponibles en una próxima etapa.</p>
+                        <div class="stat-info">
+                            <h3>Usuarios activos</h3>
+                            <span class="stat-numero" id="stat-total-usuarios">—</span>
+                            <p class="stat-nota">Conteo disponible próximamente.</p>
+                        </div>
+                        <div class="stat-icono icono-azul" aria-hidden="true">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
                     </article>
                 </section>
             </main>

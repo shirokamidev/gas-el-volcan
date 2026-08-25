@@ -121,6 +121,10 @@ body {
 }
 
 .tarjeta-stat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
     min-width: 0;
     padding: 1.5rem;
     background-color: var(--volcan-blanco);
@@ -130,14 +134,45 @@ body {
 }
 
 .tarjeta-stat h3 {
-    margin: 0 0 0.75rem;
-    font-size: 1.1rem;
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
     color: var(--volcan-azul);
 }
 
-.tarjeta-stat p {
-    margin: 0;
-    font-size: 0.95rem;
+.stat-info {
+    min-width: 0;
+}
+
+.stat-numero {
+    display: block;
+    color: var(--volcan-oscuro);
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.stat-nota {
+    margin: 0.5rem 0 0;
+    color: #555555;
+    font-size: 0.85rem;
+}
+
+/* Iconografía inicial de los indicadores */
+.stat-icono {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.icono-naranja {
+    color: var(--volcan-naranja);
+}
+
+.icono-azul {
+    color: var(--volcan-azul);
 }
 
 /* Adaptabilidad para pantallas medianas (Tablets) */
