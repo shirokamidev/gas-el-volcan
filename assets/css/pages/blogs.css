@@ -78,6 +78,81 @@ body {
     line-height: 1.6;
 }
 
+/* Estructura visual de los filtros de noticias */
+.seccion-filtros-blogs {
+    padding-top: 2.5rem;
+}
+
+.seccion-filtros-blogs h2 {
+    margin: 0 0 1.25rem;
+    color: var(--volcan-azul);
+    font-size: 1.4rem;
+}
+
+.barra-filtros {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: var(--volcan-claro);
+    border: 0.0625rem solid #e5e5e5;
+    border-radius: 0.625rem;
+}
+
+.grupo-filtro {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 0.5rem;
+}
+
+.grupo-filtro label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.grupo-filtro input,
+.grupo-filtro select {
+    width: 100%;
+    min-width: 0;
+    min-height: 2.8rem;
+    padding: 0.7rem 0.8rem;
+    border: 0.0625rem solid #cccccc;
+    border-radius: 0.3125rem;
+    font: inherit;
+    background-color: var(--volcan-blanco);
+    color: var(--volcan-oscuro);
+}
+
+.grupo-filtro input:disabled,
+.grupo-filtro select:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.boton-filtrar-blog {
+    min-height: 2.8rem;
+    border: none;
+    border-radius: 0.3125rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--volcan-naranja);
+    color: var(--volcan-blanco);
+    font-family: inherit;
+    font-weight: 700;
+}
+
+.boton-filtrar-blog:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.nota-filtros-blog {
+    margin: 0.75rem 0 0;
+    color: #555555;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
 /* Primeras tarjetas de noticias */
 .seccion-grilla-blogs {
     padding-top: 3rem;
@@ -152,6 +227,10 @@ body {
         justify-content: space-between;
     }
 
+    .barra-filtros {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .grilla-blogs {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -161,6 +240,11 @@ body {
 @media (min-width: 992px) {
     .hero-blogs h1 {
         font-size: 2.6rem;
+    }
+
+    .barra-filtros {
+        grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 1fr)) auto;
+        align-items: end;
     }
 
     .seccion-grilla-blogs {
