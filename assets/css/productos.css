@@ -329,3 +329,109 @@
     font-size: 1.1rem;
     color: var(--volcan-texto);
 }
+
+/* Fondo modal para dispositivos moviles */
+.overlay-filtros {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 3999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Adaptacion para tabletas */
+@media (max-width: 64rem) { 
+    .layout-catalogo {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .herramientas-catalogo {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .herramientas-acciones {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Panel inferior de filtros */
+    .columna-filtros {
+        position: fixed;
+        bottom: 0; 
+        left: 0; 
+        width: 100%;
+        background-color: #ffffff;
+        z-index: 4000;
+        transform: translateY(100%);
+        transition: transform 0.3s ease-out;
+        border-radius: 1.5rem 1.5rem 0 0;
+        padding: 2rem 1.5rem;
+        max-height: 85vh;
+        overflow-y: auto;
+        box-shadow: 0 -0.2rem 1rem rgba(0,0,0,0.1);
+        border: none;
+    }
+
+    .cabecera-filtros-movil {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .cabecera-filtros-movil h2 {
+        font-size: 1.5rem;
+        color: var(--volcan-oscuro);
+    }
+
+    .boton-cerrar-filtros {
+        font-size: 1.8rem;
+        color: #888;
+        cursor: pointer;
+    }
+
+    .acciones-filtros-movil {
+        display: flex;
+        margin-top: 2.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #eee;
+    }
+
+    .boton-mostrar {
+        width: 100%;
+        display: block;
+        padding: 0.9rem;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    /* Boton activador de filtros */
+    .boton-pildora-filtros {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 0.3125rem;
+        padding: 0.75rem 1.25rem;
+        font-weight: 600;
+        color: var(--volcan-oscuro);
+        background-color: #fff;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    /* Apertura del panel de filtros */
+    #toggle-filtros-movil:checked ~ .overlay-filtros {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    #toggle-filtros-movil:checked ~ .layout-catalogo .columna-filtros {
+        transform: translateY(0);
+    }
+}
