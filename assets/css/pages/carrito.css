@@ -1,0 +1,328 @@
+/* Tipografía y colores iniciales del carrito */
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../fonts/montserrat/Montserrat-Variable.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+:root {
+    --volcan-azul: #004b87;
+    --volcan-azul-oscuro: #003865;
+    --volcan-naranja: #f37021;
+    --volcan-blanco: #ffffff;
+    --volcan-oscuro: #1a1a1a;
+    --volcan-claro: #f5f6f7;
+    --volcan-borde: #e1e5e9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--volcan-claro);
+    color: var(--volcan-oscuro);
+    font-family: "Montserrat", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 0.1875rem solid var(--volcan-naranja);
+    outline-offset: 0.1875rem;
+}
+
+/* Cabecera provisional de la vista */
+.carrito-cabecera {
+    background-color: var(--volcan-blanco);
+    border-bottom: 0.0625rem solid var(--volcan-borde);
+}
+
+.carrito-cabecera-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 0;
+}
+
+.carrito-enlace-logo img {
+    display: block;
+    width: 11.25rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.carrito-cabecera nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.25rem;
+}
+
+.carrito-cabecera nav a {
+    color: var(--volcan-azul);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.carrito-cabecera nav a[aria-current="page"] {
+    border-bottom: 0.1875rem solid var(--volcan-naranja);
+}
+
+/* Presentación del carrito */
+.carrito-pagina {
+    min-height: 65vh;
+    padding: 2rem 0 3rem;
+}
+
+.carrito-introduccion {
+    margin-bottom: 1.75rem;
+}
+
+.carrito-ruta {
+    margin: 0 0 0.75rem;
+    font-size: 0.85rem;
+    color: #596676;
+}
+
+.carrito-ruta a {
+    color: var(--volcan-azul);
+    text-decoration: none;
+}
+
+.carrito-introduccion h1 {
+    margin: 0 0 0.5rem;
+    color: var(--volcan-azul-oscuro);
+    font-size: 1.65rem;
+}
+
+.carrito-introduccion > p:last-child {
+    margin: 0;
+}
+
+/* Columna de productos y estado vacío */
+.layout-carrito {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.columna-productos-carrito,
+.lista-productos-carrito {
+    min-width: 0;
+}
+
+.carrito-estado-vacio {
+    padding: 2.5rem 1.25rem;
+    background-color: var(--volcan-blanco);
+    border: 0.0625rem solid var(--volcan-borde);
+    border-radius: 0.75rem;
+    text-align: center;
+}
+
+.carrito-icono-vacio {
+    font-size: 3rem;
+    line-height: 1.4;
+}
+
+.carrito-estado-vacio h2 {
+    margin: 0.75rem 0;
+    color: var(--volcan-azul);
+    font-size: 1.35rem;
+}
+
+.carrito-estado-vacio p {
+    max-width: 30rem;
+    margin: 0 auto 1.5rem;
+    color: #46515d;
+}
+
+.carrito-boton-catalogo {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    background-color: var(--volcan-naranja);
+    color: var(--volcan-blanco);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.carrito-boton-catalogo:hover {
+    background-color: #da601b;
+}
+
+.acciones-globales-carrito {
+    margin-top: 1.25rem;
+    text-align: center;
+}
+
+.acciones-globales-carrito[hidden] {
+    display: none;
+}
+
+.btn-vaciar-carrito {
+    padding: 0.65rem 1.25rem;
+    border: 0.0625rem solid #b91c1c;
+    border-radius: 0.375rem;
+    background-color: var(--volcan-blanco);
+    color: #991b1b;
+    font-weight: 600;
+}
+
+/* Columna de resumen de compra */
+.resumen-caja {
+    padding: 1.5rem;
+    background-color: var(--volcan-blanco);
+    border: 0.0625rem solid var(--volcan-borde);
+    border-radius: 0.75rem;
+}
+
+.resumen-caja h2 {
+    margin: 0 0 1.25rem;
+    color: var(--volcan-azul);
+    font-size: 1.25rem;
+}
+
+.resumen-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 0.0625rem solid var(--volcan-borde);
+    font-weight: 700;
+}
+
+.monto-total {
+    color: var(--volcan-azul-oscuro);
+    font-size: 1.65rem;
+}
+
+.seccion-cupon {
+    margin: 1.5rem 0;
+}
+
+.seccion-cupon label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.input-grupo-cupon {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-grupo-cupon input {
+    min-width: 0;
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    border: 0.0625rem solid var(--volcan-borde);
+    border-radius: 0.375rem;
+}
+
+.input-grupo-cupon button {
+    padding: 0.65rem 1rem;
+    border: 0;
+    border-radius: 0.375rem;
+    background-color: var(--volcan-naranja);
+    color: var(--volcan-blanco);
+    font-weight: 700;
+}
+
+.mensaje-cupon {
+    margin: 0.6rem 0 0;
+    font-size: 0.8rem;
+    color: #596676;
+}
+
+.boton-continuar {
+    display: block;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 0;
+    border-radius: 0.375rem;
+    background-color: var(--volcan-azul);
+    color: var(--volcan-blanco);
+    font-weight: 700;
+}
+
+button:disabled,
+input:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.enlace-seguir-comprando {
+    display: block;
+    margin-top: 1rem;
+    color: var(--volcan-azul);
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Pie de página provisional */
+.carrito-pie {
+    padding: 1.5rem 1rem;
+    background-color: var(--volcan-azul);
+    color: var(--volcan-blanco);
+    text-align: center;
+}
+
+.carrito-pie p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (min-width: 768px) {
+    .carrito-cabecera-contenido {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .carrito-introduccion h1 {
+        font-size: 2rem;
+    }
+
+    .input-grupo-cupon {
+        flex-direction: row;
+    }
+
+    .input-grupo-cupon input {
+        flex: 1;
+    }
+}
+
+/* Adaptabilidad para dispositivos grandes (Escritorio) */
+@media (min-width: 992px) {
+    .layout-carrito {
+        grid-template-columns: minmax(0, 1.7fr) minmax(18rem, 1fr);
+        gap: 2rem;
+    }
+
+    .carrito-estado-vacio {
+        padding: 3.5rem 2rem;
+    }
+}
