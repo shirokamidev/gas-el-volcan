@@ -1,0 +1,328 @@
+/* Tipografía y colores iniciales de sucursales */
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../fonts/montserrat/Montserrat-Variable.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+:root {
+    --volcan-azul: #004b87;
+    --volcan-azul-oscuro: #003865;
+    --volcan-naranja: #f37021;
+    --volcan-blanco: #ffffff;
+    --volcan-oscuro: #1a1a1a;
+    --volcan-claro: #f5f6f7;
+    --volcan-borde: #e0e5e9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", Arial, sans-serif;
+    color: var(--volcan-oscuro);
+    background-color: var(--volcan-blanco);
+    line-height: 1.6;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+/* Cabecera y navegación inicial */
+.cabecera-principal {
+    background-color: var(--volcan-blanco);
+    border-bottom: 0.0625rem solid var(--volcan-borde);
+}
+
+.contenido-cabecera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 0;
+}
+
+.enlace-logo img {
+    display: block;
+    width: 11.25rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.contenido-cabecera nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.25rem;
+}
+
+.contenido-cabecera nav a {
+    color: var(--volcan-azul);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.contenido-cabecera nav a[aria-current="page"] {
+    color: var(--volcan-naranja);
+}
+
+.contenido-cabecera nav a:focus-visible {
+    outline: 0.1875rem solid var(--volcan-naranja);
+    outline-offset: 0.25rem;
+}
+
+/* Banner de la página */
+.banner-sucursales {
+    background-color: var(--volcan-claro);
+}
+
+.banner-sucursales img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Buscador visual, pendiente de JavaScript */
+.seccion-buscador {
+    padding-top: 2.75rem;
+    padding-bottom: 2.5rem;
+}
+
+.introduccion-buscador {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.introduccion-buscador h1 {
+    margin: 0 0 0.75rem;
+    color: var(--volcan-azul-oscuro);
+    font-size: 1.7rem;
+    line-height: 1.3;
+}
+
+.introduccion-buscador p {
+    margin: 0;
+}
+
+.formulario-buscador {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 0.0625rem solid var(--volcan-borde);
+    border-radius: 0.625rem;
+    background-color: var(--volcan-claro);
+}
+
+.grupo-campo {
+    min-width: 0;
+}
+
+.grupo-campo label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--volcan-azul-oscuro);
+    font-weight: 600;
+}
+
+.grupo-campo select,
+.formulario-buscador button {
+    width: 100%;
+    min-height: 3.25rem;
+    padding: 0.75rem 1rem;
+    font: inherit;
+    border-radius: 0.375rem;
+}
+
+.grupo-campo select {
+    border: 0.0625rem solid var(--volcan-borde);
+    color: var(--volcan-oscuro);
+    background-color: var(--volcan-blanco);
+}
+
+.formulario-buscador button {
+    border: 0;
+    background-color: var(--volcan-naranja);
+    color: var(--volcan-blanco);
+    font-weight: 700;
+}
+
+.grupo-campo select:disabled,
+.formulario-buscador button:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.aviso-buscador {
+    margin: 0.85rem 0 0;
+    color: #555e68;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Directorio de zonas y mapa de referencia */
+.seccion-directorio {
+    padding-bottom: 3.5rem;
+}
+
+.seccion-directorio h2 {
+    margin: 0 0 1.5rem;
+    color: var(--volcan-azul-oscuro);
+    font-size: 1.5rem;
+}
+
+.distribucion-directorio {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+}
+
+.lista-zonas {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+}
+
+.tarjeta-zona {
+    min-width: 0;
+    padding: 1.25rem;
+    border: 0.0625rem solid var(--volcan-borde);
+    border-left: 0.25rem solid var(--volcan-naranja);
+    border-radius: 0.5rem;
+    background-color: var(--volcan-blanco);
+}
+
+.tarjeta-zona h3 {
+    margin: 0 0 0.5rem;
+    color: var(--volcan-naranja);
+    font-size: 1.1rem;
+}
+
+.tarjeta-zona p {
+    margin: 0 0 0.75rem;
+    font-size: 0.95rem;
+}
+
+.etiqueta-zona {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    border-radius: 0.25rem;
+    background-color: var(--volcan-claro);
+    color: var(--volcan-azul-oscuro);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.contenedor-mapa {
+    min-width: 0;
+    padding: 1.25rem;
+    border: 0.0625rem solid var(--volcan-borde);
+    border-radius: 0.625rem;
+    background-color: var(--volcan-claro);
+}
+
+.contenedor-mapa h3 {
+    margin: 0 0 1rem;
+    color: var(--volcan-azul-oscuro);
+    font-size: 1.15rem;
+}
+
+.marco-mapa {
+    min-width: 0;
+    min-height: 19rem;
+    overflow: hidden;
+    border-radius: 0.375rem;
+    background-color: #e6e9ec;
+}
+
+.marco-mapa iframe {
+    display: block;
+    width: 100%;
+    height: 19rem;
+    border: 0;
+}
+
+.nota-mapa {
+    margin: 0.85rem 0 0;
+    font-size: 0.85rem;
+    color: #555e68;
+}
+
+/* Pie de página inicial */
+.pie-pagina {
+    padding: 1.5rem 0;
+    background-color: var(--volcan-azul);
+    color: var(--volcan-blanco);
+    text-align: center;
+}
+
+.pie-pagina p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (min-width: 768px) {
+    .contenido-cabecera {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .formulario-buscador {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: end;
+    }
+
+    .formulario-buscador button {
+        grid-column: 1 / -1;
+    }
+
+    .lista-zonas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Adaptabilidad para dispositivos grandes (Escritorio) */
+@media (min-width: 992px) {
+    .introduccion-buscador h1 {
+        font-size: 2.15rem;
+    }
+
+    .formulario-buscador {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .formulario-buscador button {
+        grid-column: auto;
+    }
+
+    .distribucion-directorio {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+        align-items: start;
+    }
+
+    .lista-zonas {
+        grid-template-columns: minmax(0, 1fr);
+        order: 2;
+    }
+
+    .contenedor-mapa {
+        order: 1;
+    }
+
+    .marco-mapa {
+        min-height: 28rem;
+    }
+
+    .marco-mapa iframe {
+        height: 28rem;
+    }
+}

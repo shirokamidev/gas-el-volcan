@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gas El Volcán | Sucursales</title>
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/pages/sucursales.css">
+    </head>
+    <body>
+        <!-- Cabecera inicial de sucursales -->
+        <header class="cabecera-principal">
+            <div class="contenedor contenido-cabecera">
+                <a class="enlace-logo" href="index.html" aria-label="Ir al inicio de Gas El Volcán">
+                    <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
+                </a>
+                <nav aria-label="Navegación principal">
+                    <a href="index.html">Inicio</a>
+                    <a href="catalogo.html">Productos</a>
+                    <a href="sucursales.html" aria-current="page">Sucursales</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- Banner de presentación -->
+            <section class="banner-sucursales" aria-label="Puntos Volcán">
+                <div class="contenedor">
+                    <img src="assets/images/sucursales/banner-sucursales.png" alt="Siempre hay un Punto Volcán cerca de ti">
+                </div>
+            </section>
+
+            <!-- Formulario visual para la futura búsqueda -->
+            <section class="seccion-buscador contenedor" aria-labelledby="titulo-buscador">
+                <div class="introduccion-buscador">
+                    <h1 id="titulo-buscador">Encuentra tu Punto Volcán más cercano</h1>
+                    <p>Conoce las zonas de atención incluidas en nuestro directorio.</p>
+                </div>
+
+                <form class="formulario-buscador" aria-describedby="aviso-buscador">
+                    <div class="grupo-campo">
+                        <label for="region">Región</label>
+                        <select id="region" name="region" disabled>
+                            <option value="" selected>Selecciona tu región...</option>
+                            <option value="nuble">Región de Ñuble</option>
+                            <option value="biobio">Región del Biobío</option>
+                        </select>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="comuna">Comuna</label>
+                        <select id="comuna" name="comuna" disabled>
+                            <option value="" selected>Selecciona tu comuna...</option>
+                        </select>
+                    </div>
+                    <button type="button" disabled>Buscar sucursal</button>
+                </form>
+                <p id="aviso-buscador" class="aviso-buscador">La búsqueda por región y comuna estará disponible en una próxima etapa.</p>
+            </section>
+
+            <!-- Mapa y directorio inicial de zonas -->
+            <section class="seccion-directorio contenedor" aria-labelledby="titulo-directorio">
+                <h2 id="titulo-directorio">Zonas de atención</h2>
+                <div class="distribucion-directorio">
+                    <div class="lista-zonas">
+                        <article class="tarjeta-zona">
+                            <h3>Zona Centro</h3>
+                            <p>Chillán: sectores centro, norte y sur.</p>
+                            <span class="etiqueta-zona">Región de Ñuble</span>
+                        </article>
+                        <article class="tarjeta-zona">
+                            <h3>Zona Oriente</h3>
+                            <p>Chillán: sector oriente y Chillán Viejo.</p>
+                            <span class="etiqueta-zona">Región de Ñuble</span>
+                        </article>
+                        <article class="tarjeta-zona">
+                            <h3>Zona Rural</h3>
+                            <p>El Carmen, Pinto y San Ignacio.</p>
+                            <span class="etiqueta-zona">Región de Ñuble</span>
+                        </article>
+                        <article class="tarjeta-zona">
+                            <h3>Zona Sur</h3>
+                            <p>Bulnes y Quillón.</p>
+                            <span class="etiqueta-zona">Región de Ñuble</span>
+                        </article>
+                    </div>
+
+                    <div class="contenedor-mapa">
+                        <h3>Mapa referencial de Chillán</h3>
+                        <div class="marco-mapa">
+                            <iframe
+                                title="Mapa referencial de la ciudad de Chillán"
+                                src="https://www.google.com/maps?q=Chill%C3%A1n%2C%20Chile&amp;output=embed"
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="nota-mapa">El mapa muestra la ciudad como referencia; las ubicaciones individuales de los puntos se incorporarán más adelante.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Pie de página inicial -->
+        <footer class="pie-pagina">
+            <div class="contenedor">
+                <p>&copy; 2026 Gas El Volcán. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </body>
+</html>
