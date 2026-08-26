@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gas El Volcán | Contacto</title>
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/pages/contacto.css">
+    </head>
+    <body>
+        <!-- Cabecera inicial de atención al cliente -->
+        <header class="contacto-cabecera">
+            <div class="contenedor contacto-cabecera-contenido">
+                <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
+                <nav aria-label="Navegación de contacto">
+                    <a href="contacto.html" aria-current="page">Contacto</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- Presentación de los canales de atención -->
+            <section class="contacto-portada">
+                <div class="contenedor">
+                    <h1>Contáctanos</h1>
+                    <p>Estamos aquí para resolver tus dudas y ayudarte con tu pedido.</p>
+                </div>
+            </section>
+
+            <!-- Información de contacto y primer formulario -->
+            <section class="contacto-seccion" id="contacto">
+                <div class="contenedor contacto-grilla">
+                    <article class="contacto-informacion">
+                        <h2>Hablemos</h2>
+                        <p>Si tienes consultas sobre nuestros productos, necesitas ayuda o quieres dejar un reclamo, puedes comunicarte a través de nuestros canales de atención.</p>
+
+                        <div class="contacto-canales">
+                            <div class="contacto-canal">
+                                <h3>Teléfonos</h3>
+                                <p>Atención al Cliente: <a href="tel:800509000">800 50 9000</a></p>
+                                <p>Emergencias: <a href="tel:800509111">800 50 9111</a></p>
+                            </div>
+                            <div class="contacto-canal">
+                                <h3>Correo electrónico</h3>
+                                <p><a href="mailto:ayuda@gaselvolcan.cl">ayuda@gaselvolcan.cl</a></p>
+                            </div>
+                            <div class="contacto-canal">
+                                <h3>Casa matriz</h3>
+                                <p>Av. Brasil 450, Chillán, Región de Ñuble.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="contacto-formulario-caja">
+                        <h2>Envíanos un mensaje</h2>
+                        <p class="contacto-aviso">Estamos preparando el envío de consultas en línea.</p>
+                        <form id="form-contacto">
+                            <div class="contacto-grupo">
+                                <label for="nombre-contacto">Nombre completo</label>
+                                <input id="nombre-contacto" name="nombre" type="text" placeholder="Ej: Juan Pérez" autocomplete="name" required>
+                            </div>
+                            <div class="contacto-grupo">
+                                <label for="correo-contacto">Correo electrónico</label>
+                                <input id="correo-contacto" name="correo" type="email" placeholder="Ej: usuario@gmail.com" autocomplete="email" required>
+                            </div>
+                            <div class="contacto-grupo">
+                                <label for="comentario-contacto">Mensaje</label>
+                                <textarea id="comentario-contacto" name="mensaje" rows="5" placeholder="Escribe tu consulta aquí..." required></textarea>
+                            </div>
+                            <button class="contacto-boton" type="button" disabled>Enviar mensaje</button>
+                        </form>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- Pie de página inicial -->
+        <footer class="contacto-pie">
+            <p>&copy; 2026 Gas El Volcán. Chillán, Región de Ñuble.</p>
+        </footer>
+    </body>
+</html>

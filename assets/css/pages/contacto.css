@@ -1,0 +1,218 @@
+/* Tipografía y colores iniciales de Contacto */
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../fonts/montserrat/Montserrat-Variable.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+:root {
+    --volcan-azul: #004b87;
+    --volcan-naranja: #f37021;
+    --volcan-blanco: #ffffff;
+    --volcan-oscuro: #1a1a1a;
+    --volcan-claro: #f5f6f7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", Arial, sans-serif;
+    color: var(--volcan-oscuro);
+    background-color: var(--volcan-blanco);
+    line-height: 1.6;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+/* Cabecera inicial */
+.contacto-cabecera {
+    background-color: var(--volcan-blanco);
+    border-bottom: 0.0625rem solid #e5e5e5;
+}
+
+.contacto-cabecera-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.25rem 0;
+}
+
+.contacto-cabecera img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.contacto-cabecera nav a {
+    color: var(--volcan-azul);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Portada y presentación de la vista */
+.contacto-portada {
+    background: linear-gradient(135deg, var(--volcan-azul), #002c52);
+    color: var(--volcan-blanco);
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.contacto-portada h1 {
+    margin: 0 0 0.5rem;
+    font-size: 2.2rem;
+}
+
+.contacto-portada p {
+    margin: 0 auto;
+    max-width: 38rem;
+}
+
+/* Primer módulo de información y formulario */
+.contacto-seccion {
+    background-color: var(--volcan-claro);
+    padding: 3rem 0;
+}
+
+.contacto-grilla {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+}
+
+.contacto-informacion h2,
+.contacto-formulario-caja h2 {
+    margin: 0 0 1rem;
+    font-size: 1.6rem;
+    color: var(--volcan-azul);
+}
+
+.contacto-informacion > p {
+    margin: 0;
+    text-align: justify;
+}
+
+.contacto-canales {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+
+.contacto-canal h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1.05rem;
+}
+
+.contacto-canal p {
+    margin: 0;
+}
+
+.contacto-canal a {
+    color: var(--volcan-azul);
+    overflow-wrap: anywhere;
+}
+
+.contacto-formulario-caja {
+    min-width: 0;
+    padding: 1.5rem;
+    background-color: var(--volcan-blanco);
+    border: 0.0625rem solid #e5e5e5;
+    border-radius: 0.625rem;
+}
+
+.contacto-aviso {
+    margin: 0 0 1.5rem;
+    font-size: 0.9rem;
+    color: #555555;
+}
+
+.contacto-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+}
+
+.contacto-grupo label {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.contacto-grupo input,
+.contacto-grupo textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 0.8rem 1rem;
+    border: 0.0625rem solid #d1d1d1;
+    border-radius: 0.3125rem;
+    font: inherit;
+}
+
+.contacto-grupo input:focus,
+.contacto-grupo textarea:focus {
+    outline: 0.125rem solid var(--volcan-azul);
+    outline-offset: 0.125rem;
+}
+
+.contacto-boton {
+    width: 100%;
+    padding: 0.85rem 1.25rem;
+    border: 0;
+    border-radius: 0.3125rem;
+    background-color: var(--volcan-naranja);
+    color: var(--volcan-blanco);
+    font: inherit;
+    font-weight: 700;
+}
+
+.contacto-boton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Pie de página inicial */
+.contacto-pie {
+    padding: 1.5rem;
+    background-color: var(--volcan-azul);
+    color: var(--volcan-blanco);
+    text-align: center;
+}
+
+.contacto-pie p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (min-width: 768px) {
+    .contacto-cabecera-contenido {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .contacto-grilla {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Adaptabilidad para dispositivos grandes (Escritorio) */
+@media (min-width: 992px) {
+    .contacto-portada {
+        padding: 4rem 0;
+    }
+
+    .contacto-formulario-caja {
+        padding: 2rem;
+    }
+}
