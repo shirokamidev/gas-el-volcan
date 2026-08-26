@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gas El Volcán | Lista de Productos</title>
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/pages/admin-lista-productos.css">
+    </head>
+    <body>
+        <!-- Cabecera inicial de administración -->
+        <header class="admin-cabecera">
+            <div class="admin-identidad">
+                <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
+                <span>Administración</span>
+            </div>
+            <p>Gestión de productos</p>
+        </header>
+
+        <div class="admin-estructura">
+            <!-- Navegación inicial del módulo -->
+            <aside class="admin-sidebar">
+                <nav aria-label="Módulos administrativos">
+                    <h2>Menú principal</h2>
+                    <ul>
+                        <li>Inicio</li>
+                        <li class="activo" aria-current="page">Productos</li>
+                        <li>Usuarios</li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="admin-main">
+                <!-- Presentación del listado -->
+                <section class="panel-titulo" aria-labelledby="titulo-productos">
+                    <h1 id="titulo-productos">Lista de Productos</h1>
+                    <p>Consulta inicial de los productos disponibles en la sucursal virtual.</p>
+                </section>
+
+                <!-- Tabla estática de referencia para la futura gestión -->
+                <section class="panel-productos" aria-labelledby="subtitulo-productos">
+                    <h2 id="subtitulo-productos">Productos registrados</h2>
+                    <p class="mensaje-demo">Vista preliminar con datos de muestra. La edición y el inventario se incorporarán en otra etapa.</p>
+
+                    <div class="tabla-contenedor">
+                        <table class="tabla-productos">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Código</th>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Categoría</th>
+                                    <th scope="col">Stock</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>PROD-001</td>
+                                    <td>
+                                        <div class="producto-resumen">
+                                            <img src="assets/images/productos/cilindros/cilindro-11kg.svg" alt="Cilindro de gas de 11 kg" width="52" height="52">
+                                            <span>Cilindro de gas 11 kg</span>
+                                        </div>
+                                    </td>
+                                    <td>Cilindros</td>
+                                    <td>Por registrar</td>
+                                    <td><button type="button" class="boton-accion" disabled>Editar</button></td>
+                                </tr>
+                                <tr>
+                                    <td>PROD-002</td>
+                                    <td>
+                                        <div class="producto-resumen">
+                                            <img src="assets/images/productos/cilindros/cilindro-15kg.svg" alt="Cilindro de gas de 15 kg" width="52" height="52">
+                                            <span>Cilindro de gas 15 kg</span>
+                                        </div>
+                                    </td>
+                                    <td>Cilindros</td>
+                                    <td>Por registrar</td>
+                                    <td><button type="button" class="boton-accion" disabled>Editar</button></td>
+                                </tr>
+                                <tr>
+                                    <td>PROD-003</td>
+                                    <td>
+                                        <div class="producto-resumen">
+                                            <img src="assets/images/productos/reguladores/regulador-estandar.svg" alt="Regulador estándar de gas" width="52" height="52">
+                                            <span>Regulador estándar</span>
+                                        </div>
+                                    </td>
+                                    <td>Reguladores</td>
+                                    <td>Por registrar</td>
+                                    <td><button type="button" class="boton-accion" disabled>Editar</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>
