@@ -1,0 +1,258 @@
+/* Tipografía y colores iniciales de administración */
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../fonts/montserrat/Montserrat-Variable.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+:root {
+    --volcan-azul: #004b87;
+    --volcan-naranja: #f37021;
+    --volcan-blanco: #ffffff;
+    --volcan-oscuro: #1a1a1a;
+    --volcan-claro: #f5f6f7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--volcan-oscuro);
+    background-color: var(--volcan-claro);
+}
+
+/* Cabecera y navegación administrativa */
+.admin-cabecera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    background-color: var(--volcan-azul);
+    color: var(--volcan-blanco);
+    text-align: center;
+}
+
+.admin-identidad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+}
+
+.admin-identidad img {
+    display: block;
+    width: 11.25rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.admin-cabecera p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.admin-estructura {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.admin-sidebar {
+    min-width: 0;
+    padding: 1.5rem;
+    background-color: var(--volcan-blanco);
+    border: 0.0625rem solid #e5e7eb;
+    border-radius: 0.5rem;
+}
+
+.admin-sidebar h2 {
+    margin: 0 0 1rem;
+    color: var(--volcan-azul);
+    font-size: 1.2rem;
+}
+
+.admin-sidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.admin-sidebar li {
+    padding: 0.8rem 1rem;
+    border-bottom: 0.0625rem solid #e5e7eb;
+    font-weight: 600;
+}
+
+.admin-sidebar li:last-child {
+    border-bottom: 0;
+}
+
+.admin-sidebar li.activo {
+    color: var(--volcan-naranja);
+}
+
+.admin-main {
+    min-width: 0;
+}
+
+/* Encabezado y listado inicial de usuarios */
+.panel-titulo,
+.panel-usuarios {
+    padding: 1.5rem;
+    background-color: var(--volcan-blanco);
+    border: 0.0625rem solid #e5e7eb;
+    border-radius: 0.5rem;
+}
+
+.panel-titulo {
+    margin-bottom: 1.5rem;
+}
+
+.panel-titulo h1 {
+    margin: 0 0 0.5rem;
+    color: var(--volcan-azul);
+    font-size: 1.6rem;
+}
+
+.panel-titulo p,
+.mensaje-demo {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.panel-usuarios h2 {
+    margin: 0 0 0.5rem;
+    color: var(--volcan-azul);
+    font-size: 1.2rem;
+}
+
+.mensaje-demo {
+    margin-bottom: 1.5rem;
+    color: #555555;
+}
+
+/* Tabla de usuarios con desplazamiento horizontal en móvil */
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabla-contenedor:focus-visible {
+    outline: 0.2rem solid var(--volcan-naranja);
+    outline-offset: 0.2rem;
+}
+
+.tabla-usuarios {
+    width: 100%;
+    min-width: 75rem;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabla-usuarios th,
+.tabla-usuarios td {
+    padding: 0.9rem 0.75rem;
+    border-bottom: 0.0625rem solid #e5e7eb;
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+.tabla-usuarios th {
+    background-color: var(--volcan-azul);
+    color: var(--volcan-blanco);
+    font-weight: 600;
+}
+
+.tabla-usuarios tbody tr:nth-child(even) {
+    background-color: #f7f9fb;
+}
+
+.texto-oculto {
+    position: absolute;
+    width: 0.0625rem;
+    height: 0.0625rem;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Etiquetas que distinguen los perfiles administrativos */
+.etiqueta-rol {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.rol-admin {
+    color: #004b87;
+    background-color: #e0effb;
+}
+
+.rol-vendedor {
+    color: #8d3d09;
+    background-color: #ffeedf;
+}
+
+.rol-cliente {
+    color: #405263;
+    background-color: #e5ebf0;
+}
+
+.boton-accion {
+    padding: 0.55rem 0.85rem;
+    border: 0;
+    border-radius: 0.3rem;
+    background-color: #e5e7eb;
+    color: #555555;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: not-allowed;
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (min-width: 768px) {
+    .admin-cabecera {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1.5rem 2rem;
+        text-align: left;
+    }
+
+    .admin-identidad {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .admin-estructura {
+        grid-template-columns: 14rem minmax(0, 1fr);
+        gap: 2rem;
+        padding: 2rem;
+    }
+}
+
+/* Adaptabilidad para dispositivos grandes (Escritorio) */
+@media (min-width: 992px) {
+    .panel-titulo,
+    .panel-usuarios {
+        padding: 2rem;
+    }
+
+    .panel-titulo h1 {
+        font-size: 1.9rem;
+    }
+}
