@@ -435,3 +435,28 @@
         transform: translateY(0);
     }
 }
+
+/* Adaptacion para telefonos moviles */
+@media (max-width: 48rem) { 
+    .hero-catalogo {
+        padding: 3rem 1.25rem;
+    }
+
+    .hero-catalogo-contenido h1 {
+        font-size: 2.2rem;
+    }
+    
+    .herramientas-acciones {
+        flex-direction: row;
+        gap: 0.8rem;
+        min-width: 0;
+    }
+
+    .boton-pildora-filtros {
+        padding: 0.75rem;
+    }
+
+    .boton-imprimir {
+        display: none; 
+    }
+}
