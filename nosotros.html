@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gas El Volcán | Nosotros</title>
+        <link rel="icon" type="image/svg+xml" href="assets/img/favicon-volcan.svg" />
+        
+        <!-- Fuentes de Google -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+        
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/layout.css" />
+        <link rel="stylesheet" href="assets/css/nosotros.css" />
+    </head>
+    <body>
+        <!-- Checkbox para controlar el estado del menú en móviles -->
+        <input type="checkbox" id="menu-hamburguesa" class="toggle-hamburguesa">
+
+        <!-- Header -->
+        <header class="cabecera-principal">
+            <div class="barra-superior">
+                <div class="contenedor contenido-barra-superior">
+                    <span>Atención al Cliente: <strong>800 50 9000</strong></span>
+                    <span class="texto-peligro">Emergencia: <strong>800 50 9111</strong></span>
+                </div>
+            </div>
+
+            <nav class="barra-navegacion contenedor">
+                <a href="index.html" class="enlace-logo">
+                    <img src="assets/img/logo-volcan.svg" alt="Logo Gas El Volcán" class="logo-navegacion" />
+                </a>
+                
+                <label for="menu-hamburguesa" class="icono-hamburguesa">
+                    <span class="icono-abrir">&#9776;</span>
+                    <span class="icono-cerrar">&#10005;</span>
+                </label>
+                
+                <ul class="enlaces-navegacion">
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="productos.html">PRODUCTOS</a></li>
+                    <li><a href="punto-volcan.html">SUCURSALES</a></li>
+                    <li><a href="nosotros.html" class="activo">NOSOTROS</a></li>
+                    <li><a href="blogs.html">BLOGS</a></li>
+                    <li><a href="contacto.html">CONTACTO</a></li>
+                    
+                    <li class="menu-desplegable ocultar-en-movil">
+                        <input type="checkbox" id="activar-sucursal" class="toggle-desplegable">
+                        <label for="activar-sucursal" class="boton boton-oscuro">SUCURSAL VIRTUAL</label>
+                        <ul class="sub-menu">
+                            <li><a href="login.html">Iniciar Sesión</a></li>
+                            <li class="divisor"></li>
+                            <li><a href="registro.html">Registrarse</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="ocultar-en-pc"><a href="login.html">INICIAR SESIÓN</a></li>
+                    <li class="ocultar-en-pc"><a href="registro.html">REGISTRARSE</a></li>
+                    
+                    <li><a href="carrito.html" class="icono-carrito fw-bold">CARRITO (0)</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Sección Hero de Nosotros -->
+            <section class="nosotros-hero">
+                <div class="nosotros-hero-fondo">
+                    <div class="nosotros-hero-contenido limite-ancho">
+                        <h1 class="texto-blanco fw-bold">Conoce más sobre Gas El Volcán</h1>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Quiénes Somos -->
+            <section id="quienes-somos" class="seccion-quienes-somos contenedor">
+                <div class="grilla-quienes-somos">
+                    <div class="quienes-somos-texto">
+                        <h2 class="fw-bold">¿Quiénes somos?</h2>
+                        <p>Somos una empresa familiar fundada en 1998 en la ciudad de Chillán, dedicados con orgullo a la distribución de gas licuado a domicilio en toda la Región de Ñuble.</p>
+                        <p>Desde nuestros inicios, nuestro compromiso ha sido llevar una energía limpia y segura a hogares, comercios y Pymes, operando siempre bajo los valores de la confianza y el trato cercano con nuestra comunidad.</p>
+                        <p>Hoy, con más de dos décadas de trayectoria, nos estamos modernizando. Estamos implementando nuevas herramientas tecnológicas para agilizar nuestros despachos, optimizar nuestra red de distribución y brindarte un servicio más eficiente en tiempo real, manteniendo la misma calidez y compromiso de siempre.</p>
+                    </div>
+                    <div class="quienes-somos-imagen">
+                        <img src="assets/img/nosotros/repartidor-gas-volcan.png" alt="Repartidor de Gas El Volcán entregando un cilindro" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Misión y Visión -->
+            <section id="mision-vision" class="seccion-proposito">
+                <div class="contenedor">
+                    <h2 class="fw-bold titulo-centrado">Nuestro propósito es Potenciar el Desarrollo Regional</h2>
+                    <div class="grilla-proposito">
+                        
+                        <article class="tarjeta-mv">
+                            <input type="checkbox" id="mv-mision" class="mv-checkbox">
+                            <label for="mv-mision" class="mv-label">
+                                <img src="assets/img/nosotros/fondo-mision.jpg" alt="Fondo Misión" class="mv-fondo">
+                                <div class="mv-capa-color"></div>
+                                
+                                <div class="mv-contenido">
+                                    <h3 class="fw-bold">Misión</h3>
+                                    <span class="ver-mas">Ver más</span>
+                                    <p class="mv-texto">Proveer distribución de gas licuado segura y oportuna a clientes residenciales y comerciales en Chillán y comunas aledañas. Nos comprometemos a entregar un servicio enfocado en la rapidez de despacho y la tranquilidad del cliente.</p>
+                                </div>
+                            </label>
+                        </article>
+
+                        <article class="tarjeta-mv">
+                            <input type="checkbox" id="mv-vision" class="mv-checkbox">
+                            <label for="mv-vision" class="mv-label">
+                                <img src="assets/img/nosotros/fondo-vision.jpg" alt="Fondo Visión" class="mv-fondo">
+                                <div class="mv-capa-color"></div>
+                                
+                                <div class="mv-contenido">
+                                    <h3 class="fw-bold">Visión</h3>
+                                    <span class="ver-mas">Ver más</span>
+                                    <p class="mv-texto">Consolidarnos como la distribuidora de gas a domicilio líder en la Región de Ñuble, destacando por nuestra innovación tecnológica para la gestión de pedidos en tiempo real y un sólido compromiso con la seguridad.</p>
+                                </div>
+                            </label>
+                        </article>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Equipo de Desarrollo -->
+            <section class="seccion-equipo">
+                <div class="contenedor">
+                    <h2 class="fw-bold titulo-centrado">Equipo de Desarrollo</h2>
+                    <p class="subtitulo-centrado">Conoce a los ingenieros encargados de la plataforma tecnológica de Gas El Volcán.</p>
+                    
+                    <div class="grilla-equipo">
+                        <article class="tarjeta-miembro">
+                            <div class="miembro-foto-contenedor">
+                                <img src="assets/img/equipo/benjamin-a.png" alt="Benjamín Aliste" class="foto-perfil">
+                            </div>
+                            <h3 class="fw-bold">shirokamidev</h3>
+                            <p class="miembro-nombre">Benjamín Aliste</p>
+                            <p class="miembro-rol">Ingeniero Frontend & API REST</p>
+                            <p class="miembro-desc">Especialista en la construcción de interfaces dinámicas, responsivas y la integración directa con microservicios.</p>
+                        </article>
+
+                        <article class="tarjeta-miembro">
+                            <div class="miembro-foto-contenedor">
+                                <img src="assets/img/equipo/jesus.jpeg" alt="Jesús Amaya" class="foto-perfil">
+                            </div>
+                            <h3 class="fw-bold">Jesusamayap</h3>
+                            <p class="miembro-nombre">Jesús Amaya</p>
+                            <p class="miembro-rol">Arquitectura & Seguridad Backend</p>
+                            <p class="miembro-desc">Encargado de la arquitectura de microservicios, seguridad basada en roles y lógica de negocio central del sistema.</p>
+                        </article>
+
+                        <article class="tarjeta-miembro">
+                            <div class="miembro-foto-contenedor">
+                                <img src="assets/img/equipo/benjamin-m.jpeg" alt="Benjamín Mora" class="foto-perfil">
+                            </div>
+                            <h3 class="fw-bold">nNoriega-K</h3>
+                            <p class="miembro-nombre">Benjamín Mora</p>
+                            <p class="miembro-rol">Datos & Aseguramiento de Calidad</p>
+                            <p class="miembro-desc">Responsable del modelado de datos relacional y la implementación de pruebas unitarias para garantizar la calidad.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="pie-pagina">
+            <div class="contenedor grilla-pie">
+                <div class="pie-columna">
+                    <h6>Nuestra Empresa</h6>
+                    <ul>
+                        <li><a href="nosotros.html#quienes-somos">Historia</a></li>
+                        <li><a href="nosotros.html#mision-vision">Misión y Visión</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Atención al Cliente</h6>
+                    <ul>
+                        <li><a href="contacto.html#contacto">Contacto y Soporte</a></li>
+                        <li><a href="contacto.html#faq">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Sucursal Virtual</h6>
+                    <ul>
+                        <li><a href="login.html">Iniciar Sesión</a></li>
+                        <li><a href="registro.html">Registrarse</a></li>
+                        <li><a href="punto-volcan.html">Rastrear Pedido</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Términos y Condiciones</h6>
+                    <ul>
+                        <li><a href="legales.html#terminos">Términos del Servicio</a></li>
+                        <li><a href="legales.html#privacidad">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                
+                <div class="pie-columna pie-boletin">
+                    <h6>Suscríbete para recibir ofertas exclusivas.</h6>
+                    <div class="buscador-footer">
+                        <input type="email" placeholder="Ingresa tu correo" />
+                        <a href="registro.html" class="boton boton-naranja texto-blanco">Suscríbete</a>
+                    </div>
+                    
+                    <h6>Medios de Pago</h6>
+                    <div class="pie-pagos">
+                        <img src="assets/img/pagos/visa.svg" alt="Visa" class="pago-icono" />
+                        <img src="assets/img/pagos/mastercard.svg" alt="Mastercard" class="pago-icono" />
+                        <img src="assets/img/pagos/amex.svg" alt="AMEX" class="pago-icono" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contenedor pie-copyright">
+                <p>&copy; 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
+            </div>
+        </footer>
+    </body>
+</html>
