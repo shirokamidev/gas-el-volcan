@@ -1,0 +1,237 @@
+/* Tipografía y colores iniciales del detalle de Blogs */
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../fonts/montserrat/Montserrat-Variable.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+:root {
+    --volcan-azul: #004b87;
+    --volcan-naranja: #f37021;
+    --volcan-blanco: #ffffff;
+    --volcan-oscuro: #1a1a1a;
+    --volcan-claro: #f5f6f7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", Arial, sans-serif;
+    color: var(--volcan-oscuro);
+    background-color: var(--volcan-blanco);
+    line-height: 1.7;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+/* Cabecera y enlace de navegación */
+.cabecera-detalle-blog {
+    border-bottom: 0.0625rem solid #e5e5e5;
+    background-color: var(--volcan-blanco);
+}
+
+.cabecera-contenido-blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.25rem 0;
+}
+
+.logo-detalle-blog img {
+    display: block;
+    width: 11.25rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.cabecera-detalle-blog nav a,
+.ruta-detalle-blog a {
+    color: var(--volcan-azul);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.cabecera-detalle-blog nav a:hover,
+.cabecera-detalle-blog nav a:focus-visible,
+.ruta-detalle-blog a:hover,
+.ruta-detalle-blog a:focus-visible {
+    text-decoration: underline;
+}
+
+/* Presentación y ruta del artículo */
+.pagina-detalle-blog {
+    padding-bottom: 3rem;
+}
+
+.ruta-detalle-blog {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1.5rem 0;
+    color: #555555;
+    font-size: 0.85rem;
+}
+
+.articulo-detalle-blog {
+    max-width: 52rem;
+    margin: 0 auto;
+}
+
+.encabezado-articulo-blog {
+    padding-bottom: 1.5rem;
+}
+
+.etiqueta-detalle-blog {
+    display: inline-block;
+    margin: 0 0 1rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 2rem;
+    background-color: var(--volcan-naranja);
+    color: var(--volcan-blanco);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.encabezado-articulo-blog h1 {
+    margin: 0 0 1rem;
+    color: var(--volcan-azul);
+    font-size: 1.8rem;
+    line-height: 1.25;
+    overflow-wrap: break-word;
+}
+
+.resumen-detalle-blog {
+    margin: 0;
+    font-size: 1rem;
+    color: #444444;
+}
+
+.portada-detalle-blog {
+    margin: 0 0 2rem;
+}
+
+.portada-detalle-blog img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 28rem;
+    object-fit: cover;
+    border-radius: 0.625rem;
+}
+
+.portada-detalle-blog figcaption {
+    margin-top: 0.5rem;
+    color: #666666;
+    font-size: 0.8rem;
+}
+
+/* Lectura del artículo y nota informativa */
+.contenido-articulo-blog {
+    color: #444444;
+}
+
+.contenido-articulo-blog h2 {
+    margin: 2rem 0 0.75rem;
+    color: var(--volcan-azul);
+    font-size: 1.35rem;
+}
+
+.contenido-articulo-blog p {
+    margin: 0 0 1rem;
+}
+
+.contenido-articulo-blog ul {
+    margin: 0 0 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.contenido-articulo-blog li {
+    margin-bottom: 0.5rem;
+}
+
+.aviso-detalle-blog {
+    padding: 1rem;
+    border-left: 0.25rem solid var(--volcan-naranja);
+    border-radius: 0.25rem;
+    background-color: var(--volcan-claro);
+    font-size: 0.9rem;
+}
+
+.acciones-detalle-blog {
+    max-width: 52rem;
+    margin: 2rem auto 0;
+}
+
+.boton-volver-blogs {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border: 0.0625rem solid var(--volcan-azul);
+    border-radius: 0.375rem;
+    color: var(--volcan-blanco);
+    background-color: var(--volcan-azul);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.boton-volver-blogs:hover,
+.boton-volver-blogs:focus-visible {
+    background-color: #003865;
+}
+
+.boton-volver-blogs:focus-visible {
+    outline: 0.1875rem solid var(--volcan-naranja);
+    outline-offset: 0.1875rem;
+}
+
+/* Pie de página inicial */
+.pie-detalle-blog {
+    padding: 1.5rem;
+    background-color: var(--volcan-azul);
+    color: var(--volcan-blanco);
+    text-align: center;
+}
+
+.pie-detalle-blog p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (min-width: 768px) {
+    .cabecera-contenido-blog {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .encabezado-articulo-blog h1 {
+        font-size: 2.4rem;
+    }
+
+    .resumen-detalle-blog {
+        font-size: 1.1rem;
+    }
+}
+
+/* Adaptabilidad para dispositivos grandes (Escritorio) */
+@media (min-width: 992px) {
+    .pagina-detalle-blog {
+        padding-bottom: 4rem;
+    }
+
+    .encabezado-articulo-blog h1 {
+        font-size: 2.8rem;
+    }
+}
