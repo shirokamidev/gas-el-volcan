@@ -198,3 +198,24 @@ body {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 }
+
+/* Acceso inicial a la ficha del producto destacado */
+.producto-enlace-detalle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 2.75rem;
+    margin-top: 1rem;
+    padding: 0.65rem 1.25rem;
+    border-radius: 0.375rem;
+    background-color: var(--volcan-naranja);
+    color: var(--volcan-blanco);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.producto-enlace-detalle:hover,
+.producto-enlace-detalle:focus-visible {
+    background-color: #d75b12;
+    text-decoration: underline;
+}
