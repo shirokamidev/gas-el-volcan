@@ -279,3 +279,25 @@ body {
     outline: 0.2rem solid var(--volcan-naranja);
     outline-offset: 0.15rem;
 }
+
+/* Acceso de demostración a la edición de usuarios */
+.enlace-editar {
+    display: inline-block;
+    padding: 0.55rem 0.85rem;
+    border-radius: 0.3rem;
+    background-color: var(--volcan-azul);
+    color: var(--volcan-blanco);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.enlace-editar:hover {
+    background-color: #003865;
+}
+
+.enlace-editar:focus-visible {
+    outline: 0.2rem solid var(--volcan-naranja);
+    outline-offset: 0.15rem;
+}
