@@ -1,0 +1,280 @@
+/* Tipografía y colores iniciales del formulario de registro */
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../fonts/montserrat/Montserrat-Variable.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+:root {
+    --volcan-azul: #004b87;
+    --volcan-azul-oscuro: #003865;
+    --volcan-naranja: #f37021;
+    --volcan-blanco: #ffffff;
+    --volcan-oscuro: #1a1a1a;
+    --volcan-claro: #f5f6f7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--volcan-claro);
+    color: var(--volcan-oscuro);
+    font-family: "Montserrat", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Pantalla general de autenticación */
+.pantalla-autenticacion {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navegacion-superior {
+    width: 90%;
+    max-width: 74rem;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+}
+
+.enlace-regresar {
+    color: var(--volcan-azul);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.enlace-regresar:hover,
+.enlace-regresar:focus-visible {
+    text-decoration: underline;
+}
+
+.escena-tarjeta {
+    width: 100%;
+    padding: 1rem 1rem 3rem;
+}
+
+.tarjeta-registro {
+    width: 100%;
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border: 0.0625rem solid #e0e5ea;
+    border-radius: 0.875rem;
+    background-color: var(--volcan-blanco);
+    box-shadow: 0 0.5rem 2rem rgba(0, 56, 101, 0.07);
+}
+
+.cabecera-tarjeta {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.logo-empresa {
+    display: block;
+    width: 11.5625rem;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 1.25rem;
+}
+
+.cabecera-tarjeta h1 {
+    margin: 0 0 0.75rem;
+    color: var(--volcan-azul);
+    font-size: 1.6rem;
+    line-height: 1.25;
+}
+
+.cabecera-tarjeta p {
+    margin: 0;
+    color: #535b63;
+    font-size: 0.95rem;
+}
+
+/* Secciones y controles del formulario */
+.formulario-registro {
+    display: grid;
+    gap: 1.75rem;
+}
+
+.seccion-fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 1.5rem 0 0;
+    border: 0;
+    border-top: 0.0625rem solid #e0e5ea;
+}
+
+.seccion-fieldset legend {
+    padding-right: 1rem;
+    color: var(--volcan-azul);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.indicacion-obligatoria {
+    margin: 0 0 1.25rem;
+    color: #535b63;
+    font-size: 0.85rem;
+}
+
+.grilla-formulario {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-width: 0;
+}
+
+.grupo-input label {
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.grupo-input input,
+.grupo-input select {
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.75rem 0.9rem;
+    border: 0.0625rem solid #a9b4be;
+    border-radius: 0.45rem;
+    background-color: var(--volcan-blanco);
+    color: var(--volcan-oscuro);
+    font: inherit;
+}
+
+.grupo-input input:focus-visible,
+.grupo-input select:focus-visible,
+.grupo-terminos input:focus-visible {
+    outline: 0.15rem solid rgba(0, 75, 135, 0.3);
+    border-color: var(--volcan-azul);
+}
+
+.grupo-input small {
+    color: #565e67;
+    font-size: 0.78rem;
+}
+
+.mensaje-error-input,
+.mensaje-estado-formulario {
+    font-size: 0.85rem;
+}
+
+.mensaje-error-input:empty,
+.mensaje-estado-formulario:empty {
+    display: none;
+}
+
+/* Aceptación de condiciones y registro pendiente de integración */
+.grupo-terminos {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+}
+
+.grupo-terminos input {
+    flex-shrink: 0;
+    width: 1.15rem;
+    height: 1.15rem;
+    margin-top: 0.35rem;
+    accent-color: var(--volcan-azul);
+}
+
+.grupo-terminos label {
+    font-size: 0.88rem;
+}
+
+.grupo-terminos a,
+.enlace-volver-login {
+    color: var(--volcan-azul);
+    font-weight: 700;
+}
+
+.aviso-preliminar {
+    margin: 0;
+    color: #565e67;
+    font-size: 0.85rem;
+}
+
+.acciones-registro {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.enlace-volver-login {
+    align-self: center;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.enlace-volver-login:hover,
+.enlace-volver-login:focus-visible {
+    text-decoration: underline;
+}
+
+.boton-registro {
+    padding: 0.85rem 1.75rem;
+    border: 0;
+    border-radius: 0.45rem;
+    background-color: var(--volcan-naranja);
+    color: var(--volcan-blanco);
+    font: inherit;
+    font-weight: 700;
+}
+
+.boton-registro:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.pie-autenticacion {
+    padding: 1.5rem 1rem;
+    background-color: var(--volcan-azul-oscuro);
+    color: var(--volcan-blanco);
+    text-align: center;
+}
+
+.pie-autenticacion p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+/* Adaptabilidad del registro para tablets y escritorio */
+@media (min-width: 768px) {
+    .escena-tarjeta {
+        padding: 2rem 2rem 4rem;
+    }
+
+    .tarjeta-registro {
+        padding: 2.5rem;
+    }
+
+    .grilla-formulario {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .col-completa {
+        grid-column: 1 / -1;
+    }
+
+    .acciones-registro {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .cabecera-tarjeta h1 {
+        font-size: 1.9rem;
+    }
+}

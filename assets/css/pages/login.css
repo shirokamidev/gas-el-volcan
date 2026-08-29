@@ -1,0 +1,238 @@
+/* Tipografía y paleta inicial de acceso a la Sucursal Virtual */
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../fonts/montserrat/Montserrat-Variable.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+:root {
+    --volcan-azul: #004b87;
+    --volcan-azul-oscuro: #003865;
+    --volcan-naranja: #f37021;
+    --volcan-blanco: #ffffff;
+    --volcan-oscuro: #1a1a1a;
+    --volcan-claro: #f5f6f7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--volcan-oscuro);
+    background-color: var(--volcan-claro);
+    font-family: "Montserrat", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Distribución de la pantalla de inicio de sesión */
+.pantalla-autenticacion {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navegacion-superior {
+    width: 90%;
+    max-width: 74rem;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+}
+
+.enlace-regresar {
+    color: var(--volcan-azul);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.enlace-regresar:hover,
+.enlace-regresar:focus-visible {
+    text-decoration: underline;
+}
+
+.escena-tarjeta {
+    display: grid;
+    flex: 1;
+    place-items: center;
+    width: 100%;
+    padding: 1rem 1rem 3rem;
+}
+
+.tarjeta-ingreso {
+    width: 100%;
+    max-width: 30rem;
+    padding: 1.75rem;
+    border: 0.0625rem solid #e0e5ea;
+    border-radius: 0.875rem;
+    background-color: var(--volcan-blanco);
+    box-shadow: 0 0.5rem 2rem rgba(0, 56, 101, 0.07);
+}
+
+.cabecera-tarjeta {
+    margin-bottom: 1.75rem;
+    text-align: center;
+}
+
+.logo-empresa {
+    display: block;
+    width: 11.5625rem;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 1.25rem;
+}
+
+.cabecera-tarjeta h1 {
+    margin: 0 0 0.75rem;
+    color: var(--volcan-azul);
+    font-size: 1.5rem;
+    line-height: 1.25;
+}
+
+.cabecera-tarjeta p {
+    margin: 0;
+    color: #535b63;
+    font-size: 0.95rem;
+}
+
+/* Campos del formulario visual */
+.formulario-autenticacion {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-width: 0;
+}
+
+.grupo-input label {
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.grupo-input label span {
+    color: var(--volcan-naranja);
+}
+
+.grupo-input input {
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.75rem 0.9rem;
+    border: 0.0625rem solid #a9b4be;
+    border-radius: 0.45rem;
+    background-color: var(--volcan-blanco);
+    color: var(--volcan-oscuro);
+    font: inherit;
+}
+
+.grupo-input input:focus-visible {
+    border-color: var(--volcan-azul);
+    outline: 0.15rem solid rgba(0, 75, 135, 0.22);
+}
+
+.grupo-input small {
+    color: #565e67;
+    font-size: 0.77rem;
+}
+
+.mensaje-error-input,
+.mensaje-estado-formulario {
+    font-size: 0.85rem;
+}
+
+.mensaje-error-input:empty,
+.mensaje-estado-formulario:empty {
+    display: none;
+}
+
+.ayuda-acceso {
+    margin: 0;
+    color: #535b63;
+    font-size: 0.85rem;
+}
+
+.boton-ingresar,
+.enlace-registro {
+    display: block;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 0;
+    border-radius: 0.45rem;
+    font: inherit;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+}
+
+.boton-ingresar {
+    background-color: var(--volcan-naranja);
+    color: var(--volcan-blanco);
+}
+
+.boton-ingresar:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.aviso-preliminar {
+    margin: 0;
+    color: #626a73;
+    font-size: 0.82rem;
+    text-align: center;
+}
+
+.seccion-registro {
+    margin-top: 1.75rem;
+    padding-top: 1.5rem;
+    border-top: 0.0625rem solid #e0e5ea;
+    text-align: center;
+}
+
+.seccion-registro p {
+    margin: 0 0 0.8rem;
+    color: #535b63;
+    font-size: 0.95rem;
+}
+
+.enlace-registro {
+    background-color: var(--volcan-azul);
+    color: var(--volcan-blanco);
+}
+
+.enlace-registro:hover,
+.enlace-registro:focus-visible {
+    background-color: var(--volcan-azul-oscuro);
+}
+
+.pie-autenticacion {
+    padding: 1.5rem 1rem;
+    background-color: var(--volcan-azul-oscuro);
+    color: var(--volcan-blanco);
+    text-align: center;
+}
+
+.pie-autenticacion p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+/* Adaptabilidad para tablets y escritorio */
+@media (min-width: 768px) {
+    .escena-tarjeta {
+        padding: 2rem 2rem 4rem;
+    }
+
+    .tarjeta-ingreso {
+        padding: 2.5rem;
+    }
+
+    .cabecera-tarjeta h1 {
+        font-size: 1.8rem;
+    }
+}
