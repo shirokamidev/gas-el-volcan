@@ -219,3 +219,98 @@ body {
     background-color: #d75b12;
     text-decoration: underline;
 }
+
+/* Panel de categorías y selección sin JavaScript */
+.panel-filtros {
+    min-width: 0;
+    margin: 0 0 2rem;
+    padding: 1.25rem;
+    border: 0.0625rem solid #e5e5e5;
+    border-radius: 0.625rem;
+    background-color: var(--volcan-claro);
+}
+
+.filtros-titulo {
+    padding: 0 0.5rem;
+    color: var(--volcan-azul);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.opciones-categoria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+}
+
+.opcion-categoria {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.opcion-categoria input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.opcion-categoria span {
+    display: inline-block;
+    padding: 0.625rem 1rem;
+    border: 0.0625rem solid var(--volcan-azul);
+    border-radius: 1.5rem;
+    background-color: var(--volcan-blanco);
+    color: var(--volcan-azul);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 150ms ease, color 150ms ease;
+}
+
+.opcion-categoria input:checked + span {
+    background-color: var(--volcan-azul);
+    color: var(--volcan-blanco);
+}
+
+.opcion-categoria input:focus-visible + span {
+    outline: 0.1875rem solid var(--volcan-naranja);
+    outline-offset: 0.125rem;
+}
+
+.filtros-ayuda {
+    margin: 1rem 0 0;
+    font-size: 0.875rem;
+    color: #555555;
+}
+
+/* Mostrar únicamente las tarjetas de la categoría seleccionada */
+#productos:has(#cat-cilindros:checked) .tarjeta-producto:not([data-categoria="cilindros"]),
+#productos:has(#cat-reguladores:checked) .tarjeta-producto:not([data-categoria="reguladores"]),
+#productos:has(#cat-mangueras:checked) .tarjeta-producto:not([data-categoria="mangueras"]),
+#productos:has(#cat-accesorios:checked) .tarjeta-producto:not([data-categoria="accesorios"]) {
+    display: none;
+}
+
+/* Tarjetas alineadas al incorporar nuevas categorías */
+.tarjeta-producto {
+    display: flex;
+    flex-direction: column;
+}
+
+.producto-contenido {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.producto-precio {
+    margin-top: auto;
+}
+
+@media (min-width: 768px) {
+    .panel-filtros {
+        padding: 1.5rem;
+    }
+}
