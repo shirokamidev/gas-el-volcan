@@ -59,6 +59,19 @@ body {
     text-decoration: none;
 }
 
+.contacto-cabecera nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+}
+
+.contacto-cabecera nav a:hover,
+.contacto-cabecera nav a:focus-visible {
+    text-decoration: underline;
+}
+
 /* Portada y presentación de la vista */
 .contacto-portada {
     background: linear-gradient(135deg, var(--volcan-azul), #002c52);
@@ -75,6 +88,10 @@ body {
 .contacto-portada p {
     margin: 0 auto;
     max-width: 38rem;
+}
+
+#faq {
+    scroll-margin-top: 1.5rem;
 }
 
 /* Primer módulo de información y formulario */
@@ -150,19 +167,33 @@ body {
 }
 
 .contacto-grupo input,
+.contacto-grupo select,
 .contacto-grupo textarea {
     width: 100%;
     min-width: 0;
     padding: 0.8rem 1rem;
     border: 0.0625rem solid #d1d1d1;
     border-radius: 0.3125rem;
+    background-color: var(--volcan-blanco);
+    color: var(--volcan-oscuro);
     font: inherit;
 }
 
-.contacto-grupo input:focus,
-.contacto-grupo textarea:focus {
+.contacto-grupo textarea {
+    resize: vertical;
+}
+
+.contacto-grupo input:focus-visible,
+.contacto-grupo select:focus-visible,
+.contacto-grupo textarea:focus-visible {
     outline: 0.125rem solid var(--volcan-azul);
     outline-offset: 0.125rem;
+}
+
+.contacto-ayuda {
+    color: #555555;
+    font-size: 0.85rem;
+    line-height: 1.5;
 }
 
 .contacto-boton {
@@ -179,6 +210,81 @@ body {
 .contacto-boton:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+}
+
+/* Preguntas frecuentes con expansión nativa de HTML */
+.contacto-faq {
+    padding: 3rem 0;
+    background-color: var(--volcan-blanco);
+}
+
+.contacto-faq h2 {
+    margin: 0 0 0.5rem;
+    color: var(--volcan-azul);
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+.contacto-faq-introduccion {
+    max-width: 42rem;
+    margin: 0 auto 2rem;
+    color: #555555;
+    text-align: center;
+}
+
+.contacto-faq-lista {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    max-width: 56rem;
+    margin: 0 auto;
+}
+
+.contacto-faq details {
+    min-width: 0;
+    overflow: hidden;
+    background-color: var(--volcan-blanco);
+    border: 0.0625rem solid #e0e0e0;
+    border-radius: 0.5rem;
+}
+
+.contacto-faq summary {
+    padding: 1.2rem 1.25rem;
+    color: var(--volcan-oscuro);
+    font-weight: 600;
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.contacto-faq summary::marker {
+    color: var(--volcan-naranja);
+}
+
+.contacto-faq summary:hover {
+    background-color: var(--volcan-claro);
+}
+
+.contacto-faq summary:focus-visible {
+    outline: 0.125rem solid var(--volcan-azul);
+    outline-offset: 0.125rem;
+}
+
+.contacto-faq details[open] summary {
+    color: var(--volcan-azul);
+    border-bottom: 0.0625rem solid #e0e0e0;
+}
+
+.contacto-faq details p {
+    margin: 0;
+    padding: 1.25rem;
+    color: #555555;
+    line-height: 1.7;
+}
+
+.contacto-faq details a {
+    color: var(--volcan-azul);
+    text-decoration-thickness: 0.1rem;
+    overflow-wrap: anywhere;
 }
 
 /* Pie de página inicial */
@@ -201,6 +307,10 @@ body {
         justify-content: space-between;
     }
 
+    .contacto-cabecera nav {
+        justify-content: flex-end;
+    }
+
     .contacto-grilla {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -214,5 +324,9 @@ body {
 
     .contacto-formulario-caja {
         padding: 2rem;
+    }
+
+    .contacto-faq {
+        padding: 4rem 0;
     }
 }

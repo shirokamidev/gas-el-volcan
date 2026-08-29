@@ -14,6 +14,7 @@
                 <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
                 <nav aria-label="Navegación de contacto">
                     <a href="contacto.html" aria-current="page">Contacto</a>
+                    <a href="#faq">Preguntas frecuentes</a>
                 </nav>
             </div>
         </header>
@@ -64,12 +65,54 @@
                                 <input id="correo-contacto" name="correo" type="email" placeholder="Ej: usuario@gmail.com" autocomplete="email" required>
                             </div>
                             <div class="contacto-grupo">
+                                <label for="telefono-contacto">Teléfono (opcional)</label>
+                                <input id="telefono-contacto" name="telefono" type="tel" placeholder="Ej: 912345678" autocomplete="tel" inputmode="tel" aria-describedby="ayuda-telefono-contacto">
+                                <small id="ayuda-telefono-contacto" class="contacto-ayuda">Puedes dejarlo si prefieres que te contacten por teléfono.</small>
+                            </div>
+                            <div class="contacto-grupo">
+                                <label for="asunto">Asunto</label>
+                                <select id="asunto" name="asunto" required>
+                                    <option value="" selected disabled>Selecciona un asunto...</option>
+                                    <option value="consulta">Consulta general</option>
+                                    <option value="pedido">Problema con mi pedido</option>
+                                    <option value="reclamo">Reclamo</option>
+                                    <option value="felicitacion">Felicitación</option>
+                                </select>
+                            </div>
+                            <div class="contacto-grupo">
                                 <label for="comentario-contacto">Mensaje</label>
                                 <textarea id="comentario-contacto" name="mensaje" rows="5" placeholder="Escribe tu consulta aquí..." required></textarea>
                             </div>
                             <button class="contacto-boton" type="button" disabled>Enviar mensaje</button>
                         </form>
                     </article>
+                </div>
+            </section>
+
+            <!-- Respuestas básicas para consultas frecuentes -->
+            <section class="contacto-faq" id="faq" aria-labelledby="titulo-faq">
+                <div class="contenedor">
+                    <h2 id="titulo-faq">Preguntas frecuentes</h2>
+                    <p class="contacto-faq-introduccion">Encuentra orientación inicial sobre pedidos, productos y atención al cliente.</p>
+
+                    <div class="contacto-faq-lista">
+                        <details>
+                            <summary>¿Qué hago si mi pedido se retrasa?</summary>
+                            <p>Comunícate con Atención al Cliente al <a href="tel:800509000">800 50 9000</a> y ten a mano tu número de pedido para facilitar la consulta.</p>
+                        </details>
+                        <details>
+                            <summary>¿Qué ocurre si no se aplica un descuento?</summary>
+                            <p>Revisa las condiciones de la promoción. Si el descuento sigue sin reflejarse, consulta con Atención al Cliente antes de completar tu compra.</p>
+                        </details>
+                        <details>
+                            <summary>¿Dónde encuentro información sobre los productos?</summary>
+                            <p>Puedes revisar la sección <a href="catalogo.html">Catálogo de productos</a>. Si necesitas más orientación, utiliza los canales de contacto de esta página.</p>
+                        </details>
+                        <details>
+                            <summary>¿Quién debe realizar una instalación de gas?</summary>
+                            <p>Los trabajos en instalaciones de gas deben realizarse conforme a la normativa vigente y, cuando corresponda, por instaladores autorizados por la SEC.</p>
+                        </details>
+                    </div>
                 </div>
             </section>
         </main>
