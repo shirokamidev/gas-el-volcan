@@ -258,3 +258,28 @@ body {
         font-size: 1.9rem;
     }
 }
+
+/* Acceso visual al formulario de edición de un producto de ejemplo */
+.enlace-editar-producto {
+    display: inline-block;
+    padding: 0.55rem 0.85rem;
+    border: 0.0625rem solid var(--volcan-azul);
+    border-radius: 0.3rem;
+    color: var(--volcan-azul);
+    background-color: var(--volcan-blanco);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.enlace-editar-producto:hover,
+.enlace-editar-producto:focus-visible {
+    background-color: #e7f1fa;
+    text-decoration: underline;
+}
+
+.enlace-editar-producto:focus-visible {
+    outline: 0.1875rem solid var(--volcan-naranja);
+    outline-offset: 0.1875rem;
+}
