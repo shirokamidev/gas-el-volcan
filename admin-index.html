@@ -12,6 +12,7 @@
         <header class="admin-cabecera">
             <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
             <h1>Panel de Administración</h1>
+            <a class="admin-enlace-sitio" href="index.html">Volver al sitio</a>
         </header>
 
         <div class="admin-estructura">
@@ -20,9 +21,13 @@
                 <nav aria-label="Menú de administración">
                     <h2>Menú principal</h2>
                     <ul>
-                        <li>Inicio</li>
-                        <li>Productos</li>
-                        <li>Usuarios</li>
+                        <li><a href="admin-index.html" aria-current="page">Inicio</a></li>
+                        <li class="admin-separador">Módulo productos</li>
+                        <li><a href="admin-lista-productos.html">Listar productos</a></li>
+                        <li><a href="admin-nuevo-producto.html">Nuevo producto</a></li>
+                        <li class="admin-separador">Módulo usuarios</li>
+                        <li><a href="admin-lista-usuarios.html">Listar usuarios</a></li>
+                        <li><a href="admin-nuevo-usuario.html">Nuevo usuario</a></li>
                     </ul>
                 </nav>
             </aside>
