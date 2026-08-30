@@ -43,28 +43,50 @@
     text-decoration: none;
 }
 
-/* Imagen y presentación de la portada */
+/* Imagen de portada con contenido superpuesto */
+.seccion-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    background-color: var(--volcan-claro);
+}
+
 .imagen-hero {
     display: block;
+    grid-column: 1;
+    grid-row: 1;
     width: 100%;
-    max-height: 25rem;
+    height: 25rem;
     object-fit: cover;
+    object-position: center;
 }
 
 .hero-contenido {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    grid-column: 1;
+    grid-row: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 2.5rem 5%;
-    background-color: var(--volcan-azul);
+    background: linear-gradient(rgba(0, 40, 70, 0.58), rgba(0, 40, 70, 0.7));
     color: var(--volcan-blanco);
     text-align: center;
 }
 
 .hero-contenido h1 {
-    margin-top: 0;
+    margin: 0 0 0.75rem;
     font-size: 2rem;
+    text-shadow: 0 0.1875rem 0.5rem rgba(0, 0, 0, 0.35);
 }
 
 .hero-contenido p {
+    max-width: 40rem;
+    margin: 0;
+    font-weight: 600;
     line-height: 1.6;
+    text-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.35);
 }
 
 .boton-naranja {
@@ -78,29 +100,27 @@
     text-decoration: none;
 }
 
-/* Tarjeta inicial para búsqueda de puntos y acceso a pedidos */
-.seccion-hero {
-    background-color: var(--volcan-claro);
-}
-
+/* Tarjeta azul de puntos de atención y pedidos rápidos */
 .hero-tarjeta-contenedor {
-    padding: 1.5rem 5% 3rem;
+    grid-column: 1;
+    grid-row: 2;
+    padding: 2rem 5% 3rem;
 }
 
 .hero-tarjeta {
     max-width: 72rem;
     margin: 0 auto;
     padding: 1.5rem;
-    border: 0.0625rem solid #dbe3e9;
     border-radius: 0.75rem;
-    background-color: var(--volcan-blanco);
-    box-shadow: 0 0.35rem 1.2rem rgba(0, 56, 101, 0.1);
+    background-color: rgba(0, 75, 135, 0.95);
+    color: var(--volcan-blanco);
+    box-shadow: 0 0.625rem 1.875rem rgba(0, 40, 70, 0.16);
 }
 
 .hero-tarjeta h2 {
     max-width: 42rem;
     margin: 0 0 1.5rem;
-    color: var(--volcan-azul-oscuro);
+    color: var(--volcan-blanco);
     font-size: 1.5rem;
     line-height: 1.35;
 }
@@ -108,7 +128,7 @@
 .hero-buscador label {
     display: block;
     margin-bottom: 0.6rem;
-    color: var(--volcan-azul);
+    color: var(--volcan-blanco);
     font-weight: 700;
 }
 
@@ -125,7 +145,7 @@
     padding: 0.75rem 1rem;
     border: 0.0625rem solid #aab9c5;
     border-radius: 0.4rem;
-    background-color: #f6f8fa;
+    background-color: var(--volcan-blanco);
     color: var(--volcan-oscuro);
     font: inherit;
 }
@@ -156,7 +176,7 @@
 
 .hero-buscador-aviso {
     margin: 0.65rem 0 0;
-    color: #526170;
+    color: #e2edf6;
     font-size: 0.85rem;
     line-height: 1.5;
 }
@@ -169,14 +189,14 @@
 }
 
 .hero-accion-principal {
-    background-color: var(--volcan-azul);
-    color: var(--volcan-blanco);
+    background-color: var(--volcan-blanco);
+    color: var(--volcan-azul-oscuro);
 }
 
 .hero-accion-secundaria {
-    border: 0.125rem solid var(--volcan-azul);
-    background-color: var(--volcan-blanco);
-    color: var(--volcan-azul);
+    border: 0.125rem solid var(--volcan-blanco);
+    background-color: transparent;
+    color: var(--volcan-blanco);
 }
 
 .hero-boton-buscar:hover,
@@ -186,12 +206,12 @@
 
 .hero-accion-principal:hover,
 .hero-accion-principal:focus-visible {
-    background-color: var(--volcan-azul-oscuro);
+    background-color: #e7f0f7;
 }
 
 .hero-accion-secundaria:hover,
 .hero-accion-secundaria:focus-visible {
-    background-color: #e7f0f7;
+    background-color: var(--volcan-azul-oscuro);
 }
 
 .hero-boton-buscar:focus-visible,
@@ -306,6 +326,18 @@
 
 /* Adaptabilidad para pantallas medianas (Tablets) */
 @media (min-width: 768px) {
+    .imagen-hero {
+        height: 28rem;
+    }
+
+    .hero-contenido h1 {
+        font-size: 2.75rem;
+    }
+
+    .hero-contenido p {
+        font-size: 1.1rem;
+    }
+
     .grilla-noticias {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -335,6 +367,10 @@
 
 /* Adaptabilidad para dispositivos grandes (Escritorio) */
 @media (min-width: 992px) {
+    .hero-contenido h1 {
+        font-size: 3rem;
+    }
+
     .grilla-productos {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
