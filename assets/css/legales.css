@@ -1,0 +1,138 @@
+/* Ajuste de anclas para cabecera fija */
+#terminos,
+#privacidad {
+    scroll-margin-top: 12.8rem; 
+}
+
+/* Seccion hero de legales */
+.legales-hero-fondo {
+    width: 100%;
+    min-height: 28rem; 
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/legales/hero-legales.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--volcan-azul);
+}
+
+.legales-hero-contenido h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 0.25rem 0.625rem rgba(0,0,0,0.5);
+}
+
+.legales-hero-contenido p {
+    font-size: 1.15rem;
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.5);
+}
+
+/* Contenedor principal de textos legales */
+.seccion-legales {
+    padding: 5rem 1.25rem;
+}
+
+/* Bloques de contenido legal */
+.bloque-legal {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.titulo-legal {
+    color: var(--volcan-azul);
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.fecha-actualizacion {
+    color: #888888;
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 1rem;
+}
+
+.bloque-legal h3 {
+    color: var(--volcan-oscuro);
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.bloque-legal p {
+    color: #444444;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin: 0;
+}
+
+.bloque-legal ul {
+    margin: 0.5rem 0 1.5rem 2rem;
+    padding: 0;
+}
+
+.bloque-legal li {
+    color: #444444;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
+    text-align: justify;
+}
+
+.bloque-legal li strong {
+    color: var(--volcan-oscuro);
+}
+
+/* Divisor entre terminos y privacidad */
+.separador-legal {
+    width: 100%;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 4rem 0;
+}
+
+/* Media queries para pantallas medianas */
+@media (max-width: 64rem) {
+    #terminos,
+    #privacidad {
+        scroll-margin-top: 8.5rem; 
+    }
+}
+
+/* Media queries para dispositivos moviles */
+@media (max-width: 48rem) {
+    .legales-hero-fondo {
+        min-height: 20rem;
+    }
+
+    .legales-hero-contenido h1 {
+        font-size: 2.2rem;
+    }
+    
+    .legales-hero-contenido p {
+        font-size: 1rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .seccion-legales {
+        padding: 3rem 1.25rem;
+    }
+
+    .titulo-legal {
+        font-size: 1.8rem;
+    }
+
+    .bloque-legal h3 {
+        font-size: 1.25rem;
+    }
+    
+    .separador-legal {
+        margin: 3rem 0;
+    }
+}
