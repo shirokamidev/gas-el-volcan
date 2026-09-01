@@ -55,35 +55,42 @@
                     <article class="contacto-formulario-caja">
                         <h2>Envíanos un mensaje</h2>
                         <p class="contacto-aviso">Estamos preparando el envío de consultas en línea.</p>
-                        <form id="form-contacto">
+                        <form id="form-contacto" novalidate>
                             <div class="contacto-grupo">
                                 <label for="nombre-contacto">Nombre completo</label>
-                                <input id="nombre-contacto" name="nombre" type="text" placeholder="Ej: Juan Pérez" autocomplete="name" required>
+                                <input id="nombre-contacto" name="nombre" type="text" placeholder="Ej: Juan Pérez" autocomplete="name" maxlength="100" aria-describedby="error-nombre-contacto" required>
+                                <span id="error-nombre-contacto" class="mensaje-error-input" aria-live="polite"></span>
                             </div>
                             <div class="contacto-grupo">
                                 <label for="correo-contacto">Correo electrónico</label>
-                                <input id="correo-contacto" name="correo" type="email" placeholder="Ej: usuario@gmail.com" autocomplete="email" required>
+                                <input id="correo-contacto" name="correo" type="email" placeholder="Ej: usuario@gmail.com" autocomplete="email" maxlength="254" aria-describedby="error-correo-contacto" required>
+                                <span id="error-correo-contacto" class="mensaje-error-input" aria-live="polite"></span>
                             </div>
                             <div class="contacto-grupo">
                                 <label for="telefono-contacto">Teléfono (opcional)</label>
-                                <input id="telefono-contacto" name="telefono" type="tel" placeholder="Ej: 912345678" autocomplete="tel" inputmode="tel" aria-describedby="ayuda-telefono-contacto">
+                                <input id="telefono-contacto" name="telefono" type="tel" placeholder="Ej: 912345678" autocomplete="tel" inputmode="tel" aria-describedby="ayuda-telefono-contacto error-telefono-contacto">
                                 <small id="ayuda-telefono-contacto" class="contacto-ayuda">Puedes dejarlo si prefieres que te contacten por teléfono.</small>
+                                <span id="error-telefono-contacto" class="mensaje-error-input" aria-live="polite"></span>
                             </div>
                             <div class="contacto-grupo">
                                 <label for="asunto">Asunto</label>
-                                <select id="asunto" name="asunto" required>
+                                <select id="asunto" name="asunto" aria-describedby="error-asunto-contacto" required>
                                     <option value="" selected disabled>Selecciona un asunto...</option>
                                     <option value="consulta">Consulta general</option>
                                     <option value="pedido">Problema con mi pedido</option>
                                     <option value="reclamo">Reclamo</option>
                                     <option value="felicitacion">Felicitación</option>
                                 </select>
+                                <span id="error-asunto-contacto" class="mensaje-error-input" aria-live="polite"></span>
                             </div>
                             <div class="contacto-grupo">
                                 <label for="comentario-contacto">Mensaje</label>
-                                <textarea id="comentario-contacto" name="mensaje" rows="5" placeholder="Escribe tu consulta aquí..." required></textarea>
+                                <textarea id="comentario-contacto" name="mensaje" rows="5" placeholder="Escribe tu consulta aquí..." maxlength="500" aria-describedby="error-comentario-contacto" required></textarea>
+                                <span id="error-comentario-contacto" class="mensaje-error-input" aria-live="polite"></span>
                             </div>
-                            <button class="contacto-boton" type="button" disabled>Enviar mensaje</button>
+                            <!-- Mensaje de resultado que utilizará la futura validación -->
+                            <div id="mensaje-contacto" class="mensaje-estado-formulario" role="status" aria-live="polite"></div>
+                            <button class="contacto-boton" type="submit" disabled>Enviar mensaje</button>
                         </form>
                     </article>
                 </div>
@@ -119,7 +126,7 @@
 
         <!-- Pie de página inicial -->
         <footer class="contacto-pie">
-            <p>&copy; 2026 Gas El Volcán. Chillán, Región de Ñuble.</p>
+            <p>© 2026 Gas El Volcán. Chillán, Región de Ñuble.</p>
         </footer>
     </body>
 </html>

@@ -212,6 +212,50 @@ body {
     cursor: not-allowed;
 }
 
+/* Campos preparados para la validación del formulario */
+.contacto-grupo .campo-invalido {
+    border-color: #b42318;
+    background-color: #fff9f7;
+}
+
+.contacto-grupo .campo-invalido:focus-visible {
+    outline-color: #b42318;
+}
+
+.mensaje-error-input {
+    display: none;
+    color: #a92319;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.mensaje-error-input.activo {
+    display: block;
+}
+
+.mensaje-estado-formulario {
+    display: none;
+    padding: 0.85rem 1rem;
+    margin-bottom: 1.25rem;
+    border-radius: 0.375rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.mensaje-estado-formulario.activo {
+    display: block;
+}
+
+.mensaje-estado-formulario.exito {
+    color: #176534;
+    background-color: #e8f5e9;
+}
+
+.mensaje-estado-formulario.error {
+    color: #9d2319;
+    background-color: #fff0ed;
+}
+
 /* Preguntas frecuentes con expansión nativa de HTML */
 .contacto-faq {
     padding: 3rem 0;
