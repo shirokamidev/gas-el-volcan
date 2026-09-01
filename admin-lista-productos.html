@@ -43,59 +43,85 @@
                         <h2 id="subtitulo-productos">Productos registrados</h2>
                         <a class="enlace-nuevo-producto" href="admin-nuevo-producto.html">Nuevo producto</a>
                     </div>
-                    <p class="mensaje-demo">Datos de demostración. Puedes consultar el formulario de edición del primer producto; guardar los cambios y gestionar el inventario estarán disponibles en una próxima etapa.</p>
+                    <p class="mensaje-demo" id="aviso-datos-productos">Datos de demostración. La edición completa, el inventario y la paginación se habilitarán cuando conectemos el listado con JavaScript.</p>
 
-                    <div class="tabla-contenedor">
-                        <table class="tabla-productos">
+                    <!-- Tabla de demostración preparada para el renderizado de productos -->
+                    <div class="tabla-contenedor" role="region" aria-label="Tabla de productos, con desplazamiento horizontal" tabindex="0">
+                        <table class="tabla-productos" aria-describedby="aviso-datos-productos">
+                            <caption class="texto-oculto">Listado preliminar de productos con precios, stock y acciones</caption>
                             <thead>
                                 <tr>
                                     <th scope="col">Código</th>
-                                    <th scope="col">Producto</th>
                                     <th scope="col">Categoría</th>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Descripción</th>
+                                    <th scope="col">Unidad</th>
+                                    <th scope="col">P. residencial</th>
+                                    <th scope="col">P. comercial</th>
                                     <th scope="col">Stock</th>
                                     <th scope="col">Acciones</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="tbody-productos-admin">
                                 <tr>
                                     <td>PROD-001</td>
+                                    <td>Cilindros</td>
                                     <td>
                                         <div class="producto-resumen">
                                             <img src="assets/images/productos/cilindros/cilindro-11kg.svg" alt="Cilindro de gas de 11 kg" width="52" height="52">
                                             <span>Cilindro de gas 11 kg</span>
                                         </div>
                                     </td>
-                                    <td>Cilindros</td>
+                                    <td class="celda-descripcion">Formato residencial de uso frecuente.</td>
+                                    <td>Unidad</td>
+                                    <td>$12.000</td>
+                                    <td>Por definir</td>
                                     <td>Por registrar</td>
                                     <td><a class="enlace-editar-producto" href="admin-editar-producto.html">Ver edición</a></td>
                                 </tr>
                                 <tr>
                                     <td>PROD-002</td>
+                                    <td>Cilindros</td>
                                     <td>
                                         <div class="producto-resumen">
                                             <img src="assets/images/productos/cilindros/cilindro-15kg.svg" alt="Cilindro de gas de 15 kg" width="52" height="52">
                                             <span>Cilindro de gas 15 kg</span>
                                         </div>
                                     </td>
-                                    <td>Cilindros</td>
+                                    <td class="celda-descripcion">Formato para un consumo doméstico mayor.</td>
+                                    <td>Unidad</td>
+                                    <td>Por definir</td>
+                                    <td>Por definir</td>
                                     <td>Por registrar</td>
                                     <td><button type="button" class="boton-accion" disabled>Editar</button></td>
                                 </tr>
                                 <tr>
                                     <td>PROD-003</td>
+                                    <td>Reguladores</td>
                                     <td>
                                         <div class="producto-resumen">
                                             <img src="assets/images/productos/reguladores/regulador-estandar.svg" alt="Regulador estándar de gas" width="52" height="52">
                                             <span>Regulador estándar</span>
                                         </div>
                                     </td>
-                                    <td>Reguladores</td>
+                                    <td class="celda-descripcion">Accesorio para instalaciones domésticas compatibles.</td>
+                                    <td>Unidad</td>
+                                    <td>$8.990</td>
+                                    <td>Por definir</td>
                                     <td>Por registrar</td>
                                     <td><button type="button" class="boton-accion" disabled>Editar</button></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+
+                    <!-- Controles preparados para la paginación dinámica -->
+                    <nav class="paginacion-admin" aria-label="Páginas del listado de productos">
+                        <button type="button" class="btn-pagina" id="btn-pag-ant" aria-label="Página anterior" disabled>Anterior</button>
+                        <button type="button" class="btn-pagina activo" id="btn-pag-1" aria-current="page" disabled>1</button>
+                        <button type="button" class="btn-pagina" id="btn-pag-2" disabled>2</button>
+                        <button type="button" class="btn-pagina" id="btn-pag-sig" aria-label="Página siguiente" disabled>Siguiente</button>
+                    </nav>
                 </section>
             </main>
         </div>
