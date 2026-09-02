@@ -8,8 +8,15 @@
         <link rel="stylesheet" href="assets/css/pages/admin-index.css">
     </head>
     <body>
+        <!-- Control accesible del menú administrativo en celular -->
+        <input type="checkbox" id="menu-admin-movil" class="admin-control-menu">
+
         <!-- Cabecera inicial de administración -->
         <header class="admin-cabecera">
+            <label for="menu-admin-movil" class="admin-boton-menu">
+                <span aria-hidden="true">☰</span>
+                <span>Menú administrativo</span>
+            </label>
             <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
             <h1>Panel de Administración</h1>
             <a class="admin-enlace-sitio" href="index.html">Volver al sitio</a>
@@ -17,7 +24,7 @@
 
         <div class="admin-estructura">
             <!-- Navegación de los módulos administrativos -->
-            <aside class="admin-sidebar">
+            <aside class="admin-sidebar" id="navegacion-admin">
                 <nav aria-label="Menú de administración">
                     <h2>Menú principal</h2>
                     <ul>
