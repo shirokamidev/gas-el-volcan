@@ -278,3 +278,39 @@ body {
         font-size: 1.9rem;
     }
 }
+
+/* Controles preparados para mostrar u ocultar contraseñas */
+.caja-password {
+    display: flex;
+    align-items: stretch;
+    min-width: 0;
+    gap: 0.5rem;
+}
+
+.caja-password input {
+    flex: 1;
+    min-width: 0;
+}
+
+.boton-ver-password {
+    flex-shrink: 0;
+    min-width: 5.5rem;
+    padding: 0.65rem 0.75rem;
+    border: 0.0625rem solid var(--volcan-azul);
+    border-radius: 0.45rem;
+    background-color: #e8f1f8;
+    color: var(--volcan-azul-oscuro);
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.boton-ver-password:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.boton-ver-password:focus-visible {
+    outline: 0.15rem solid var(--volcan-naranja);
+    outline-offset: 0.15rem;
+}

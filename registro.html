@@ -12,7 +12,7 @@
         <main class="pantalla-autenticacion">
             <!-- Navegación inicial de autenticación -->
             <nav class="navegacion-superior" aria-label="Volver a la tienda">
-                <a href="index.html" class="enlace-regresar">&larr; Regresar a Inicio</a>
+                <a href="index.html" class="enlace-regresar">← Regresar a Inicio</a>
             </nav>
 
             <!-- Tarjeta principal del registro de clientes -->
@@ -54,13 +54,19 @@
                                 </div>
                                 <div class="grupo-input">
                                     <label for="password-registro">Contraseña *</label>
-                                    <input type="password" id="password-registro" name="password" autocomplete="new-password" required>
+                                    <div class="caja-password">
+                                        <input type="password" id="password-registro" name="password" autocomplete="new-password" minlength="4" maxlength="10" required>
+                                        <button type="button" id="toggle-password-registro" class="boton-ver-password" aria-label="Mostrar contraseña" aria-controls="password-registro" aria-pressed="false" disabled>Mostrar</button>
+                                    </div>
                                     <small>Entre 4 y 10 caracteres, según los requisitos de esta demostración.</small>
                                     <span id="error-password-registro" class="mensaje-error-input" aria-live="polite"></span>
                                 </div>
                                 <div class="grupo-input">
                                     <label for="password-confirm-registro">Repetir contraseña *</label>
-                                    <input type="password" id="password-confirm-registro" name="password_confirm" autocomplete="new-password" required>
+                                    <div class="caja-password">
+                                        <input type="password" id="password-confirm-registro" name="password_confirm" autocomplete="new-password" minlength="4" maxlength="10" required>
+                                        <button type="button" id="toggle-password-confirm" class="boton-ver-password" aria-label="Mostrar contraseña" aria-controls="password-confirm-registro" aria-pressed="false" disabled>Mostrar</button>
+                                    </div>
                                     <span id="error-password-confirm-registro" class="mensaje-error-input" aria-live="polite"></span>
                                 </div>
                             </div>
@@ -133,7 +139,7 @@
                         <div id="mensaje-registro" class="mensaje-estado-formulario" role="status" aria-live="polite"></div>
                         <p class="aviso-preliminar">Formulario de demostración: el registro estará disponible cuando se implemente la validación JavaScript.</p>
                         <div class="acciones-registro">
-                            <a href="login.html" class="enlace-volver-login">&larr; Volver a Iniciar Sesión</a>
+                            <a href="login.html" class="enlace-volver-login">← Volver a Iniciar Sesión</a>
                             <button type="submit" class="boton-registro" disabled>Crear cuenta</button>
                         </div>
                     </form>
@@ -142,7 +148,7 @@
 
             <!-- Pie de página inicial -->
             <footer class="pie-autenticacion">
-                <p>&copy; 2026 Gas El Volcán. Chillán, Región de Ñuble.</p>
+                <p>© 2026 Gas El Volcán. Chillán, Región de Ñuble.</p>
             </footer>
         </main>
     </body>

@@ -12,7 +12,7 @@
         <main class="pantalla-autenticacion">
             <!-- Navegación inicial de autenticación -->
             <nav class="navegacion-superior" aria-label="Volver a la tienda">
-                <a href="index.html" class="enlace-regresar">&larr; Regresar a Inicio</a>
+                <a href="index.html" class="enlace-regresar">← Regresar a Inicio</a>
             </nav>
 
             <!-- Tarjeta inicial de inicio de sesión -->
@@ -37,12 +37,19 @@
 
                         <div class="grupo-input">
                             <label for="password-login">Contraseña <span aria-hidden="true">*</span></label>
-                            <input type="password" id="password-login" name="password" placeholder="Ingresa tu contraseña" autocomplete="current-password" required>
+                            <div class="caja-password">
+                                <input type="password" id="password-login" name="password" placeholder="Ingresa tu contraseña" autocomplete="current-password" minlength="4" maxlength="10" required>
+                                <button type="button" id="toggle-password" class="boton-ver-password" aria-label="Mostrar contraseña" aria-controls="password-login" aria-pressed="false" disabled>Mostrar</button>
+                            </div>
                             <small>Entre 4 y 10 caracteres, según los requisitos de esta demostración.</small>
                             <span class="mensaje-error-input" id="error-password-login" aria-live="polite"></span>
                         </div>
 
-                        <p class="ayuda-acceso">La recuperación de contraseña estará disponible en una próxima etapa.</p>
+                        <!-- Enlace y aviso preparados para la futura recuperación de acceso -->
+                        <a href="#recuperacion-clave" id="enlace-recuperar" class="enlace-recuperar">¿Olvidaste tu contraseña?</a>
+                        <div id="recuperacion-clave" class="aviso-recuperacion" role="status" aria-live="polite">
+                            La recuperación de contraseña requerirá integración con un servicio de cuentas.
+                        </div>
                         <div id="mensaje-login" class="mensaje-estado-formulario" role="status" aria-live="polite"></div>
                         <button type="submit" class="boton-ingresar" disabled>Ingresar</button>
                         <p class="aviso-preliminar">Formulario de demostración: el inicio de sesión aún no está habilitado.</p>
@@ -58,7 +65,7 @@
 
             <!-- Pie de página inicial -->
             <footer class="pie-autenticacion">
-                <p>&copy; 2026 Gas El Volcán. Chillán, Región de Ñuble.</p>
+                <p>© 2026 Gas El Volcán. Chillán, Región de Ñuble.</p>
             </footer>
         </main>
     </body>
