@@ -37,9 +37,9 @@
                 <div class="nosotros-grilla-historia">
                     <div class="nosotros-historia-texto">
                         <h2 id="titulo-historia">¿Quiénes somos?</h2>
-                        <p>Somos una empresa familiar fundada en 1998 en la ciudad de Chillán, dedicada a la distribución de gas licuado a domicilio en la Región de Ñuble.</p>
-                        <p>Desde nuestros inicios, nuestro compromiso es llevar energía segura a hogares, comercios y pequeñas empresas, con un trato cercano y responsable.</p>
-                        <p>Seguimos mejorando nuestros procesos para brindar una atención más eficiente, sin dejar de lado la confianza de nuestra comunidad.</p>
+                        <p>Somos una empresa familiar fundada en 1998 en la ciudad de Chillán, dedicados con orgullo a la distribución de gas licuado a domicilio en toda la Región de Ñuble.</p>
+                        <p>Desde nuestros inicios, nuestro compromiso ha sido llevar una energía limpia y segura a hogares, comercios y Pymes, operando siempre bajo los valores de la confianza y el trato cercano con nuestra comunidad.</p>
+                        <p>Hoy, con más de dos décadas de trayectoria, nos estamos modernizando. Estamos implementando nuevas herramientas tecnológicas para agilizar nuestros despachos, optimizar nuestra red de distribución y brindarte un servicio más eficiente en tiempo real, manteniendo la misma calidez y compromiso de siempre.</p>
                     </div>
                     <img class="nosotros-foto-historia" src="assets/images/nosotros/repartidor-gas-volcan.png" alt="Repartidor de Gas El Volcán junto a un cilindro de gas" width="640" loading="lazy">
                 </div>
@@ -48,21 +48,32 @@
             <!-- Objetivos institucionales -->
             <section id="mision-vision" class="seccion-proposito" aria-labelledby="titulo-proposito">
                 <div class="contenedor">
-                    <h2 id="titulo-proposito">Nuestro propósito</h2>
+                    <h2 id="titulo-proposito">Nuestro propósito es Potenciar el Desarrollo Regional</h2>
                     <div class="nosotros-grilla-proposito">
+                        <!-- Cada tarjeta se puede abrir sin JavaScript -->
                         <article class="nosotros-tarjeta-proposito">
-                            <img src="assets/images/nosotros/fondo-mision.jpg" alt="" width="560" loading="lazy">
-                            <div class="nosotros-contenido-proposito">
-                                <h3>Misión</h3>
-                                <p>Distribuir gas licuado de forma segura y oportuna a clientes residenciales y comerciales de Chillán y sus alrededores.</p>
-                            </div>
+                            <input class="mv-checkbox" id="mv-mision" type="checkbox" aria-label="Mostrar u ocultar la misión">
+                            <label class="mv-label" for="mv-mision">
+                                <img class="mv-fondo" src="assets/images/nosotros/fondo-mision.jpg" alt="" width="560" loading="lazy">
+                                <span class="mv-capa-color" aria-hidden="true"></span>
+                                <span class="mv-contenido">
+                                    <span class="mv-titulo" role="heading" aria-level="3">Misión</span>
+                                    <span class="mv-ver-mas">Ver más</span>
+                                    <span class="mv-texto">Proveer distribución de gas licuado segura y oportuna a clientes residenciales y comerciales en Chillán y comunas aledañas. Nos comprometemos a entregar un servicio enfocado en la rapidez de despacho y la tranquilidad del cliente.</span>
+                                </span>
+                            </label>
                         </article>
                         <article class="nosotros-tarjeta-proposito">
-                            <img src="assets/images/nosotros/fondo-vision.jpg" alt="" width="560" loading="lazy">
-                            <div class="nosotros-contenido-proposito">
-                                <h3>Visión</h3>
-                                <p>Consolidarnos como una distribuidora destacada en Ñuble por la innovación, la calidad del servicio y el compromiso con la seguridad.</p>
-                            </div>
+                            <input class="mv-checkbox" id="mv-vision" type="checkbox" aria-label="Mostrar u ocultar la visión">
+                            <label class="mv-label" for="mv-vision">
+                                <img class="mv-fondo" src="assets/images/nosotros/fondo-vision.jpg" alt="" width="560" loading="lazy">
+                                <span class="mv-capa-color" aria-hidden="true"></span>
+                                <span class="mv-contenido">
+                                    <span class="mv-titulo" role="heading" aria-level="3">Visión</span>
+                                    <span class="mv-ver-mas">Ver más</span>
+                                    <span class="mv-texto">Consolidarnos como la distribuidora de gas a domicilio líder en la Región de Ñuble, destacando por nuestra innovación tecnológica para la gestión de pedidos en tiempo real y un sólido compromiso con la seguridad.</span>
+                                </span>
+                            </label>
                         </article>
                     </div>
                 </div>
@@ -71,25 +82,28 @@
             <!-- Presentación del equipo de desarrollo -->
             <section id="equipo" class="seccion-equipo contenedor" aria-labelledby="titulo-equipo">
                 <h2 id="titulo-equipo">Equipo de desarrollo</h2>
-                <p class="equipo-introduccion">Conoce a quienes participan en la construcción de nuestra plataforma web.</p>
+                <p class="equipo-introduccion">Conoce a los ingenieros encargados de la plataforma tecnológica de Gas El Volcán.</p>
                 <div class="nosotros-grilla-equipo">
                     <article class="nosotros-tarjeta-miembro">
                         <img src="assets/images/equipo/benjamin-a.png" alt="Fotografía de Benjamín Aliste" width="180" height="180" loading="lazy">
                         <h3>shirokamidev</h3>
                         <p>Benjamín Aliste</p>
-                        <span>Desarrollo de interfaces</span>
+                        <span>Ingeniería Frontend y UI/UX</span>
+                        <p class="nosotros-miembro-descripcion">Especialista en la construcción de interfaces semánticas, maquetación HTML/CSS y diseño Mobile First.</p>
                     </article>
                     <article class="nosotros-tarjeta-miembro">
                         <img src="assets/images/equipo/jesus.jpeg" alt="Fotografía de Jesús Amaya" width="180" height="180" loading="lazy">
                         <h3>Jesusamayap</h3>
                         <p>Jesús Amaya</p>
-                        <span>Vistas y funcionalidades</span>
+                        <span>Lógica de Negocio y Persistencia</span>
+                        <p class="nosotros-miembro-descripcion">Encargado de la lógica interactiva del sistema con JavaScript, validación estricta de formularios y persistencia de datos mediante LocalStorage.</p>
                     </article>
                     <article class="nosotros-tarjeta-miembro">
                         <img src="assets/images/equipo/benjamin-m.jpeg" alt="Fotografía de Benjamín Mora" width="180" height="180" loading="lazy">
                         <h3>nNoriega-K</h3>
                         <p>Benjamín Mora</p>
-                        <span>Panel de administración</span>
+                        <span>Aseguramiento de Calidad y Documentación</span>
+                        <p class="nosotros-miembro-descripcion">Responsable del documento de Especificación de Requisitos de Software (ERS), control de versiones y aseguramiento de calidad visual.</p>
                     </article>
                 </div>
             </section>
@@ -98,7 +112,7 @@
         <!-- Pie de página inicial -->
         <footer class="nosotros-pie">
             <div class="contenedor">
-                <p>&copy; 2026 Gas El Volcán. Chillán, Región de Ñuble.</p>
+                <p>© 2026 Gas El Volcán. Chillán, Región de Ñuble.</p>
             </div>
         </footer>
     </body>
