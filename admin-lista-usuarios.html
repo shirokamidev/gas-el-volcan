@@ -43,7 +43,10 @@
                     <h2 id="subtitulo-usuarios">Usuarios registrados</h2>
                     <p class="mensaje-demo" id="aviso-demo">Datos de demostración, no corresponden a personas reales. La primera fila permite visualizar el formulario de edición de demostración. Los cambios todavía no se guardan.</p>
 
-                    <div class="tabla-contenedor" role="region" aria-label="Tabla de usuarios, desplazamiento horizontal disponible" tabindex="0">
+                    <!-- Orientación para revisar todas las columnas desde el celular -->
+                    <p class="ayuda-desplazamiento" id="ayuda-tabla-usuarios">Desliza la tabla hacia los lados para revisar todos los datos y las acciones disponibles.</p>
+
+                    <div class="tabla-contenedor" role="region" aria-label="Tabla de usuarios, desplazamiento horizontal disponible" aria-describedby="ayuda-tabla-usuarios" tabindex="0">
                         <table class="tabla-usuarios" aria-describedby="aviso-demo">
                             <caption class="texto-oculto">Usuarios de ejemplo con datos personales, roles y acciones futuras</caption>
                             <thead>

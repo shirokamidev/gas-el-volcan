@@ -301,3 +301,43 @@ body {
     outline: 0.2rem solid var(--volcan-naranja);
     outline-offset: 0.15rem;
 }
+
+/* Ayuda y seguimiento visual de las columnas en pantallas pequeñas */
+.ayuda-desplazamiento {
+    margin: 0 0 0.75rem;
+    color: #405263;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.tabla-contenedor {
+    border: 0.0625rem solid #d1d9e0;
+    border-radius: 0.375rem;
+    scrollbar-color: var(--volcan-azul) #e5e7eb;
+    scrollbar-width: thin;
+}
+
+@media (max-width: 767px) {
+    .tabla-usuarios th:first-child,
+    .tabla-usuarios td:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 1;
+        background-color: var(--volcan-blanco);
+        box-shadow: 0.125rem 0 0 #d1d9e0;
+    }
+
+    .tabla-usuarios th:first-child {
+        background-color: var(--volcan-azul);
+    }
+
+    .tabla-usuarios tbody tr:nth-child(even) td:first-child {
+        background-color: #f7f9fb;
+    }
+}
+
+@media (min-width: 768px) {
+    .ayuda-desplazamiento {
+        display: none;
+    }
+}
