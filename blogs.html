@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gas El Volcán | Blogs y Noticias</title>
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/pages/blogs.css">
+    </head>
+    <body>
+        <!-- Cabecera inicial de noticias -->
+        <header class="cabecera-principal">
+            <div class="contenedor">
+                <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
+                <nav aria-label="Navegación de noticias">
+                    <a href="blogs.html" aria-current="page">Blogs y Noticias</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="pagina-blogs">
+            <!-- Presentación de la sección -->
+            <section class="hero-blogs">
+                <div class="contenedor">
+                    <h1>Blogs y Noticias</h1>
+                    <p>Conoce nuestras novedades y consejos para utilizar el gas de manera segura en tu hogar.</p>
+                </div>
+            </section>
+
+            <!-- Estructura inicial de filtros para las noticias -->
+            <section class="seccion-filtros-blogs contenedor" id="filtros-blogs" aria-labelledby="titulo-filtros-blog">
+                <h2 id="titulo-filtros-blog">Explora nuestras noticias</h2>
+                <form class="barra-filtros" id="form-filtros-blog">
+                    <div class="grupo-filtro">
+                        <label for="buscar-blog">Buscar</label>
+                        <input type="search" id="buscar-blog" name="q" placeholder="Buscar noticias..." disabled>
+                    </div>
+                    <div class="grupo-filtro">
+                        <label for="categoria-blog">Categoría</label>
+                        <select id="categoria-blog" name="categoria" disabled>
+                            <option value="todas">Todas las categorías</option>
+                            <option value="comunidad">Comunidad</option>
+                            <option value="negocio">Nuestro Negocio</option>
+                        </select>
+                    </div>
+                    <div class="grupo-filtro">
+                        <label for="fecha-blog">Año</label>
+                        <select id="fecha-blog" name="fecha" disabled>
+                            <option value="todos">Todos los años</option>
+                            <option value="2026">2026</option>
+                            <option value="2025">2025</option>
+                        </select>
+                    </div>
+                    <button type="button" class="boton-filtrar-blog" id="btn-filtrar-cat" disabled>Filtrar</button>
+                </form>
+                <p class="nota-filtros-blog">Los filtros se habilitarán cuando se incorpore la lógica de búsqueda.</p>
+            </section>
+
+            <!-- Listado de noticias con datos para los futuros filtros -->
+            <section class="seccion-grilla-blogs contenedor" aria-labelledby="titulo-noticias">
+                <h2 id="titulo-noticias">Últimas noticias</h2>
+                <div class="grilla-blogs" id="grilla-blogs-js">
+                    <article class="tarjeta-blog" data-categoria="negocio" data-anio="2026">
+                        <img src="assets/images/blogs/noticia-subsidio.jpg" alt="Información sobre beneficios para el hogar" width="480">
+                        <div class="blog-cuerpo">
+                            <p class="blog-categoria">Nuestro Negocio</p>
+                            <h3>Consejos para el subsidio de gas y ahorro en el hogar</h3>
+                            <p>Recomendaciones para conocer los beneficios disponibles y mejorar el consumo de gas.</p>
+                            <a href="detalle-blog.html" class="blog-enlace-detalle" aria-label="Leer noticia: Consejos para el subsidio de gas y ahorro en el hogar">Leer noticia <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-blog" data-categoria="comunidad" data-anio="2026">
+                        <img src="assets/images/blogs/seguridad-fugas.png" alt="Recomendaciones para prevenir fugas de gas" width="480">
+                        <div class="blog-cuerpo">
+                            <p class="blog-categoria">Comunidad</p>
+                            <h3>Consejos de seguridad para prevenir fugas de gas</h3>
+                            <p>Medidas básicas de prevención para mantener seguros los espacios de tu hogar.</p>
+                            <a href="detalle-seguridad.html" class="blog-enlace-detalle" aria-label="Leer noticia: Consejos de seguridad para prevenir fugas de gas">Leer noticia <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- Pie de página inicial -->
+        <footer class="pie-pagina">
+            <p>© 2026 Gas El Volcán. Chillán, Región de Ñuble.</p>
+        </footer>
+    </body>
+</html>
