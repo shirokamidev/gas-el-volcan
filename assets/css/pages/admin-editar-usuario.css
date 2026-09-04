@@ -1,0 +1,16 @@
+/* Ajustes visuales de la edición de usuarios */
+.campo-formulario input[readonly] {
+    background-color: #eef0f2;
+    border-color: #d1d7dd;
+    color: #4c5864;
+    cursor: not-allowed;
+}
+
+.campo-formulario input[readonly]:focus-visible {
+    outline-color: var(--volcan-azul);
+}
+
+/* Separación del aviso respecto de los controles del formulario */
+#mensaje-usuario {
+    margin-top: 0.25rem;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gas El Volcán | Lista de Usuarios</title>
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/pages/admin-lista-usuarios.css">
+    </head>
+    <body>
+        <!-- Cabecera inicial de administración -->
+        <header class="admin-cabecera">
+            <div class="admin-identidad">
+                <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
+                <span>Administración</span>
+            </div>
+            <p>Gestión de usuarios</p>
+        </header>
+
+        <div class="admin-estructura">
+            <!-- Navegación inicial del módulo -->
+            <aside class="admin-sidebar">
+                <nav aria-label="Módulos administrativos">
+                    <h2>Menú principal</h2>
+                    <ul>
+                        <li>Inicio</li>
+                        <li>Productos</li>
+                        <li class="activo" aria-current="page">Usuarios</li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="admin-main">
+                <!-- Presentación del listado -->
+                <section class="panel-titulo" aria-labelledby="titulo-usuarios">
+                    <h1 id="titulo-usuarios">Lista de Usuarios</h1>
+                    <p>Consulta inicial de los perfiles que se administrarán en la sucursal virtual.</p>
+                    <a href="admin-nuevo-usuario.html" class="enlace-nuevo-usuario">Nuevo usuario</a>
+                </section>
+
+                <!-- Tabla preliminar con datos de demostración -->
+                <section class="panel-usuarios" aria-labelledby="subtitulo-usuarios">
+                    <h2 id="subtitulo-usuarios">Usuarios registrados</h2>
+                    <p class="mensaje-demo" id="aviso-demo">Datos de demostración, no corresponden a personas reales. La primera fila permite visualizar el formulario de edición de demostración. Los cambios todavía no se guardan.</p>
+
+                    <!-- Orientación para revisar todas las columnas desde el celular -->
+                    <p class="ayuda-desplazamiento" id="ayuda-tabla-usuarios">Desliza la tabla hacia los lados para revisar todos los datos y las acciones disponibles.</p>
+
+                    <div class="tabla-contenedor" role="region" aria-label="Tabla de usuarios, desplazamiento horizontal disponible" aria-describedby="ayuda-tabla-usuarios" tabindex="0">
+                        <table class="tabla-usuarios" aria-describedby="aviso-demo">
+                            <caption class="texto-oculto">Usuarios de ejemplo con datos personales, roles y acciones futuras</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">RUT</th>
+                                    <th scope="col">Nombre completo</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Teléfono</th>
+                                    <th scope="col">Región</th>
+                                    <th scope="col">Comuna</th>
+                                    <th scope="col">Dirección</th>
+                                    <th scope="col">Rol</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-usuarios-admin">
+                                <tr>
+                                    <td>Pendiente</td>
+                                    <td>Perfil de administración</td>
+                                    <td>admin@example.com</td>
+                                    <td>Pendiente</td>
+                                    <td>Ñuble</td>
+                                    <td>Chillán</td>
+                                    <td>Pendiente</td>
+                                    <td><span class="etiqueta-rol rol-admin">Administrador</span></td>
+                                    <td><a href="admin-editar-usuario.html" class="enlace-editar" aria-label="Ver formulario de edición del perfil de administración (demostración)">Ver edición</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Pendiente</td>
+                                    <td>Perfil de ventas</td>
+                                    <td>ventas@example.com</td>
+                                    <td>Pendiente</td>
+                                    <td>Ñuble</td>
+                                    <td>Chillán</td>
+                                    <td>Pendiente</td>
+                                    <td><span class="etiqueta-rol rol-vendedor">Vendedor</span></td>
+                                    <td><button type="button" class="boton-accion" disabled aria-label="Editar perfil de ventas, no disponible">Editar</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Pendiente</td>
+                                    <td>Perfil de cliente</td>
+                                    <td>cliente@example.com</td>
+                                    <td>Pendiente</td>
+                                    <td>Ñuble</td>
+                                    <td>Chillán</td>
+                                    <td>Pendiente</td>
+                                    <td><span class="etiqueta-rol rol-cliente">Cliente</span></td>
+                                    <td><button type="button" class="boton-accion" disabled aria-label="Editar perfil de cliente, no disponible">Editar</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>

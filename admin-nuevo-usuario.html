@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Formulario administrativo para preparar el registro de usuarios de Gas El Volcán.">
+        <title>Gas El Volcán | Nuevo Usuario</title>
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/pages/admin-nuevo-usuario.css">
+    </head>
+    <body>
+        <!-- Cabecera inicial de administración -->
+        <header class="admin-cabecera">
+            <div class="admin-identidad">
+                <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
+                <span>Administración</span>
+            </div>
+            <p>Gestión de usuarios</p>
+        </header>
+
+        <div class="admin-estructura">
+            <!-- Navegación inicial del módulo -->
+            <aside class="admin-sidebar">
+                <nav aria-label="Módulos administrativos">
+                    <h2>Menú principal</h2>
+                    <ul>
+                        <li>Inicio</li>
+                        <li>Productos</li>
+                        <li class="activo">Usuarios</li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="admin-main">
+                <!-- Presentación del registro -->
+                <section class="panel-titulo" aria-labelledby="titulo-nuevo-usuario">
+                    <div class="titulo-acciones">
+                        <div>
+                            <h1 id="titulo-nuevo-usuario">Crear nuevo usuario</h1>
+                            <p>Prepara los datos del perfil que se incorporará al sistema.</p>
+                        </div>
+                        <a href="admin-lista-usuarios.html" class="enlace-volver">Volver a la lista</a>
+                    </div>
+                </section>
+
+                <!-- Formulario preliminar: el guardado se incorporará con JavaScript -->
+                <section class="panel-formulario" aria-labelledby="subtitulo-registro">
+                    <h2 id="subtitulo-registro">Información del usuario</h2>
+                    <p id="aviso-registro" class="aviso-formulario">Formulario de demostración. Los datos ingresados no se guardarán todavía. Los campos con * serán obligatorios.</p>
+
+                    <form id="form-nuevo-usuario" class="formulario-usuario" aria-describedby="aviso-registro">
+                        <fieldset class="grupo-campos">
+                            <legend>Datos personales</legend>
+                            <div class="grilla-campos">
+                                <div class="campo-formulario campo-completo">
+                                    <label for="rut-usuario">RUT <span aria-hidden="true">*</span></label>
+                                    <input id="rut-usuario" name="rut" type="text" maxlength="12" placeholder="Ej.: 12345678-9" autocomplete="off" required>
+                                    <small>El formato y el dígito verificador se validarán posteriormente.</small>
+                                </div>
+                                <div class="campo-formulario campo-completo">
+                                    <label for="nombre-usuario">Nombre <span aria-hidden="true">*</span></label>
+                                    <input id="nombre-usuario" name="nombre" type="text" maxlength="100" placeholder="Ej.: Camila" required>
+                                </div>
+                                <div class="campo-formulario">
+                                    <label for="apellidop-usuario">Apellido paterno <span aria-hidden="true">*</span></label>
+                                    <input id="apellidop-usuario" name="apellidoPaterno" type="text" maxlength="100" placeholder="Ej.: Pérez" required>
+                                </div>
+                                <div class="campo-formulario">
+                                    <label for="apellidom-usuario">Apellido materno (opcional)</label>
+                                    <input id="apellidom-usuario" name="apellidoMaterno" type="text" maxlength="100" placeholder="Ej.: González">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="grupo-campos">
+                            <legend>Contacto y credenciales</legend>
+                            <div class="grilla-campos">
+                                <div class="campo-formulario">
+                                    <label for="correo-usuario">Correo electrónico <span aria-hidden="true">*</span></label>
+                                    <input id="correo-usuario" name="correo" type="email" maxlength="150" placeholder="Ej.: usuario@ejemplo.cl" required>
+                                </div>
+                                <div class="campo-formulario">
+                                    <label for="telefono-usuario">Teléfono (opcional)</label>
+                                    <input id="telefono-usuario" name="telefono" type="tel" placeholder="Ej.: 912345678" inputmode="tel">
+                                </div>
+                                <div class="campo-formulario campo-completo">
+                                    <label for="password-usuario">Contraseña temporal <span aria-hidden="true">*</span></label>
+                                    <input id="password-usuario" name="password" type="password" minlength="8" maxlength="64" autocomplete="new-password" required>
+                                    <small>Esta versión no almacena contraseñas. La gestión de credenciales se implementará más adelante.</small>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="grupo-campos">
+                            <legend>Dirección</legend>
+                            <div class="grilla-campos">
+                                <div class="campo-formulario">
+                                    <label for="region-admin">Región <span aria-hidden="true">*</span></label>
+                                    <select id="region-admin" name="region" required>
+                                        <option value="" selected disabled>Selecciona una región</option>
+                                        <option value="nuble">Región de Ñuble</option>
+                                        <option value="biobio">Región del Biobío</option>
+                                    </select>
+                                </div>
+                                <div class="campo-formulario">
+                                    <label for="comuna-admin">Comuna <span aria-hidden="true">*</span></label>
+                                    <select id="comuna-admin" name="comuna" disabled required aria-describedby="aviso-comuna">
+                                        <option value="" selected>Selecciona primero una región</option>
+                                    </select>
+                                    <small id="aviso-comuna">La selección de comunas se habilitará al incorporar JavaScript.</small>
+                                </div>
+                                <div class="campo-formulario campo-completo">
+                                    <label for="direccion-usuario">Calle y número <span aria-hidden="true">*</span></label>
+                                    <input id="direccion-usuario" name="direccion" type="text" maxlength="300" placeholder="Ej.: Los Volcanes 125, Chillán" required>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="grupo-campos">
+                            <legend>Rol del sistema</legend>
+                            <div class="grilla-campos">
+                                <div class="campo-formulario campo-completo">
+                                    <label for="rol-usuario">Tipo de usuario <span aria-hidden="true">*</span></label>
+                                    <select id="rol-usuario" name="rol" required>
+                                        <option value="" selected disabled>Selecciona un perfil</option>
+                                        <option value="cliente">Cliente</option>
+                                        <option value="vendedor">Vendedor</option>
+                                        <option value="administrador">Administrador</option>
+                                    </select>
+                                    <small>Este campo permitirá definir el tipo de acceso del perfil.</small>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Acciones preparadas para la futura gestión de usuarios -->
+                        <div id="mensaje-usuario" class="mensaje-formulario" role="status">El registro de usuarios estará disponible en una próxima etapa.</div>
+                        <div class="acciones-formulario">
+                            <button type="submit" class="boton-guardar" disabled>Guardar usuario</button>
+                        </div>
+                    </form>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>
