@@ -138,3 +138,170 @@
     font-size: 0.95rem;
     margin: 0;
 }
+
+/* Contenedor de detalles por sucursal */
+.vistas-detalles {
+    width: 100%;
+}
+
+.vistas-detalles .detalle-card {
+    display: none; 
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tarjeta-detalle-encabezado,
+.tarjeta-detalle-cuerpo {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.05);
+}
+
+.tarjeta-detalle-cuerpo h4 {
+    color: var(--volcan-oscuro);
+    font-size: 1.15rem;
+    margin-bottom: 0.8rem;
+}
+
+.dato-despacho {
+    color: #333333;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Informacion de contacto en detalle */
+.info-contacto-detalle {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-style: normal; 
+}
+
+/* Estilos de enlaces de contacto */
+.enlace-azul {
+    color: var(--volcan-azul);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.05rem;
+}
+
+.enlace-azul:hover {
+    color: var(--volcan-naranja);
+}
+
+.texto-naranja {
+    color: var(--volcan-naranja);
+    font-size: 1.05rem;
+}
+
+.texto-rojo {
+    color: #dc3545;
+    font-size: 1.05rem;
+}
+
+/* Boton de regreso */
+.btn-atras {
+    display: inline-block;
+    color: var(--volcan-azul);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-atras:hover {
+    color: var(--volcan-naranja);
+}
+
+/* Logica de visualizacion normal sin absolute */
+#suc-1:checked ~ .vista-lista-general,
+#suc-2:checked ~ .vista-lista-general,
+#suc-3:checked ~ .vista-lista-general,
+#suc-4:checked ~ .vista-lista-general,
+#suc-5:checked ~ .vista-lista-general {
+    display: none;
+}
+
+#suc-1:checked ~ .vistas-detalles #detalle-1,
+#suc-2:checked ~ .vistas-detalles #detalle-2,
+#suc-3:checked ~ .vistas-detalles #detalle-3,
+#suc-4:checked ~ .vistas-detalles #detalle-4,
+#suc-5:checked ~ .vistas-detalles #detalle-5 {
+    display: flex;
+}
+
+/* Adaptacion para tabletas */
+@media (max-width: 64rem) {
+    .grilla-directorio {
+        grid-template-columns: 1fr; 
+        align-items: start; 
+    }
+
+    .columna-mapa {
+        height: 28rem; 
+    }
+
+    .columna-lista {
+        height: auto;
+    }
+
+    .vistas-detalles {
+        height: auto;
+    }
+
+    .formulario-buscador {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .grupo-select {
+        flex: 1;
+        min-width: 40%;
+    }
+    
+    .boton-buscar {
+        width: 100%;
+    }
+}
+
+/* Adaptacion para dispositivos moviles */
+@media (max-width: 48rem) {
+    .seccion-banner-gris {
+        padding: 2.5rem 1.25rem; 
+    }
+
+    .seccion-buscador {
+        padding-top: 2.5rem; 
+        padding-bottom: 1.5rem;
+    }
+
+    .seccion-mapa-directorio {
+        padding-bottom: 4.5rem; 
+    }
+
+    .titulo-buscador {
+        font-size: 1.8rem;
+    }
+
+    .formulario-buscador {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .grupo-select {
+        width: 100%;
+    }
+    
+    .boton-buscar {
+        width: 100%;
+    }
+    
+    .columna-mapa {
+        height: 22rem; 
+    }
+}
