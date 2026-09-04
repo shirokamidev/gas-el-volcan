@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gas El Volcán | Sucursales</title>
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/pages/sucursales.css">
+    </head>
+    <body>
+        <!-- Cabecera inicial de sucursales -->
+        <header class="cabecera-principal">
+            <div class="contenedor contenido-cabecera">
+                <a class="enlace-logo" href="index.html" aria-label="Ir al inicio de Gas El Volcán">
+                    <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
+                </a>
+                <nav aria-label="Navegación principal">
+                    <a href="index.html">Inicio</a>
+                    <a href="catalogo.html">Productos</a>
+                    <a href="sucursales.html" aria-current="page">Sucursales</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- Banner de presentación -->
+            <section class="banner-sucursales" aria-label="Puntos Volcán">
+                <div class="contenedor">
+                    <img src="assets/images/sucursales/banner-sucursales.png" alt="Siempre hay un Punto Volcán cerca de ti">
+                </div>
+            </section>
+
+            <!-- Formulario visual para la futura búsqueda -->
+            <section class="seccion-buscador contenedor" aria-labelledby="titulo-buscador">
+                <div class="introduccion-buscador">
+                    <h1 id="titulo-buscador">Encuentra tu Punto Volcán más cercano</h1>
+                    <p>Conoce las zonas de atención incluidas en nuestro directorio.</p>
+                </div>
+
+                <form class="formulario-buscador" aria-describedby="aviso-buscador">
+                    <div class="grupo-campo">
+                        <label for="region">Región</label>
+                        <select id="region" name="region" disabled>
+                            <option value="" selected>Selecciona tu región...</option>
+                            <option value="nuble">Región de Ñuble</option>
+                            <option value="biobio">Región del Biobío</option>
+                        </select>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="comuna">Comuna</label>
+                        <select id="comuna" name="comuna" disabled>
+                            <option value="" selected>Selecciona tu comuna...</option>
+                        </select>
+                    </div>
+                    <button type="button" disabled>Buscar sucursal</button>
+                </form>
+                <p id="aviso-buscador" class="aviso-buscador">La búsqueda por región y comuna estará disponible en una próxima etapa.</p>
+            </section>
+
+            <!-- Directorio ampliado con horarios y puntos de atención -->
+            <section class="seccion-directorio contenedor" aria-labelledby="titulo-directorio">
+                <h2 id="titulo-directorio">Zonas de atención</h2>
+                <div class="distribucion-directorio">
+                    <div class="lista-zonas">
+                        <article class="tarjeta-zona">
+                            <h3>Zona Centro</h3>
+                            <p>Chillán: sectores centro, norte y sur.</p>
+                            <span class="etiqueta-zona">Región de Ñuble</span>
+                            <details>
+                                <summary>Ver horarios y puntos de atención</summary>
+                                <p><strong>Atención:</strong> Lunes a sábado de 08:00 a 20:00 hrs.</p>
+                                <p><strong>Tiempo estimado:</strong> 1 a 3 horas.</p>
+                                <ul>
+                                    <li><strong>Punto Volcán Centro:</strong> Calle Volcán 125, Chillán.</li>
+                                </ul>
+                                <a href="catalogo.html">Realizar pedido online</a>
+                            </details>
+                        </article>
+                        <article class="tarjeta-zona">
+                            <h3>Zona Oriente</h3>
+                            <p>Chillán: sector oriente y Chillán Viejo.</p>
+                            <span class="etiqueta-zona">Región de Ñuble</span>
+                            <details>
+                                <summary>Ver horarios y puntos de atención</summary>
+                                <p><strong>Atención:</strong> Lunes a viernes de 08:00 a 18:00 hrs.</p>
+                                <p><strong>Tiempo estimado:</strong> 2 a 4 horas.</p>
+                                <ul>
+                                    <li><strong>Punto Volcán Oriente:</strong> Pasaje Cordillera 340, Chillán.</li>
+                                    <li><strong>Punto Volcán Chillán Viejo:</strong> Calle Las Araucarias 215, Chillán Viejo.</li>
+                                </ul>
+                                <a href="catalogo.html">Realizar pedido online</a>
+                            </details>
+                        </article>
+                        <article class="tarjeta-zona">
+                            <h3>Zona Rural</h3>
+                            <p>El Carmen, Pinto y San Ignacio.</p>
+                            <span class="etiqueta-zona">Región de Ñuble</span>
+                            <details>
+                                <summary>Ver horarios y puntos de atención</summary>
+                                <p><strong>Atención:</strong> Martes y jueves de 08:00 a 16:00 hrs.</p>
+                                <p><strong>Tiempo estimado:</strong> 3 a 6 horas.</p>
+                                <ul>
+                                    <li><strong>Punto Volcán Pinto:</strong> Calle Los Copihues 180, Pinto.</li>
+                                    <li><strong>Punto Volcán El Carmen:</strong> Pasaje Las Vertientes 290, El Carmen.</li>
+                                    <li><strong>Punto Volcán San Ignacio:</strong> Calle Los Robles 145, San Ignacio.</li>
+                                </ul>
+                                <a href="catalogo.html">Realizar pedido online</a>
+                            </details>
+                        </article>
+                        <article class="tarjeta-zona">
+                            <h3>Zona Sur</h3>
+                            <p>Bulnes y Quillón.</p>
+                            <span class="etiqueta-zona">Región de Ñuble</span>
+                            <details>
+                                <summary>Ver horarios y puntos de atención</summary>
+                                <p><strong>Atención:</strong> Miércoles de 08:00 a 16:00 hrs.</p>
+                                <p><strong>Tiempo estimado:</strong> 4 a 6 horas.</p>
+                                <ul>
+                                    <li><strong>Punto Volcán Bulnes:</strong> Calle Las Camelias 310, Bulnes.</li>
+                                    <li><strong>Punto Volcán Quillón:</strong> Pasaje El Mirador 220, Quillón.</li>
+                                </ul>
+                                <a href="catalogo.html">Realizar pedido online</a>
+                            </details>
+                        </article>
+                        <article class="tarjeta-zona">
+                            <h3>Zona Comercial</h3>
+                            <p>Parques industriales y locales comerciales.</p>
+                            <span class="etiqueta-zona">Región de Ñuble</span>
+                            <details>
+                                <summary>Ver horarios y puntos de atención</summary>
+                                <p><strong>Atención:</strong> Lunes a viernes de 07:00 a 17:00 hrs.</p>
+                                <p><strong>Tiempo estimado:</strong> Según agenda.</p>
+                                <ul>
+                                    <li><strong>Punto Volcán Comercial:</strong> Calle Los Mañíos 455, Chillán.</li>
+                                </ul>
+                                <a href="catalogo.html">Realizar pedido online</a>
+                            </details>
+                        </article>
+                        <article class="tarjeta-zona">
+                            <h3>Zona Concepción</h3>
+                            <p>Concepción.</p>
+                            <span class="etiqueta-zona">Región del Biobío</span>
+                            <details>
+                                <summary>Ver horarios y puntos de atención</summary>
+                                <p><strong>Atención:</strong> Lunes a sábado de 08:00 a 19:00 hrs.</p>
+                                <p><strong>Tiempo estimado:</strong> 2 a 4 horas.</p>
+                                <ul>
+                                    <li><strong>Punto Volcán Concepción:</strong> Calle Los Avellanos 235, Concepción.</li>
+                                </ul>
+                                <a href="catalogo.html">Realizar pedido online</a>
+                            </details>
+                        </article>
+                        <article class="tarjeta-zona">
+                            <h3>Zona Talcahuano</h3>
+                            <p>Talcahuano.</p>
+                            <span class="etiqueta-zona">Región del Biobío</span>
+                            <details>
+                                <summary>Ver horarios y puntos de atención</summary>
+                                <p><strong>Atención:</strong> Lunes a viernes de 09:00 a 18:00 hrs.</p>
+                                <p><strong>Tiempo estimado:</strong> 2 a 5 horas.</p>
+                                <ul>
+                                    <li><strong>Punto Volcán Talcahuano:</strong> Pasaje El Faro 170, Talcahuano.</li>
+                                </ul>
+                                <a href="catalogo.html">Realizar pedido online</a>
+                            </details>
+                        </article>
+                        <article class="tarjeta-zona">
+                            <h3>Zona Los Ángeles</h3>
+                            <p>Los Ángeles.</p>
+                            <span class="etiqueta-zona">Región del Biobío</span>
+                            <details>
+                                <summary>Ver horarios y puntos de atención</summary>
+                                <p><strong>Atención:</strong> Lunes a sábado de 08:30 a 18:30 hrs.</p>
+                                <p><strong>Tiempo estimado:</strong> 2 a 5 horas.</p>
+                                <ul>
+                                    <li><strong>Punto Volcán Los Ángeles:</strong> Calle Los Maitenes 380, Los Ángeles.</li>
+                                </ul>
+                                <a href="catalogo.html">Realizar pedido online</a>
+                            </details>
+                        </article>
+                    </div>
+
+                    <div class="contenedor-mapa">
+                        <h3>Mapa referencial de Chillán</h3>
+                        <div class="marco-mapa">
+                            <iframe
+                                title="Mapa referencial de la ciudad de Chillán"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102029.35123067205!2d-72.17935497931326!3d-36.60830491790409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9668d7cc91e57199%3A0x6431e5f88421b068!2sChill%C3%A1n%2C%20B%C3%ADo%20B%C3%ADo!5e0!3m2!1ses-419!2scl!4v1700000000000!5m2!1ses-419!2scl"
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="nota-mapa">El mapa muestra la ciudad como referencia. Las ubicaciones individuales de los puntos se incorporarán más adelante.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Pie de página inicial -->
+        <footer class="pie-pagina">
+            <div class="contenedor">
+                <p>© 2026 Gas El Volcán. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </body>
+</html>
