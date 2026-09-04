@@ -1,0 +1,15 @@
+/* Configuración general de los elementos */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--volcan-oscuro);
+    background-color: var(--volcan-blanco);
+    font-family: "Montserrat", Arial, sans-serif;
+}
+
+a {
+    color: inherit;
+}

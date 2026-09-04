@@ -1,0 +1,377 @@
+/* Cabecera y navegación inicial */
+.barra-superior {
+    padding: 0.75rem 5%;
+    background-color: var(--volcan-azul-oscuro);
+    color: var(--volcan-blanco);
+    text-align: center;
+}
+
+.barra-superior p {
+    display: inline-block;
+    margin: 0.25rem 1rem;
+    font-size: 0.85rem;
+}
+
+.barra-navegacion {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 5%;
+}
+
+.enlace-logo img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.enlaces-navegacion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.enlaces-navegacion a {
+    color: var(--volcan-azul);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Imagen de portada con contenido superpuesto */
+.seccion-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    background-color: var(--volcan-claro);
+}
+
+.imagen-hero {
+    display: block;
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-contenido {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    grid-column: 1;
+    grid-row: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 5%;
+    background: linear-gradient(rgba(0, 40, 70, 0.58), rgba(0, 40, 70, 0.7));
+    color: var(--volcan-blanco);
+    text-align: center;
+}
+
+.hero-contenido h1 {
+    margin: 0 0 0.75rem;
+    font-size: 2rem;
+    text-shadow: 0 0.1875rem 0.5rem rgba(0, 0, 0, 0.35);
+}
+
+.hero-contenido p {
+    max-width: 40rem;
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.6;
+    text-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.35);
+}
+
+.boton-naranja {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.9rem 1.5rem;
+    border-radius: 0.4rem;
+    background-color: var(--volcan-naranja);
+    color: var(--volcan-blanco);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Tarjeta azul de puntos de atención y pedidos rápidos */
+.hero-tarjeta-contenedor {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 2rem 5% 3rem;
+}
+
+.hero-tarjeta {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    background-color: rgba(0, 75, 135, 0.95);
+    color: var(--volcan-blanco);
+    box-shadow: 0 0.625rem 1.875rem rgba(0, 40, 70, 0.16);
+}
+
+.hero-tarjeta h2 {
+    max-width: 42rem;
+    margin: 0 0 1.5rem;
+    color: var(--volcan-blanco);
+    font-size: 1.5rem;
+    line-height: 1.35;
+}
+
+.hero-buscador label {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: var(--volcan-blanco);
+    font-weight: 700;
+}
+
+.hero-buscador-controles {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+}
+
+.hero-buscador-controles input {
+    width: 100%;
+    min-width: 0;
+    min-height: 3rem;
+    padding: 0.75rem 1rem;
+    border: 0.0625rem solid #aab9c5;
+    border-radius: 0.4rem;
+    background-color: var(--volcan-blanco);
+    color: var(--volcan-oscuro);
+    font: inherit;
+}
+
+.hero-buscador-controles input:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+.hero-boton-buscar,
+.hero-accion-principal,
+.hero-accion-secundaria {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.4rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+}
+
+.hero-boton-buscar {
+    background-color: var(--volcan-naranja);
+    color: var(--volcan-blanco);
+}
+
+.hero-buscador-aviso {
+    margin: 0.65rem 0 0;
+    color: #e2edf6;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.hero-acciones {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.hero-accion-principal {
+    background-color: var(--volcan-blanco);
+    color: var(--volcan-azul-oscuro);
+}
+
+.hero-accion-secundaria {
+    border: 0.125rem solid var(--volcan-blanco);
+    background-color: transparent;
+    color: var(--volcan-blanco);
+}
+
+.hero-boton-buscar:hover,
+.hero-boton-buscar:focus-visible {
+    background-color: #d65d18;
+}
+
+.hero-accion-principal:hover,
+.hero-accion-principal:focus-visible {
+    background-color: #e7f0f7;
+}
+
+.hero-accion-secundaria:hover,
+.hero-accion-secundaria:focus-visible {
+    background-color: var(--volcan-azul-oscuro);
+}
+
+.hero-boton-buscar:focus-visible,
+.hero-accion-principal:focus-visible,
+.hero-accion-secundaria:focus-visible {
+    outline: 0.1875rem solid var(--volcan-naranja);
+    outline-offset: 0.1875rem;
+}
+
+/* Primera presentación de productos */
+.seccion-productos {
+    padding: 3rem 5%;
+    text-align: center;
+}
+
+.grilla-productos {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.tarjeta-producto {
+    padding: 1.5rem;
+    border: 0.0625rem solid #e0e0e0;
+    border-radius: 0.5rem;
+    background-color: var(--volcan-blanco);
+}
+
+.tarjeta-producto img {
+    display: block;
+    width: 100%;
+    height: 12rem;
+    object-fit: contain;
+}
+
+.tarjeta-producto h3 {
+    color: var(--volcan-azul);
+    font-size: 1.1rem;
+}
+
+/* Primer bloque de novedades y consejos */
+.seccion-noticias {
+    padding: 3rem 5%;
+    background-color: var(--volcan-claro);
+}
+
+.contenedor-noticias {
+    width: 100%;
+    max-width: 72rem;
+    margin: 0 auto;
+}
+
+.encabezado-noticias {
+    text-align: center;
+}
+
+.encabezado-noticias h2 {
+    margin-top: 0;
+    color: var(--volcan-azul);
+    font-size: 1.7rem;
+}
+
+.encabezado-noticias p {
+    line-height: 1.6;
+}
+
+.grilla-noticias {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.tarjeta-noticia {
+    padding: 1.5rem;
+    border: 0.0625rem solid #e0e0e0;
+    border-radius: 0.5rem;
+    background-color: var(--volcan-blanco);
+}
+
+.tarjeta-noticia h3 {
+    margin-top: 0;
+    color: var(--volcan-azul);
+    font-size: 1.15rem;
+}
+
+.tarjeta-noticia p {
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+/* Información de contacto y cierre */
+.seccion-contacto {
+    padding: 3rem 5%;
+    background-color: var(--volcan-claro);
+    text-align: center;
+}
+
+.seccion-contacto a {
+    color: var(--volcan-azul);
+    font-weight: 600;
+}
+
+.pie-pagina {
+    padding: 1.5rem 5%;
+    background-color: var(--volcan-azul-oscuro);
+    color: var(--volcan-blanco);
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (min-width: 768px) {
+    .imagen-hero {
+        height: 28rem;
+    }
+
+    .hero-contenido h1 {
+        font-size: 2.75rem;
+    }
+
+    .hero-contenido p {
+        font-size: 1.1rem;
+    }
+
+    .grilla-noticias {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero-buscador-controles {
+        grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .hero-acciones {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero-tarjeta {
+        padding: 2rem;
+    }
+
+    .barra-navegacion {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .grilla-productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Adaptabilidad para dispositivos grandes (Escritorio) */
+@media (min-width: 992px) {
+    .hero-contenido h1 {
+        font-size: 3rem;
+    }
+
+    .grilla-productos {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}

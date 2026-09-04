@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Gas El Volcán, distribuidora de gas para hogares de la Región de Ñuble.">
+        <title>Gas El Volcán | Inicio</title>
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/layout.css">
+        <link rel="stylesheet" href="assets/css/pages/index.css">
+    </head>
+    <body>
+        <!-- Cabecera principal de la empresa -->
+        <header class="cabecera-principal">
+            <div class="barra-superior">
+                <p>Atención al Cliente: <strong>800 50 9000</strong></p>
+                <p>Emergencia: <strong>800 50 9111</strong></p>
+            </div>
+
+            <nav class="barra-navegacion" aria-label="Navegación principal">
+                <a href="index.html" class="enlace-logo" aria-label="Gas El Volcán, inicio">
+                    <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="160">
+                </a>
+
+                <ul class="enlaces-navegacion">
+                    <li><a href="index.html" aria-current="page">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Presentación inicial de la distribuidora -->
+            <section class="seccion-hero" aria-labelledby="titulo-inicio">
+                <img
+                    src="assets/images/hero-volcan.jpg"
+                    alt="Distribución de gas para el hogar"
+                    class="imagen-hero"
+                    width="1200"
+                >
+
+                <div class="hero-contenido">
+                    <h1 id="titulo-inicio">¡Bienvenido a Gas El Volcán!</h1>
+                    <p>Llevando la energía que tu hogar necesita, con seguridad y rapidez en cada entrega.</p>
+                    <a href="#productos" class="boton boton-naranja">Conoce nuestros productos</a>
+                </div>
+
+                <!-- Accesos iniciales para consultar puntos de atención y productos -->
+                <div class="hero-tarjeta-contenedor">
+                    <article class="hero-tarjeta" aria-labelledby="titulo-pedido-rapido">
+                        <h2 id="titulo-pedido-rapido">Gas confiable a tu puerta. Pide fácil y rápido.</h2>
+
+                        <div class="hero-buscador">
+                            <label for="buscador-punto-volcan">Busca tu Punto Volcán</label>
+                            <div class="hero-buscador-controles">
+                                <input
+                                    id="buscador-punto-volcan"
+                                    name="punto-volcan"
+                                    type="search"
+                                    placeholder="Ingresa tu comuna o dirección"
+                                    aria-describedby="aviso-punto-volcan"
+                                    disabled
+                                >
+                                <a href="sucursales.html" class="hero-boton-buscar">Ver puntos de atención</a>
+                            </div>
+                            <p class="hero-buscador-aviso" id="aviso-punto-volcan">La búsqueda por dirección estará disponible próximamente.</p>
+                        </div>
+
+                        <div class="hero-acciones">
+                            <a href="catalogo.html" class="hero-accion-principal">Hacer pedido rápido</a>
+                            <a href="login.html" class="hero-accion-secundaria">Iniciar sesión</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Primera presentación estática del catálogo -->
+            <section class="seccion-productos" id="productos" aria-labelledby="titulo-productos">
+                <h2 id="titulo-productos">Nuestros productos</h2>
+
+                <div class="grilla-productos">
+                    <article class="tarjeta-producto">
+                        <img src="assets/images/productos/cilindros/cilindro-5kg.svg" alt="Cilindro de gas de 5 kilos" width="220">
+                        <h3>Cilindro de gas 5 kg</h3>
+                    </article>
+
+                    <article class="tarjeta-producto">
+                        <img src="assets/images/productos/cilindros/cilindro-11kg.svg" alt="Cilindro de gas de 11 kilos" width="220">
+                        <h3>Cilindro de gas 11 kg</h3>
+                    </article>
+
+                    <article class="tarjeta-producto">
+                        <img src="assets/images/productos/cilindros/cilindro-15kg.svg" alt="Cilindro de gas de 15 kilos" width="220">
+                        <h3>Cilindro de gas 15 kg</h3>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Primer espacio de novedades y consejos -->
+            <section class="seccion-noticias" id="noticias" aria-labelledby="titulo-noticias">
+                <div class="contenedor-noticias">
+                    <header class="encabezado-noticias">
+                        <h2 id="titulo-noticias">Noticias y consejos para tu hogar</h2>
+                        <p>Encuentra recomendaciones útiles para el uso cotidiano del gas.</p>
+                    </header>
+
+                    <div class="grilla-noticias">
+                        <article class="tarjeta-noticia">
+                            <h3>Revisa tu instalación de gas</h3>
+                            <p>Comprueba periódicamente el estado de la manguera y del regulador, y sigue siempre las indicaciones de seguridad.</p>
+                        </article>
+
+                        <article class="tarjeta-noticia">
+                            <h3>Elige el cilindro adecuado</h3>
+                            <p>Conoce los formatos disponibles y selecciona el que mejor se adapte a las necesidades de tu hogar.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Información básica de atención -->
+            <section class="seccion-contacto" id="contacto" aria-labelledby="titulo-contacto">
+                <h2 id="titulo-contacto">Estamos para ayudarte</h2>
+                <p>Contáctanos para conocer nuestros puntos de atención y productos disponibles.</p>
+                <a href="tel:800509000">Llamar a Atención al Cliente</a>
+            </section>
+        </main>
+
+        <!-- Información corporativa de cierre -->
+        <footer class="pie-pagina">
+            <p>&copy; 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
+        </footer>
+    </body>
+</html>
