@@ -1,0 +1,216 @@
+/* Variables generales */
+:root {
+    --volcan-naranja: #e06015;
+    --volcan-azul: #004c97;
+    --volcan-oscuro: #212529;
+    --volcan-texto: #333333;
+    --volcan-fondo: #f4f6f9;
+    --volcan-borde: #e9ecef;
+}
+
+/* Configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--volcan-fondo);
+    color: var(--volcan-texto);
+    overflow-x: hidden;
+}
+
+/* Checkbox para navegación responsiva */
+.toggle-menu-checkbox {
+    display: none;
+}
+
+/* Diseño de la cabecera */
+.admin-cabecera {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4rem;
+    background-color: var(--volcan-oscuro);
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    z-index: 1000;
+}
+
+.cabecera-izq, .cabecera-der {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.btn-hamburguesa {
+    background-color: transparent;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+}
+
+.btn-hamburguesa:hover {
+    opacity: 0.8;
+}
+
+.logo-admin {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.logo-admin img {
+    height: 1.5rem;
+}
+
+/* Opciones de usuario en cabecera */
+.saludo-admin {
+    font-size: 0.95rem;
+}
+
+.btn-salir {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid #ffffff;
+    border-radius: 2rem;
+    padding: 0.4rem 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-salir:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Panel de navegación lateral */
+.admin-sidebar {
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    width: 260px;
+    height: calc(100vh - 4rem);
+    background-color: #ffffff;
+    border-right: 1px solid var(--volcan-borde);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    z-index: 999;
+}
+
+.nav-lateral ul {
+    list-style: none;
+    padding: 1.5rem 0;
+}
+
+.nav-lateral li a {
+    display: block;
+    padding: 0.9rem 1.5rem;
+    color: var(--volcan-texto);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.nav-lateral li a:hover, 
+.nav-lateral li a.activo {
+    background-color: rgba(224, 96, 21, 0.08);
+    color: var(--volcan-naranja);
+    border-right: 4px solid var(--volcan-naranja);
+}
+
+.separador {
+    padding: 1.5rem 1.5rem 0.5rem;
+    font-size: 0.75rem;
+    color: #888888;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+/* Estructura del área de trabajo */
+.admin-main {
+    margin-left: 260px;
+    margin-top: 4rem;
+    padding: 2rem;
+    transition: margin-left 0.3s ease;
+}
+
+.contenedor-vista {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Comportamiento del menú en resoluciones grandes */
+.toggle-menu-checkbox:checked ~ .admin-sidebar {
+    transform: translateX(-100%);
+}
+
+.toggle-menu-checkbox:checked ~ .admin-main {
+    margin-left: 0;
+}
+
+/* Media queries para pantallas medianas */
+@media (max-width: 64rem) {
+    .saludo-admin {
+        display: none;
+    }
+    
+    .admin-sidebar {
+        width: 100%;
+        height: calc(100vh - 4rem);
+        top: 4rem;
+        left: 0;
+        border-right: none;
+        transform: translateY(100%);
+    }
+    
+    .admin-main {
+        margin-left: 0;
+        padding: 1.5rem;
+    }
+    
+    .toggle-menu-checkbox:checked ~ .admin-sidebar {
+        transform: translateY(0);
+    }
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 48rem) {
+    .admin-cabecera {
+        padding: 0 0.8rem;
+    }
+    
+    .cabecera-izq, .cabecera-der {
+        gap: 0.5rem;
+    }
+    
+    .logo-admin {
+        font-size: 1rem;
+    }
+
+    .logo-admin img {
+        height: 1.3rem;
+    }
+    
+    .btn-salir {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}
