@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gas El Volcán | Panel de Administración</title>
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/pages/admin-index.css">
+    </head>
+    <body>
+        <!-- Control accesible del menú administrativo en celular -->
+        <input type="checkbox" id="menu-admin-movil" class="admin-control-menu">
+
+        <!-- Cabecera inicial de administración -->
+        <header class="admin-cabecera">
+            <label for="menu-admin-movil" class="admin-boton-menu">
+                <span aria-hidden="true">☰</span>
+                <span>Menú administrativo</span>
+            </label>
+            <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
+            <h1>Panel de Administración</h1>
+            <a class="admin-enlace-sitio" href="index.html">Volver al sitio</a>
+        </header>
+
+        <div class="admin-estructura">
+            <!-- Navegación de los módulos administrativos -->
+            <aside class="admin-sidebar" id="navegacion-admin">
+                <nav aria-label="Menú de administración">
+                    <h2>Menú principal</h2>
+                    <ul>
+                        <li><a href="admin-index.html" aria-current="page">Inicio</a></li>
+                        <li class="admin-separador">Módulo productos</li>
+                        <li><a href="admin-lista-productos.html">Listar productos</a></li>
+                        <li><a href="admin-nuevo-producto.html">Nuevo producto</a></li>
+                        <li class="admin-separador">Módulo usuarios</li>
+                        <li><a href="admin-lista-usuarios.html">Listar usuarios</a></li>
+                        <li><a href="admin-nuevo-usuario.html">Nuevo usuario</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="admin-main">
+                <!-- Presentación del panel de control -->
+                <section class="panel-bienvenida">
+                    <h2>Bienvenido al Panel de Administración</h2>
+                    <p>Desde este espacio se organizará la gestión de productos y usuarios de la sucursal virtual.</p>
+                </section>
+
+                <!-- Resumen visual de productos y usuarios -->
+                <section class="grilla-estadisticas" aria-label="Resumen del sistema">
+                    <article class="tarjeta-stat">
+                        <div class="stat-info">
+                            <h3>Productos registrados</h3>
+                            <span class="stat-numero" id="stat-total-productos">—</span>
+                            <p class="stat-nota">Conteo disponible próximamente.</p>
+                        </div>
+                        <div class="stat-icono icono-naranja" aria-hidden="true">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                        </div>
+                    </article>
+                    <article class="tarjeta-stat">
+                        <div class="stat-info">
+                            <h3>Usuarios activos</h3>
+                            <span class="stat-numero" id="stat-total-usuarios">—</span>
+                            <p class="stat-nota">Conteo disponible próximamente.</p>
+                        </div>
+                        <div class="stat-icono icono-azul" aria-hidden="true">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                    </article>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>

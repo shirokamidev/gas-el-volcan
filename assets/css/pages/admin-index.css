@@ -1,0 +1,318 @@
+/* Tipografía y colores iniciales del panel administrativo */
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../fonts/montserrat/Montserrat-Variable.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+:root {
+    --volcan-azul: #004b87;
+    --volcan-naranja: #f37021;
+    --volcan-blanco: #ffffff;
+    --volcan-oscuro: #1a1a1a;
+    --volcan-claro: #f5f6f7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", Arial, sans-serif;
+    color: var(--volcan-oscuro);
+    background-color: var(--volcan-claro);
+    line-height: 1.6;
+}
+
+/* Cabecera inicial del panel */
+.admin-cabecera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    background-color: var(--volcan-azul);
+    color: var(--volcan-blanco);
+    text-align: center;
+}
+
+.admin-cabecera img {
+    display: block;
+    width: 11.25rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.admin-cabecera h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Control del menú lateral sin JavaScript en dispositivos móviles */
+.admin-control-menu {
+    position: absolute;
+    width: 0.0625rem;
+    height: 0.0625rem;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    clip-path: inset(50%);
+}
+
+.admin-boton-menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    min-height: 2.75rem;
+    padding: 0.65rem 1rem;
+    border: 0.0625rem solid var(--volcan-blanco);
+    border-radius: 0.375rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.admin-boton-menu:hover {
+    background-color: var(--volcan-blanco);
+    color: var(--volcan-azul);
+}
+
+.admin-control-menu:focus-visible ~ .admin-cabecera .admin-boton-menu {
+    outline: 0.1875rem solid var(--volcan-naranja);
+    outline-offset: 0.1875rem;
+}
+
+.admin-control-menu:checked ~ .admin-cabecera .admin-boton-menu {
+    background-color: var(--volcan-blanco);
+    color: var(--volcan-azul);
+}
+
+/* Distribución inicial de navegación y contenido */
+.admin-estructura {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.admin-sidebar {
+    display: none;
+    min-width: 0;
+    padding: 1.5rem;
+    background-color: var(--volcan-blanco);
+    border: 0.0625rem solid #e5e7eb;
+    border-radius: 0.5rem;
+}
+
+/* La navegación se despliega al activar el control del encabezado */
+.admin-control-menu:checked ~ .admin-estructura .admin-sidebar {
+    display: block;
+}
+
+.admin-sidebar h2 {
+    margin: 0 0 1rem;
+    color: var(--volcan-azul);
+    font-size: 1.2rem;
+}
+
+.admin-sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-sidebar li:not(.admin-separador) {
+    border-bottom: 0.0625rem solid #e5e7eb;
+}
+
+/* Enlaces y secciones de la navegación administrativa */
+.admin-sidebar a {
+    display: block;
+    padding: 0.8rem 1rem;
+    border-radius: 0.375rem;
+    color: var(--volcan-azul);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.admin-sidebar a:hover,
+.admin-sidebar a:focus-visible {
+    background-color: #e7f1fa;
+}
+
+.admin-sidebar a[aria-current="page"] {
+    background-color: var(--volcan-azul);
+    color: var(--volcan-blanco);
+}
+
+.admin-separador {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem 0.35rem;
+    color: #555555;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.admin-enlace-sitio {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 2.5rem;
+    padding: 0.45rem 0.9rem;
+    border: 0.0625rem solid var(--volcan-blanco);
+    border-radius: 0.375rem;
+    color: var(--volcan-blanco);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.admin-enlace-sitio:hover,
+.admin-enlace-sitio:focus-visible {
+    background-color: var(--volcan-blanco);
+    color: var(--volcan-azul);
+}
+
+.admin-sidebar a:focus-visible,
+.admin-enlace-sitio:focus-visible {
+    outline: 0.1875rem solid var(--volcan-naranja);
+    outline-offset: 0.1875rem;
+}
+
+.admin-sidebar li:last-child {
+    border-bottom: 0;
+}
+
+.admin-main {
+    min-width: 0;
+}
+
+/* Contenido y primeras tarjetas de estadísticas */
+.panel-bienvenida {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--volcan-blanco);
+    border-radius: 0.5rem;
+    border: 0.0625rem solid #e5e7eb;
+}
+
+.panel-bienvenida h2 {
+    margin: 0 0 0.75rem;
+    color: var(--volcan-azul);
+    font-size: 1.5rem;
+}
+
+.panel-bienvenida p {
+    margin: 0;
+}
+
+.grilla-estadisticas {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+}
+
+.tarjeta-stat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-width: 0;
+    padding: 1.5rem;
+    background-color: var(--volcan-blanco);
+    border: 0.0625rem solid #e5e7eb;
+    border-top: 0.25rem solid var(--volcan-naranja);
+    border-radius: 0.5rem;
+}
+
+.tarjeta-stat h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
+    color: var(--volcan-azul);
+}
+
+.stat-info {
+    min-width: 0;
+}
+
+.stat-numero {
+    display: block;
+    color: var(--volcan-oscuro);
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.stat-nota {
+    margin: 0.5rem 0 0;
+    color: #555555;
+    font-size: 0.85rem;
+}
+
+/* Iconografía inicial de los indicadores */
+.stat-icono {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.icono-naranja {
+    color: var(--volcan-naranja);
+}
+
+.icono-azul {
+    color: var(--volcan-azul);
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (min-width: 768px) {
+    .admin-boton-menu {
+        display: none;
+    }
+
+    .admin-sidebar {
+        display: block;
+    }
+
+    .admin-cabecera {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        padding: 1.5rem 2rem;
+    }
+
+    .admin-estructura {
+        grid-template-columns: 14rem minmax(0, 1fr);
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .grilla-estadisticas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Adaptabilidad para dispositivos grandes (Escritorio) */
+@media (min-width: 992px) {
+    .admin-cabecera h1 {
+        font-size: 1.8rem;
+    }
+
+    .panel-bienvenida {
+        padding: 2rem;
+    }
+
+    .tarjeta-stat {
+        padding: 2rem;
+    }
+}
