@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Formulario de registro de la Sucursal Virtual de Gas El Volcán.">
+        <title>Gas El Volcán | Registrar Cuenta</title>
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/pages/registro.css">
+    </head>
+    <body class="cuerpo-autenticacion">
+        <main class="pantalla-autenticacion">
+            <!-- Navegación inicial de autenticación -->
+            <nav class="navegacion-superior" aria-label="Volver a la tienda">
+                <a href="index.html" class="enlace-regresar">← Regresar a Inicio</a>
+            </nav>
+
+            <!-- Tarjeta principal del registro de clientes -->
+            <section class="escena-tarjeta" aria-labelledby="titulo-registro">
+                <div class="tarjeta-registro">
+                    <header class="cabecera-tarjeta">
+                        <a href="index.html" class="enlace-logo" aria-label="Gas El Volcán - Ir a Inicio">
+                            <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" class="logo-empresa" width="185">
+                        </a>
+                        <h1 id="titulo-registro">Formulario de registro</h1>
+                        <p>Completa tus datos para crear una cuenta en la Sucursal Virtual.</p>
+                    </header>
+
+                    <!-- Formulario inicial, pendiente de validaciones con JavaScript -->
+                    <form id="form-registro" action="#" method="post" class="formulario-registro">
+                        <fieldset class="seccion-fieldset">
+                            <legend>Datos personales</legend>
+                            <p class="indicacion-obligatoria">Los campos marcados con * son obligatorios.</p>
+                            <div class="grilla-formulario">
+                                <div class="grupo-input col-completa">
+                                    <label for="rut-registro">RUT *</label>
+                                    <input type="text" id="rut-registro" name="rut" placeholder="Ej: 19011022K" autocomplete="off" required>
+                                    <small>Sin puntos ni guion.</small>
+                                    <span id="error-rut-registro" class="mensaje-error-input" aria-live="polite"></span>
+                                </div>
+                                <div class="grupo-input col-completa">
+                                    <label for="nombre-registro">Nombre *</label>
+                                    <input type="text" id="nombre-registro" name="nombre" autocomplete="given-name" required>
+                                    <span id="error-nombre-registro" class="mensaje-error-input" aria-live="polite"></span>
+                                </div>
+                                <div class="grupo-input">
+                                    <label for="apellido-p-registro">Apellido paterno *</label>
+                                    <input type="text" id="apellido-p-registro" name="apellido_paterno" required>
+                                    <span id="error-apellido-p-registro" class="mensaje-error-input" aria-live="polite"></span>
+                                </div>
+                                <div class="grupo-input">
+                                    <label for="apellido-m-registro">Apellido materno (opcional)</label>
+                                    <input type="text" id="apellido-m-registro" name="apellido_materno">
+                                </div>
+                                <div class="grupo-input">
+                                    <label for="password-registro">Contraseña *</label>
+                                    <div class="caja-password">
+                                        <input type="password" id="password-registro" name="password" autocomplete="new-password" minlength="4" maxlength="10" required>
+                                        <button type="button" id="toggle-password-registro" class="boton-ver-password" aria-label="Mostrar contraseña" aria-controls="password-registro" aria-pressed="false" disabled>Mostrar</button>
+                                    </div>
+                                    <small>Entre 4 y 10 caracteres, según los requisitos de esta demostración.</small>
+                                    <span id="error-password-registro" class="mensaje-error-input" aria-live="polite"></span>
+                                </div>
+                                <div class="grupo-input">
+                                    <label for="password-confirm-registro">Repetir contraseña *</label>
+                                    <div class="caja-password">
+                                        <input type="password" id="password-confirm-registro" name="password_confirm" autocomplete="new-password" minlength="4" maxlength="10" required>
+                                        <button type="button" id="toggle-password-confirm" class="boton-ver-password" aria-label="Mostrar contraseña" aria-controls="password-confirm-registro" aria-pressed="false" disabled>Mostrar</button>
+                                    </div>
+                                    <span id="error-password-confirm-registro" class="mensaje-error-input" aria-live="polite"></span>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Datos de contacto para la cuenta -->
+                        <fieldset class="seccion-fieldset">
+                            <legend>Datos de contacto</legend>
+                            <div class="grilla-formulario">
+                                <div class="grupo-input">
+                                    <label for="telefono-registro">Teléfono (opcional)</label>
+                                    <input type="tel" id="telefono-registro" name="telefono" placeholder="Ej: 912345678" autocomplete="tel">
+                                    <span id="error-telefono-registro" class="mensaje-error-input" aria-live="polite"></span>
+                                </div>
+                                <div class="grupo-input">
+                                    <label for="correo-registro">Correo electrónico *</label>
+                                    <input type="email" id="correo-registro" name="correo" placeholder="Ej: usuario@gmail.com" autocomplete="email" required>
+                                    <span id="error-correo-registro" class="mensaje-error-input" aria-live="polite"></span>
+                                </div>
+                                <div class="grupo-input col-completa">
+                                    <label for="correo-confirm-registro">Repetir correo electrónico *</label>
+                                    <input type="email" id="correo-confirm-registro" name="correo_confirm" required>
+                                    <span id="error-correo-confirm-registro" class="mensaje-error-input" aria-live="polite"></span>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Dirección inicial, con comunas estáticas en esta etapa -->
+                        <fieldset class="seccion-fieldset">
+                            <legend>Dirección</legend>
+                            <div class="grilla-formulario">
+                                <div class="grupo-input">
+                                    <label for="region-registro">Región *</label>
+                                    <select id="region-registro" name="region" required>
+                                        <option value="">Selecciona una región</option>
+                                        <option value="nuble">Región de Ñuble</option>
+                                        <option value="biobio">Región del Biobío</option>
+                                    </select>
+                                    <span id="error-region-registro" class="mensaje-error-input" aria-live="polite"></span>
+                                </div>
+                                <div class="grupo-input">
+                                    <label for="comuna-registro">Comuna *</label>
+                                    <select id="comuna-registro" name="comuna" required>
+                                        <option value="">Selecciona una comuna</option>
+                                        <option value="chillan">Chillán</option>
+                                        <option value="chillan-viejo">Chillán Viejo</option>
+                                        <option value="el-carmen">El Carmen</option>
+                                        <option value="pinto">Pinto</option>
+                                        <option value="san-ignacio">San Ignacio</option>
+                                        <option value="bulnes">Bulnes</option>
+                                        <option value="quillon">Quillón</option>
+                                    </select>
+                                    <small>La selección de comunas por región llegará con JavaScript.</small>
+                                    <span id="error-comuna-registro" class="mensaje-error-input" aria-live="polite"></span>
+                                </div>
+                                <div class="grupo-input col-completa">
+                                    <label for="calle-registro">Calle y número *</label>
+                                    <input type="text" id="calle-registro" name="calle" maxlength="300" placeholder="Ej: Calle Volcán 125, Chillán" autocomplete="street-address" required>
+                                    <span id="error-calle-registro" class="mensaje-error-input" aria-live="polite"></span>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Consentimiento y acciones iniciales -->
+                        <div class="grupo-terminos">
+                            <input type="checkbox" id="terminos-registro" name="terminos" required>
+                            <label for="terminos-registro">Acepto los <a href="legales.html#terminos">términos y condiciones</a> y la <a href="legales.html#privacidad">política de privacidad</a>.</label>
+                        </div>
+                        <span id="error-terminos-registro" class="mensaje-error-input" aria-live="polite"></span>
+                        <div id="mensaje-registro" class="mensaje-estado-formulario" role="status" aria-live="polite"></div>
+                        <p class="aviso-preliminar">Formulario de demostración: el registro estará disponible cuando se implemente la validación JavaScript.</p>
+                        <div class="acciones-registro">
+                            <a href="login.html" class="enlace-volver-login">← Volver a Iniciar Sesión</a>
+                            <button type="submit" class="boton-registro" disabled>Crear cuenta</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Pie de página inicial -->
+            <footer class="pie-autenticacion">
+                <p>© 2026 Gas El Volcán. Chillán, Región de Ñuble.</p>
+            </footer>
+        </main>
+    </body>
+</html>

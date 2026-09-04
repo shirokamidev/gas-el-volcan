@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Accede a tu cuenta de la Sucursal Virtual de Gas El Volcán.">
+        <title>Gas El Volcán | Iniciar Sesión</title>
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/pages/login.css">
+    </head>
+    <body class="cuerpo-autenticacion">
+        <main class="pantalla-autenticacion">
+            <!-- Navegación inicial de autenticación -->
+            <nav class="navegacion-superior" aria-label="Volver a la tienda">
+                <a href="index.html" class="enlace-regresar">← Regresar a Inicio</a>
+            </nav>
+
+            <!-- Tarjeta inicial de inicio de sesión -->
+            <section class="escena-tarjeta" aria-labelledby="titulo-login">
+                <div class="tarjeta-ingreso">
+                    <header class="cabecera-tarjeta">
+                        <a href="index.html" class="enlace-logo" aria-label="Gas El Volcán - Ir a Inicio">
+                            <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" class="logo-empresa" width="185">
+                        </a>
+                        <h1 id="titulo-login">Bienvenido a Sucursal Virtual</h1>
+                        <p>Ingresa con tu correo y contraseña para acceder a tu cuenta.</p>
+                    </header>
+
+                    <!-- Formulario visual, pendiente de validación con JavaScript -->
+                    <form id="form-login" class="formulario-autenticacion" action="#" method="post">
+                        <div class="grupo-input">
+                            <label for="correo-login">Correo electrónico <span aria-hidden="true">*</span></label>
+                            <input type="email" id="correo-login" name="correo" placeholder="Ej: usuario@gmail.com" autocomplete="email" required>
+                            <small>Se aceptarán correos @duoc.cl, @profesor.duoc.cl y @gmail.com.</small>
+                            <span class="mensaje-error-input" id="error-correo-login" aria-live="polite"></span>
+                        </div>
+
+                        <div class="grupo-input">
+                            <label for="password-login">Contraseña <span aria-hidden="true">*</span></label>
+                            <div class="caja-password">
+                                <input type="password" id="password-login" name="password" placeholder="Ingresa tu contraseña" autocomplete="current-password" minlength="4" maxlength="10" required>
+                                <button type="button" id="toggle-password" class="boton-ver-password" aria-label="Mostrar contraseña" aria-controls="password-login" aria-pressed="false" disabled>Mostrar</button>
+                            </div>
+                            <small>Entre 4 y 10 caracteres, según los requisitos de esta demostración.</small>
+                            <span class="mensaje-error-input" id="error-password-login" aria-live="polite"></span>
+                        </div>
+
+                        <!-- Enlace y aviso preparados para la futura recuperación de acceso -->
+                        <a href="#recuperacion-clave" id="enlace-recuperar" class="enlace-recuperar">¿Olvidaste tu contraseña?</a>
+                        <div id="recuperacion-clave" class="aviso-recuperacion" role="status" aria-live="polite">
+                            La recuperación de contraseña requerirá integración con un servicio de cuentas.
+                        </div>
+                        <div id="mensaje-login" class="mensaje-estado-formulario" role="status" aria-live="polite"></div>
+                        <button type="submit" class="boton-ingresar" disabled>Ingresar</button>
+                        <p class="aviso-preliminar">Formulario de demostración: el inicio de sesión aún no está habilitado.</p>
+                    </form>
+
+                    <!-- Enlace a la página de registro de esta misma rama -->
+                    <div class="seccion-registro">
+                        <p>¿No tienes una cuenta?</p>
+                        <a class="enlace-registro" href="registro.html">Crear una cuenta</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pie de página inicial -->
+            <footer class="pie-autenticacion">
+                <p>© 2026 Gas El Volcán. Chillán, Región de Ñuble.</p>
+            </footer>
+        </main>
+    </body>
+</html>
