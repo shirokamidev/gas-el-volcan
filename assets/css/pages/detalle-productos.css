@@ -1,0 +1,276 @@
+/* Tipografía y colores temporales del detalle de productos */
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../fonts/montserrat/Montserrat-Variable.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+:root {
+    --volcan-azul: #004b87;
+    --volcan-naranja: #f37021;
+    --volcan-blanco: #ffffff;
+    --volcan-oscuro: #1a1a1a;
+    --volcan-claro: #f5f6f7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--volcan-oscuro);
+    background-color: var(--volcan-blanco);
+    font-family: "Montserrat", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.detalle-contenedor {
+    width: 90%;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+/* Cabecera y ruta de navegación */
+.detalle-cabecera {
+    background-color: var(--volcan-blanco);
+    border-bottom: 0.0625rem solid #e5e5e5;
+}
+
+.detalle-cabecera-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 0;
+}
+
+.detalle-logo img {
+    display: block;
+    width: 11.25rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.detalle-cabecera nav a,
+.detalle-ruta a {
+    color: var(--volcan-azul);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.detalle-cabecera nav a:hover,
+.detalle-ruta a:hover,
+.detalle-cabecera nav a:focus-visible,
+.detalle-ruta a:focus-visible {
+    text-decoration: underline;
+}
+
+.detalle-ruta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+}
+
+.detalle-ruta span[aria-current="page"] {
+    color: #555555;
+}
+
+/* Presentación de imagen, información y compra */
+.detalle-producto {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    padding-bottom: 3rem;
+}
+
+.detalle-imagen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    padding: 1.5rem;
+    background-color: var(--volcan-claro);
+    border: 0.0625rem solid #e5e5e5;
+    border-radius: 0.75rem;
+}
+
+.detalle-imagen img {
+    display: block;
+    width: 100%;
+    max-width: 24rem;
+    height: auto;
+    object-fit: contain;
+}
+
+.detalle-informacion {
+    min-width: 0;
+}
+
+.detalle-categoria {
+    margin: 0 0 0.5rem;
+    color: var(--volcan-naranja);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.detalle-informacion h1 {
+    margin: 0 0 1rem;
+    color: var(--volcan-azul);
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.detalle-descripcion {
+    margin: 0 0 1.5rem;
+    color: #444444;
+}
+
+.detalle-precio {
+    margin: 0;
+    color: var(--volcan-azul);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.detalle-nota {
+    margin: 0 0 1.5rem;
+    color: #606060;
+    font-size: 0.8rem;
+}
+
+.detalle-compra {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 24rem;
+}
+
+.detalle-compra label {
+    font-weight: 700;
+}
+
+.detalle-compra input {
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.65rem 0.75rem;
+    border: 0.0625rem solid #b4b4b4;
+    border-radius: 0.375rem;
+    font: inherit;
+}
+
+.detalle-compra button {
+    min-height: 2.75rem;
+    padding: 0.65rem 1rem;
+    border: 0;
+    border-radius: 0.375rem;
+    background-color: #cdcdcd;
+    color: #444444;
+    font: inherit;
+    font-weight: 700;
+    cursor: not-allowed;
+}
+
+.detalle-aviso {
+    margin: 0.25rem 0 0;
+    color: #606060;
+    font-size: 0.85rem;
+}
+
+/* Características y regreso al catálogo */
+.detalle-especificaciones {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background-color: var(--volcan-claro);
+    border-radius: 0.75rem;
+}
+
+.detalle-especificaciones h2 {
+    margin: 0 0 1rem;
+    color: var(--volcan-azul);
+    font-size: 1.4rem;
+}
+
+.detalle-especificaciones ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.detalle-especificaciones li + li {
+    margin-top: 0.5rem;
+}
+
+.detalle-relacionados {
+    padding: 3rem 0;
+    background-color: var(--volcan-claro);
+    text-align: center;
+}
+
+.detalle-relacionados h2 {
+    margin: 0 0 0.75rem;
+    color: var(--volcan-azul);
+}
+
+.detalle-relacionados p {
+    margin: 0 0 1.5rem;
+}
+
+.detalle-volver {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0.65rem 1.25rem;
+    border-radius: 0.375rem;
+    background-color: var(--volcan-naranja);
+    color: var(--volcan-blanco);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.detalle-volver:hover,
+.detalle-volver:focus-visible {
+    background-color: #d75b12;
+    text-decoration: underline;
+}
+
+.detalle-pie {
+    padding: 1.5rem 0;
+    background-color: var(--volcan-azul);
+    color: var(--volcan-blanco);
+    text-align: center;
+}
+
+.detalle-pie p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (min-width: 768px) {
+    .detalle-cabecera-contenido {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .detalle-producto {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2.5rem;
+    }
+}
+
+/* Adaptabilidad para dispositivos grandes (Escritorio) */
+@media (min-width: 992px) {
+    .detalle-informacion h1 {
+        font-size: 2.4rem;
+    }
+
+    .detalle-producto {
+        gap: 4rem;
+    }
+}

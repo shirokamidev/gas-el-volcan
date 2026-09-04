@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Conoce los productos de Gas El Volcán: cilindros, reguladores y accesorios para tu hogar.">
+        <title>Gas El Volcán | Catálogo de Productos</title>
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/pages/catalogo.css">
+    </head>
+    <body>
+        <!-- Cabecera inicial del catálogo de productos -->
+        <header class="cabecera-catalogo">
+            <div class="contenedor cabecera-contenido">
+                <a href="catalogo.html" class="enlace-logo" aria-label="Gas El Volcán - Catálogo">
+                    <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
+                </a>
+                <nav aria-label="Navegación del catálogo">
+                    <a href="#productos" class="enlace-catalogo">Ver productos</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- Presentación de productos disponibles -->
+            <section class="hero-catalogo" aria-labelledby="titulo-catalogo">
+                <div class="contenedor">
+                    <h1 id="titulo-catalogo">Catálogo de Productos</h1>
+                    <p>Encuentra cilindros, reguladores y accesorios para las necesidades de tu hogar.</p>
+                </div>
+            </section>
+
+            <!-- Primer listado estático de artículos -->
+            <section id="productos" class="seccion-productos contenedor" aria-labelledby="titulo-productos">
+                <h2 id="titulo-productos">Nuestros productos</h2>
+                <p class="introduccion-productos">Explora una selección de productos de Gas El Volcán.</p>
+
+                <!-- Filtros por categoría sin JavaScript -->
+                <fieldset class="panel-filtros">
+                    <legend class="filtros-titulo">Filtrar por categoría</legend>
+                    <div class="opciones-categoria">
+                        <label class="opcion-categoria" for="cat-todos">
+                            <input type="radio" id="cat-todos" name="filtro-categoria" value="todos" checked>
+                            <span>Todos</span>
+                        </label>
+                        <label class="opcion-categoria" for="cat-cilindros">
+                            <input type="radio" id="cat-cilindros" name="filtro-categoria" value="cilindros">
+                            <span>Cilindros</span>
+                        </label>
+                        <label class="opcion-categoria" for="cat-reguladores">
+                            <input type="radio" id="cat-reguladores" name="filtro-categoria" value="reguladores">
+                            <span>Reguladores</span>
+                        </label>
+                        <label class="opcion-categoria" for="cat-mangueras">
+                            <input type="radio" id="cat-mangueras" name="filtro-categoria" value="mangueras">
+                            <span>Mangueras</span>
+                        </label>
+                        <label class="opcion-categoria" for="cat-accesorios">
+                            <input type="radio" id="cat-accesorios" name="filtro-categoria" value="accesorios">
+                            <span>Accesorios</span>
+                        </label>
+                    </div>
+                    <p class="filtros-ayuda">Selecciona una categoría para visualizar sus artículos. Los precios son referenciales.</p>
+                </fieldset>
+
+                <div class="grilla-productos">
+                    <article class="tarjeta-producto" data-categoria="cilindros">
+                        <img src="assets/images/productos/cilindros/cilindro-5kg.svg" alt="Cilindro de gas licuado de 5 kg" width="300" height="300">
+                        <div class="producto-contenido">
+                            <p class="producto-categoria">Cilindros</p>
+                            <h3>Cilindro GLP 5 kg</h3>
+                            <p class="producto-descripcion">Ideal para espacios pequeños y necesidades de consumo moderado.</p>
+                            <p class="producto-precio">$6.500</p>
+                            <a href="detalle-producto.html" class="producto-enlace-detalle">Ver detalles</a>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-producto" data-categoria="cilindros">
+                        <img src="assets/images/productos/cilindros/cilindro-11kg.svg" alt="Cilindro de gas licuado de 11 kg" width="300" height="300">
+                        <div class="producto-contenido">
+                            <p class="producto-categoria">Cilindros</p>
+                            <h3>Cilindro GLP 11 kg</h3>
+                            <p class="producto-descripcion">Una alternativa habitual para el uso diario en el hogar.</p>
+                            <p class="producto-precio">$12.000</p>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-producto" data-categoria="reguladores">
+                        <img src="assets/images/productos/reguladores/regulador-estandar.svg" alt="Regulador doméstico estándar de una etapa" width="300" height="300">
+                        <div class="producto-contenido">
+                            <p class="producto-categoria">Reguladores</p>
+                            <h3>Regulador doméstico estándar</h3>
+                            <p class="producto-descripcion">Compatible con cilindros domésticos de 5, 11 y 15 kg.</p>
+                            <p class="producto-precio">$8.990</p>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-producto" data-categoria="mangueras">
+                        <img src="assets/images/productos/mangueras/manguera-1-5m.svg" alt="Manguera flexible para gas de un metro y medio" width="300" height="300">
+                        <div class="producto-contenido">
+                            <p class="producto-categoria">Mangueras y conexiones</p>
+                            <h3>Manguera gas 1.5 m</h3>
+                            <p class="producto-descripcion">Manguera flexible homologada, compatible con reguladores estándar.</p>
+                            <p class="producto-precio">$3.990</p>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-producto" data-categoria="cilindros">
+                        <img src="assets/images/productos/cilindros/cilindro-15kg.svg" alt="Cilindro de gas licuado de 15 kg" width="300" height="300">
+                        <div class="producto-contenido">
+                            <p class="producto-categoria">Cilindros</p>
+                            <h3>Cilindro GLP 15 kg</h3>
+                            <p class="producto-descripcion">Para hogares de mayor consumo y pequeños locales.</p>
+                            <p class="producto-precio">$16.000</p>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-producto" data-categoria="reguladores">
+                        <img src="assets/images/productos/reguladores/regulador-dual.svg" alt="Regulador de gas dual con dos salidas" width="300" height="300">
+                        <div class="producto-contenido">
+                            <p class="producto-categoria">Reguladores</p>
+                            <h3>Regulador dual (2 salidas)</h3>
+                            <p class="producto-descripcion">Permite conectar dos artefactos al mismo cilindro.</p>
+                            <p class="producto-precio">$14.990</p>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-producto" data-categoria="mangueras">
+                        <img src="assets/images/productos/mangueras/manguera-3m.svg" alt="Manguera para gas de tres metros" width="300" height="300">
+                        <div class="producto-contenido">
+                            <p class="producto-categoria">Mangueras y conexiones</p>
+                            <h3>Manguera gas 3 m</h3>
+                            <p class="producto-descripcion">Para instalaciones que necesitan mayor longitud de conexión.</p>
+                            <p class="producto-precio">$6.990</p>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-producto" data-categoria="accesorios">
+                        <img src="assets/images/productos/accesorios/carro-cilindro.svg" alt="Carro con ruedas para cilindro de 11 y 15 kg" width="300" height="300">
+                        <div class="producto-contenido">
+                            <p class="producto-categoria">Accesorios</p>
+                            <h3>Carro porta cilindro 11/15 kg</h3>
+                            <p class="producto-descripcion">Facilita el traslado doméstico de cilindros de forma segura.</p>
+                            <p class="producto-precio">$12.990</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- Pie de página inicial -->
+        <footer class="pie-catalogo">
+            <div class="contenedor">
+                <p>&copy; 2026 Gas El Volcán. Chillán, Región de Ñuble.</p>
+            </div>
+        </footer>
+    </body>
+</html>

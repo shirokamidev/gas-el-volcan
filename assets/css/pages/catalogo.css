@@ -1,0 +1,316 @@
+/* Configuración inicial de la tipografía y los colores del catálogo */
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../fonts/montserrat/Montserrat-Variable.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+:root {
+    --volcan-azul: #004b87;
+    --volcan-naranja: #f37021;
+    --volcan-blanco: #ffffff;
+    --volcan-oscuro: #1a1a1a;
+    --volcan-claro: #f5f6f7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", Arial, sans-serif;
+    color: var(--volcan-oscuro);
+    background-color: var(--volcan-blanco);
+    line-height: 1.6;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+/* Cabecera de la vista de productos */
+.cabecera-catalogo {
+    background-color: var(--volcan-blanco);
+    border-bottom: 0.0625rem solid #e5e5e5;
+}
+
+.cabecera-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 0;
+}
+
+.enlace-logo img {
+    display: block;
+    width: 11.25rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.enlace-catalogo {
+    color: var(--volcan-azul);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.enlace-catalogo:hover,
+.enlace-catalogo:focus-visible {
+    text-decoration: underline;
+}
+
+/* Presentación inicial del catálogo */
+.hero-catalogo {
+    padding: 3rem 0;
+    background-color: var(--volcan-azul);
+    color: var(--volcan-blanco);
+    text-align: center;
+}
+
+.hero-catalogo h1 {
+    margin: 0 0 0.75rem;
+    font-size: 2rem;
+}
+
+.hero-catalogo p {
+    margin: 0 auto;
+    max-width: 42rem;
+    font-size: 1rem;
+}
+
+/* Primer listado de productos */
+.seccion-productos {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    scroll-margin-top: 2rem;
+}
+
+.seccion-productos h2 {
+    margin: 0 0 0.5rem;
+    color: var(--volcan-azul);
+    font-size: 1.7rem;
+}
+
+.introduccion-productos {
+    margin: 0 0 2rem;
+    color: #555555;
+}
+
+.grilla-productos {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+}
+
+.tarjeta-producto {
+    min-width: 0;
+    background-color: var(--volcan-blanco);
+    border: 0.0625rem solid #e5e5e5;
+    border-radius: 0.625rem;
+    overflow: hidden;
+}
+
+.tarjeta-producto img {
+    display: block;
+    width: 100%;
+    height: 14rem;
+    object-fit: contain;
+    background-color: var(--volcan-claro);
+    padding: 1rem;
+}
+
+.producto-contenido {
+    padding: 1.5rem;
+}
+
+.producto-categoria {
+    margin: 0 0 0.5rem;
+    color: var(--volcan-naranja);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.producto-contenido h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1.2rem;
+}
+
+.producto-descripcion {
+    margin: 0 0 1rem;
+    font-size: 0.95rem;
+    color: #555555;
+}
+
+.producto-precio {
+    margin: 0;
+    color: var(--volcan-azul);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* Pie de página inicial */
+.pie-catalogo {
+    padding: 1.5rem 0;
+    background-color: var(--volcan-azul);
+    color: var(--volcan-blanco);
+    text-align: center;
+}
+
+.pie-catalogo p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (min-width: 768px) {
+    .cabecera-contenido {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .grilla-productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Adaptabilidad para dispositivos grandes (Escritorio) */
+@media (min-width: 992px) {
+    .hero-catalogo h1 {
+        font-size: 2.6rem;
+    }
+
+    .seccion-productos {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .grilla-productos {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* Acceso inicial a la ficha del producto destacado */
+.producto-enlace-detalle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 2.75rem;
+    margin-top: 1rem;
+    padding: 0.65rem 1.25rem;
+    border-radius: 0.375rem;
+    background-color: var(--volcan-naranja);
+    color: var(--volcan-blanco);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.producto-enlace-detalle:hover,
+.producto-enlace-detalle:focus-visible {
+    background-color: #d75b12;
+    text-decoration: underline;
+}
+
+/* Panel de categorías y selección sin JavaScript */
+.panel-filtros {
+    min-width: 0;
+    margin: 0 0 2rem;
+    padding: 1.25rem;
+    border: 0.0625rem solid #e5e5e5;
+    border-radius: 0.625rem;
+    background-color: var(--volcan-claro);
+}
+
+.filtros-titulo {
+    padding: 0 0.5rem;
+    color: var(--volcan-azul);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.opciones-categoria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+}
+
+.opcion-categoria {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.opcion-categoria input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.opcion-categoria span {
+    display: inline-block;
+    padding: 0.625rem 1rem;
+    border: 0.0625rem solid var(--volcan-azul);
+    border-radius: 1.5rem;
+    background-color: var(--volcan-blanco);
+    color: var(--volcan-azul);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 150ms ease, color 150ms ease;
+}
+
+.opcion-categoria input:checked + span {
+    background-color: var(--volcan-azul);
+    color: var(--volcan-blanco);
+}
+
+.opcion-categoria input:focus-visible + span {
+    outline: 0.1875rem solid var(--volcan-naranja);
+    outline-offset: 0.125rem;
+}
+
+.filtros-ayuda {
+    margin: 1rem 0 0;
+    font-size: 0.875rem;
+    color: #555555;
+}
+
+/* Mostrar únicamente las tarjetas de la categoría seleccionada */
+#productos:has(#cat-cilindros:checked) .tarjeta-producto:not([data-categoria="cilindros"]),
+#productos:has(#cat-reguladores:checked) .tarjeta-producto:not([data-categoria="reguladores"]),
+#productos:has(#cat-mangueras:checked) .tarjeta-producto:not([data-categoria="mangueras"]),
+#productos:has(#cat-accesorios:checked) .tarjeta-producto:not([data-categoria="accesorios"]) {
+    display: none;
+}
+
+/* Tarjetas alineadas al incorporar nuevas categorías */
+.tarjeta-producto {
+    display: flex;
+    flex-direction: column;
+}
+
+.producto-contenido {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.producto-precio {
+    margin-top: auto;
+}
+
+@media (min-width: 768px) {
+    .panel-filtros {
+        padding: 1.5rem;
+    }
+}
