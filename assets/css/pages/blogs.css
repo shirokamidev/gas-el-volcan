@@ -243,17 +243,14 @@ body {
     margin-bottom: 0;
 }
 
-/* Pie de página inicial */
-.pie-pagina {
-    padding: 1.5rem;
-    background-color: var(--volcan-azul);
-    color: var(--volcan-blanco);
-    text-align: center;
+/* Compatibilidad del pie compartido durante la unificación */
+.pie-pagina .pie-columna ul {
+    margin: 0;
+    padding: 0;
 }
 
-.pie-pagina p {
-    margin: 0;
-    font-size: 0.9rem;
+.pie-pagina .pie-columna h6 {
+    margin-top: 0;
 }
 
 /* Adaptabilidad para pantallas medianas (Tablets) */
