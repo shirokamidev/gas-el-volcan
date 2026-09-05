@@ -1,0 +1,183 @@
+/* Configuración de formularios y campos de entrada */
+.formulario-generico {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-campo,
+.caja-input-flex {
+    width: 100%;
+    border: 0.0625rem solid var(--volcan-borde-oscuro);
+    border-radius: 0.4rem;
+    background-color: var(--volcan-blanco);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-campo {
+    padding: 0.9rem 1.2rem;
+    font-size: 1rem;
+    color: var(--volcan-texto);
+    font-family: inherit;
+    outline: none;
+}
+
+.input-campo:focus,
+.caja-input-flex:focus-within {
+    border-color: var(--volcan-azul);
+    box-shadow: 0 0 0 0.2rem rgba(0, 75, 135, 0.1);
+}
+
+.input-campo::placeholder,
+.input-limpio::placeholder {
+    color: var(--volcan-gris-claro);
+}
+
+.caja-input-flex {
+    display: flex;
+    align-items: center;
+    padding: 0 0.8rem;
+    overflow: hidden;
+}
+
+.input-limpio {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0.9rem 0.5rem;
+    font-size: 1rem;
+    color: var(--volcan-texto);
+    font-family: inherit;
+}
+
+.icono-izquierdo {
+    color: var(--volcan-azul);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.icono-derecho {
+    color: var(--volcan-gris-claro);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icono-toggle-password {
+    border: none;
+    background: transparent;
+    padding: 0.25rem;
+    font: inherit;
+}
+
+.icono-derecho:hover,
+.icono-derecho:focus-visible {
+    color: var(--volcan-azul);
+}
+
+.texto-ayuda {
+    font-size: 0.85rem;
+    color: var(--volcan-gris-claro);
+    margin-top: 0.4rem;
+    padding-left: 0.2rem;
+    line-height: 1.3;
+    text-align: left;
+}
+
+.select-campo {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.8rem center;
+    background-size: 1.1em;
+    padding-right: 2.2rem;
+}
+
+.divisor-formulario {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1.8rem 0;
+    color: var(--volcan-gris-claro);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.divisor-formulario::before,
+.divisor-formulario::after {
+    content: "";
+    flex: 1;
+    border-bottom: 0.0625rem solid var(--volcan-borde-medio);
+}
+
+.divisor-formulario::before {
+    margin-right: 1rem;
+}
+
+.divisor-formulario::after {
+    margin-left: 1rem;
+}
+
+/* Alertas de estados en los formularios */
+.mensaje-error-input {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 0.3rem;
+    text-align: left;
+    display: none;
+}
+
+.mensaje-error-input.activo,
+.mensaje-estado-formulario.activo {
+    display: block;
+}
+
+.mensaje-estado-formulario {
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.82rem;
+    margin: 0;
+    display: none;
+}
+
+.mensaje-estado-formulario.exito {
+    color: var(--volcan-azul);
+    background-color: #eaf5ff;
+}
+
+.mensaje-estado-formulario.error {
+    color: #ba2631;
+    background-color: #fff1f1;
+}
+
+/* Tamaño estable de las áreas de texto */
+textarea {
+    resize: none;
+}
+
+/* Estados de validación compartidos */
+.mensaje-estado-formulario.activo {
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 0.4rem;
+    text-align: left;
+    line-height: 1.45;
+}
+
+.input-campo.campo-invalido,
+.caja-input-flex.campo-invalido,
+.form-grupo .campo-invalido {
+    border-color: var(--volcan-rojo);
+}
