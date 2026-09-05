@@ -1,9 +1,20 @@
-/* Colores corporativos compartidos */
+/* Variables globales y paleta de colores corporativos */
 :root {
     --volcan-azul: #004b87;
     --volcan-azul-oscuro: #003865;
     --volcan-naranja: #f37021;
-    --volcan-blanco: #ffffff;
-    --volcan-oscuro: #1a1a1a;
+    --volcan-naranja-oscuro: #e06015;
     --volcan-claro: #f8f9fa;
+    --volcan-oscuro: #1a1a1a;
+    --volcan-texto: #333333;
+    --volcan-rojo: #dc3545;
+    --volcan-blanco: #ffffff;
+    --volcan-borde-claro: #eeeeee;
+    --volcan-borde-medio: #e0e0e0;
+    --volcan-borde-oscuro: #cccccc;
+    --volcan-gris: #666666;
+    --volcan-gris-claro: #888888;
+    --peso-texto-boton: 700;
+    --tamano-texto-boton: 0.875rem;
+    --alto-navegacion: 5.5rem;
 }

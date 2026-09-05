@@ -1,0 +1,40 @@
+/* Estructura y contenedores principales */
+.contenedor {
+    width: 100%;
+    max-width: 84rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.limite-ancho {
+    width: 100%;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+/* Clases de disposición compartidas */
+.relativo {
+    position: relative;
+}
+
+.texto-bloque {
+    display: block;
+}
+
+.ocultar-en-pc {
+    display: none;
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (min-width: 768px) {
+    .contenedor {
+        padding: 0 1.25rem;
+    }
+}
+
+/* Adaptabilidad para dispositivos grandes (Escritorio) */
+@media (min-width: 992px) {
+    .contenedor {
+        padding: 0 2rem;
+    }
+}
