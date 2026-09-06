@@ -244,3 +244,219 @@
     background-color: #dc3545;
     color: #ffffff;
 }
+
+/* Resumen de compra */
+.resumen-compra-carrito {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.625rem;
+    padding: 2rem;
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.04);
+    width: 24rem;
+    flex-shrink: 0;
+}
+
+.resumen-caja {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.resumen-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resumen-total h2 {
+    font-size: 1.25rem;
+    color: var(--volcan-oscuro);
+    font-weight: 700;
+}
+
+.resumen-total .monto-total {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--volcan-oscuro);
+}
+
+.divisor-resumen {
+    border: 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Cupon de descuento */
+.seccion-cupon {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.seccion-cupon label {
+    font-size: 0.9rem;
+    color: #666666;
+    font-weight: 600;
+}
+
+.input-grupo-cupon {
+    display: flex;
+    height: 3rem;
+    border-radius: 0.3125rem;
+    overflow: hidden;
+    border: 1px solid #d1d1d1;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+.input-grupo-cupon input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    padding: 0 1rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.btn-aplicar-cupon {
+    background-color: var(--volcan-naranja);
+    color: #ffffff;
+    border: none;
+    padding: 0 1.25rem;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Botones de accion final */
+.boton-continuar {
+    background-color: var(--volcan-naranja);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.9rem;
+    border-radius: 0.3125rem;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    border: none;
+}
+
+.enlace-seguir-comprando {
+    text-align: center;
+    color: var(--volcan-azul);
+    text-decoration: underline;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+/* Media queries para pantallas medianas */
+@media (max-width: 64rem) {
+    .layout-carrito {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .resumen-compra-carrito {
+        width: 100%;
+    }
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 48rem) {
+    .seccion-fondo-gris {
+        padding: 2rem 0;
+    }
+
+    .titulo-carrito {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .item-carrito {
+        display: grid;
+        grid-template-columns: 4.5rem 1fr auto;
+        grid-template-rows: auto auto;
+        gap: 1rem 0.5rem;
+        padding: 1.25rem 1rem;
+        width: 100%;
+    }
+
+    .item-imagen {
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+    }
+
+    .img-producto-carrito {
+        height: 4.5rem;
+    }
+
+    .item-detalles-texto {
+        grid-column: 2;
+        grid-row: 1;
+        padding: 0;
+        min-width: 0;
+    }
+
+    .item-nombre {
+        font-size: 1rem;
+        white-space: normal;
+    }
+
+    .item-acciones {
+        grid-column: 3;
+        grid-row: 1;
+        padding: 0;
+        border-left: none;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+
+    .item-precios {
+        grid-column: 1 / 3;
+        grid-row: 2;
+        padding: 0;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+
+    .precio-principal {
+        font-size: 1.3rem;
+    }
+
+    .precio-secundario {
+        font-size: 0.9rem;
+        margin-top: 0;
+    }
+
+    .item-controles-stock {
+        grid-column: 2 / 4;
+        grid-row: 2;
+        justify-self: end;
+        align-items: center;
+    }
+
+    .control-cantidad-carrito {
+        width: 6.8rem;
+        height: 2.2rem;
+        grid-template-columns: 2rem 1fr 2rem;
+    }
+
+    .control-cantidad-carrito button {
+        font-size: 1.2rem;
+    }
+
+    .control-cantidad-carrito input {
+        font-size: 1rem;
+    }
+
+    .texto-stock {
+        font-size: 0.75rem;
+    }
+}
