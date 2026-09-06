@@ -5,22 +5,48 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Gas El Volcán | Sucursales</title>
         <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/layout.css">
         <link rel="stylesheet" href="assets/css/pages/sucursales.css">
     </head>
     <body>
-        <!-- Cabecera inicial de sucursales -->
+        <!-- Control accesible del menú móvil -->
+        <input type="checkbox" id="menu-hamburguesa" class="toggle-hamburguesa" aria-label="Mostrar u ocultar menú principal">
+
+        <!-- Cabecera principal de la empresa -->
         <header class="cabecera-principal">
-            <div class="contenedor contenido-cabecera">
-                <a class="enlace-logo" href="index.html" aria-label="Ir al inicio de Gas El Volcán">
-                    <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
-                </a>
-                <nav aria-label="Navegación principal">
-                    <a href="index.html">Inicio</a>
-                    <a href="catalogo.html">Productos</a>
-                    <a href="sucursales.html" aria-current="page">Sucursales</a>
-                    <a href="contacto.html">Contacto</a>
-                </nav>
+            <div class="barra-superior">
+                <div class="contenedor contenido-barra-superior">
+                    <span>Atención al Cliente: <strong>800 50 9000</strong></span>
+                    <span class="texto-peligro">Emergencia: <strong>800 50 9111</strong></span>
+                </div>
             </div>
+
+            <nav class="barra-navegacion contenedor" aria-label="Navegación principal">
+                <a href="index.html" class="enlace-logo" aria-label="Gas El Volcán, inicio">
+                    <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" class="logo-navegacion" width="180">
+                </a>
+
+                <!-- Desplegable básico preparado para futuras opciones -->
+                <label for="menu-hamburguesa" class="icono-hamburguesa" aria-label="Abrir o cerrar navegación">
+                    <span class="icono-abrir" aria-hidden="true">☰</span>
+                    <span class="icono-cerrar" aria-hidden="true">×</span>
+                </label>
+
+                <ul class="enlaces-navegacion" id="enlaces-principales">
+                    <li class="grupo-navegacion-principal">
+                        <ul class="enlaces-principales">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="catalogo.html">Productos</a></li>
+                            <li><a href="sucursales.html" aria-current="page">Sucursales</a></li>
+                            <li><a href="nosotros.html">Nosotros</a></li>
+                            <li><a href="blogs.html">Blogs</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                        </ul>
+                    </li>
+                    <li class="enlace-cuenta"><a href="login.html">Sucursal Virtual</a></li>
+                    <li class="enlace-carrito"><a href="carrito.html">Carrito (0)</a></li>
+                </ul>
+            </nav>
         </header>
 
         <main>

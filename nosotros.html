@@ -6,21 +6,48 @@
         <meta name="description" content="Conoce la historia, misión, visión y equipo de Gas El Volcán, distribuidora de gas en la Región de Ñuble.">
         <title>Gas El Volcán | Nosotros</title>
         <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/layout.css">
         <link rel="stylesheet" href="assets/css/pages/nosotros.css">
     </head>
     <body>
-        <!-- Cabecera inicial de la sección Nosotros -->
-        <header class="nosotros-cabecera">
-            <div class="contenedor nosotros-barra">
-                <a class="nosotros-logo" href="nosotros.html" aria-label="Gas El Volcán - Nosotros">
-                    <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
-                </a>
-                <nav class="nosotros-navegacion" aria-label="Secciones de Nosotros">
-                    <a href="#quienes-somos">Quiénes somos</a>
-                    <a href="#mision-vision">Misión y visión</a>
-                    <a href="#equipo">Nuestro equipo</a>
-                </nav>
+        <!-- Control accesible del menú móvil -->
+        <input type="checkbox" id="menu-hamburguesa" class="toggle-hamburguesa" aria-label="Mostrar u ocultar menú principal">
+
+        <!-- Cabecera principal de la empresa -->
+        <header class="cabecera-principal">
+            <div class="barra-superior">
+                <div class="contenedor contenido-barra-superior">
+                    <span>Atención al Cliente: <strong>800 50 9000</strong></span>
+                    <span class="texto-peligro">Emergencia: <strong>800 50 9111</strong></span>
+                </div>
             </div>
+
+            <nav class="barra-navegacion contenedor" aria-label="Navegación principal">
+                <a href="index.html" class="enlace-logo" aria-label="Gas El Volcán, inicio">
+                    <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" class="logo-navegacion" width="180">
+                </a>
+
+                <!-- Desplegable básico preparado para futuras opciones -->
+                <label for="menu-hamburguesa" class="icono-hamburguesa" aria-label="Abrir o cerrar navegación">
+                    <span class="icono-abrir" aria-hidden="true">☰</span>
+                    <span class="icono-cerrar" aria-hidden="true">×</span>
+                </label>
+
+                <ul class="enlaces-navegacion" id="enlaces-principales">
+                    <li class="grupo-navegacion-principal">
+                        <ul class="enlaces-principales">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="catalogo.html">Productos</a></li>
+                            <li><a href="sucursales.html">Sucursales</a></li>
+                            <li><a href="nosotros.html" aria-current="page">Nosotros</a></li>
+                            <li><a href="blogs.html">Blogs</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                        </ul>
+                    </li>
+                    <li class="enlace-cuenta"><a href="login.html">Sucursal Virtual</a></li>
+                    <li class="enlace-carrito"><a href="carrito.html">Carrito (0)</a></li>
+                </ul>
+            </nav>
         </header>
 
         <main>
