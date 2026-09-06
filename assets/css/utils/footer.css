@@ -1,0 +1,167 @@
+/* Pie de página corporativo */
+.pie-pagina {
+    padding: 3rem 0 1.25rem;
+    background-color: var(--volcan-oscuro);
+    color: var(--volcan-blanco);
+}
+
+.grilla-pie {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.875rem;
+    margin-bottom: 2.5rem;
+}
+
+.pie-columna h6 {
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+    white-space: normal;
+}
+
+.pie-columna ul {
+    list-style: none;
+}
+
+.pie-columna ul li {
+    margin-bottom: 0.75rem;
+}
+
+.pie-columna a:not(.boton) {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.pie-columna a:hover {
+    color: var(--volcan-blanco);
+}
+
+.pie-boletin {
+    min-width: 0;
+    grid-column: span 1;
+}
+
+.buscador-footer {
+    display: flex;
+    width: 100%;
+    margin-bottom: 1.25rem;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.buscador-footer input {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 0.3125rem;
+    outline: none;
+    color: var(--volcan-texto);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.buscador-footer .boton {
+    flex: 0 0 auto;
+    border-radius: 0.3125rem;
+    color: var(--volcan-blanco);
+}
+
+.pie-pagos {
+    display: flex;
+    align-items: center;
+    gap: 0.9375rem;
+}
+
+.pago-icono {
+    width: auto;
+    height: 1.5rem;
+}
+
+.pie-copyright {
+    padding-top: 1.5rem;
+    color: var(--volcan-gris-claro);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.pie-columna {
+    min-width: 0;
+}
+
+.buscador-footer input,
+.buscador-footer .boton {
+    width: 100%;
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (min-width: 768px) {
+    .grilla-pie {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pie-columna h6 {
+        white-space: nowrap;
+    }
+
+    .pie-boletin {
+        grid-column: span 2;
+    }
+
+    .buscador-footer {
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .buscador-footer input {
+        border-radius: 0.3125rem 0 0 0.3125rem;
+    }
+
+    .buscador-footer .boton {
+        border-radius: 0 0.3125rem 0.3125rem 0;
+    }
+
+    .pie-columna {
+        min-width: unset;
+    }
+
+    .buscador-footer input,
+    .buscador-footer .boton {
+        width: auto;
+    }
+}
+
+/* Adaptabilidad para dispositivos grandes (Escritorio) */
+@media (min-width: 992px) {
+    .grilla-pie {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        column-gap: 1.5rem;
+        row-gap: 1.25rem;
+    }
+
+    .grilla-pie > .pie-columna {
+        flex: 1 1 10.75rem;
+        width: auto;
+        min-width: 0;
+    }
+
+    .grilla-pie > .pie-columna:nth-child(4) {
+        flex-basis: 13rem;
+    }
+
+    .grilla-pie > .pie-boletin {
+        flex: 2 1 21rem;
+        grid-column: auto;
+    }
+
+    .pie-boletin .buscador-footer {
+        max-width: 32rem;
+    }
+
+    .pie-columna h6 {
+        white-space: normal;
+    }
+}
