@@ -5,27 +5,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Gas El Volcán | Lista de Usuarios</title>
         <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/admin-layout.css">
         <link rel="stylesheet" href="assets/css/pages/admin-lista-usuarios.css">
     </head>
-    <body>
-        <!-- Cabecera inicial de administración -->
+        <body>
+        <!-- Control del menú administrativo para dispositivos móviles -->
+        <input type="checkbox" id="menu-admin-movil" class="admin-control-menu">
+
+        <!-- Cabecera compartida del panel de administración -->
         <header class="admin-cabecera">
-            <div class="admin-identidad">
-                <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
-                <span>Administración</span>
-            </div>
-            <p>Gestión de usuarios</p>
+            <label for="menu-admin-movil" class="admin-boton-menu">
+                <span aria-hidden="true">☰</span>
+                <span>Menú administrativo</span>
+            </label>
+            <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
+            <h1>Gestión de usuarios</h1>
+            <a class="admin-enlace-sitio" href="index.html">Volver al sitio</a>
         </header>
 
         <div class="admin-estructura">
-            <!-- Navegación inicial del módulo -->
-            <aside class="admin-sidebar">
-                <nav aria-label="Módulos administrativos">
+            <!-- Navegación compartida entre módulos administrativos -->
+            <aside class="admin-sidebar" id="navegacion-admin">
+                <nav aria-label="Menú de administración">
                     <h2>Menú principal</h2>
                     <ul>
-                        <li>Inicio</li>
-                        <li>Productos</li>
-                        <li class="activo" aria-current="page">Usuarios</li>
+                        <li><a href="admin-index.html">Inicio</a></li>
+                        <li class="admin-separador">Módulo productos</li>
+                        <li><a href="admin-lista-productos.html">Listar productos</a></li>
+                        <li><a href="admin-nuevo-producto.html">Nuevo producto</a></li>
+                        <li class="admin-separador">Módulo usuarios</li>
+                        <li><a href="admin-lista-usuarios.html" aria-current="page">Listar usuarios</a></li>
+                        <li><a href="admin-nuevo-usuario.html">Nuevo usuario</a></li>
                     </ul>
                 </nav>
             </aside>
@@ -33,7 +43,7 @@
             <main class="admin-main">
                 <!-- Presentación del listado -->
                 <section class="panel-titulo" aria-labelledby="titulo-usuarios">
-                    <h1 id="titulo-usuarios">Lista de Usuarios</h1>
+                    <h2 id="titulo-usuarios">Lista de Usuarios</h2>
                     <p>Consulta inicial de los perfiles que se administrarán en la sucursal virtual.</p>
                     <a href="admin-nuevo-usuario.html" class="enlace-nuevo-usuario">Nuevo usuario</a>
                 </section>
