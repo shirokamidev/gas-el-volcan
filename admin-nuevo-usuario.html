@@ -6,27 +6,37 @@
         <meta name="description" content="Formulario administrativo para preparar el registro de usuarios de Gas El Volcán.">
         <title>Gas El Volcán | Nuevo Usuario</title>
         <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/admin-layout.css">
         <link rel="stylesheet" href="assets/css/pages/admin-nuevo-usuario.css">
     </head>
-    <body>
-        <!-- Cabecera inicial de administración -->
+        <body>
+        <!-- Control del menú administrativo para dispositivos móviles -->
+        <input type="checkbox" id="menu-admin-movil" class="admin-control-menu">
+
+        <!-- Cabecera compartida del panel de administración -->
         <header class="admin-cabecera">
-            <div class="admin-identidad">
-                <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
-                <span>Administración</span>
-            </div>
-            <p>Gestión de usuarios</p>
+            <label for="menu-admin-movil" class="admin-boton-menu">
+                <span aria-hidden="true">☰</span>
+                <span>Menú administrativo</span>
+            </label>
+            <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
+            <h1>Gestión de usuarios</h1>
+            <a class="admin-enlace-sitio" href="index.html">Volver al sitio</a>
         </header>
 
         <div class="admin-estructura">
-            <!-- Navegación inicial del módulo -->
-            <aside class="admin-sidebar">
-                <nav aria-label="Módulos administrativos">
+            <!-- Navegación compartida entre módulos administrativos -->
+            <aside class="admin-sidebar" id="navegacion-admin">
+                <nav aria-label="Menú de administración">
                     <h2>Menú principal</h2>
                     <ul>
-                        <li>Inicio</li>
-                        <li>Productos</li>
-                        <li class="activo">Usuarios</li>
+                        <li><a href="admin-index.html">Inicio</a></li>
+                        <li class="admin-separador">Módulo productos</li>
+                        <li><a href="admin-lista-productos.html">Listar productos</a></li>
+                        <li><a href="admin-nuevo-producto.html">Nuevo producto</a></li>
+                        <li class="admin-separador">Módulo usuarios</li>
+                        <li><a href="admin-lista-usuarios.html">Listar usuarios</a></li>
+                        <li><a href="admin-nuevo-usuario.html" aria-current="page">Nuevo usuario</a></li>
                     </ul>
                 </nav>
             </aside>
@@ -36,7 +46,7 @@
                 <section class="panel-titulo" aria-labelledby="titulo-nuevo-usuario">
                     <div class="titulo-acciones">
                         <div>
-                            <h1 id="titulo-nuevo-usuario">Crear nuevo usuario</h1>
+                            <h2 id="titulo-nuevo-usuario">Crear nuevo usuario</h2>
                             <p>Prepara los datos del perfil que se incorporará al sistema.</p>
                         </div>
                         <a href="admin-lista-usuarios.html" class="enlace-volver">Volver a la lista</a>
