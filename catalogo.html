@@ -6,19 +6,45 @@
         <meta name="description" content="Conoce los productos de Gas El Volcán: cilindros, reguladores y accesorios para tu hogar.">
         <title>Gas El Volcán | Catálogo de Productos</title>
         <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/layout.css">
         <link rel="stylesheet" href="assets/css/pages/catalogo.css">
     </head>
     <body>
-        <!-- Cabecera inicial del catálogo de productos -->
-        <header class="cabecera-catalogo">
-            <div class="contenedor cabecera-contenido">
-                <a href="catalogo.html" class="enlace-logo" aria-label="Gas El Volcán - Catálogo">
-                    <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
-                </a>
-                <nav aria-label="Navegación del catálogo">
-                    <a href="#productos" class="enlace-catalogo">Ver productos</a>
-                </nav>
+        <!-- Control del menú móvil compartido -->
+        <input type="checkbox" id="menu-hamburguesa" class="toggle-hamburguesa" aria-label="Mostrar u ocultar menú principal">
+
+        <!-- Cabecera corporativa y navegación entre vistas -->
+        <header class="cabecera-principal">
+            <div class="barra-superior">
+                <div class="contenedor contenido-barra-superior">
+                    <span>Atención al Cliente: <strong>800 50 9000</strong></span>
+                    <span class="texto-peligro">Emergencia: <strong>800 50 9111</strong></span>
+                </div>
             </div>
+
+            <nav class="barra-navegacion contenedor" aria-label="Navegación principal">
+                <a href="index.html" class="enlace-logo" aria-label="Gas El Volcán, inicio">
+                    <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" class="logo-navegacion" width="180">
+                </a>
+                <label for="menu-hamburguesa" class="icono-hamburguesa" aria-label="Abrir o cerrar navegación">
+                    <span class="icono-abrir" aria-hidden="true">☰</span>
+                    <span class="icono-cerrar" aria-hidden="true">×</span>
+                </label>
+                <ul class="enlaces-navegacion" id="enlaces-principales">
+                    <li class="grupo-navegacion-principal">
+                        <ul class="enlaces-principales">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="catalogo.html" aria-current="page">Productos</a></li>
+                            <li><a href="sucursales.html">Sucursales</a></li>
+                            <li><a href="nosotros.html">Nosotros</a></li>
+                            <li><a href="blogs.html">Blogs</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                        </ul>
+                    </li>
+                    <li class="enlace-cuenta"><a href="login.html">Sucursal Virtual</a></li>
+                    <li class="enlace-carrito"><a href="carrito.html">Carrito (0)</a></li>
+                </ul>
+            </nav>
         </header>
 
         <main>
@@ -151,7 +177,7 @@
         <!-- Pie de página inicial -->
         <footer class="pie-catalogo">
             <div class="contenedor">
-                <p>&copy; 2026 Gas El Volcán. Chillán, Región de Ñuble.</p>
+                <p>© 2026 Gas El Volcán. Chillán, Región de Ñuble.</p>
             </div>
         </footer>
     </body>
