@@ -5,27 +5,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Gas El Volcán | Editar Producto</title>
         <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/admin-layout.css">
         <link rel="stylesheet" href="assets/css/pages/admin-nuevo-producto.css">
     </head>
-    <body>
-        <!-- Cabecera inicial de administración -->
+        <body>
+        <!-- Control del menú administrativo para dispositivos móviles -->
+        <input type="checkbox" id="menu-admin-movil" class="admin-control-menu">
+
+        <!-- Cabecera compartida del panel de administración -->
         <header class="admin-cabecera">
-            <div class="admin-identidad">
-                <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
-                <span>Administración</span>
-            </div>
-            <p>Gestión de productos</p>
+            <label for="menu-admin-movil" class="admin-boton-menu">
+                <span aria-hidden="true">☰</span>
+                <span>Menú administrativo</span>
+            </label>
+            <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
+            <h1>Gestión de productos</h1>
+            <a class="admin-enlace-sitio" href="index.html">Volver al sitio</a>
         </header>
 
         <div class="admin-estructura">
-            <!-- Navegación inicial del módulo -->
-            <aside class="admin-sidebar">
-                <nav aria-label="Módulos administrativos">
+            <!-- Navegación compartida entre módulos administrativos -->
+            <aside class="admin-sidebar" id="navegacion-admin">
+                <nav aria-label="Menú de administración">
                     <h2>Menú principal</h2>
                     <ul>
-                        <li>Inicio</li>
-                        <li class="activo">Productos</li>
-                        <li>Usuarios</li>
+                        <li><a href="admin-index.html">Inicio</a></li>
+                        <li class="admin-separador">Módulo productos</li>
+                        <li><a href="admin-lista-productos.html" aria-current="page">Listar productos</a></li>
+                        <li><a href="admin-nuevo-producto.html">Nuevo producto</a></li>
+                        <li class="admin-separador">Módulo usuarios</li>
+                        <li><a href="admin-lista-usuarios.html">Listar usuarios</a></li>
+                        <li><a href="admin-nuevo-usuario.html">Nuevo usuario</a></li>
                     </ul>
                 </nav>
             </aside>
@@ -35,7 +45,7 @@
                 <section class="panel-titulo" aria-labelledby="titulo-editar-producto">
                     <div class="titulo-acciones">
                         <div>
-                            <h1 id="titulo-editar-producto">Editar producto</h1>
+                            <h2 id="titulo-editar-producto">Editar producto</h2>
                             <p>Revisa la información del cilindro de 11 kg. Los datos son de ejemplo.</p>
                         </div>
                         <a class="enlace-volver" href="admin-lista-productos.html">Volver a la lista</a>
