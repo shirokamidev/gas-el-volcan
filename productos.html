@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gas El Volcán | Productos</title>
+        <link rel="icon" type="image/svg+xml" href="assets/img/favicon-volcan.svg" />
+        
+        <!-- Fuentes de Google -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+        
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/layout.css" />
+        <link rel="stylesheet" href="assets/css/productos.css" />
+    </head>
+    <body>
+        <!-- Control del menú móvil -->
+        <input type="checkbox" id="menu-hamburguesa" class="toggle-hamburguesa">
+
+        <!-- Cabecera principal -->
+        <header class="cabecera-principal">
+            <div class="barra-superior">
+                <div class="contenedor contenido-barra-superior">
+                    <span>Atención al Cliente: <strong>800 50 9000</strong></span>
+                    <span class="texto-peligro">Emergencia: <strong>800 50 9111</strong></span>
+                </div>
+            </div>
+
+            <nav class="barra-navegacion contenedor">
+                <a href="index.html" class="enlace-logo">
+                    <img src="assets/img/logo-volcan.svg" alt="Logo Gas El Volcán" class="logo-navegacion" />
+                </a>
+                
+                <label for="menu-hamburguesa" class="icono-hamburguesa">
+                    <span class="icono-abrir">&#9776;</span>
+                    <span class="icono-cerrar">&#10005;</span>
+                </label>
+                
+                <ul class="enlaces-navegacion">
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="productos.html" class="activo">PRODUCTOS</a></li>
+                    <li><a href="punto-volcan.html">SUCURSALES</a></li>
+                    <li><a href="nosotros.html">NOSOTROS</a></li>
+                    <li><a href="blogs.html">BLOGS</a></li>
+                    <li><a href="contacto.html">CONTACTO</a></li>
+                    
+                    <li class="menu-desplegable ocultar-en-movil">
+                        <input type="checkbox" id="activar-sucursal" class="toggle-desplegable">
+                        <label for="activar-sucursal" class="boton boton-oscuro">SUCURSAL VIRTUAL</label>
+                        <ul class="sub-menu">
+                            <li><a href="login.html">Iniciar Sesión</a></li>
+                            <li class="divisor"></li>
+                            <li><a href="registro.html">Registrarse</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="ocultar-en-pc"><a href="login.html">INICIAR SESIÓN</a></li>
+                    <li class="ocultar-en-pc"><a href="registro.html">REGISTRARSE</a></li>
+                    
+                    <li><a href="carrito.html" class="icono-carrito fw-bold">CARRITO (0)</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="pagina-productos">
+            
+            <!-- Hero del catalogo -->
+            <section class="hero-catalogo">
+                <div class="contenedor hero-catalogo-contenido">
+                    <h1 class="fw-bold texto-blanco">Catálogo de Productos</h1>
+                    <p class="bajada-hero">Encuentra cilindros, reguladores y accesorios con la garantía y seguridad de Gas El Volcán.</p>
+                </div>
+            </section>
+
+            <!-- Seccion principal del catalogo -->
+            <section class="seccion-catalogo-fondo">
+                <div class="contenedor contenedor-catalogo-principal">
+                    
+                    <!-- Controladores de estado para filtros -->
+                    <input type="radio" name="filtro-categoria" id="cat-todos" class="input-oculto" checked>
+                    <input type="radio" name="filtro-categoria" id="cat-cilindros" class="input-oculto">
+                    <input type="radio" name="filtro-categoria" id="cat-reguladores" class="input-oculto">
+                    <input type="radio" name="filtro-categoria" id="cat-mangueras" class="input-oculto">
+                    <input type="radio" name="filtro-categoria" id="cat-accesorios" class="input-oculto">
+
+                    <!-- Controlador del panel de filtros -->
+                    <input type="checkbox" id="toggle-filtros-movil" class="input-oculto">
+                    <label for="toggle-filtros-movil" class="overlay-filtros"></label>
+
+                    <!-- Layout principal del catalogo -->
+                    <div class="layout-catalogo">
+                        
+                        <!-- Panel lateral de filtros -->
+                        <aside class="columna-filtros">
+                            
+                            <div class="cabecera-filtros-movil">
+                                <h2 class="fw-bold" style="display: flex; align-items: center; gap: 0.5rem; color: var(--volcan-oscuro);">
+                                    <!-- Iconos de interfaz obtenidos de la libreria de codigo abierto Feather Icons -->
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="4" y1="21" x2="4" y2="14"></line>
+                                        <line x1="4" y1="10" x2="4" y2="3"></line>
+                                        <line x1="12" y1="21" x2="12" y2="12"></line>
+                                        <line x1="12" y1="8" x2="12" y2="3"></line>
+                                        <line x1="20" y1="21" x2="20" y2="16"></line>
+                                        <line x1="20" y1="12" x2="20" y2="3"></line>
+                                        <line x1="1" y1="14" x2="7" y2="14"></line>
+                                        <line x1="9" y1="8" x2="15" y2="8"></line>
+                                        <line x1="17" y1="16" x2="23" y2="16"></line>
+                                    </svg>
+                                    Filtros
+                                </h2>
+                                <label for="toggle-filtros-movil" class="boton-cerrar-filtros">&#10005;</label>
+                            </div>
+
+                            <div class="bloque-filtro">
+                                <h3 class="titulo-filtro fw-bold">Categorías</h3>
+                                <nav class="lista-categorias">
+                                    <label for="cat-todos" class="item-categoria etiqueta-todos">Todos los productos</label>
+                                    <label for="cat-cilindros" class="item-categoria etiqueta-cilindros">Cilindros</label>
+                                    <label for="cat-reguladores" class="item-categoria etiqueta-reguladores">Reguladores</label>
+                                    <label for="cat-mangueras" class="item-categoria etiqueta-mangueras">Mangueras y Conexiones</label>
+                                    <label for="cat-accesorios" class="item-categoria etiqueta-accesorios">Accesorios</label>
+                                </nav>
+                            </div>
+
+                            <!-- Acciones del panel de filtros -->
+                            <div class="acciones-filtros-movil">
+                                <label for="toggle-filtros-movil" class="boton boton-naranja boton-mostrar">Mostrar resultados</label>
+                            </div>
+                        </aside>
+
+                        <!-- Contenido principal -->
+                        <section class="columna-productos">
+                            
+                            <!-- Barra de herramientas -->
+                            <div class="herramientas-catalogo">
+                                
+                                <div class="herramientas-acciones">
+                                    
+                                    <!-- Boton de filtros movil -->
+                                    <label for="toggle-filtros-movil" class="boton-pildora-filtros">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="4" y1="21" x2="4" y2="14"></line>
+                                            <line x1="4" y1="10" x2="4" y2="3"></line>
+                                            <line x1="12" y1="21" x2="12" y2="12"></line>
+                                            <line x1="12" y1="8" x2="12" y2="3"></line>
+                                            <line x1="20" y1="21" x2="20" y2="16"></line>
+                                            <line x1="20" y1="12" x2="20" y2="3"></line>
+                                            <line x1="1" y1="14" x2="7" y2="14"></line>
+                                            <line x1="9" y1="8" x2="15" y2="8"></line>
+                                            <line x1="17" y1="16" x2="23" y2="16"></line>
+                                        </svg>
+                                    </label>
+
+                                    <!-- Buscador -->
+                                    <div class="grupo-busqueda">
+                                        <input type="text" placeholder="Buscar producto por nombre..." class="input-busqueda">
+                                        <button type="button" class="boton boton-naranja boton-buscador-accion">Buscar</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Opcion de impresion -->
+                                <button type="button" class="boton boton-imprimir" onclick="window.print()">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                                        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                                        <rect x="6" y="14" width="12" height="8"></rect>
+                                    </svg>
+                                    Imprimir Catálogo
+                                </button>
+                            </div>
+
+                            <p class="texto-resultados">Mostrando 14 resultados</p>
+
+                            <!-- Grilla de productos -->
+                            <div class="grilla-productos">
+                                
+                                <!-- 1. Cilindro 5kg -->
+                                <article class="tarjeta-producto cat-cilindros">
+                                    <a href="detalle-productos.html" class="producto-enlace-img">
+                                        <img src="assets/img/productos/cilindros/cilindro-5kg.svg" alt="Cilindro GLP 5 kg" class="producto-img" />
+                                    </a>
+                                    <span class="producto-categoria">Cilindros</span>
+                                    <h3 class="producto-nombre">Cilindro GLP 5 kg</h3>
+                                    <p class="producto-detalle">Para uso residencial (cocina, calefacción pequeña).</p>
+                                    <div class="producto-precios">
+                                        <h4 class="precio-principal">Residencial: $6.500</h4>
+                                        <h5 class="precio-secundario">Comercial: $6.000</h5>
+                                    </div>
+                                    <div class="producto-controles">
+                                        <div class="control-cantidad">
+                                            <button type="button" class="btn-restar">-</button>
+                                            <input type="number" value="1" min="1" class="input-cantidad" readonly />
+                                            <button type="button" class="btn-sumar">+</button>
+                                        </div>
+                                        <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                                    </div>
+                                </article>
+
+                                <!-- 2. Cilindro 11kg -->
+                                <article class="tarjeta-producto cat-cilindros">
+                                    <a href="detalle-productos.html" class="producto-enlace-img">
+                                        <img src="assets/img/productos/cilindros/cilindro-11kg.svg" alt="Cilindro GLP 11 kg" class="producto-img" />
+                                    </a>
+                                    <span class="producto-categoria">Cilindros</span>
+                                    <h3 class="producto-nombre">Cilindro GLP 11 kg</h3>
+                                    <p class="producto-detalle">Cilindro estándar doméstico. El más utilizado en hogares.</p>
+                                    <div class="producto-precios">
+                                        <h4 class="precio-principal">Residencial: $12.000</h4>
+                                        <h5 class="precio-secundario">Comercial: $11.000</h5>
+                                    </div>
+                                    <div class="producto-controles">
+                                        <div class="control-cantidad">
+                                            <button type="button" class="btn-restar">-</button>
+                                            <input type="number" value="1" min="1" class="input-cantidad" readonly />
+                                            <button type="button" class="btn-sumar">+</button>
+                                        </div>
+                                        <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                                    </div>
+                                </article>
+
+                                <!-- 3. Cilindro 15kg -->
+                                <article class="tarjeta-producto cat-cilindros">
+                                    <a href="detalle-productos.html" class="producto-enlace-img">
+                                        <img src="assets/img/productos/cilindros/cilindro-15kg.svg" alt="Cilindro GLP 15 kg" class="producto-img" />
+                                    </a>
+                                    <span class="producto-categoria">Cilindros</span>
+                                    <h3 class="producto-nombre">Cilindro GLP 15 kg</h3>
+                                    <p class="producto-detalle">Cilindro de mayor capacidad para hogares de alto consumo.</p>
+                                    <div class="producto-precios">
+                                        <h4 class="precio-principal">Residencial: $16.000</h4>
+                                        <h5 class="precio-secundario">Comercial: $14.500</h5>
+                                    </div>
+                                    <div class="producto-controles">
+                                        <div class="control-cantidad">
+                                            <button type="button" class="btn-restar">-</button>
+                                            <input type="number" value="1" min="1" class="input-cantidad" readonly />
+                                            <button type="button" class="btn-sumar">+</button>
+                                        </div>
+                                        <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                                    </div>
+                                </article>
+
+                                <!-- 4. Cilindro 45kg -->
+                                <article class="tarjeta-producto cat-cilindros">
+                                    <a href="detalle-productos.html" class="producto-enlace-img">
+                                        <img src="assets/img/productos/cilindros/cilindro-45kg.svg" alt="Cilindro GLP 45 kg" class="producto-img" />
+                                    </a>
+                                    <span class="producto-categoria">Cilindros</span>
+                                    <h3 class="producto-nombre">Cilindro GLP 45 kg</h3>
+                                    <p class="producto-detalle">Cilindro industrial. Uso comercial: restaurantes y locales.</p>
+                                    <div class="producto-precios">
+                                        <h4 class="precio-principal">Residencial: $45.000</h4>
+                                        <h5 class="precio-secundario">Comercial: $40.000</h5>
+                                    </div>
+                                    <div class="producto-controles">
+                                        <div class="control-cantidad">
+                                            <button type="button" class="btn-restar">-</button>
+                                            <input type="number" value="1" min="1" class="input-cantidad" readonly />
+                                            <button type="button" class="btn-sumar">+</button>
+                                        </div>
+                                        <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                                    </div>
+                                </article>
+
+                                <!-- 5. Regulador estándar -->
+                                <article class="tarjeta-producto cat-reguladores">
+                                    <a href="detalle-productos.html" class="producto-enlace-img">
+                                        <img src="assets/img/productos/reguladores/regulador-estandar.svg" alt="Regulador doméstico estándar" class="producto-img" />
+                                    </a>
+                                    <span class="producto-categoria">Reguladores</span>
+                                    <h3 class="producto-nombre">Regulador doméstico</h3>
+                                    <p class="producto-detalle">Regulador de 1 etapa para cilindros 5, 11 y 15 kg.</p>
+                                    <div class="producto-precios">
+                                        <h4 class="precio-principal">Residencial: $8.990</h4>
+                                        <h5 class="precio-secundario">Comercial: $8.200</h5>
+                                    </div>
+                                    <div class="producto-controles">
+                                        <div class="control-cantidad">
+                                            <button type="button" class="btn-restar">-</button>
+                                            <input type="number" value="1" min="1" class="input-cantidad" readonly />
+                                            <button type="button" class="btn-sumar">+</button>
+                                        </div>
+                                        <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                                    </div>
+                                </article>
+
+                                <!-- 6. Regulador alta presión -->
+                                <article class="tarjeta-producto cat-reguladores">
+                                    <a href="detalle-productos.html" class="producto-enlace-img">
+                                        <img src="assets/img/productos/reguladores/regulador-alta-presion.svg" alt="Regulador de alta presión" class="producto-img" />
+                                    </a>
+                                    <span class="producto-categoria">Reguladores</span>
+                                    <h3 class="producto-nombre">Regulador alta presión</h3>
+                                    <p class="producto-detalle">Para cocinas industriales o equipos de mayor consumo.</p>
+                                    <div class="producto-precios">
+                                        <h4 class="precio-principal">Residencial: $18.990</h4>
+                                        <h5 class="precio-secundario">Comercial: $17.000</h5>
+                                    </div>
+                                    <div class="producto-controles">
+                                        <div class="control-cantidad">
+                                            <button type="button" class="btn-restar">-</button>
+                                            <input type="number" value="1" min="1" class="input-cantidad" readonly />
+                                            <button type="button" class="btn-sumar">+</button>
+                                        </div>
+                                        <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                                    </div>
+                                </article>
+
+                                <!-- 7. Regulador dual -->
+                                <article class="tarjeta-producto cat-reguladores">
+                                    <a href="detalle-productos.html" class="producto-enlace-img">
+                                        <img src="assets/img/productos/reguladores/regulador-dual.svg" alt="Regulador dual" class="producto-img" />
+                                    </a>
+                                    <span class="producto-categoria">Reguladores</span>
+                                    <h3 class="producto-nombre">Regulador dual (2 salidas)</h3>
+                                    <p class="producto-detalle">Permite conectar dos artefactos simultáneamente.</p>
+                                    <div class="producto-precios">
+                                        <h4 class="precio-principal">Residencial: $14.990</h4>
+                                        <h5 class="precio-secundario">Comercial: $13.500</h5>
+                                    </div>
+                                    <div class="producto-controles">
+                                        <div class="control-cantidad">
+                                            <button type="button" class="btn-restar">-</button>
+                                            <input type="number" value="1" min="1" class="input-cantidad" readonly />
+                                            <button type="button" class="btn-sumar">+</button>
+                                        </div>
+                                        <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                                    </div>
+                                </article>
+
+                                <!-- 8. Manguera 1.5m -->
+                                <article class="tarjeta-producto cat-mangueras">
+                                    <a href="detalle-productos.html" class="producto-enlace-img">
+                                        <img src="assets/img/productos/mangueras/manguera-1-5m.svg" alt="Manguera gas 1.5 m" class="producto-img" />
+                                    </a>
+                                    <span class="producto-categoria">Mangueras y Conexiones</span>
+                                    <h3 class="producto-nombre">Manguera gas 1.5 m</h3>
+                                    <p class="producto-detalle">Manguera flexible homologada. Diámetro interior 9mm.</p>
+                                    <div class="producto-precios">
+                                        <h4 class="precio-principal">Residencial: $3.990</h4>
+                                        <h5 class="precio-secundario">Comercial: $3.500</h5>
+                                    </div>
+                                    <div class="producto-controles">
+                                        <div class="control-cantidad">
+                                            <button type="button" class="btn-restar">-</button>
+                                            <input type="number" value="1" min="1" class="input-cantidad" readonly />
+                                            <button type="button" class="btn-sumar">+</button>
+                                        </div>
+                                        <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                                    </div>
+                                </article>
+
+                                <!-- 9. Manguera 3m -->
+                                <article class="tarjeta-producto cat-mangueras">
+                                    <a href="detalle-productos.html" class="producto-enlace-img">
+                                        <img src="assets/img/productos/mangueras/manguera-3m.svg" alt="Manguera gas 3 m" class="producto-img" />
+                                    </a>
+                                    <span class="producto-categoria">Mangueras y Conexiones</span>
+                                    <h3 class="producto-nombre">Manguera gas 3 m</h3>
+                                    <p class="producto-detalle">Manguera larga para artefactos alejados del cilindro.</p>
+                                    <div class="producto-precios">
+                                        <h4 class="precio-principal">Residencial: $6.990</h4>
+                                        <h5 class="precio-secundario">Comercial: $6.200</h5>
+                                    </div>
+                                    <div class="producto-controles">
+                                        <div class="control-cantidad">
+                                            <button type="button" class="btn-restar">-</button>
+                                            <input type="number" value="1" min="1" class="input-cantidad" readonly />
+                                            <button type="button" class="btn-sumar">+</button>
+                                        </div>
+                                        <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                                    </div>
+                                </article>
+
+                                <!-- 10. Abrazadera -->
+                                <article class="tarjeta-producto cat-mangueras">
+                                    <a href="detalle-productos.html" class="producto-enlace-img">
+                                        <img src="assets/img/productos/mangueras/abrazadera.svg" alt="Abrazadera metálica" class="producto-img" />
+                                    </a>
+                                    <span class="producto-categoria">Mangueras y Conexiones</span>
+                                    <h3 class="producto-nombre">Abrazadera metálica</h3>
+                                    <p class="producto-detalle">De acero para asegurar la conexión manguera-regulador.</p>
+                                    <div class="producto-precios">
+                                        <h4 class="precio-principal">Residencial: $990</h4>
+                                        <h5 class="precio-secundario">Comercial: $800</h5>
+                                    </div>
+                                    <div class="producto-controles">
+                                        <div class="control-cantidad">
+                                            <button type="button" class="btn-restar">-</button>
+                                            <input type="number" value="1" min="1" class="input-cantidad" readonly />
+                                            <button type="button" class="btn-sumar">+</button>
+                                        </div>
+                                        <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                                    </div>
+                                </article>
+
+                                <!-- 11. Kit conexión -->
+                                <article class="tarjeta-producto cat-mangueras">
+                                    <a href="detalle-productos.html" class="producto-enlace-img">
+                                        <img src="assets/img/productos/mangueras/kit-conexion.svg" alt="Kit conexión completo" class="producto-img" />
+                                    </a>
+                                    <span class="producto-categoria">Mangueras y Conexiones</span>
+                                    <h3 class="producto-nombre">Kit conexión completo</h3>
+                                    <p class="producto-detalle">Regulador, manguera 1.5m y abrazaderas necesarias.</p>
+                                    <div class="producto-precios">
+                                        <h4 class="precio-principal">Residencial: $12.990</h4>
+                                        <h5 class="precio-secundario">Comercial: $11.500</h5>
+                                    </div>
+                                    <div class="producto-controles">
+                                        <div class="control-cantidad">
+                                            <button type="button" class="btn-restar">-</button>
+                                            <input type="number" value="1" min="1" class="input-cantidad" readonly />
+                                            <button type="button" class="btn-sumar">+</button>
+                                        </div>
+                                        <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                                    </div>
+                                </article>
+
+                                <!-- 12. Carro cilindro -->
+                                <article class="tarjeta-producto cat-accesorios">
+                                    <a href="detalle-productos.html" class="producto-enlace-img">
+                                        <img src="assets/img/productos/accesorios/carro-cilindro.svg" alt="Carro porta cilindro" class="producto-img" />
+                                    </a>
+                                    <span class="producto-categoria">Accesorios</span>
+                                    <h3 class="producto-nombre">Carro porta cilindro</h3>
+                                    <p class="producto-detalle">Carro metálico para transportar cilindros 11/15 kg.</p>
+                                    <div class="producto-precios">
+                                        <h4 class="precio-principal">Residencial: $12.990</h4>
+                                        <h5 class="precio-secundario">Comercial: $11.000</h5>
+                                    </div>
+                                    <div class="producto-controles">
+                                        <div class="control-cantidad">
+                                            <button type="button" class="btn-restar">-</button>
+                                            <input type="number" value="1" min="1" class="input-cantidad" readonly />
+                                            <button type="button" class="btn-sumar">+</button>
+                                        </div>
+                                        <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                                    </div>
+                                </article>
+
+                                <!-- 13. Tapa protectora -->
+                                <article class="tarjeta-producto cat-accesorios">
+                                    <a href="detalle-productos.html" class="producto-enlace-img">
+                                        <img src="assets/img/productos/accesorios/tapa-valvula.svg" alt="Tapa protectora" class="producto-img" />
+                                    </a>
+                                    <span class="producto-categoria">Accesorios</span>
+                                    <h3 class="producto-nombre">Tapa protectora</h3>
+                                    <p class="producto-detalle">Plástico ABS para proteger la válvula en el transporte.</p>
+                                    <div class="producto-precios">
+                                        <h4 class="precio-principal">Residencial: $1.490</h4>
+                                        <h5 class="precio-secundario">Comercial: $1.200</h5>
+                                    </div>
+                                    <div class="producto-controles">
+                                        <div class="control-cantidad">
+                                            <button type="button" class="btn-restar">-</button>
+                                            <input type="number" value="1" min="1" class="input-cantidad" readonly />
+                                            <button type="button" class="btn-sumar">+</button>
+                                        </div>
+                                        <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                                    </div>
+                                </article>
+
+                                <!-- 14. Detector gas -->
+                                <article class="tarjeta-producto cat-accesorios">
+                                    <a href="detalle-productos.html" class="producto-enlace-img">
+                                        <img src="assets/img/productos/accesorios/detector-gas.svg" alt="Detector de gas a batería" class="producto-img" />
+                                    </a>
+                                    <span class="producto-categoria">Accesorios</span>
+                                    <h3 class="producto-nombre">Detector de gas a batería</h3>
+                                    <p class="producto-detalle">Sensor electroquímico. Alarma sonora ante fugas de gas.</p>
+                                    <div class="producto-precios">
+                                        <h4 class="precio-principal">Residencial: $19.990</h4>
+                                        <h5 class="precio-secundario">Comercial: $17.000</h5>
+                                    </div>
+                                    <div class="producto-controles">
+                                        <div class="control-cantidad">
+                                            <button type="button" class="btn-restar">-</button>
+                                            <input type="number" value="1" min="1" class="input-cantidad" readonly />
+                                            <button type="button" class="btn-sumar">+</button>
+                                        </div>
+                                        <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                                    </div>
+                                </article>
+
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="pie-pagina">
+            <div class="contenedor grilla-pie">
+                <div class="pie-columna">
+                    <h6>Nuestra Empresa</h6>
+                    <ul>
+                        <li><a href="nosotros.html#quienes-somos">Historia</a></li>
+                        <li><a href="nosotros.html#mision-vision">Misión y Visión</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Atención al Cliente</h6>
+                    <ul>
+                        <li><a href="contacto.html#contacto">Contacto y Soporte</a></li>
+                        <li><a href="contacto.html#faq">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Sucursal Virtual</h6>
+                    <ul>
+                        <li><a href="login.html">Iniciar Sesión</a></li>
+                        <li><a href="registro.html">Registrarse</a></li>
+                        <li><a href="punto-volcan.html">Rastrear Pedido</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Términos y Condiciones</h6>
+                    <ul>
+                        <li><a href="legales.html#terminos">Términos del Servicio</a></li>
+                        <li><a href="legales.html#privacidad">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                
+                <div class="pie-columna pie-boletin">
+                    <h6>Suscríbete para recibir ofertas exclusivas.</h6>
+                    <div class="buscador-footer">
+                        <input type="email" placeholder="Ingresa tu correo" />
+                        <a href="registro.html" class="boton boton-naranja texto-blanco">Suscríbete</a>
+                    </div>
+                    
+                    <h6>Medios de Pago</h6>
+                    <div class="pie-pagos">
+                        <img src="assets/img/pagos/visa.svg" alt="Visa" class="pago-icono" />
+                        <img src="assets/img/pagos/mastercard.svg" alt="Mastercard" class="pago-icono" />
+                        <img src="assets/img/pagos/amex.svg" alt="AMEX" class="pago-icono" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contenedor pie-copyright">
+                <p>&copy; 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
+            </div>
+        </footer>
+    </body>
+</html>
