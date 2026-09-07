@@ -108,26 +108,29 @@
                         <!-- Formulario de Contacto -->
                         <article class="contacto-formulario-caja">
                             <h3 class="fw-bold">Envíanos un mensaje</h3>
-                            <form class="formulario-contacto" action="#" method="POST">
+                            
+                            <form id="form-contacto" class="formulario-contacto" novalidate>
                                 <div class="form-grupo">
-                                    <label for="nombre">Nombre Completo *</label>
-                                    <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                                    <label for="nombre-contacto">Nombre Completo *</label>
+                                    <input type="text" id="nombre-contacto" placeholder="Ej: Juan Pérez">
+                                    <span id="error-nombre-contacto" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: block; margin-top: 0.3rem;"></span>
                                 </div>
-
+                            
                                 <div class="form-grupo">
-                                    <label for="correo">Correo Electrónico *</label>
-                                    <input type="email" id="correo" name="correo" placeholder="Ej: usuario@gmail.com" required>
+                                    <label for="correo-contacto">Correo Electrónico *</label>
+                                    <input type="email" id="correo-contacto" placeholder="Ej: usuario@gmail.com">
                                     <p class="texto-ayuda">Solo se admiten dominios @gmail.com, @duocuc.cl y @profesor.duoc.cl</p>
+                                    <span id="error-correo-contacto" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: block; margin-top: 0.3rem;"></span>
                                 </div>
-
+                            
                                 <div class="form-grupo">
                                     <label for="telefono">Teléfono</label>
                                     <input type="tel" id="telefono" name="telefono" placeholder="Ej: 912345678" pattern="[0-9]{9}">
                                 </div>
-
+                            
                                 <div class="form-grupo">
                                     <label for="asunto">Asunto *</label>
-                                    <select id="asunto" name="asunto" required>
+                                    <select id="asunto" required>
                                         <option value="" disabled selected>Selecciona un asunto...</option>
                                         <option value="consulta">Consulta General</option>
                                         <option value="pedido">Problema con mi pedido</option>
@@ -135,14 +138,18 @@
                                         <option value="felicitacion">Felicitación</option>
                                     </select>
                                 </div>
-
+                            
                                 <div class="form-grupo">
-                                    <label for="mensaje">Mensaje *</label>
-                                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                                    <label for="comentario-contacto">Mensaje *</label>
+                                    <textarea id="comentario-contacto" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+                                    <span id="error-comentario-contacto" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: block; margin-top: 0.3rem;"></span>
                                 </div>
-
+                            
+                                <div id="mensaje-contacto" style="text-align: center; font-weight: 600; margin-bottom: 1rem;"></div>
+                            
                                 <button type="submit" class="boton boton-naranja boton-bloque">ENVIAR MENSAJE</button>
                             </form>
+                            
                         </article>
 
                     </div>
@@ -253,5 +260,8 @@
                 <p>&copy; 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
             </div>
         </footer>
+
+        <!-- Enlace al JS -->
+        <script src="assets/js/validaciones.js"></script>
     </body>
 </html>
