@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gas El Volcán | Sucursales</title>
+        <link rel="icon" type="image/svg+xml" href="assets/img/favicon-volcan.svg" />
+        
+        <!-- Fuentes de Google -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+        
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/layout.css" />
+        <link rel="stylesheet" href="assets/css/punto-volcan.css" />
+    </head>
+    <body>
+        <!-- Checkbox para controlar el estado del menú en móviles -->
+        <input type="checkbox" id="menu-hamburguesa" class="toggle-hamburguesa">
+
+        <!-- Header -->
+        <header class="cabecera-principal">
+            <div class="barra-superior">
+                <div class="contenedor contenido-barra-superior">
+                    <span>Atención al Cliente: <strong>800 50 9000</strong></span>
+                    <span class="texto-peligro">Emergencia: <strong>800 50 9111</strong></span>
+                </div>
+            </div>
+
+            <nav class="barra-navegacion contenedor">
+                <a href="index.html" class="enlace-logo">
+                    <img src="assets/img/logo-volcan.svg" alt="Logo Gas El Volcán" class="logo-navegacion" />
+                </a>
+                
+                <label for="menu-hamburguesa" class="icono-hamburguesa">
+                    <span class="icono-abrir">&#9776;</span>
+                    <span class="icono-cerrar">&#10005;</span>
+                </label>
+                
+                <ul class="enlaces-navegacion">
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="productos.html">PRODUCTOS</a></li>
+                    <li><a href="punto-volcan.html" class="activo">SUCURSALES</a></li>
+                    <li><a href="nosotros.html">NOSOTROS</a></li>
+                    <li><a href="blogs.html">BLOGS</a></li>
+                    <li><a href="contacto.html">CONTACTO</a></li>
+                    
+                    <li class="menu-desplegable ocultar-en-movil">
+                        <input type="checkbox" id="activar-sucursal" class="toggle-desplegable">
+                        <label for="activar-sucursal" class="boton boton-oscuro">SUCURSAL VIRTUAL</label>
+                        <ul class="sub-menu">
+                            <li><a href="login.html">Iniciar Sesión</a></li>
+                            <li class="divisor"></li>
+                            <li><a href="registro.html">Registrarse</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="ocultar-en-pc"><a href="login.html">INICIAR SESIÓN</a></li>
+                    <li class="ocultar-en-pc"><a href="registro.html">REGISTRARSE</a></li>
+                    
+                    <li><a href="carrito.html" class="icono-carrito fw-bold">CARRITO (0)</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Banner informativo -->
+            <section class="seccion-banner-gris">
+                <div class="contenedor">
+                    <img src="assets/img/sucursales/banner-sucursales.png" alt="Siempre hay un Punto Volcán cerca de ti" class="imagen-banner">
+                </div>
+            </section>
+
+            <!-- Buscador de sucursales -->
+            <section class="seccion-buscador contenedor">
+                <h2 class="titulo-buscador fw-bold">Encuentra tu Punto Volcán más cercano</h2>
+                <div class="formulario-buscador">
+                    <div class="grupo-select">
+                        <select id="region" aria-label="Región">
+                            <option value="" disabled selected>Selecciona tu región...</option>
+                            <option value="nuble">Región de Ñuble</option>
+                            <option value="biobio">Región del Biobío</option>
+                        </select>
+                    </div>
+                    <div class="grupo-select">
+                        <select id="comuna" aria-label="Comuna">
+                            <option value="" disabled selected>Selecciona tu comuna...</option>
+                            <option value="chillan">Chillán</option>
+                            <option value="chillan-viejo">Chillán Viejo</option>
+                            <option value="bulnes">Bulnes</option>
+                            <option value="el-carmen">El Carmen</option>
+                        </select>
+                    </div>
+                    <button type="button" class="boton boton-naranja boton-buscar">Buscar</button>
+                </div>
+            </section>
+
+            <!-- Directorio y mapa interactivo -->
+            <section class="seccion-mapa-directorio contenedor">
+                <div class="grilla-directorio">
+                    
+                    <!-- Columna del mapa -->
+                    <div class="columna-mapa">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102029.35123067205!2d-72.17935497931326!3d-36.60830491790409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9668d7cc91e57199%3A0x6431e5f88421b068!2sChill%C3%A1n%2C%20B%C3%ADo%20B%C3%ADo!5e0!3m2!1ses-419!2scl!4v1700000000000!5m2!1ses-419!2scl" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Mapa de sucursales Gas El Volcán">
+                        </iframe>
+                    </div>
+
+                    <!-- Columna de navegación de sucursales -->
+                    <aside class="columna-lista">
+                        
+                        <!-- Controladores de estado ocultos -->
+                        <input type="radio" name="sucursal" id="reset-sucursal" class="radio-oculto" checked>
+                        <input type="radio" name="sucursal" id="suc-1" class="radio-oculto">
+                        <input type="radio" name="sucursal" id="suc-2" class="radio-oculto">
+                        <input type="radio" name="sucursal" id="suc-3" class="radio-oculto">
+                        <input type="radio" name="sucursal" id="suc-4" class="radio-oculto">
+                        <input type="radio" name="sucursal" id="suc-5" class="radio-oculto">
+
+                        <!-- Lista general de zonas -->
+                        <nav class="vista-lista-general">
+                            <label for="suc-1" class="tarjeta-resumen">
+                                <h3 class="titulo-naranja">Zona Centro</h3>
+                                <p class="texto-direccion">Chillán (sectores centro, norte y sur)</p>
+                            </label>
+                            
+                            <label for="suc-2" class="tarjeta-resumen">
+                                <h3 class="titulo-naranja">Zona Oriente</h3>
+                                <p class="texto-direccion">Chillán (sector oriente), Chillán Viejo</p>
+                            </label>
+                            
+                            <label for="suc-3" class="tarjeta-resumen">
+                                <h3 class="titulo-naranja">Zona Rural</h3>
+                                <p class="texto-direccion">El Carmen, Pinto, San Ignacio</p>
+                            </label>
+                            
+                            <label for="suc-4" class="tarjeta-resumen">
+                                <h3 class="titulo-naranja">Zona Sur</h3>
+                                <p class="texto-direccion">Bulnes, Quillón</p>
+                            </label>
+
+                            <label for="suc-5" class="tarjeta-resumen">
+                                <h3 class="titulo-naranja">Zona Comercial</h3>
+                                <p class="texto-direccion">Parques industriales y locales comerciales</p>
+                            </label>
+                        </nav>
+
+                        <!-- Contenedor de detalles por zona -->
+                        <section class="vistas-detalles">
+                            
+                            <article class="detalle-card" id="detalle-1">
+                                <header class="tarjeta-detalle-encabezado">
+                                    <h3 class="titulo-naranja">Zona Centro</h3>
+                                    <p class="texto-direccion">Chillán (sectores centro, norte y sur)</p>
+                                </header>
+                                <section class="tarjeta-detalle-cuerpo">
+                                    <h4 class="fw-bold">Haz tu pedido de gas aquí:</h4>
+                                    <p class="dato-despacho">Lunes a Sábado | 08:00 a 20:00 hrs.</p>
+                                    <p class="dato-despacho">Tiempo estimado: 1 a 3 horas</p>
+                                    
+                                    <address class="info-contacto-detalle">
+                                        <a href="productos.html" class="enlace-azul">Realizar pedido online</a>
+                                        <span class="texto-naranja fw-bold">Call Center: 800 20 9000</span>
+                                        <span class="texto-rojo fw-bold">Emergencia: 800 50 9111</span>
+                                    </address>
+                                    <label for="reset-sucursal" class="btn-atras">&lt; Ir atrás</label>
+                                </section>
+                            </article>
+
+                            <article class="detalle-card" id="detalle-2">
+                                <header class="tarjeta-detalle-encabezado">
+                                    <h3 class="titulo-naranja">Zona Oriente</h3>
+                                    <p class="texto-direccion">Chillán (sector oriente), Chillán Viejo</p>
+                                </header>
+                                <section class="tarjeta-detalle-cuerpo">
+                                    <h4 class="fw-bold">Haz tu pedido de gas aquí:</h4>
+                                    <p class="dato-despacho">Lunes a Viernes | 08:00 a 18:00 hrs.</p>
+                                    <p class="dato-despacho">Tiempo estimado: 2 a 4 horas</p>
+                                    
+                                    <address class="info-contacto-detalle">
+                                        <a href="productos.html" class="enlace-azul">Realizar pedido online</a>
+                                        <span class="texto-naranja fw-bold">Call Center: 800 20 9000</span>
+                                        <span class="texto-rojo fw-bold">Emergencia: 800 50 9111</span>
+                                    </address>
+                                    <label for="reset-sucursal" class="btn-atras">&lt; Ir atrás</label>
+                                </section>
+                            </article>
+
+                            <article class="detalle-card" id="detalle-3">
+                                <header class="tarjeta-detalle-encabezado">
+                                    <h3 class="titulo-naranja">Zona Rural</h3>
+                                    <p class="texto-direccion">El Carmen, Pinto, San Ignacio</p>
+                                </header>
+                                <section class="tarjeta-detalle-cuerpo">
+                                    <h4 class="fw-bold">Haz tu pedido de gas aquí:</h4>
+                                    <p class="dato-despacho">Martes y Jueves | 08:00 a 16:00 hrs.</p>
+                                    <p class="dato-despacho">Tiempo estimado: 3 a 6 horas</p>
+                                    
+                                    <address class="info-contacto-detalle">
+                                        <a href="productos.html" class="enlace-azul">Realizar pedido online</a>
+                                        <span class="texto-naranja fw-bold">Call Center: 800 20 9000</span>
+                                        <span class="texto-rojo fw-bold">Emergencia: 800 50 9111</span>
+                                    </address>
+                                    <label for="reset-sucursal" class="btn-atras">&lt; Ir atrás</label>
+                                </section>
+                            </article>
+
+                            <article class="detalle-card" id="detalle-4">
+                                <header class="tarjeta-detalle-encabezado">
+                                    <h3 class="titulo-naranja">Zona Sur</h3>
+                                    <p class="texto-direccion">Bulnes, Quillón</p>
+                                </header>
+                                <section class="tarjeta-detalle-cuerpo">
+                                    <h4 class="fw-bold">Haz tu pedido de gas aquí:</h4>
+                                    <p class="dato-despacho">Miércoles | 08:00 a 16:00 hrs.</p>
+                                    <p class="dato-despacho">Tiempo estimado: 4 a 6 horas</p>
+                                    
+                                    <address class="info-contacto-detalle">
+                                        <a href="productos.html" class="enlace-azul">Realizar pedido online</a>
+                                        <span class="texto-naranja fw-bold">Call Center: 800 20 9000</span>
+                                        <span class="texto-rojo fw-bold">Emergencia: 800 50 9111</span>
+                                    </address>
+                                    <label for="reset-sucursal" class="btn-atras">&lt; Ir atrás</label>
+                                </section>
+                            </article>
+
+                            <article class="detalle-card" id="detalle-5">
+                                <header class="tarjeta-detalle-encabezado">
+                                    <h3 class="titulo-naranja">Zona Comercial</h3>
+                                    <p class="texto-direccion">Parques industriales y locales comerciales</p>
+                                </header>
+                                <section class="tarjeta-detalle-cuerpo">
+                                    <h4 class="fw-bold">Haz tu pedido de gas aquí:</h4>
+                                    <p class="dato-despacho">Lunes a Viernes | 07:00 a 17:00 hrs.</p>
+                                    <p class="dato-despacho">Tiempo estimado: Según agenda</p>
+                                    
+                                    <address class="info-contacto-detalle">
+                                        <a href="productos.html" class="enlace-azul">Realizar pedido online</a>
+                                        <span class="texto-naranja fw-bold">Call Center: 800 20 9000</span>
+                                        <span class="texto-rojo fw-bold">Emergencia: 800 50 9111</span>
+                                    </address>
+                                    <label for="reset-sucursal" class="btn-atras">&lt; Ir atrás</label>
+                                </section>
+                            </article>
+
+                        </section>
+                    </aside>
+                </div>
+            </section>
+        
+        </main>
+
+        <!-- Footer -->
+        <footer class="pie-pagina">
+            <div class="contenedor grilla-pie">
+                <div class="pie-columna">
+                    <h6>Nuestra Empresa</h6>
+                    <ul>
+                        <li><a href="nosotros.html#quienes-somos">Historia</a></li>
+                        <li><a href="nosotros.html#mision-vision">Misión y Visión</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Atención al Cliente</h6>
+                    <ul>
+                        <li><a href="contacto.html#contacto">Contacto y Soporte</a></li>
+                        <li><a href="contacto.html#faq">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Sucursal Virtual</h6>
+                    <ul>
+                        <li><a href="login.html">Iniciar Sesión</a></li>
+                        <li><a href="registro.html">Registrarse</a></li>
+                        <li><a href="punto-volcan.html">Rastrear Pedido</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Términos y Condiciones</h6>
+                    <ul>
+                        <li><a href="legales.html#terminos">Términos del Servicio</a></li>
+                        <li><a href="legales.html#privacidad">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                
+                <div class="pie-columna pie-boletin">
+                    <h6>Suscríbete para recibir ofertas exclusivas.</h6>
+                    <div class="buscador-footer">
+                        <input type="email" placeholder="Ingresa tu correo" />
+                        <a href="registro.html" class="boton boton-naranja texto-blanco">Suscríbete</a>
+                    </div>
+                    
+                    <h6>Medios de Pago</h6>
+                    <div class="pie-pagos">
+                        <img src="assets/img/pagos/visa.svg" alt="Visa" class="pago-icono" />
+                        <img src="assets/img/pagos/mastercard.svg" alt="Mastercard" class="pago-icono" />
+                        <img src="assets/img/pagos/amex.svg" alt="AMEX" class="pago-icono" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contenedor pie-copyright">
+                <p>&copy; 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
+            </div>
+        </footer>
+    </body>
+</html>
