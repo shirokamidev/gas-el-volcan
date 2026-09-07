@@ -1,0 +1,222 @@
+/* Indicador de navegación activa */
+.enlaces-navegacion a.activo {
+    color: var(--volcan-naranja);
+}
+
+/* Fondo general */
+.pagina-detalle {
+    background-color: #ffffff;
+    padding-bottom: 2.5rem;
+    min-height: calc(100vh - 200px);
+}
+
+/* Ruta de navegación */
+.ruta-navegacion {
+    font-size: 0.95rem;
+    color: #666666;
+    margin-bottom: 2.5rem;
+    padding-top: 2rem;
+}
+
+.ruta-navegacion a {
+    color: var(--volcan-azul);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.ruta-navegacion a:hover {
+    text-decoration: underline;
+}
+
+.ruta-navegacion span {
+    margin: 0 0.5rem;
+}
+
+/* Contenedor de portada */
+.portada-blog {
+    position: relative;
+    width: 100%;
+    height: 35rem; 
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 3.5rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.img-fondo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Degradado sobre la imagen */
+.capa-oscura {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.85) 100%);
+    pointer-events: none;
+}
+
+/* Textos sobre la imagen */
+.contenido-encima {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 3.5rem;
+    color: #ffffff;
+}
+
+.etiqueta-naranja {
+    display: inline-block;
+    background-color: var(--volcan-naranja);
+    color: #ffffff;
+    padding: 0.4rem 1.2rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.titulo-blanco {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 0.15rem 0.4rem rgba(0, 0, 0, 0.7);
+}
+
+.meta-info {
+    font-size: 0.95rem;
+    color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 600;
+}
+
+.separador {
+    color: #888888;
+}
+
+.fecha-icono {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* Cuerpo del artículo */
+.cuerpo-texto {
+    width: 100%;
+    color: #444444;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify; 
+}
+
+.cuerpo-texto p {
+    margin-bottom: 1.5rem;
+}
+
+.texto-intro {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--volcan-oscuro);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.cuerpo-texto h2 {
+    color: var(--volcan-azul);
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    margin-bottom: 1.2rem;
+}
+
+.cuerpo-texto ul, 
+.cuerpo-texto ol {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+}
+
+.cuerpo-texto li {
+    margin-bottom: 0.8rem;
+}
+
+.cuerpo-texto li strong {
+    color: var(--volcan-oscuro);
+}
+
+/* Sección de compartir */
+.bloque-compartir {
+    margin-top: 4rem;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.compartir-titulo {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--volcan-oscuro);
+}
+
+.compartir-iconos {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.compartir-iconos a {
+    color: #666666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.compartir-iconos a:hover {
+    color: var(--volcan-naranja);
+    transform: translateY(-2px);
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 48rem) {
+    .portada-blog {
+        height: 25rem;
+        border-radius: 0.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .contenido-encima {
+        padding: 2rem 1.5rem;
+    }
+
+    .titulo-blanco {
+        font-size: 1.8rem;
+    }
+
+    .cuerpo-texto {
+        font-size: 1rem;
+    }
+
+    .cuerpo-texto h2 {
+        font-size: 1.5rem;
+    }
+
+    .texto-intro {
+        font-size: 1.15rem;
+    }
+
+    .bloque-compartir {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
