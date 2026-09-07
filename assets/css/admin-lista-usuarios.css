@@ -1,0 +1,173 @@
+/* Cabecera del modulo */
+.cabecera-modulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.cabecera-modulo h1 {
+    color: var(--volcan-oscuro);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.btn-nuevo-registro {
+    background-color: var(--volcan-oscuro);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-nuevo-registro:hover {
+    background-color: var(--volcan-naranja);
+}
+
+/* Caja blanca que envuelve la tabla */
+.caja-tabla-admin {
+    background-color: #ffffff;
+    border-radius: 0.6rem;
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--volcan-borde);
+    padding: 1.5rem;
+}
+
+/* Contenedor con scroll forzado para que no se apilen columnas en pantallas chicas */
+.tabla-responsiva {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Estilos de la tabla de datos */
+.tabla-datos {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+/* Garantiza que todo el contenido se mantenga en una sola linea */
+.tabla-datos th, 
+.tabla-datos td {
+    padding: 1.2rem 1rem;
+    border-bottom: 1px solid var(--volcan-borde);
+    vertical-align: middle;
+    font-size: 0.95rem;
+    white-space: nowrap; 
+}
+
+.tabla-datos th {
+    background-color: #f8f9fa;
+    color: var(--volcan-oscuro);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.tabla-datos tbody tr:hover {
+    background-color: #fbfcfd;
+}
+
+/* Clases de apoyo para los textos de la tabla */
+.fw-bold {
+    font-weight: 600;
+    color: var(--volcan-azul);
+}
+
+.texto-secundario {
+    color: #888888;
+    font-size: 0.9rem;
+}
+
+.columna-centro {
+    text-align: center;
+}
+
+/* Etiquetas visuales para los roles */
+.etiqueta-rol {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.rol-admin {
+    background-color: rgba(0, 76, 151, 0.1);
+    color: var(--volcan-azul);
+}
+
+.rol-vendedor {
+    background-color: rgba(224, 96, 21, 0.1);
+    color: var(--volcan-naranja);
+}
+
+.rol-cliente {
+    background-color: #f1f3f5;
+    color: #495057;
+}
+
+/* Botones SVG para editar y eliminar */
+.celda-acciones {
+    text-align: center;
+    vertical-align: middle;
+    min-width: 100px;
+}
+
+.btn-accion {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem;
+    border-radius: 0.3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.2rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-editar {
+    color: var(--volcan-azul);
+}
+
+.btn-editar:hover {
+    background-color: rgba(0, 76, 151, 0.1);
+}
+
+.btn-eliminar {
+    color: #dc3545;
+}
+
+.btn-eliminar:hover {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* Media queries para adaptar vista en celulares */
+@media (max-width: 48rem) {
+    .cabecera-modulo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+    
+    .cabecera-modulo h1 {
+        font-size: 1.6rem;
+    }
+    
+    .btn-nuevo-registro {
+        align-self: flex-start;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+
+    .caja-tabla-admin {
+        padding: 1rem;
+    }
+}
