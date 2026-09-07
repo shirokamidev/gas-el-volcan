@@ -1,0 +1,218 @@
+/* Cabecera del modulo */
+.cabecera-modulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.cabecera-modulo h1 {
+    color: var(--volcan-oscuro);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Boton secundario */
+.btn-secundario {
+    background-color: #ffffff;
+    color: var(--volcan-oscuro);
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 1px solid var(--volcan-borde);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-secundario:hover {
+    background-color: #f8f9fa;
+    border-color: #d1d1d1;
+}
+
+/* Contenedor principal del formulario */
+.caja-formulario-admin {
+    background-color: #ffffff;
+    border-radius: 0.6rem;
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--volcan-borde);
+    padding: 2.5rem;
+}
+
+/* Formulario generico y fieldsets */
+.formulario-generico {
+    display: flex;
+    flex-direction: column;
+}
+
+.seccion-fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.espaciado-seccion {
+    margin-top: 2.5rem;
+}
+
+.titulo-legend {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--volcan-oscuro);
+    margin-bottom: 0.8rem;
+    width: 100%;
+}
+
+.linea-separadora {
+    height: 1px;
+    background-color: var(--volcan-borde);
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.texto-obligatorio {
+    font-size: 0.9rem;
+    color: #666666;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+/* Grilla del formulario */
+.grilla-formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 2rem;
+}
+
+.col-completa {
+    grid-column: span 2;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Etiquetas e Inputs */
+.label-campo {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--volcan-texto);
+    margin-bottom: 0.5rem;
+}
+
+.asterisco {
+    color: #dc3545;
+}
+
+.input-campo {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid #d1d1d1;
+    border-radius: 0.3125rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--volcan-texto);
+    background-color: #ffffff;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    outline: none;
+}
+
+.input-campo:focus {
+    border-color: var(--volcan-azul);
+    background-color: #fbfcfd;
+}
+
+.input-campo::placeholder {
+    color: #a0a0a0;
+}
+
+/* Selector estilizado */
+.select-campo {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23333333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    padding-right: 2.5rem;
+}
+
+/* Textos de ayuda debajo de los inputs */
+.texto-ayuda {
+    font-size: 0.8rem;
+    color: #888888;
+    margin-top: 0.4rem;
+    font-weight: 500;
+}
+
+/* Acciones finales del formulario */
+.acciones-registro {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--volcan-borde);
+}
+
+.boton-guardar {
+    background-color: var(--volcan-naranja);
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 0.3125rem;
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-guardar:hover {
+    background-color: #e06015;
+}
+
+/* Media queries para adaptar vista en celulares y tablets */
+@media (max-width: 64rem) {
+    .grilla-formulario {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .col-completa {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 48rem) {
+    .cabecera-modulo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .cabecera-modulo h1 {
+        font-size: 1.6rem;
+    }
+    
+    .btn-secundario {
+        align-self: flex-start;
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .caja-formulario-admin {
+        padding: 1.5rem;
+    }
+    
+    .acciones-registro {
+        justify-content: center;
+    }
+    
+    .boton-guardar {
+        width: 100%;
+    }
+}
