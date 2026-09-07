@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gas El Volcán | Blogs y Noticias</title>
+        <link rel="icon" type="image/svg+xml" href="assets/img/favicon-volcan.svg" />
+        
+        <!-- Fuentes de Google -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+        
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/layout.css" />
+        <link rel="stylesheet" href="assets/css/blogs.css" />
+    </head>
+    <body>
+        <!-- Checkbox para controlar el estado del menú en móviles -->
+        <input type="checkbox" id="menu-hamburguesa" class="toggle-hamburguesa">
+
+        <!-- Cabecera principal -->
+        <header class="cabecera-principal">
+            <div class="barra-superior">
+                <div class="contenedor contenido-barra-superior">
+                    <span>Atención al Cliente: <strong>800 50 9000</strong></span>
+                    <span class="texto-peligro">Emergencia: <strong>800 50 9111</strong></span>
+                </div>
+            </div>
+
+            <nav class="barra-navegacion contenedor">
+                <a href="index.html" class="enlace-logo">
+                    <img src="assets/img/logo-volcan.svg" alt="Logo Gas El Volcán" class="logo-navegacion" />
+                </a>
+                
+                <label for="menu-hamburguesa" class="icono-hamburguesa">
+                    <span class="icono-abrir">&#9776;</span>
+                    <span class="icono-cerrar">&#10005;</span>
+                </label>
+                
+                <ul class="enlaces-navegacion">
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="productos.html">PRODUCTOS</a></li>
+                    <li><a href="punto-volcan.html">SUCURSALES</a></li>
+                    <li><a href="nosotros.html">NOSOTROS</a></li>
+                    <li><a href="blogs.html" class="activo">BLOGS</a></li>
+                    <li><a href="contacto.html">CONTACTO</a></li>
+                    
+                    <li class="menu-desplegable ocultar-en-movil">
+                        <input type="checkbox" id="activar-sucursal" class="toggle-desplegable">
+                        <label for="activar-sucursal" class="boton boton-oscuro">SUCURSAL VIRTUAL</label>
+                        <ul class="sub-menu">
+                            <li><a href="login.html">Iniciar Sesión</a></li>
+                            <li class="divisor"></li>
+                            <li><a href="registro.html">Registrarse</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="ocultar-en-pc"><a href="login.html">INICIAR SESIÓN</a></li>
+                    <li class="ocultar-en-pc"><a href="registro.html">REGISTRARSE</a></li>
+                    
+                    <li><a href="carrito.html" class="icono-carrito fw-bold">CARRITO (0)</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="pagina-blogs">
+            
+            <!-- Hero de noticias -->
+            <section class="hero-blogs">
+                <div class="contenedor hero-blogs-contenido">
+                    <h1 class="fw-bold texto-blanco">Blogs y Noticias</h1>
+                    <p class="bajada-blogs">Entérate de nuestras últimas novedades, consejos de seguridad y beneficios exclusivos para tu hogar.</p>
+                </div>
+            </section>
+
+            <!-- Barra de herramientas y filtros -->
+            <section class="seccion-filtros-blogs contenedor">
+                <form class="barra-filtros" action="#" method="GET">
+                    
+                    <div class="grupo-filtro filtro-buscar">
+                        <label for="buscar-blog">Buscar</label>
+                        <div class="caja-buscador">
+                            <input type="text" id="buscar-blog" name="q" placeholder="Buscar...">
+                            <button type="submit" class="boton-lupa" aria-label="Buscar">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="grupo-filtro">
+                        <label for="categoria-blog">Categoría</label>
+                        <select id="categoria-blog" name="categoria">
+                            <option value="todas">Todas las categorías</option>
+                            <option value="comunidad">Comunidad</option>
+                            <option value="negocio">Nuestro Negocio</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-filtro">
+                        <label for="fecha-blog">Fecha</label>
+                        <select id="fecha-blog" name="fecha">
+                            <option value="todos">Todos los años</option>
+                            <option value="2026">2026</option>
+                            <option value="2025">2025</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-filtro-accion">
+                        <button type="button" class="boton boton-naranja boton-bloque btn-filtrar">FILTRAR</button>
+                    </div>
+
+                </form>
+            </section>
+
+            <!-- Grilla de noticias -->
+            <section class="seccion-grilla-blogs contenedor">
+                <div class="grilla-blogs">
+                    
+                    <!-- Noticia 1: Subsidio -->
+                    <article class="tarjeta-blog">
+                        <a href="detalle-blog-1.html" class="blog-enlace-img">
+                            <img src="assets/img/blogs/noticia-subsidio.jpg" alt="Familia ahorrando en calefacción" class="blog-img">
+                        </a>
+                        <div class="blog-cuerpo">
+                            <div class="blog-meta">
+                                <span class="meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    10/08/2026
+                                </span>
+                                <span class="meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                    Nuestro Negocio
+                                </span>
+                            </div>
+                            <h3 class="blog-titulo">Plan de invierno: Beneficios y descuentos para nuestros clientes en Ñuble</h3>
+                            <p class="blog-resumen">Conoce nuestro programa de descuentos que ofrece tarifas preferenciales en cilindros de 15 kg durante los meses de más baja temperatura. Entérate de cómo un 84% de las familias de la región optimiza su calefacción con Gas El Volcán.</p>
+                            <a href="detalle-blog-1.html" class="blog-enlace-leer">
+                                Seguir leyendo 
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Noticia 2: Fugas de gas -->
+                    <article class="tarjeta-blog">
+                        <a href="detalle-blog-2.html" class="blog-enlace-img">
+                            <img src="assets/img/blogs/seguridad-fugas.png" alt="Revisión de válvula y regulador" class="blog-img">
+                        </a>
+                        <div class="blog-cuerpo">
+                            <div class="blog-meta">
+                                <span class="meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    02/09/2026
+                                </span>
+                                <span class="meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                    Comunidad
+                                </span>
+                            </div>
+                            <h3 class="blog-titulo">¿Cómo detectar fugas de gas a tiempo? 3 pasos clave</h3>
+                            <p class="blog-resumen">La prevención es vital en tu hogar. Aprende el método de la espuma para válvulas, cómo identificar olores sospechosos y qué protocolos seguir ante una emergencia con tu cilindro.</p>
+                            <a href="detalle-blog-2.html" class="blog-enlace-leer">
+                                Seguir leyendo 
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+        </main>
+
+        <!-- Pie de página -->
+        <footer class="pie-pagina">
+            <div class="contenedor grilla-pie">
+                <div class="pie-columna">
+                    <h6>Nuestra Empresa</h6>
+                    <ul>
+                        <li><a href="nosotros.html#quienes-somos">Historia</a></li>
+                        <li><a href="nosotros.html#mision-vision">Misión y Visión</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Atención al Cliente</h6>
+                    <ul>
+                        <li><a href="contacto.html#contacto">Contacto y Soporte</a></li>
+                        <li><a href="contacto.html#faq">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Sucursal Virtual</h6>
+                    <ul>
+                        <li><a href="login.html">Iniciar Sesión</a></li>
+                        <li><a href="registro.html">Registrarse</a></li>
+                        <li><a href="punto-volcan.html">Rastrear Pedido</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Términos y Condiciones</h6>
+                    <ul>
+                        <li><a href="legales.html#terminos">Términos del Servicio</a></li>
+                        <li><a href="legales.html#privacidad">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                
+                <div class="pie-columna pie-boletin">
+                    <h6>Suscríbete para recibir ofertas exclusivas.</h6>
+                    <div class="buscador-footer">
+                        <input type="email" placeholder="Ingresa tu correo" />
+                        <a href="registro.html" class="boton boton-naranja texto-blanco">Suscríbete</a>
+                    </div>
+                    
+                    <h6>Medios de Pago</h6>
+                    <div class="pie-pagos">
+                        <img src="assets/img/pagos/visa.svg" alt="Visa" class="pago-icono" />
+                        <img src="assets/img/pagos/mastercard.svg" alt="Mastercard" class="pago-icono" />
+                        <img src="assets/img/pagos/amex.svg" alt="AMEX" class="pago-icono" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contenedor pie-copyright">
+                <p>&copy; 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
+            </div>
+        </footer>
+    </body>
+</html>
