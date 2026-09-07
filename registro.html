@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gas El Volcán | Registrar Cuenta</title>
+        <link rel="icon" type="image/svg+xml" href="assets/img/favicon-volcan.svg" />
+        
+        <!-- Fuentes de Google -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/layout.css" />
+        <link rel="stylesheet" href="assets/css/registro.css" />
+    </head>
+    <body class="cuerpo-autenticacion">
+        
+        <main class="pantalla-autenticacion">
+            
+            <!-- Navegacion superior -->
+            <nav class="navegacion-superior">
+                <a href="index.html" class="enlace-regresar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Regresar a Inicio
+                </a>
+            </nav>
+
+            <!-- Tarjeta principal de registro -->
+            <section class="escena-tarjeta">
+                <article class="tarjeta-registro">
+                    <header class="cabecera-tarjeta">
+                        <img src="assets/img/logo-volcan.svg" alt="Gas El Volcán" class="logo-empresa">
+                        <h1 class="titulo-acceso fw-bold">Formulario de registro</h1>
+                    </header>
+                    
+                    <form action="#" class="formulario-generico">
+                        
+                        <!-- Seccion de datos personales -->
+                        <fieldset class="seccion-fieldset">
+                            <legend class="titulo-legend">Datos personales</legend>
+                            <div class="linea-separadora"></div>
+                            
+                            <p class="texto-obligatorio">* Completa la información solicitada a continuación:</p>
+                            <p class="texto-intro-registro"><strong>Ingresa los datos solicitados para poder crear tu cuenta en la Sucursal Virtual. Este proceso te tomará menos de 2 minutos.</strong></p>
+                            
+                            <div class="grilla-formulario">
+                                <div class="grupo-input col-completa">
+                                    <input type="text" placeholder="Rut" class="input-campo" required>
+                                    <span class="texto-ayuda">Sin puntos ni guion, Ej: 19011022K</span>
+                                </div>
+                                
+                                <div class="grupo-input col-completa">
+                                    <input type="text" placeholder="Nombre" class="input-campo" required>
+                                </div>
+                                
+                                <div class="grupo-input">
+                                    <input type="text" placeholder="Apellido Paterno" class="input-campo" required>
+                                </div>
+                                
+                                <div class="grupo-input">
+                                    <input type="text" placeholder="Apellido Materno" class="input-campo" required>
+                                </div>
+                                
+                                <div class="grupo-input">
+                                    <div class="caja-input-flex">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icono-izquierdo">
+                                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                        </svg>
+                                        
+                                        <input type="password" placeholder="Contraseña de acceso" class="input-limpio" required>
+                                        
+                                        <span class="icono-derecho">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                <circle cx="12" cy="12" r="3"></circle>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <span class="texto-ayuda">Entre 4 a 10 caracteres.</span>
+                                </div>
+
+                                <div class="grupo-input">
+                                    <div class="caja-input-flex">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icono-izquierdo">
+                                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                        </svg>
+                                        
+                                        <input type="password" placeholder="Repetir contraseña" class="input-limpio" required>
+                                        
+                                        <span class="icono-derecho">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                <circle cx="12" cy="12" r="3"></circle>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Seccion de datos de contacto -->
+                        <fieldset class="seccion-fieldset espaciado-seccion">
+                            <legend class="titulo-legend">Datos de contacto</legend>
+                            <div class="linea-separadora"></div>
+                            
+                            <div class="grilla-formulario">
+                                <div class="grupo-input col-completa">
+                                    <input type="tel" placeholder="Teléfono (Opcional)" pattern="[0-9]{9}" class="input-campo">
+                                    <span class="texto-ayuda">Ej: 912345678</span>
+                                </div>
+                                
+                                <div class="grupo-input col-completa">
+                                    <input type="email" placeholder="E-mail" class="input-campo" required>
+                                    <span class="texto-ayuda">Solo correos con @duoc.cl, @profesor.duoc.cl y @gmail.com</span>
+                                </div>
+                                
+                                <div class="grupo-input col-completa">
+                                    <input type="email" placeholder="Repetir e-mail" class="input-campo" required>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Seccion de direccion -->
+                        <fieldset class="seccion-fieldset espaciado-seccion">
+                            <legend class="titulo-legend">Dirección</legend>
+                            <div class="linea-separadora"></div>
+                            
+                            <div class="grilla-formulario">
+                                <div class="grupo-input">
+                                    <select class="input-campo select-campo" required>
+                                        <option value="" disabled selected>Seleccione región</option>
+                                        <option value="nuble">Región de Ñuble</option>
+                                        <option value="biobio">Región del Biobío</option>
+                                    </select>   
+                                </div>
+                                
+                                <div class="grupo-input">
+                                    <select id="comuna" class="input-campo select-campo" required>
+                                        <option value="" disabled selected>Seleccione comuna</option>
+                                        <option value="chillan">Chillán</option>
+                                        <option value="chillan-viejo">Chillán Viejo</option>
+                                        <option value="el-carmen">El Carmen</option>
+                                        <option value="pinto">Pinto</option>
+                                        <option value="san-ignacio">San Ignacio</option>
+                                        <option value="bulnes">Bulnes</option>
+                                        <option value="quillon">Quillón</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="grupo-input col-completa">
+                                    <input type="text" placeholder="Calle y Número (Ej: Los Puelches 123)" class="input-campo" required>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Mensaje informativo -->
+                        <div class="caja-informacion">
+                            <h4 class="titulo-info">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                </svg>
+                                ¿Por qué solicitamos estos datos?
+                            </h4>
+                            <p class="texto-info">No es de curiosos, estos datos nos ayudan a entregarte una mejor y más personalizada experiencia. ¡Muchas gracias!</p>
+                        </div>
+
+                        <!-- Checkbox y politicas -->
+                        <div class="grupo-checkbox">
+                            <input type="checkbox" id="terminos" required>
+                            <label for="terminos">Acepto los <a href="legales.html#terminos">términos y condiciones</a> y la <a href="legales.html#privacidad">política de privacidad</a>.</label>
+                        </div>
+                        
+                        <!-- Botones de accion final -->
+                        <div class="acciones-registro">
+                            <a href="login.html" class="enlace-volver-login">
+                                <span>&larr;</span> Volver a Iniciar Sesión
+                            </a>
+                            <button type="submit" class="boton boton-naranja boton-grande">Continuar</button>
+                        </div>
+                    </form>
+                </article>
+            </section>
+
+            <!-- Pie de pagina -->
+            <footer class="pie-autenticacion">
+                <p class="texto-copyright">&copy; 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
+                <div class="banda-degradada-inferior"></div>
+            </footer>
+            
+        </main>
+    </body>
+</html>
