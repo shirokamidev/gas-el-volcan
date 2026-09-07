@@ -167,3 +167,109 @@ if (formContacto) {
     }
   });
 }
+
+// Validación del formulario de registro
+const formRegistro = document.getElementById("form-registro");
+
+if (formRegistro) {
+  const rutRegistro = document.getElementById("rut-registro");
+  const nombreRegistro = document.getElementById("nombre-registro");
+  const correoRegistro = document.getElementById("correo-registro");
+  const correoConfirmRegistro = document.getElementById("correo-confirm-registro");
+  const passwordRegistro = document.getElementById("password-registro");
+  const passwordConfirmRegistro = document.getElementById("password-confirm-registro");
+  const terminosRegistro = document.getElementById("terminos-registro");
+  
+  const errorRutRegistro = document.getElementById("error-rut-registro");
+  const errorNombreRegistro = document.getElementById("error-nombre-registro");
+  const errorCorreoRegistro = document.getElementById("error-correo-registro");
+  const errorPasswordRegistro = document.getElementById("error-password-registro");
+  const errorTerminosRegistro = document.getElementById("error-terminos-registro");
+  const mensajeRegistro = document.getElementById("mensaje-registro");
+
+  // Ojitos para las contraseñas de registro
+  const togglePassReg = document.getElementById("toggle-password-registro");
+  const togglePassConf = document.getElementById("toggle-password-confirm");
+
+  function configurarOjito(toggleBtn, inputPass) {
+    if (toggleBtn && inputPass) {
+      toggleBtn.addEventListener("click", () => {
+        const type = inputPass.getAttribute("type") === "password" ? "text" : "password";
+        inputPass.setAttribute("type", type);
+        
+        if (type === "text") {
+          toggleBtn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>`;
+        } else {
+          toggleBtn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
+        }
+      });
+    }
+  }
+
+  configurarOjito(togglePassReg, passwordRegistro);
+  configurarOjito(togglePassConf, passwordConfirmRegistro);
+
+  formRegistro.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let formularioValido = true;
+
+    // Validar RUT (básico, sin puntos ni guion)
+    if (rutRegistro.value.trim() === "" || rutRegistro.value.length < 8) {
+      errorRutRegistro.textContent = "Ingrese un RUT válido sin puntos ni guion.";
+      formularioValido = false;
+    } else {
+      errorRutRegistro.textContent = "";
+    }
+
+    // Validar Nombre
+    if (nombreRegistro.value.trim() === "") {
+      errorNombreRegistro.textContent = "El nombre es obligatorio.";
+      formularioValido = false;
+    } else {
+      errorNombreRegistro.textContent = "";
+    }
+
+    // Validar Correos (Formato y coincidencia)
+    const errorCorreo = validarCorreo(correoRegistro.value);
+    if (errorCorreo !== "") {
+      errorCorreoRegistro.textContent = errorCorreo;
+      formularioValido = false;
+    } else if (correoRegistro.value !== correoConfirmRegistro.value) {
+      errorCorreoRegistro.textContent = "Los correos electrónicos no coinciden.";
+      formularioValido = false;
+    } else {
+      errorCorreoRegistro.textContent = "";
+    }
+
+    // Validar Contraseñas
+    if (passwordRegistro.value.length < 4 || passwordRegistro.value.length > 10) {
+      errorPasswordRegistro.textContent = "La contraseña debe tener entre 4 y 10 caracteres.";
+      formularioValido = false;
+    } else if (passwordRegistro.value !== passwordConfirmRegistro.value) {
+      errorPasswordRegistro.textContent = "Las contraseñas no coinciden.";
+      formularioValido = false;
+    } else {
+      errorPasswordRegistro.textContent = "";
+    }
+
+    // Validar Términos
+    if (!terminosRegistro.checked) {
+      errorTerminosRegistro.textContent = "Debes aceptar los términos y condiciones.";
+      formularioValido = false;
+    } else {
+      errorTerminosRegistro.textContent = "";
+    }
+
+    // Resultado final
+    if (formularioValido) {
+      mensajeRegistro.textContent = "Cuenta registrada exitosamente. Redirigiendo...";
+      mensajeRegistro.style.color = "var(--volcan-azul)";
+      setTimeout(() => {
+        window.location.href = "login.html";
+      }, 2000);
+    } else {
+      mensajeRegistro.textContent = "Por favor, corrige los errores antes de continuar.";
+      mensajeRegistro.style.color = "#dc3545";
+    }
+  });
+}
