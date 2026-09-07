@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gas El Volcán | Contacto</title>
+        <link rel="icon" type="image/svg+xml" href="assets/img/favicon-volcan.svg" />
+        
+        <!-- Fuentes de Google -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+        
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/layout.css" />
+        <link rel="stylesheet" href="assets/css/contacto.css" />
+    </head>
+    <body>
+        <!-- Checkbox para controlar el estado del menú en móviles -->
+        <input type="checkbox" id="menu-hamburguesa" class="toggle-hamburguesa">
+
+        <!-- Header -->
+        <header class="cabecera-principal">
+            <div class="barra-superior">
+                <div class="contenedor contenido-barra-superior">
+                    <span>Atención al Cliente: <strong>800 50 9000</strong></span>
+                    <span class="texto-peligro">Emergencia: <strong>800 50 9111</strong></span>
+                </div>
+            </div>
+
+            <nav class="barra-navegacion contenedor">
+                <a href="index.html" class="enlace-logo">
+                    <img src="assets/img/logo-volcan.svg" alt="Logo Gas El Volcán" class="logo-navegacion" />
+                </a>
+                
+                <label for="menu-hamburguesa" class="icono-hamburguesa">
+                    <span class="icono-abrir">&#9776;</span>
+                    <span class="icono-cerrar">&#10005;</span>
+                </label>
+                
+                <ul class="enlaces-navegacion">
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="productos.html">PRODUCTOS</a></li>
+                    <li><a href="punto-volcan.html">SUCURSALES</a></li>
+                    <li><a href="nosotros.html">NOSOTROS</a></li>
+                    <li><a href="blogs.html">BLOGS</a></li>
+                    <li><a href="contacto.html" class="activo">CONTACTO</a></li>
+                    
+                    <li class="menu-desplegable ocultar-en-movil">
+                        <input type="checkbox" id="activar-sucursal" class="toggle-desplegable">
+                        <label for="activar-sucursal" class="boton boton-oscuro">SUCURSAL VIRTUAL</label>
+                        <ul class="sub-menu">
+                            <li><a href="login.html">Iniciar Sesión</a></li>
+                            <li class="divisor"></li>
+                            <li><a href="registro.html">Registrarse</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="ocultar-en-pc"><a href="login.html">INICIAR SESIÓN</a></li>
+                    <li class="ocultar-en-pc"><a href="registro.html">REGISTRARSE</a></li>
+                    
+                    <li><a href="carrito.html" class="icono-carrito fw-bold">CARRITO (0)</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Hero de Contacto -->
+            <section class="contacto-hero">
+                <div class="contacto-hero-fondo">
+                    <div class="contacto-hero-contenido limite-ancho">
+                        <h1 class="texto-blanco fw-bold">Contáctanos</h1>
+                        <p class="texto-blanco">Estamos aquí para resolver tus dudas y ayudarte con tu pedido.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Principal de Contacto -->
+            <section class="seccion-contacto" id="contacto">
+                <div class="contenedor">
+                    <div class="grilla-contacto">
+                        
+                        <!-- Información de Contacto -->
+                        <article class="contacto-info">
+                            <h2 class="fw-bold">Hablemos</h2>
+                            <p>Si tienes consultas sobre nuestros productos, necesitas soporte técnico o quieres dejar un reclamo, contáctanos a través de nuestros canales oficiales.</p>
+                            
+                            <div class="info-items">
+                                <div class="info-item">
+                                    <h4 class="fw-bold">Teléfonos</h4>
+                                    <p>Atención al Cliente: +56 800 50 9000</p>
+                                    <p>Emergencias 24/7: +56 800 50 9111</p>
+                                </div>
+                                
+                                <div class="info-item">
+                                    <h4 class="fw-bold">Correo Electrónico</h4>
+                                    <p>ayuda@gaselvolcan.cl</p>
+                                    <p>reclamos@gaselvolcan.cl</p>
+                                </div>
+                                
+                                <div class="info-item">
+                                    <h4 class="fw-bold">Casa Matriz y Despachos</h4>
+                                    <p>Av. Brasil 450, Chillán, Región de Ñuble.</p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Formulario de Contacto -->
+                        <article class="contacto-formulario-caja">
+                            <h3 class="fw-bold">Envíanos un mensaje</h3>
+                            <form class="formulario-contacto" action="#" method="POST">
+                                <div class="form-grupo">
+                                    <label for="nombre">Nombre Completo *</label>
+                                    <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                                </div>
+
+                                <div class="form-grupo">
+                                    <label for="correo">Correo Electrónico *</label>
+                                    <input type="email" id="correo" name="correo" placeholder="Ej: usuario@gmail.com" required>
+                                    <p class="texto-ayuda">Solo se admiten dominios @gmail.com, @duocuc.cl y @profesor.duoc.cl</p>
+                                </div>
+
+                                <div class="form-grupo">
+                                    <label for="telefono">Teléfono</label>
+                                    <input type="tel" id="telefono" name="telefono" placeholder="Ej: 912345678" pattern="[0-9]{9}">
+                                </div>
+
+                                <div class="form-grupo">
+                                    <label for="asunto">Asunto *</label>
+                                    <select id="asunto" name="asunto" required>
+                                        <option value="" disabled selected>Selecciona un asunto...</option>
+                                        <option value="consulta">Consulta General</option>
+                                        <option value="pedido">Problema con mi pedido</option>
+                                        <option value="reclamo">Reclamo</option>
+                                        <option value="felicitacion">Felicitación</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-grupo">
+                                    <label for="mensaje">Mensaje *</label>
+                                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                                </div>
+
+                                <button type="submit" class="boton boton-naranja boton-bloque">ENVIAR MENSAJE</button>
+                            </form>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Banner Sucursal Virtual -->
+            <section class="seccion-banner-sucursal">
+                <div class="grilla-banner-sucursal">
+                    <div class="banner-contenido-wrapper">
+                        <div class="banner-contenido">
+                            <h2 class="fw-bold">Ingresa a la Sucursal Virtual</h2>
+                            <p>Crea requerimientos relacionados con servicios, cupones, descuentos o productos de Gas El Volcán.</p>
+                            
+                            <a href="login.html" class="boton boton-azul boton-redondeado">Sucursal Virtual</a>
+                        </div>
+                    </div>
+                    <div class="banner-imagen">
+                        <img src="assets/img/contacto/cliente-sucursal-virtual.jpg" alt="Cliente utilizando la sucursal virtual en su computador" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Preguntas Frecuentes -->
+            <section class="seccion-faq" id="faq">
+                <div class="contenedor">
+                    <h2 class="fw-bold titulo-centrado">Preguntas Frecuentes</h2>
+                    <div class="faq-contenedor">
+                        <details>
+                            <summary>¿Cómo se debe instalar un cilindro de 45kg?</summary>
+                            <p>Gas El Volcán no cuenta con instalación directa de cilindros de 45kg en domicilios. Esto debe ser realizado por instaladores autorizados de la Superintendencia de Electricidad y Combustibles (SEC) para garantizar tu seguridad.</p>
+                        </details>
+                        
+                        <details>
+                            <summary>¿Qué debo hacer si el distribuidor me entrega mal el vuelto?</summary>
+                            <p>Si ocurre un problema con tu vuelto al momento de recibir un pedido de Gas El Volcán, comunícate de inmediato al 800 50 9000 indicando tu número de pedido y los datos del repartidor para gestionar la solución a la brevedad.</p>
+                        </details>
+                        
+                        <details>
+                            <summary>¿Qué debo hacer si no se aplica mi descuento?</summary>
+                            <p>Verifica que tu compra cumpla con las condiciones de la promoción de Gas El Volcán. Si el error persiste en la plataforma, no finalices el pedido y contáctanos a nuestro teléfono de atención al cliente para validar tu rebaja.</p>
+                        </details>
+                        
+                        <details>
+                            <summary>¿Qué debo hacer si el repartidor no llega a la hora indicada?</summary>
+                            <p>Puedes rastrear el estado de tu pedido directamente en nuestra Sucursal Virtual. Si hay un retraso inusual, nuestra central telefónica te ayudará a contactar al camión de Gas El Volcán asignado a tu ruta.</p>
+                        </details>
+                        
+                        <details>
+                            <summary>¿Cómo puedo saber el precio del cilindro en mi comuna?</summary>
+                            <p>Al navegar por la sección de "Productos" en el sitio web de Gas El Volcán, puedes seleccionar tu comuna. El sistema actualizará automáticamente los valores según tu ubicación en la Región de Ñuble y alrededores.</p>
+                        </details>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="pie-pagina">
+            <div class="contenedor grilla-pie">
+                <div class="pie-columna">
+                    <h6>Nuestra Empresa</h6>
+                    <ul>
+                        <li><a href="nosotros.html#quienes-somos">Historia</a></li>
+                        <li><a href="nosotros.html#mision-vision">Misión y Visión</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Atención al Cliente</h6>
+                    <ul>
+                        <li><a href="contacto.html#contacto">Contacto y Soporte</a></li>
+                        <li><a href="contacto.html#faq">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Sucursal Virtual</h6>
+                    <ul>
+                        <li><a href="login.html">Iniciar Sesión</a></li>
+                        <li><a href="registro.html">Registrarse</a></li>
+                        <li><a href="punto-volcan.html">Rastrear Pedido</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Términos y Condiciones</h6>
+                    <ul>
+                        <li><a href="legales.html#terminos">Términos del Servicio</a></li>
+                        <li><a href="legales.html#privacidad">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                
+                <div class="pie-columna pie-boletin">
+                    <h6>Suscríbete para recibir ofertas exclusivas.</h6>
+                    <div class="buscador-footer">
+                        <input type="email" placeholder="Ingresa tu correo" />
+                        <a href="registro.html" class="boton boton-naranja texto-blanco">Suscríbete</a>
+                    </div>
+                    
+                    <h6>Medios de Pago</h6>
+                    <div class="pie-pagos">
+                        <img src="assets/img/pagos/visa.svg" alt="Visa" class="pago-icono" />
+                        <img src="assets/img/pagos/mastercard.svg" alt="Mastercard" class="pago-icono" />
+                        <img src="assets/img/pagos/amex.svg" alt="AMEX" class="pago-icono" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contenedor pie-copyright">
+                <p>&copy; 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
+            </div>
+        </footer>
+    </body>
+</html>

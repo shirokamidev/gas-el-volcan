@@ -1,0 +1,328 @@
+/* Color indicador de navegación */
+.enlaces-navegacion a.activo {
+    color: var(--volcan-naranja);
+}
+
+#contacto,
+#faq {
+    scroll-margin-top: 7.8rem; 
+}
+
+/* Hero de Contacto */
+.contacto-hero-fondo {
+    width: 100%;
+    background: linear-gradient(135deg, var(--volcan-azul) 0%, #002c52 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 1.25rem;
+}
+
+.contacto-hero-contenido h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Grilla de Contacto */
+.seccion-contacto {
+    background-color: var(--volcan-claro);
+    padding: 4rem 0;
+}
+
+.grilla-contacto {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+/* Información de Contacto */
+.contacto-info h2 {
+    color: var(--volcan-azul);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.contacto-info p {
+    color: #444;
+    line-height: 1.6;
+}
+
+.info-items {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-item h4 {
+    color: var(--volcan-oscuro);
+    margin-bottom: 0.3rem;
+    font-size: 1.1rem;
+}
+
+.info-item p {
+    color: #555;
+    margin: 0;
+}
+
+/* Formulario de Contacto */
+.contacto-formulario-caja {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 0.8rem;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.05);
+}
+
+.contacto-formulario-caja h3 {
+    margin-bottom: 1.5rem;
+    color: var(--volcan-oscuro);
+    font-size: 1.5rem;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+}
+
+.form-grupo label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--volcan-texto);
+}
+
+.form-grupo input,
+.form-grupo select,
+.form-grupo textarea {
+    padding: 0.8rem 1rem;
+    border: 1px solid #d1d1d1;
+    border-radius: 0.3125rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--volcan-texto);
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus,
+.form-grupo textarea:focus {
+    border-color: var(--volcan-azul);
+    outline: none;
+}
+
+/* Texto de ayuda para inputs */
+.texto-ayuda {
+    font-size: 0.85rem;
+    color: #888888;
+    margin-top: 0.4rem;
+    line-height: 1.3;
+}
+
+/* Banner Sucursal Virtual */
+.seccion-banner-sucursal {
+    background-color: #ffffff;
+}
+
+.grilla-banner-sucursal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+}
+
+.banner-contenido-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.banner-contenido {
+    width: 100%;
+    max-width: 37.5rem;
+    padding: 4rem 2rem 4rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.banner-contenido h2 {
+    color: var(--volcan-oscuro);
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.banner-contenido p {
+    color: #555;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.banner-imagen {
+    width: 100%;
+    height: 100%;
+    max-height: 22rem; 
+}
+
+.banner-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.boton-azul {
+    background-color: var(--volcan-azul);
+    color: #ffffff;
+}
+
+.boton-azul:hover {
+    background-color: #003865;
+    color: #ffffff;
+}
+
+/* Sección Preguntas Frecuentes */
+.seccion-faq {
+    background-color: var(--volcan-claro);
+    padding: 4rem 0;
+}
+
+.titulo-centrado {
+    text-align: center;
+    color: var(--volcan-azul);
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+}
+
+.faq-contenedor {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+details {
+    background-color: #ffffff;
+    border: 1px solid #e2e2e2;
+    border-radius: 0.4rem;
+    overflow: hidden;
+}
+
+summary {
+    padding: 1.25rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--volcan-oscuro);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    background-color: #ffffff;
+    transition: background-color 0.2s ease;
+}
+
+summary:hover {
+    background-color: #fcfcfc;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Flecha desplegable */
+summary::after {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--volcan-naranja);
+    border-bottom: 2px solid var(--volcan-naranja);
+    transform: rotate(45deg);
+    margin-right: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+/* Estado abierto */
+details[open] summary {
+    color: var(--volcan-naranja);
+    border-bottom: 1px solid #f0f0f0;
+}
+
+details[open] summary::after {
+    transform: rotate(-135deg);
+    margin-top: 5px;
+}
+
+details p {
+    padding: 1.25rem;
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Media queries para pantallas medianas */
+@media (max-width: 64rem) {
+    #contacto,
+    #faq {
+        scroll-margin-top: 4rem; 
+    }
+
+    .grilla-contacto {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .contacto-hero-contenido h1 {
+        font-size: 2.2rem;
+    }
+
+    .grilla-banner-sucursal {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-contenido-wrapper {
+        justify-content: center;
+    }
+
+    .banner-contenido {
+        text-align: center;
+        align-items: center;
+        padding: 4rem 1.25rem;
+    }
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 48rem) {
+    .contacto-hero-fondo {
+        padding: 3rem 1.25rem;
+    }
+    
+    .seccion-contacto {
+        padding: 3rem 0;
+    }
+    
+    .contacto-info h2, 
+    .titulo-centrado {
+        font-size: 1.8rem;
+    }
+
+    .contacto-formulario-caja {
+        padding: 1.5rem;
+    }
+
+    .banner-contenido {
+        padding: 3rem 1.25rem;
+    }
+
+    .banner-imagen {
+        height: 15rem; 
+    }
+    
+    .seccion-faq {
+        padding: 3rem 0;
+    }
+}
