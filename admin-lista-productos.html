@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gas El Volcán | Lista de Productos</title>
+        <link rel="icon" type="image/svg+xml" href="assets/img/favicon-volcan.svg" />
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="assets/css/admin-layout.css" />
+        <link rel="stylesheet" href="assets/css/admin-lista-productos.css" />
+    </head>
+    <body>
+        <!-- Control oculto para el menu hamburguesa responsivo -->
+        <input type="checkbox" id="toggle-menu" class="toggle-menu-checkbox">
+
+        <!-- Cabecera principal -->
+        <header class="admin-cabecera">
+            <div class="cabecera-izq">
+                <label for="toggle-menu" class="btn-hamburguesa">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </label>
+                <div class="logo-admin">
+                    <img src="assets/img/favicon-volcan.svg" alt="Icono Gas El Volcán">
+                    <span>Admin Volcán</span>
+                </div>
+            </div>
+            
+            <div class="cabecera-der">
+                <span class="saludo-admin">Hola, <strong>Administradora</strong></span>
+                <a href="login.html" class="btn-salir">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    Salir
+                </a>
+            </div>
+        </header>
+
+        <!-- Barra de navegacion lateral -->
+        <aside class="admin-sidebar">
+            <nav class="nav-lateral">
+                <ul>
+                    <li>
+                        <a href="admin-index.html">Inicio</a>
+                    </li>
+                    
+                    <li class="separador">Módulo Productos</li>
+                    <li><a href="admin-lista-productos.html" class="activo">Listar productos</a></li>
+                    <li><a href="admin-nuevo-producto.html">Nuevo producto</a></li>
+                    
+                    <li class="separador">Módulo Usuarios</li>
+                    <li><a href="admin-lista-usuarios.html">Listar usuarios</a></li>
+                    <li><a href="admin-nuevo-usuario.html">Nuevo usuario</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido dinamico principal -->
+        <main class="admin-main">
+            <div class="contenedor-vista">
+                
+                <div class="cabecera-modulo">
+                    <h1>Lista de Productos</h1>
+                    <a href="admin-nuevo-producto.html" class="btn-nuevo-registro">NUEVO PRODUCTO</a>
+                </div>
+
+                <section class="caja-tabla-admin">
+                    <!-- Contenedor responsivo para scroll horizontal -->
+                    <div class="tabla-responsiva">
+                        <table class="tabla-datos">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Categoría</th>
+                                    <th>Producto</th>
+                                    <th>Descripción</th>
+                                    <th>Unidad</th>
+                                    <th>P. Residencial</th>
+                                    <th>P. Comercial</th>
+                                    <th>Stock</th>
+                                    <th class="columna-centro">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Se muestran los primeros 7 productos simulando la primera pagina -->
+                                <tr>
+                                    <td class="texto-secundario">#CL001</td>
+                                    <td>Cilindros de Gas</td>
+                                    <td class="fw-bold">Cilindro GLP 5 kg</td>
+                                    <td class="columna-descripcion">Cilindro de gas licuado de petróleo 5 kg. Para uso residencial (cocina, calefacción pequeña).</td>
+                                    <td>Unidad</td>
+                                    <td class="fw-bold">$6.500</td>
+                                    <td class="texto-secundario">$6.000</td>
+                                    <td>80</td>
+                                    <td class="celda-acciones">
+                                        <button type="button" class="btn-accion btn-editar" aria-label="Editar producto">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                        <button type="button" class="btn-accion btn-eliminar" aria-label="Eliminar producto">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="texto-secundario">#CL002</td>
+                                    <td>Cilindros de Gas</td>
+                                    <td class="fw-bold">Cilindro GLP 11 kg</td>
+                                    <td class="columna-descripcion">Cilindro estándar doméstico. El más utilizado en hogares chilenos. Compatible con reguladores estándar.</td>
+                                    <td>Unidad</td>
+                                    <td class="fw-bold">$12.000</td>
+                                    <td class="texto-secundario">$11.000</td>
+                                    <td>200</td>
+                                    <td class="celda-acciones">
+                                        <button type="button" class="btn-accion btn-editar" aria-label="Editar producto">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                        <button type="button" class="btn-accion btn-eliminar" aria-label="Eliminar producto">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="texto-secundario">#CL003</td>
+                                    <td>Cilindros de Gas</td>
+                                    <td class="fw-bold">Cilindro GLP 15 kg</td>
+                                    <td class="columna-descripcion">Cilindro de mayor capacidad para hogares de alto consumo o locales pequeños.</td>
+                                    <td>Unidad</td>
+                                    <td class="fw-bold">$16.000</td>
+                                    <td class="texto-secundario">$14.500</td>
+                                    <td>90</td>
+                                    <td class="celda-acciones">
+                                        <button type="button" class="btn-accion btn-editar" aria-label="Editar producto">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                        <button type="button" class="btn-accion btn-eliminar" aria-label="Eliminar producto">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="texto-secundario">#CL004</td>
+                                    <td>Cilindros de Gas</td>
+                                    <td class="fw-bold">Cilindro GLP 45 kg</td>
+                                    <td class="columna-descripcion">Cilindro industrial. Uso comercial: restaurantes, talleres, calefacción de locales.</td>
+                                    <td>Unidad</td>
+                                    <td class="fw-bold">$45.000</td>
+                                    <td class="texto-secundario">$40.000</td>
+                                    <td>30</td>
+                                    <td class="celda-acciones">
+                                        <button type="button" class="btn-accion btn-editar" aria-label="Editar producto">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                        <button type="button" class="btn-accion btn-eliminar" aria-label="Eliminar producto">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="texto-secundario">#RG001</td>
+                                    <td>Reguladores</td>
+                                    <td class="fw-bold">Regulador doméstico estándar</td>
+                                    <td class="columna-descripcion">Regulador de 1 etapa para cilindros 5, 11 y 15 kg. Presión de salida 28 mbar.</td>
+                                    <td>Unidad</td>
+                                    <td class="fw-bold">$8.990</td>
+                                    <td class="texto-secundario">$8.200</td>
+                                    <td>45</td>
+                                    <td class="celda-acciones">
+                                        <button type="button" class="btn-accion btn-editar" aria-label="Editar producto">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                        <button type="button" class="btn-accion btn-eliminar" aria-label="Eliminar producto">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="texto-secundario">#RG002</td>
+                                    <td>Reguladores</td>
+                                    <td class="fw-bold">Regulador de alta presión</td>
+                                    <td class="columna-descripcion">Regulador para cocinas industriales o equipos de mayor consumo. Presión regulable.</td>
+                                    <td>Unidad</td>
+                                    <td class="fw-bold">$18.990</td>
+                                    <td class="texto-secundario">$17.000</td>
+                                    <td>12</td>
+                                    <td class="celda-acciones">
+                                        <button type="button" class="btn-accion btn-editar" aria-label="Editar producto">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                        <button type="button" class="btn-accion btn-eliminar" aria-label="Eliminar producto">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="texto-secundario">#RG003</td>
+                                    <td>Reguladores</td>
+                                    <td class="fw-bold">Regulador dual (2 salidas)</td>
+                                    <td class="columna-descripcion">Permite conectar dos artefactos simultáneamente al mismo cilindro.</td>
+                                    <td>Unidad</td>
+                                    <td class="fw-bold">$14.990</td>
+                                    <td class="texto-secundario">$13.500</td>
+                                    <td>18</td>
+                                    <td class="celda-acciones">
+                                        <button type="button" class="btn-accion btn-editar" aria-label="Editar producto">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                        </button>
+                                        <button type="button" class="btn-accion btn-eliminar" aria-label="Eliminar producto">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Paginacion de la tabla -->
+                    <div class="paginacion-admin">
+                        <button type="button" class="btn-pagina flecha" disabled>&laquo;</button>
+                        <button type="button" class="btn-pagina activo">1</button>
+                        <button type="button" class="btn-pagina">2</button>
+                        <button type="button" class="btn-pagina flecha">&raquo;</button>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </body>
+</html>
