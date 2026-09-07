@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gas El Volcán | Mi Carrito</title>
+        <link rel="icon" type="image/svg+xml" href="assets/img/favicon-volcan.svg" />
+        
+        <!-- Fuentes de Google -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+        
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/layout.css" />
+        <link rel="stylesheet" href="assets/css/carrito.css" />
+    </head>
+    <body>
+        <!-- Checkbox para controlar el estado del menú en móviles -->
+        <input type="checkbox" id="menu-hamburguesa" class="toggle-hamburguesa">
+
+        <!-- Header -->
+        <header class="cabecera-principal">
+            <div class="barra-superior">
+                <div class="contenedor contenido-barra-superior">
+                    <span>Atención al Cliente: <strong>800 50 9000</strong></span>
+                    <span class="texto-peligro">Emergencia: <strong>800 50 9111</strong></span>
+                </div>
+            </div>
+
+            <nav class="barra-navegacion contenedor">
+                <a href="index.html" class="enlace-logo">
+                    <img src="assets/img/logo-volcan.svg" alt="Logo Gas El Volcán" class="logo-navegacion" />
+                </a>
+                
+                <label for="menu-hamburguesa" class="icono-hamburguesa">
+                    <span class="icono-abrir">&#9776;</span>
+                    <span class="icono-cerrar">&#10005;</span>
+                </label>
+                
+                <ul class="enlaces-navegacion">
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="productos.html">PRODUCTOS</a></li>
+                    <li><a href="punto-volcan.html">SUCURSALES</a></li>
+                    <li><a href="nosotros.html">NOSOTROS</a></li>
+                    <li><a href="blogs.html">BLOGS</a></li>
+                    <li><a href="contacto.html">CONTACTO</a></li>
+                    
+                    <li class="menu-desplegable ocultar-en-movil">
+                        <input type="checkbox" id="activar-sucursal" class="toggle-desplegable">
+                        <label for="activar-sucursal" class="boton boton-oscuro">SUCURSAL VIRTUAL</label>
+                        <ul class="sub-menu">
+                            <li><a href="login.html">Iniciar Sesión</a></li>
+                            <li class="divisor"></li>
+                            <li><a href="registro.html">Registrarse</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="ocultar-en-pc"><a href="login.html">INICIAR SESIÓN</a></li>
+                    <li class="ocultar-en-pc"><a href="registro.html">REGISTRARSE</a></li>
+                    
+                    <li><a href="carrito.html" class="icono-carrito fw-bold activo">CARRITO (1)</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Contenido principal del carrito -->
+        <main class="seccion-fondo-gris">
+            <div class="contenedor">
+                <h1 class="titulo-carrito">Mi carrito de compras</h1>
+                
+                <!-- Contenedor general del carrito -->
+                <div class="layout-carrito" id="layout-carrito-activo">
+                    
+                    <!-- Columna de lista de productos -->
+                    <div class="columna-productos-carrito">
+                        <section class="lista-productos-carrito" id="contenedor-items-carrito">
+                            
+                            <!-- Item del carrito -->
+                            <article class="item-carrito">
+                                <div class="item-imagen">
+                                    <img src="assets/img/productos/cilindros/cilindro-15kg.svg" alt="Cilindro GLP 15 kg" class="img-producto-carrito">
+                                </div>
+                                
+                                <div class="item-detalles-texto">
+                                    <span class="item-categoria">CILINDROS</span>
+                                    <h3 class="item-nombre">Cilindro GLP 15 kg</h3>
+                                </div>
+                                
+                                <div class="item-precios">
+                                    <span class="precio-principal">$16.000</span>
+                                    <span class="precio-secundario">$14.500</span>
+                                </div>
+                                
+                                <div class="item-controles-stock">
+                                    <div class="control-cantidad-carrito">
+                                        <button type="button" class="btn-restar">-</button>
+                                        <input type="number" value="1" min="1" max="80" class="input-cantidad" readonly>
+                                        <button type="button" class="btn-sumar">+</button>
+                                    </div>
+                                    <span class="texto-stock">80 disponibles</span>
+                                </div>
+                                
+                                <div class="item-acciones">
+                                    <button type="button" class="btn-eliminar-item" aria-label="Eliminar producto">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="3 6 5 6 21 6"></polyline>
+                                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                            <line x1="10" y1="11" x2="10" y2="17"></line>
+                                            <line x1="14" y1="11" x2="14" y2="17"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </article>
+
+                        </section>
+
+                        <!-- Acciones globales -->
+                        <div class="acciones-globales-carrito">
+                            <button type="button" class="btn-vaciar-carrito" id="btn-vaciar-todo">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                                Vaciar carrito
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Columna de resumen de compra -->
+                    <aside class="resumen-compra-carrito">
+                        <div class="resumen-caja">
+                            <div class="resumen-total">
+                                <h2>TOTAL:</h2>
+                                <h2 class="monto-total" id="monto-total-carrito">$ 16.000</h2>
+                            </div>
+                            
+                            <hr class="divisor-resumen">
+
+                            <div class="seccion-cupon">
+                                <label for="cupon-descuento">Ingrese el cupón de descuento</label>
+                                <div class="input-grupo-cupon">
+                                    <input type="text" id="cupon-descuento" placeholder="Ej: VOLCAN15">
+                                    <button type="button" class="btn-aplicar-cupon" id="btn-aplicar">APLICAR</button>
+                                </div>
+                            </div>
+
+                            <a href="#" class="boton-continuar" id="btn-continuar">Continuar</a>
+                            <a href="productos.html" class="enlace-seguir-comprando">Seguir comprando</a>
+                        </div>
+                    </aside>
+
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="pie-pagina">
+            <div class="contenedor grilla-pie">
+                <div class="pie-columna">
+                    <h6>Nuestra Empresa</h6>
+                    <ul>
+                        <li><a href="nosotros.html#quienes-somos">Historia</a></li>
+                        <li><a href="nosotros.html#mision-vision">Misión y Visión</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Atención al Cliente</h6>
+                    <ul>
+                        <li><a href="contacto.html#contacto">Contacto y Soporte</a></li>
+                        <li><a href="contacto.html#faq">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Sucursal Virtual</h6>
+                    <ul>
+                        <li><a href="login.html">Iniciar Sesión</a></li>
+                        <li><a href="registro.html">Registrarse</a></li>
+                        <li><a href="punto-volcan.html">Rastrear Pedido</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Términos y Condiciones</h6>
+                    <ul>
+                        <li><a href="legales.html#terminos">Términos del Servicio</a></li>
+                        <li><a href="legales.html#privacidad">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                
+                <div class="pie-columna pie-boletin">
+                    <h6>Suscríbete para recibir ofertas exclusivas.</h6>
+                    <div class="buscador-footer">
+                        <input type="email" placeholder="Ingresa tu correo" />
+                        <a href="registro.html" class="boton boton-naranja texto-blanco">Suscríbete</a>
+                    </div>
+                    
+                    <h6>Medios de Pago</h6>
+                    <div class="pie-pagos">
+                        <img src="assets/img/pagos/visa.svg" alt="Visa" class="pago-icono" />
+                        <img src="assets/img/pagos/mastercard.svg" alt="Mastercard" class="pago-icono" />
+                        <img src="assets/img/pagos/amex.svg" alt="AMEX" class="pago-icono" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contenedor pie-copyright">
+                <p>&copy; 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
+            </div>
+        </footer>
+    </body>
+</html>
