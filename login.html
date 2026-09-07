@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gas El Volcán | Iniciar Sesión</title>
+        <link rel="icon" type="image/svg+xml" href="assets/img/favicon-volcan.svg" />
+        
+        <!-- Fuentes de Google -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/layout.css" />
+        <link rel="stylesheet" href="assets/css/login.css" />
+    </head>
+    <body class="cuerpo-autenticacion">
+        
+        <main class="pantalla-autenticacion">
+            
+            <!-- Navegacion superior -->
+            <nav class="navegacion-superior">
+                <a href="index.html" class="enlace-regresar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Regresar a Inicio
+                </a>
+            </nav>
+
+            <!-- Tarjeta principal de ingreso -->
+            <section class="escena-tarjeta">
+                <article class="tarjeta-ingreso">
+                    <header class="cabecera-tarjeta">
+                        <img src="assets/img/logo-volcan.svg" alt="Gas El Volcán" class="logo-empresa">
+                        <h1 class="titulo-acceso fw-bold">Bienvenido a Sucursal Virtual</h1>
+                        <p class="subtitulo-acceso">Ingresa con tu Rut y contraseña</p>
+                    </header>
+                    
+                    <form action="#" class="formulario-generico">
+                        <div class="grupo-input">
+                            <input type="text" placeholder="Ingresa tu Rut" class="input-campo" required>
+                            <span class="texto-ayuda">Sin puntos ni guion, Ej: 19011022K</span>
+                        </div>
+                        
+                        <div class="grupo-input">
+                            <div class="caja-input-flex">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icono-izquierdo">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                </svg>
+                                
+                                <input type="password" placeholder="Escribe tu contraseña" class="input-limpio" required>
+                                
+                                <span class="icono-derecho">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="enlace-recuperar">¿Olvidaste tu contraseña? Recuperar</a>
+                        
+                        <button type="submit" class="boton boton-naranja boton-bloque boton-grande">Ingresar</button>
+                    </form>
+                    
+                    <!-- Separador visual de registro -->
+                    <div class="divisor-formulario">
+                        <span>¿No tienes una cuenta?</span>
+                    </div>
+                    
+                    <a href="registro.html" class="boton boton-oscuro boton-bloque boton-grande">Registrarme</a>
+                </article>
+            </section>
+
+            <!-- Pie de pagina -->
+            <footer class="pie-autenticacion">
+                <p class="texto-copyright">&copy; 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
+                <div class="banda-degradada-inferior"></div>
+            </footer>
+            
+        </main>
+    </body>
+</html>

@@ -1,0 +1,239 @@
+/* Configuracion general del fondo */
+.cuerpo-autenticacion {
+    background: linear-gradient(135deg, rgba(0, 75, 135, 0.05) 0%, rgba(243, 112, 33, 0.05) 100%);
+    overflow-x: hidden;
+}
+
+/* Layout principal en columna */
+.pantalla-autenticacion {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Barra de navegacion superior */
+.navegacion-superior {
+    padding: 2rem 2.5rem;
+}
+
+.enlace-regresar {
+    color: var(--volcan-azul);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.enlace-regresar:hover {
+    color: var(--volcan-naranja);
+}
+
+/* Contenedor centrado de la tarjeta */
+.escena-tarjeta {
+    margin: auto; 
+    width: 100%;
+    max-width: 32rem; 
+    padding: 2rem 1.25rem 4rem;
+}
+
+.tarjeta-ingreso {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.8rem 2.5rem rgba(0, 0, 0, 0.08);
+    padding: 3.5rem; 
+}
+
+/* Encabezado del formulario */
+.cabecera-tarjeta {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo-empresa {
+    width: 100%;
+    max-width: 12rem;
+    height: auto;
+    margin-bottom: 1.5rem;
+}
+
+.titulo-acceso {
+    color: var(--volcan-azul);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo-acceso {
+    color: #666666;
+    font-size: 1.05rem;
+}
+
+/* Estructura del formulario */
+.formulario-generico {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos base para inputs */
+.input-campo,
+.caja-input-flex {
+    width: 100%;
+    border: 1px solid #cccccc;
+    border-radius: 0.4rem;
+    background-color: #ffffff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-campo {
+    padding: 0.9rem 1.2rem;
+    font-size: 1rem;
+    color: var(--volcan-texto);
+    font-family: inherit;
+    outline: none;
+}
+
+.input-campo:focus,
+.caja-input-flex:focus-within {
+    border-color: var(--volcan-azul);
+    box-shadow: 0 0 0 3px rgba(0, 75, 135, 0.1);
+}
+
+.input-campo::placeholder {
+    color: #a0a0a0;
+}
+
+/* Estructura flex para inputs con iconos */
+.caja-input-flex {
+    display: flex;
+    align-items: center;
+    padding: 0 1.2rem;
+}
+
+.input-limpio {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0.9rem 0.8rem;
+    font-size: 1rem;
+    color: var(--volcan-texto);
+    font-family: inherit;
+}
+
+.input-limpio::placeholder {
+    color: #a0a0a0;
+}
+
+/* Iconos de los inputs */
+.icono-izquierdo {
+    color: var(--volcan-azul);
+    flex-shrink: 0;
+}
+
+.icono-derecho {
+    color: #888888;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: color 0.2s ease;
+}
+
+.icono-derecho:hover {
+    color: var(--volcan-azul);
+}
+
+/* Textos de ayuda y enlaces */
+.texto-ayuda {
+    font-size: 0.85rem;
+    color: #888888;
+    margin-top: 0.4rem;
+    padding-left: 0.2rem;
+    line-height: 1.3;
+}
+
+.enlace-recuperar {
+    color: var(--volcan-naranja);
+    font-size: 0.95rem;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 0.2rem;
+}
+
+.enlace-recuperar:hover {
+    text-decoration: underline;
+}
+
+.boton-grande {
+    padding: 0.9rem;
+    font-size: 1.1rem;
+    border-radius: 0.4rem;
+}
+
+/* Separador visual con pseudo-elementos */
+.divisor-formulario {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1.8rem 0;
+    color: #888888;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.divisor-formulario::before,
+.divisor-formulario::after {
+    content: ''; /* Obligatorio para dibujar los elementos */
+    flex: 1;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.divisor-formulario::before {
+    margin-right: 1rem;
+}
+
+.divisor-formulario::after {
+    margin-left: 1rem;
+}
+
+/* Pie de pagina anclado abajo */
+.pie-autenticacion {
+    width: 100%;
+    margin-top: auto; 
+}
+
+.texto-copyright {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.85rem;
+    color: #888888;
+}
+
+.banda-degradada-inferior {
+    width: 100%;
+    height: 0.4rem;
+    background: linear-gradient(90deg, #fbc02d, var(--volcan-naranja), var(--volcan-azul));
+}
+
+/* Media Queries para dispositivos moviles */
+@media (max-width: 48rem) {
+    .navegacion-superior {
+        padding: 1.5rem;
+    }
+
+    .tarjeta-ingreso {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .titulo-acceso {
+        font-size: 1.6rem;
+    }
+}
