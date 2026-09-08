@@ -186,3 +186,27 @@
         font-size: 1.9rem;
     }
 }
+
+/* Validación visual al registrar y editar productos */
+.mensaje-formulario.estado-exito {
+    border: 0.0625rem solid #187344;
+    background-color: #edf9f0;
+    color: #14562f;
+}
+
+.mensaje-formulario.estado-error {
+    border: 0.0625rem solid #b42318;
+    background-color: #fff1f0;
+    color: #912018;
+}
+
+.boton-guardar:not(:disabled) {
+    background-color: var(--volcan-naranja);
+    color: var(--volcan-oscuro);
+    cursor: pointer;
+}
+
+.boton-guardar:not(:disabled):focus-visible {
+    outline: 0.1875rem solid var(--volcan-azul);
+    outline-offset: 0.1875rem;
+}
