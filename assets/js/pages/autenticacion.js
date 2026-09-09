@@ -120,3 +120,250 @@ if (formLogin) {
         }
     });
 }
+
+// Lógica de registro para el enrolamiento de nuevos clientes
+const formRegistro = document.getElementById("form-registro");
+
+if (formRegistro) {
+    const rutRegistro = document.getElementById("rut-registro");
+    const nombreRegistro = document.getElementById("nombre-registro");
+    const apellidoPaternoRegistro = document.getElementById("apellido-p-registro");
+    const apellidoMaternoRegistro = document.getElementById("apellido-m-registro");
+    const correoRegistro = document.getElementById("correo-registro");
+    const correoConfirmRegistro = document.getElementById("correo-confirm-registro");
+    const passwordRegistro = document.getElementById("password-registro");
+    const passwordConfirmRegistro = document.getElementById("password-confirm-registro");
+    const telefonoRegistro = document.getElementById("telefono-registro");
+    const calleRegistro = document.getElementById("calle-registro");
+    const terminosRegistro = document.getElementById("terminos-registro");
+    
+    const errorRutRegistro = document.getElementById("error-rut-registro");
+    const errorNombreRegistro = document.getElementById("error-nombre-registro");
+    const errorApellidoPaternoRegistro = document.getElementById("error-apellido-p-registro");
+    const errorApellidoMaternoRegistro = document.getElementById("error-apellido-m-registro");
+    const errorCorreoRegistro = document.getElementById("error-correo-registro");
+    const errorCorreoConfirmRegistro = document.getElementById("error-correo-confirm-registro");
+    const errorPasswordRegistro = document.getElementById("error-password-registro");
+    const errorPasswordConfirmRegistro = document.getElementById("error-password-confirm-registro");
+    const errorTelefonoRegistro = document.getElementById("error-telefono-registro");
+    const errorCalleRegistro = document.getElementById("error-calle-registro");
+    const errorTerminosRegistro = document.getElementById("error-terminos-registro");
+    const mensajeRegistro = document.getElementById("mensaje-registro");
+
+    const selectRegionRegistro = document.getElementById("region-registro");
+    const selectComunaRegistro = document.getElementById("comuna-registro");
+    const errorRegionRegistro = document.getElementById("error-region-registro");
+    const errorComunaRegistro = document.getElementById("error-comuna-registro");
+
+    if (selectRegionRegistro && selectComunaRegistro) {
+        const actualizarComunas = () => poblarSelectComunas(selectRegionRegistro, selectComunaRegistro);
+        selectRegionRegistro.addEventListener("change", () => {
+            actualizarComunas();
+            mostrarErrorRegistro(selectRegionRegistro, "", errorRegionRegistro)
+            mostrarErrorRegistro(selectComunaRegistro, "", errorComunaRegistro)
+        });
+        selectComunaRegistro.addEventListener("change", validarComunaRegistro);
+        actualizarComunas();
+    }
+
+    const togglePassReg = document.getElementById("toggle-password-registro");
+    const togglePassConf = document.getElementById("toggle-password-confirm");
+
+    configurarVisibilidadPassword(togglePassReg, passwordRegistro);
+    configurarVisibilidadPassword(togglePassConf, passwordConfirmRegistro);
+
+    function mostrarErrorRegistro(campo, mensaje, elementoError) {
+        mostrarErrorCampo(campo, elementoError, mensaje)
+    }
+
+    function validarRutRegistro() {
+        const mensaje = validarRut(rutRegistro.value);
+        mostrarErrorRegistro(rutRegistro, mensaje, errorRutRegistro);
+        return mensaje === "";
+    }
+
+    function validarRegionRegistro() {
+        const mensaje = validarRegion(selectRegionRegistro.value);
+        mostrarErrorRegistro(selectRegionRegistro, mensaje, errorRegionRegistro);
+        return mensaje === "";
+    }
+
+    function validarComunaRegistro() {
+        const mensaje = validarComuna(selectComunaRegistro.value);
+        mostrarErrorRegistro(selectComunaRegistro, mensaje, errorComunaRegistro);
+        return mensaje === "";
+    }
+
+    observarValidacionCampo(rutRegistro, errorRutRegistro, validarRut)
+
+    function validarApellidoRegistro(campo, error) {
+        const mensaje = validarApellidoPaterno(campo.value);
+        mostrarErrorRegistro(campo, mensaje, error);
+        return mensaje === "";
+    }
+
+    observarValidacionCampo(apellidoPaternoRegistro, errorApellidoPaternoRegistro, validarApellidoPaterno)
+    observarValidacionCampo(apellidoMaternoRegistro, errorApellidoMaternoRegistro, validarApellidoMaternoOpcional)
+
+    function validarConfirmacionesRegistro(mostrarVacios = true) {
+        const correo = correoRegistro.value.trim();
+        const correoConfirm = correoConfirmRegistro.value.trim();
+        const clave = passwordRegistro.value;
+        const claveConfirm = passwordConfirmRegistro.value;
+        let errorCorreo = "";
+        if (!correoConfirm && mostrarVacios) {
+            errorCorreo = "Debe repetir el correo electrónico.";
+        } else if (correoConfirm && correo !== correoConfirm) {
+            errorCorreo = "Los correos electrónicos no coinciden.";
+        }
+
+        let errorClave = "";
+        if (!claveConfirm && mostrarVacios) {
+            errorClave = "Debe repetir la contraseña.";
+        } else if (claveConfirm && clave !== claveConfirm) {
+            errorClave = "Las contraseñas no coinciden.";
+        }
+        mostrarErrorRegistro(correoConfirmRegistro, errorCorreo, errorCorreoConfirmRegistro);
+        mostrarErrorRegistro(passwordConfirmRegistro, errorClave, errorPasswordConfirmRegistro);
+        return !errorCorreo && !errorClave;
+    }
+
+    function validarLongitudPasswordRegistro() {
+        const error = validarLongitudPassword(passwordRegistro.value);
+        mostrarErrorRegistro(passwordRegistro, error, errorPasswordRegistro);
+        return !error;
+    }
+
+    // Los errores de formato se actualizan al escribir, sin exigir valores vacíos
+    observarValidacionCampo(nombreRegistro, errorNombreRegistro, valor => {
+        if (valor.trim().length > 100) return "El nombre no puede superar los 100 caracteres."
+        return ""
+    })
+    observarValidacionCampo(correoRegistro, errorCorreoRegistro, validarFormatoCorreo)
+    observarValidacionCampo(passwordRegistro, errorPasswordRegistro, validarLongitudPassword)
+    observarValidacionCampo(calleRegistro, errorCalleRegistro, valor => {
+        if (valor.trim().length > 300) return "La dirección no puede superar los 300 caracteres."
+        return ""
+    })
+    for (const campo of [correoRegistro, correoConfirmRegistro, passwordRegistro, passwordConfirmRegistro]) {
+        campo.addEventListener("input", () => validarConfirmacionesRegistro(false))
+    }
+    terminosRegistro.addEventListener("change", () => {
+        if (terminosRegistro.checked) {
+            errorTerminosRegistro.textContent = ""
+            errorTerminosRegistro.classList.remove("activo")
+        }
+    })
+
+    // Comprueba el teléfono opcional a medida que se escribe
+    function validarTelefonoRegistro() {
+        const telefono = telefonoRegistro.value.trim();
+        const mensaje = validarTelefonoOpcional(telefono);
+        errorTelefonoRegistro.textContent = mensaje;
+        errorTelefonoRegistro.classList.toggle("activo", Boolean(mensaje));
+        telefonoRegistro.classList.toggle("campo-invalido", Boolean(mensaje));
+        return !mensaje;
+    }
+
+    if (telefonoRegistro) {
+        telefonoRegistro.addEventListener("input", validarTelefonoRegistro);
+    }
+
+    formRegistro.addEventListener("submit", (event) => {
+        event.preventDefault();
+        let formularioValido = true;
+
+        if (!validarRutRegistro()) formularioValido = false;
+
+        if (nombreRegistro.value.trim() === "" || nombreRegistro.value.trim().length > 100) {
+            if (nombreRegistro.value.trim() === "") {
+                errorNombreRegistro.textContent = "El nombre es obligatorio.";
+            } else {
+                errorNombreRegistro.textContent = "El nombre no puede superar los 100 caracteres.";
+            }
+            errorNombreRegistro.classList.add("activo");
+            formularioValido = false;
+        } else {
+            errorNombreRegistro.textContent = "";
+            errorNombreRegistro.classList.remove("activo");
+        }
+
+        if (!validarApellidoRegistro(apellidoPaternoRegistro, errorApellidoPaternoRegistro)) formularioValido = false;
+        if (!validarCampoAlEnviar(apellidoMaternoRegistro, errorApellidoMaternoRegistro, validarApellidoMaternoOpcional)) formularioValido = false;
+
+        const errorCorreo = validarFormatoCorreo(correoRegistro.value);
+        
+        errorCorreoRegistro.textContent = "";
+        errorCorreoRegistro.classList.remove("activo");
+        errorCorreoConfirmRegistro.textContent = "";
+        errorCorreoConfirmRegistro.classList.remove("activo");
+
+        if (errorCorreo !== "") {
+            errorCorreoRegistro.textContent = errorCorreo;
+            errorCorreoRegistro.classList.add("activo");
+            formularioValido = false;
+        }
+
+        if (!validarLongitudPasswordRegistro()) formularioValido = false;
+
+        if (!validarConfirmacionesRegistro()) formularioValido = false;
+
+        if (!validarTelefonoRegistro()) {
+            formularioValido = false;
+        }
+
+        if (!validarRegionRegistro()) formularioValido = false;
+        if (!validarComunaRegistro()) formularioValido = false;
+
+        if (calleRegistro.value.trim() === "") {
+            errorCalleRegistro.textContent = "La dirección es obligatoria.";
+            errorCalleRegistro.classList.add("activo");
+            formularioValido = false;
+        } else if (calleRegistro.value.trim().length > 300) {
+            errorCalleRegistro.textContent = "La dirección no puede superar los 300 caracteres.";
+            errorCalleRegistro.classList.add("activo");
+            formularioValido = false;
+        } else {
+            errorCalleRegistro.textContent = "";
+            errorCalleRegistro.classList.remove("activo");
+        }
+
+        if (!terminosRegistro.checked) {
+            errorTerminosRegistro.textContent = "Debes aceptar los términos y condiciones.";
+            errorTerminosRegistro.classList.add("activo");
+            formularioValido = false;
+        } else {
+            errorTerminosRegistro.textContent = "";
+            errorTerminosRegistro.classList.remove("activo");
+        }
+
+        // Destaca los campos que requieren una corrección
+        [[rutRegistro, errorRutRegistro], [nombreRegistro, errorNombreRegistro],
+            [apellidoPaternoRegistro, errorApellidoPaternoRegistro],
+            [apellidoMaternoRegistro, errorApellidoMaternoRegistro],
+            [correoRegistro, errorCorreoRegistro], [correoConfirmRegistro, errorCorreoConfirmRegistro],
+            [passwordRegistro, errorPasswordRegistro], [passwordConfirmRegistro, errorPasswordConfirmRegistro],
+            [telefonoRegistro, errorTelefonoRegistro], [calleRegistro, errorCalleRegistro]].forEach(([campo, error]) => {
+            let contenedor = campo;
+            if (campo) {
+                const caja = campo.closest(".caja-input-flex");
+                if (caja) {
+                    contenedor = caja;
+                }
+            }
+            if (contenedor && error) {
+                contenedor.classList.toggle("campo-invalido", Boolean(error.textContent));
+            }
+        });
+
+        // Informa que el registro de cuentas es una funcionalidad pendiente
+        if (formularioValido) {
+            mensajeRegistro.textContent = "El registro de cuentas estará disponible próximamente. No se ha creado ninguna cuenta."
+            mensajeRegistro.className = "mensaje-estado-formulario activo error"
+            alert("El registro de cuentas estará disponible próximamente.")
+        } else {
+            mensajeRegistro.textContent = "Revise los campos marcados antes de enviar.";
+            mensajeRegistro.className = "mensaje-estado-formulario activo error";
+        }
+    });
+}
