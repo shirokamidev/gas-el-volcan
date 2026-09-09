@@ -36,11 +36,11 @@
                 <form class="barra-filtros" id="form-filtros-blog">
                     <div class="grupo-filtro">
                         <label for="buscar-blog">Buscar</label>
-                        <input type="search" id="buscar-blog" name="q" placeholder="Buscar noticias..." disabled>
+                        <input type="search" id="buscar-blog" name="q" placeholder="Buscar noticias...">
                     </div>
                     <div class="grupo-filtro">
                         <label for="categoria-blog">Categoría</label>
-                        <select id="categoria-blog" name="categoria" disabled>
+                        <select id="categoria-blog" name="categoria">
                             <option value="todas">Todas las categorías</option>
                             <option value="comunidad">Comunidad</option>
                             <option value="negocio">Nuestro Negocio</option>
@@ -48,15 +48,15 @@
                     </div>
                     <div class="grupo-filtro">
                         <label for="fecha-blog">Año</label>
-                        <select id="fecha-blog" name="fecha" disabled>
+                        <select id="fecha-blog" name="fecha">
                             <option value="todos">Todos los años</option>
                             <option value="2026">2026</option>
                             <option value="2025">2025</option>
                         </select>
                     </div>
-                    <button type="button" class="boton-filtrar-blog" id="btn-filtrar-cat" disabled>Filtrar</button>
+                    <button type="button" class="boton-filtrar-blog" id="btn-filtrar-cat">Filtrar</button>
                 </form>
-                <p class="nota-filtros-blog">Los filtros se habilitarán cuando se incorpore la lógica de búsqueda.</p>
+                <p class="nota-filtros-blog" id="mensaje-no-blogs" role="status" aria-live="polite">Filtra las noticias por texto, categoría o año.</p>
             </section>
 
             <!-- Listado de noticias con datos para los futuros filtros -->
@@ -136,5 +136,8 @@
                 <p>© 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
             </div>
         </footer>
+        <!-- Datos del blog y filtros para el listado de noticias -->
+        <script defer src="assets/js/data/blogsData.js"></script>
+        <script defer src="assets/js/pages/blogs.js"></script>
     </body>
 </html>
