@@ -4,40 +4,94 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Gas El Volcán | Blogs y Noticias</title>
-        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-        <link rel="stylesheet" href="assets/css/layout.css">
-        <link rel="stylesheet" href="assets/css/utils/botones.css">
-        <link rel="stylesheet" href="assets/css/pages/blogs.css">
-        <link rel="stylesheet" href="assets/css/utils/footer.css">
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+        
+        <!-- Fuentes de Google -->
+        
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/layout.css" />
+        <link rel="stylesheet" href="assets/css/pages/blogs.css" />
     </head>
     <body>
-        <!-- Cabecera inicial de noticias -->
+        <!-- Control del menú móvil -->
+        <input type="checkbox" id="menu-hamburguesa" class="toggle-hamburguesa">
+
+        <!-- Cabecera principal -->
         <header class="cabecera-principal">
-            <div class="contenedor">
-                <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
-                <nav aria-label="Navegación de noticias">
-                    <a href="blogs.html" aria-current="page">Blogs y Noticias</a>
-                </nav>
+            <div class="barra-superior">
+                <div class="contenedor contenido-barra-superior">
+                    <span>Atención al Cliente: <strong>800 50 9000</strong></span>
+                    <span class="texto-peligro">Emergencia: <strong>800 50 9111</strong></span>
+                </div>
             </div>
+
+            <nav class="barra-navegacion contenedor">
+                <a href="index.html" class="enlace-logo">
+                    <img src="assets/images/logo-volcan.svg" alt="Logo Gas El Volcán" class="logo-navegacion" />
+                </a>
+                
+                <label for="menu-hamburguesa" class="icono-hamburguesa">
+                    <span class="icono-abrir">☰</span>
+                    <span class="icono-cerrar">×</span>
+                </label>
+                
+                <ul class="enlaces-navegacion">
+                    <li class="grupo-navegacion-principal">
+                        <ul class="enlaces-principales">
+                            <li><a href="index.html">INICIO</a></li>
+                            <li><a href="catalogo.html">PRODUCTOS</a></li>
+                            <li><a href="sucursales.html">SUCURSALES</a></li>
+                            <li><a href="nosotros.html">NOSOTROS</a></li>
+                            <li><a href="blogs.html" class="activo">BLOGS</a></li>
+                            <li><a href="contacto.html">CONTACTO</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-desplegable ocultar-en-movil">
+                        <input type="checkbox" id="activar-sucursal" class="toggle-desplegable">
+                        <label for="activar-sucursal" class="boton boton-oscuro">SUCURSAL VIRTUAL</label>
+                        <ul class="sub-menu">
+                            <li><a href="login.html">Iniciar Sesión</a></li>
+                            <li class="divisor"></li>
+                            <li><a href="registro.html">Registrarse</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="ocultar-en-pc"><a href="login.html">INICIAR SESIÓN</a></li>
+                    <li class="ocultar-en-pc"><a href="registro.html">REGISTRARSE</a></li>
+                    
+                    <li><a href="carrito.html" class="icono-carrito fw-bold">CARRITO (0)</a></li>
+                </ul>
+            </nav>
         </header>
 
         <main class="pagina-blogs">
-            <!-- Presentación de la sección -->
+            
+            <!-- Hero de noticias -->
             <section class="hero-blogs">
-                <div class="contenedor">
-                    <h1>Blogs y Noticias</h1>
-                    <p>Conoce nuestras novedades y consejos para utilizar el gas de manera segura en tu hogar.</p>
+                <div class="contenedor hero-blogs-contenido">
+                    <h1 class="fw-bold texto-blanco">Blogs y Noticias</h1>
+                    <p class="bajada-blogs">Entérate de nuestras últimas novedades, consejos de seguridad y beneficios exclusivos para tu hogar.</p>
                 </div>
             </section>
 
-            <!-- Estructura inicial de filtros para las noticias -->
-            <section class="seccion-filtros-blogs contenedor" id="filtros-blogs" aria-labelledby="titulo-filtros-blog">
-                <h2 id="titulo-filtros-blog">Explora nuestras noticias</h2>
-                <form class="barra-filtros" id="form-filtros-blog">
-                    <div class="grupo-filtro">
+            <!-- Barra de herramientas y filtros -->
+            <section class="seccion-filtros-blogs contenedor" id="filtros-blogs">
+                <form class="barra-filtros" id="form-filtros-blog" action="#" method="GET">
+                    
+                    <div class="grupo-filtro filtro-buscar">
                         <label for="buscar-blog">Buscar</label>
-                        <input type="search" id="buscar-blog" name="q" placeholder="Buscar noticias...">
+                        <div class="caja-buscador">
+                            <input type="text" id="buscar-blog" name="q" placeholder="Buscar...">
+                            <button type="button" id="btn-buscar-lupa" class="boton-lupa" aria-label="Buscar">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
+
                     <div class="grupo-filtro">
                         <label for="categoria-blog">Categoría</label>
                         <select id="categoria-blog" name="categoria">
@@ -46,47 +100,35 @@
                             <option value="negocio">Nuestro Negocio</option>
                         </select>
                     </div>
+
                     <div class="grupo-filtro">
-                        <label for="fecha-blog">Año</label>
+                        <label for="fecha-blog">Fecha</label>
                         <select id="fecha-blog" name="fecha">
                             <option value="todos">Todos los años</option>
                             <option value="2026">2026</option>
                             <option value="2025">2025</option>
                         </select>
                     </div>
-                    <button type="button" class="boton-filtrar-blog" id="btn-filtrar-cat">Filtrar</button>
+
+                    <div class="grupo-filtro-accion">
+                        <button type="button" id="btn-filtrar-cat" class="boton boton-naranja boton-bloque">Filtrar</button>
+                    </div>
+
                 </form>
-                <p class="nota-filtros-blog" id="mensaje-no-blogs" role="status" aria-live="polite">Filtra las noticias por texto, categoría o año.</p>
             </section>
 
-            <!-- Listado de noticias con datos para los futuros filtros -->
-            <section class="seccion-grilla-blogs contenedor" aria-labelledby="titulo-noticias">
-                <h2 id="titulo-noticias">Últimas noticias</h2>
+            <!-- Listado de blogs -->
+            <section class="seccion-grilla-blogs contenedor">
+                <h2 class="titulo-listado-blogs" id="titulo-listado-blogs">Últimos blogs</h2>
+                <p id="mensaje-no-blogs" class="mensaje-vacio-blogs">No se encontraron blogs con los filtros seleccionados.</p>
                 <div class="grilla-blogs" id="grilla-blogs-js">
-                    <article class="tarjeta-blog" data-categoria="negocio" data-anio="2026">
-                        <img src="assets/images/blogs/noticia-subsidio.jpg" alt="Información sobre beneficios para el hogar" width="480">
-                        <div class="blog-cuerpo">
-                            <p class="blog-categoria">Nuestro Negocio</p>
-                            <h3>Consejos para el subsidio de gas y ahorro en el hogar</h3>
-                            <p>Recomendaciones para conocer los beneficios disponibles y mejorar el consumo de gas.</p>
-                            <a href="detalle-blog.html?id=1" class="blog-enlace-detalle" aria-label="Leer noticia: Consejos para el subsidio de gas y ahorro en el hogar">Leer noticia <span aria-hidden="true">→</span></a>
-                        </div>
-                    </article>
-
-                    <article class="tarjeta-blog" data-categoria="comunidad" data-anio="2026">
-                        <img src="assets/images/blogs/seguridad-fugas.png" alt="Recomendaciones para prevenir fugas de gas" width="480">
-                        <div class="blog-cuerpo">
-                            <p class="blog-categoria">Comunidad</p>
-                            <h3>Consejos de seguridad para prevenir fugas de gas</h3>
-                            <p>Medidas básicas de prevención para mantener seguros los espacios de tu hogar.</p>
-                            <a href="detalle-blog.html?id=2" class="blog-enlace-detalle" aria-label="Leer noticia: Consejos de seguridad para prevenir fugas de gas">Leer noticia <span aria-hidden="true">→</span></a>
-                        </div>
-                    </article>
+                    
+                    <!-- Tarjetas cargadas desde blogsData.js -->
                 </div>
             </section>
         </main>
 
-        <!-- Primera integración del pie de página corporativo -->
+        <!-- Pie de página -->
         <footer class="pie-pagina">
             <div class="contenedor grilla-pie">
                 <div class="pie-columna">
@@ -118,25 +160,30 @@
                         <li><a href="legales.html#privacidad">Política de Privacidad</a></li>
                     </ul>
                 </div>
+                
                 <div class="pie-columna pie-boletin">
                     <h6>Suscríbete para recibir ofertas exclusivas.</h6>
-                    <div class="buscador-footer">
-                        <input type="email" placeholder="Ingresa tu correo" aria-label="Correo para suscripción">
-                        <a href="registro.html" class="boton boton-naranja texto-blanco">Suscríbete</a>
-                    </div>
+                    <form class="buscador-footer" data-formulario-suscripcion novalidate>
+                        <input type="email" name="correoSuscripcion" placeholder="Ingresa tu correo" aria-label="Correo para suscribirse" aria-describedby="mensaje-suscripcion" maxlength="100" required>
+                        <button type="submit" class="boton boton-naranja texto-blanco">Suscríbete</button>
+                    </form>
+                    <p id="mensaje-suscripcion" class="mensaje-estado-formulario error mensaje-suscripcion" role="alert" aria-live="polite"></p>
+                    
                     <h6>Medios de Pago</h6>
                     <div class="pie-pagos">
-                        <img src="assets/images/pagos/visa.svg" alt="Visa" class="pago-icono">
-                        <img src="assets/images/pagos/mastercard.svg" alt="Mastercard" class="pago-icono">
-                        <img src="assets/images/pagos/amex.svg" alt="AMEX" class="pago-icono">
+                        <img src="assets/images/pagos/visa.svg" alt="Visa" class="pago-icono" />
+                        <img src="assets/images/pagos/mastercard.svg" alt="Mastercard" class="pago-icono" />
+                        <img src="assets/images/pagos/amex.svg" alt="AMEX" class="pago-icono" />
                     </div>
                 </div>
             </div>
+            
             <div class="contenedor pie-copyright">
                 <p>© 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
             </div>
         </footer>
-        <!-- Datos del blog y filtros para el listado de noticias -->
+
+        <!-- Carga de JavaScript -->
         <script defer src="assets/js/data/blogsData.js"></script>
         <script defer src="assets/js/pages/blogs.js"></script>
     </body>
