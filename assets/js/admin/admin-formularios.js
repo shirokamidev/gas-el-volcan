@@ -87,7 +87,10 @@ function iniciarFormularioAdminProductos() {
         campo.addEventListener("change", () => validarDatoProducto(campo))
     })
 
+    const enlaceInventario = document.getElementById("enlace-inventario-productos")
+
     formulario.addEventListener("submit", evento => {
+        if (enlaceInventario) enlaceInventario.hidden = true
         evento.preventDefault()
         const productos = obtenerProductos()
         const codigo = campos.codigo.value.trim().toUpperCase()
@@ -157,8 +160,10 @@ function iniciarFormularioAdminProductos() {
         if (!esEdicion) {
             formulario.reset()
             mostrarMensaje("Producto registrado correctamente. Ya aparece en el inventario.", true)
+            if (enlaceInventario) enlaceInventario.hidden = false
         } else {
             mostrarMensaje("Producto actualizado correctamente. Los cambios se guardaron en el inventario.", true)
+            if (enlaceInventario) enlaceInventario.hidden = false
         }
     })
 }
