@@ -147,12 +147,11 @@
                         <div class="bloque-inferior-compra">
                             <div class="bloque-controles-detalle">
                                 <div class="control-cantidad-detalle">
-                                    <button type="button" class="btn-restar-detalle" onclick="this.nextElementSibling.stepDown()">-</button>
-                                    <input type="number" value="1" min="1" max="80" class="input-cantidad-detalle" id="cantidad-producto-1" readonly />
-                                    <button type="button" class="btn-sumar-detalle" onclick="this.previousElementSibling.stepUp()">+</button>
+                                    <button type="button" class="btn-restar-detalle" onclick="var inp=document.getElementById('cant-det-1'); inp.value = Math.max(1, parseInt(inp.value)-1);">-</button>
+                                    <input type="number" id="cant-det-1" value="1" min="1" max="80" class="input-cantidad-detalle" readonly />
+                                    <button type="button" class="btn-sumar-detalle" onclick="var inp=document.getElementById('cant-det-1'); inp.value = Math.min(80, parseInt(inp.value)+1);">+</button>
                                 </div>
-                                <!-- El boton ahora llama a la funcion de main.js con el id del producto 1 -->
-                                <button type="button" class="boton boton-naranja boton-bloque" onclick="agregarAlCarrito(1, parseInt(document.getElementById('cantidad-producto-1').value))">AGREGAR AL CARRITO</button>
+                                <button type="button" class="boton boton-naranja boton-bloque" onclick="window.agregarAlCarrito(1, parseInt(document.getElementById('cant-det-1').value))">AGREGAR AL CARRITO</button>
                             </div>
                         </div>
 
@@ -165,8 +164,7 @@
                 <div class="contenedor">
                     <h2 class="titulo-relacionados fw-bold">Productos relacionados</h2>
                     
-                    <div class="grilla-relacionados" id="grilla-productos-js">
-                        <!-- Las tarjetas recomendadas ahora son ignoradas temporalmente hasta que se decida inyectarlas por JS completo o se mantengan estáticas conectando los onClick como en el bloque superior -->
+                    <div class="grilla-relacionados">
                         
                         <!-- Producto recomendado 1 -->
                         <article class="tarjeta-relacionada">
@@ -184,11 +182,11 @@
                             
                             <div class="producto-controles">
                                 <div class="control-cantidad">
-                                    <button type="button" class="btn-restar" onclick="this.nextElementSibling.stepDown()">-</button>
-                                    <input type="number" value="1" min="1" class="input-cantidad" id="rel-cant-2" readonly />
-                                    <button type="button" class="btn-sumar" onclick="this.previousElementSibling.stepUp()">+</button>
+                                    <button type="button" class="btn-restar" onclick="var inp=document.getElementById('cant-det-2'); inp.value = Math.max(1, parseInt(inp.value)-1);">-</button>
+                                    <input type="number" id="cant-det-2" value="1" min="1" class="input-cantidad" readonly />
+                                    <button type="button" class="btn-sumar" onclick="var inp=document.getElementById('cant-det-2'); inp.value = parseInt(inp.value)+1;">+</button>
                                 </div>
-                                <button type="button" class="boton boton-naranja boton-bloque" onclick="agregarAlCarrito(2, parseInt(document.getElementById('rel-cant-2').value))">AGREGAR AL CARRITO</button>
+                                <button type="button" class="boton boton-naranja boton-bloque" onclick="window.agregarAlCarrito(2, parseInt(document.getElementById('cant-det-2').value))">AGREGAR AL CARRITO</button>
                             </div>
                         </article>
 
@@ -208,11 +206,11 @@
                             
                             <div class="producto-controles">
                                 <div class="control-cantidad">
-                                    <button type="button" class="btn-restar" onclick="this.nextElementSibling.stepDown()">-</button>
-                                    <input type="number" value="1" min="1" class="input-cantidad" id="rel-cant-3" readonly />
-                                    <button type="button" class="btn-sumar" onclick="this.previousElementSibling.stepUp()">+</button>
+                                    <button type="button" class="btn-restar" onclick="var inp=document.getElementById('cant-det-3'); inp.value = Math.max(1, parseInt(inp.value)-1);">-</button>
+                                    <input type="number" id="cant-det-3" value="1" min="1" class="input-cantidad" readonly />
+                                    <button type="button" class="btn-sumar" onclick="var inp=document.getElementById('cant-det-3'); inp.value = parseInt(inp.value)+1;">+</button>
                                 </div>
-                                <button type="button" class="boton boton-naranja boton-bloque" onclick="agregarAlCarrito(3, parseInt(document.getElementById('rel-cant-3').value))">AGREGAR AL CARRITO</button>
+                                <button type="button" class="boton boton-naranja boton-bloque" onclick="window.agregarAlCarrito(3, parseInt(document.getElementById('cant-det-3').value))">AGREGAR AL CARRITO</button>
                             </div>
                         </article>
 
@@ -232,11 +230,11 @@
                             
                             <div class="producto-controles">
                                 <div class="control-cantidad">
-                                    <button type="button" class="btn-restar" onclick="this.nextElementSibling.stepDown()">-</button>
-                                    <input type="number" value="1" min="1" class="input-cantidad" id="rel-cant-4" readonly />
-                                    <button type="button" class="btn-sumar" onclick="this.previousElementSibling.stepUp()">+</button>
+                                    <button type="button" class="btn-restar" onclick="var inp=document.getElementById('cant-det-4'); inp.value = Math.max(1, parseInt(inp.value)-1);">-</button>
+                                    <input type="number" id="cant-det-4" value="1" min="1" class="input-cantidad" readonly />
+                                    <button type="button" class="btn-sumar" onclick="var inp=document.getElementById('cant-det-4'); inp.value = parseInt(inp.value)+1;">+</button>
                                 </div>
-                                <button type="button" class="boton boton-naranja boton-bloque" onclick="agregarAlCarrito(4, parseInt(document.getElementById('rel-cant-4').value))">AGREGAR AL CARRITO</button>
+                                <button type="button" class="boton boton-naranja boton-bloque" onclick="window.agregarAlCarrito(4, parseInt(document.getElementById('cant-det-4').value))">AGREGAR AL CARRITO</button>
                             </div>
                         </article>
 
@@ -299,8 +297,8 @@
             </div>
         </footer>
 
-        <!-- Scripts de logica global y de productos -->
-        <script src="assets/js/tienda.js"></script>
+        <!-- Scripts -->
         <script src="assets/js/main.js"></script>
+        <script src="assets/js/tienda.js"></script>
     </body>
 </html>
