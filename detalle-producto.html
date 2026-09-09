@@ -3,17 +3,20 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Conoce las características y el precio referencial del cilindro de gas de 5 kg de Gas El Volcán.">
         <title>Gas El Volcán | Cilindro GLP 5 kg</title>
-        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-        <link rel="stylesheet" href="assets/css/layout.css">
-        <link rel="stylesheet" href="assets/css/pages/detalle-productos.css">
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+        
+        <!-- Fuentes de Google -->
+        
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/layout.css" />
+        <link rel="stylesheet" href="assets/css/pages/detalle-productos.css" />
     </head>
     <body>
-        <!-- Control del menú móvil compartido -->
-        <input type="checkbox" id="menu-hamburguesa" class="toggle-hamburguesa" aria-controls="enlaces-principales" aria-label="Mostrar u ocultar menú principal">
+        <!-- Control del menú móvil -->
+        <input type="checkbox" id="menu-hamburguesa" class="toggle-hamburguesa">
 
-        <!-- Cabecera corporativa y navegación entre vistas -->
+        <!-- Cabecera principal -->
         <header class="cabecera-principal">
             <div class="barra-superior">
                 <div class="contenedor contenido-barra-superior">
@@ -22,90 +25,128 @@
                 </div>
             </div>
 
-            <nav class="barra-navegacion contenedor" aria-label="Navegación principal">
-                <a href="index.html" class="enlace-logo" aria-label="Gas El Volcán, inicio">
-                    <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" class="logo-navegacion" width="180">
+            <nav class="barra-navegacion contenedor">
+                <a href="index.html" class="enlace-logo">
+                    <img src="assets/images/logo-volcan.svg" alt="Logo Gas El Volcán" class="logo-navegacion" />
                 </a>
-                <label for="menu-hamburguesa" class="icono-hamburguesa" aria-label="Abrir o cerrar navegación">
-                    <span class="icono-abrir" aria-hidden="true">☰</span>
-                    <span class="icono-cerrar" aria-hidden="true">×</span>
+                
+                <label for="menu-hamburguesa" class="icono-hamburguesa">
+                    <span class="icono-abrir">☰</span>
+                    <span class="icono-cerrar">×</span>
                 </label>
-                <ul class="enlaces-navegacion" id="enlaces-principales">
+                
+                <ul class="enlaces-navegacion">
                     <li class="grupo-navegacion-principal">
                         <ul class="enlaces-principales">
-                            <li><a href="index.html">Inicio</a></li>
-                            <li><a href="catalogo.html" aria-current="page">Productos</a></li>
-                            <li><a href="sucursales.html">Sucursales</a></li>
-                            <li><a href="nosotros.html">Nosotros</a></li>
-                            <li><a href="blogs.html">Blogs</a></li>
-                            <li><a href="contacto.html">Contacto</a></li>
+                            <li><a href="index.html">INICIO</a></li>
+                            <li><a href="catalogo.html" class="activo">PRODUCTOS</a></li>
+                            <li><a href="sucursales.html">SUCURSALES</a></li>
+                            <li><a href="nosotros.html">NOSOTROS</a></li>
+                            <li><a href="blogs.html">BLOGS</a></li>
+                            <li><a href="contacto.html">CONTACTO</a></li>
                         </ul>
                     </li>
-                    <li class="enlace-cuenta"><a href="login.html">Sucursal Virtual</a></li>
-                    <li class="enlace-carrito"><a href="carrito.html">Carrito (0)</a></li>
+
+                    <li class="menu-desplegable ocultar-en-movil">
+                        <input type="checkbox" id="activar-sucursal" class="toggle-desplegable">
+                        <label for="activar-sucursal" class="boton boton-oscuro">SUCURSAL VIRTUAL</label>
+                        <ul class="sub-menu">
+                            <li><a href="login.html">Iniciar Sesión</a></li>
+                            <li class="divisor"></li>
+                            <li><a href="registro.html">Registrarse</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="ocultar-en-pc"><a href="login.html">INICIAR SESIÓN</a></li>
+                    <li class="ocultar-en-pc"><a href="registro.html">REGISTRARSE</a></li>
+                    
+                    <li><a href="carrito.html" class="icono-carrito fw-bold">CARRITO (0)</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
-            <!-- Ruta de navegación y presentación del artículo -->
-            <div class="detalle-contenedor">
-                <nav class="detalle-ruta" aria-label="Ruta de navegación">
-                    <a href="catalogo.html">Catálogo</a>
-                    <span aria-hidden="true">/</span>
-                    <span aria-current="page">Cilindro GLP 5 kg</span>
-                </nav>
+            <!-- Información del producto seleccionado -->
+            <section class="seccion-detalle-blanca">
+                <div class="contenedor">
+                    <div class="layout-detalle" id="detalle-producto-js"></div>
+                </div>
+            </section>
 
-                <section class="detalle-producto" aria-labelledby="titulo-detalle">
-                    <div class="detalle-imagen">
-                        <img src="assets/images/productos/cilindros/cilindro-5kg.svg" alt="Cilindro de gas licuado de 5 kilogramos" width="480" height="480">
-                    </div>
-                    <div class="detalle-informacion">
-                        <p class="detalle-categoria">Cilindros</p>
-                        <h1 id="titulo-detalle">Cilindro GLP 5 kg</h1>
-                        <p class="detalle-descripcion">Una alternativa práctica para espacios pequeños y necesidades de consumo moderado en el hogar.</p>
-                        <p class="detalle-precio">$6.500</p>
-                        <p class="detalle-nota">Precio referencial de esta etapa de demostración.</p>
-
-                        <!-- Controles preparados para la futura compra -->
-                        <div class="detalle-compra">
-                            <label for="cantidad-producto">Cantidad</label>
-                            <input id="cantidad-producto" type="number" min="1" value="1" disabled>
-                            <button type="button" disabled>Agregar al carrito</button>
-                            <p class="detalle-aviso">La compra estará disponible cuando se incorpore la funcionalidad del carrito.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Especificaciones descriptivas de la ficha -->
-                <section class="detalle-especificaciones" aria-labelledby="titulo-especificaciones">
-                    <h2 id="titulo-especificaciones">Características del producto</h2>
-                    <ul>
-                        <li><strong>Tipo:</strong> Cilindro de gas licuado de petróleo (GLP).</li>
-                        <li><strong>Presentación:</strong> 5 kg.</li>
-                        <li><strong>Uso recomendado:</strong> Hogar y consumo moderado.</li>
-                        <li><strong>Categoría:</strong> Cilindros.</li>
-                    </ul>
-                </section>
-            </div>
-
-            <!-- Enlace de retorno a otros artículos -->
-            <section class="detalle-relacionados">
-                <div class="detalle-contenedor">
-                    <h2>¿Buscas otra alternativa?</h2>
-                    <p>Revisa también los cilindros de otras capacidades y nuestros accesorios.</p>
-                    <a href="catalogo.html#productos" class="detalle-volver">Volver al catálogo</a>
+            <!-- Productos de la misma categoría -->
+            <section class="seccion-relacionados-gris" id="seccion-relacionados-js">
+                <div class="contenedor">
+                    <h2 class="titulo-relacionados fw-bold">Productos relacionados</h2>
+                    <div class="grilla-relacionados" id="grilla-relacionados-js"></div>
                 </div>
             </section>
         </main>
-
-        <!-- Pie de página inicial -->
-        <footer class="detalle-pie">
-            <div class="detalle-contenedor">
-                <p>© 2026 Gas El Volcán. Chillán, Región de Ñuble.</p>
+        
+        <!-- Pie de página -->
+        <footer class="pie-pagina">
+            <div class="contenedor grilla-pie">
+                <div class="pie-columna">
+                    <h6>Nuestra Empresa</h6>
+                    <ul>
+                        <li><a href="nosotros.html#quienes-somos">Historia</a></li>
+                        <li><a href="nosotros.html#mision-vision">Misión y Visión</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Atención al Cliente</h6>
+                    <ul>
+                        <li><a href="contacto.html#contacto">Contacto y Soporte</a></li>
+                        <li><a href="contacto.html#faq">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Sucursal Virtual</h6>
+                    <ul>
+                        <li><a href="login.html">Iniciar Sesión</a></li>
+                        <li><a href="registro.html">Registrarse</a></li>
+                        <li><a href="sucursales.html" data-accion="rastrear-pedido">Rastrear Pedido</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Términos y Condiciones</h6>
+                    <ul>
+                        <li><a href="legales.html#terminos">Términos del Servicio</a></li>
+                        <li><a href="legales.html#privacidad">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                
+                <div class="pie-columna pie-boletin">
+                    <h6>Suscríbete para recibir ofertas exclusivas.</h6>
+                    <form class="buscador-footer" data-formulario-suscripcion novalidate>
+                        <input type="email" name="correoSuscripcion" placeholder="Ingresa tu correo" aria-label="Correo para suscribirse" aria-describedby="mensaje-suscripcion" maxlength="100" required>
+                        <button type="submit" class="boton boton-naranja texto-blanco">Suscríbete</button>
+                    </form>
+                    <p id="mensaje-suscripcion" class="mensaje-estado-formulario error mensaje-suscripcion" role="alert" aria-live="polite"></p>
+                    
+                    <h6>Medios de Pago</h6>
+                    <div class="pie-pagos">
+                        <img src="assets/images/pagos/visa.svg" alt="Visa" class="pago-icono" />
+                        <img src="assets/images/pagos/mastercard.svg" alt="Mastercard" class="pago-icono" />
+                        <img src="assets/images/pagos/amex.svg" alt="AMEX" class="pago-icono" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contenedor pie-copyright">
+                <p>© 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
             </div>
         </footer>
-        <!-- Interacciones compartidas de la navegación pública -->
+
+        <!-- Carga del JavaScript principal -->
         <script defer src="assets/js/app.js"></script>
+        <script defer src="assets/js/data/categoriasData.js"></script>
+        <script defer src="assets/js/data/productosData.js"></script>
+        <script defer src="assets/js/data/usuariosData.js"></script>
+        <script defer src="assets/js/services/almacenamiento-local.js"></script>
+        <script defer src="assets/js/services/operaciones-carrito.js"></script>
+        <script defer src="assets/js/utils/validaciones.js"></script>
+        <script defer src="assets/js/utils/interacciones-productos.js"></script>
+        <script defer src="assets/js/pages/catalogo.js"></script>
+        <script defer src="assets/js/pages/detalle-productos.js"></script>
     </body>
 </html>
