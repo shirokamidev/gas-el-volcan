@@ -1,124 +1,113 @@
-// Gestiona los productos del carrito y conserva los cambios entre visitas
-const CLAVE_CARRITO = "carritoVolcan";
+// Recupera el carrito y actualiza los datos de los productos que siguen disponibles
+let carritoVirtual = []
+const carritoGuardado = leerLocalStorageJSON("carritoVolcan")
 
-// Comprueba cantidades, precios y stock antes de utilizar los datos guardados
-const normalizarItem = (item) => {
-    if (!item || typeof item !== "object") {
-        return null;
-    }
+if (Array.isArray(carritoGuardado)) {
+    const productosDisponibles = obtenerProductos()
 
-    const id = Number(item.id);
-    const precio = Number(item.precioResidencial);
-    const stock = Number(item.stock);
-    const cantidad = Number(item.cantidad);
-
-    if (!Number.isInteger(id) || id <= 0 || !Number.isFinite(precio) || precio <= 0
-        || !Number.isInteger(stock) || stock <= 0 || !Number.isInteger(cantidad) || cantidad <= 0
-        || typeof item.nombre !== "string" || item.nombre.trim() === "") {
-        return null;
-    }
-
-    return {
-        ...item,
-        id,
-        precioResidencial: precio,
-        stock,
-        cantidad: Math.min(cantidad, stock)
-    };
-};
-
-// Recupera la información local sin impedir que la página abra si está dañada
-const recuperarCarrito = () => {
-    try {
-        const guardado = JSON.parse(localStorage.getItem(CLAVE_CARRITO) || "[]");
-        if (!Array.isArray(guardado)) {
-            return [];
+    carritoGuardado.forEach(productoGuardado => {
+        if (!productoGuardado || !Number.isInteger(productoGuardado.id)) {
+            return
         }
 
-        const productos = new Map();
-        for (const dato of guardado) {
-            const item = normalizarItem(dato);
-            if (!item) {
-                continue;
-            }
-
-            const anterior = productos.get(item.id);
-            if (anterior) {
-                anterior.cantidad = Math.min(anterior.stock, anterior.cantidad + item.cantidad);
-            } else {
-                productos.set(item.id, item);
-            }
+        const productoActual = productosDisponibles.find(producto => producto.id === productoGuardado.id)
+        if (!productoActual || productoActual.stock <= 0) {
+            return
         }
-        return [...productos.values()];
-    } catch (error) {
-        console.warn("No fue posible recuperar el carrito guardado.", error);
-        return [];
+
+        const cantidadGuardada = Number(productoGuardado.cantidad)
+        if (!Number.isInteger(cantidadGuardada) || cantidadGuardada < 1) {
+            return
+        }
+
+        const cantidadPermitida = Math.min(cantidadGuardada, productoActual.stock)
+        const productoEnCarrito = { ...productoActual, cantidad: cantidadPermitida }
+        carritoVirtual.push(productoEnCarrito)
+    })
+}
+
+// Actualiza el indicador numérico del menú principal
+const actualizarContadorMenu = function() {
+    const btnCarritoIcono = document.querySelector(".icono-carrito");
+    if (btnCarritoIcono) {
+        const totalItems = carritoVirtual.reduce((total, item) => total + item.cantidad, 0);
+        btnCarritoIcono.textContent = `CARRITO (${totalItems})`;
     }
 };
 
-let carritoVirtual = recuperarCarrito();
-
-// Sincroniza el estado de compra con las demás vistas
-const sincronizarLocalStorage = () => {
-    try {
-        localStorage.setItem(CLAVE_CARRITO, JSON.stringify(carritoVirtual));
-    } catch (error) {
-        console.warn("No fue posible guardar los cambios del carrito.", error);
-    }
-
+// Sincroniza el estado actual del arreglo con localStorage
+const sincronizarLocalStorage = function() {
+    const guardadoCorrecto = guardarLocalStorageJSON("carritoVolcan", carritoVirtual);
+    actualizarContadorMenu();
     document.dispatchEvent(new Event("carrito-actualizado"));
+    return guardadoCorrecto;
 };
 
-// Incorpora productos respetando el stock, para su futura conexión con Catálogo
-const agregarAlCarrito = (producto, cantidadAgregada = 1) => {
-    const cantidad = Number(cantidadAgregada);
-    const nuevo = normalizarItem({ ...producto, cantidad });
-    if (!nuevo) {
-        return false;
+// Integra un nuevo artículo al carrito respetando el límite de stock disponible
+const agregarAlCarrito = function(idProducto, cantidadAgregada) {
+    const productoBuscado = obtenerProductos().find(producto => producto.id === idProducto);
+    if (!productoBuscado) return;
+
+    const itemExistente = carritoVirtual.find(item => item.id === idProducto);
+    let cantidadEnCarrito = 0;
+    if (itemExistente) {
+        cantidadEnCarrito = itemExistente.cantidad;
+    }
+    const stockDisponible = Math.max(0, productoBuscado.stock - cantidadEnCarrito);
+
+    if (stockDisponible === 0) {
+        alert(`Ya tienes todas las unidades disponibles de ${productoBuscado.nombre} en tu carrito.`);
+        return;
     }
 
-    const existente = carritoVirtual.find((item) => item.id === nuevo.id);
-    if (existente) {
-        if (existente.cantidad >= existente.stock) {
-            return false;
-        }
-        existente.cantidad = Math.min(existente.stock, existente.cantidad + nuevo.cantidad);
+    const cantidadSolicitada = Math.max(1, Number(cantidadAgregada) || 1);
+    const cantidadPermitida = Math.min(cantidadSolicitada, stockDisponible);
+
+    if (itemExistente) {
+        itemExistente.cantidad += cantidadPermitida;
     } else {
-        carritoVirtual.push(nuevo);
+        carritoVirtual.push({ ...productoBuscado, cantidad: cantidadPermitida });
     }
 
-    sincronizarLocalStorage();
-    return true;
+    const guardadoCorrecto = sincronizarLocalStorage();
+    if (!guardadoCorrecto) {
+        alert("El producto se agregó temporalmente, pero el navegador no permite guardar el carrito para otras páginas.");
+        return;
+    }
+    if (cantidadPermitida < cantidadSolicitada) {
+        alert(`Solo quedan ${stockDisponible} unidad(es) de ${productoBuscado.nombre}. Se agregaron las disponibles.`);
+    } else {
+        alert(`${productoBuscado.nombre} agregado al carrito exitosamente.`);
+    }
+
 };
 
-// Cambia una unidad de un producto sin permitir cero ni superar el stock
-const cambiarCantidadCarrito = (indice, cambio) => {
-    const item = carritoVirtual[indice];
-    if (!item || !Number.isInteger(cambio)) {
-        return false;
-    }
+if (Array.isArray(carritoGuardado) && JSON.stringify(carritoGuardado) !== JSON.stringify(carritoVirtual)) {
+    guardarLocalStorageJSON("carritoVolcan", carritoVirtual)
+}
+actualizarContadorMenu();
 
-    const cantidad = item.cantidad + cambio;
-    if (cantidad < 1 || cantidad > item.stock) {
-        return false;
+// Modifica la cantidad de un artículo sin sobrepasar el stock
+function cambiarCantidadCarrito(index, cambio) {
+    const producto = carritoVirtual[index];
+    if (!producto) return;
+    const nuevoValor = producto.cantidad + cambio;
+    const productoActual = obtenerProductos().find(item => item.id === producto.id);
+    if (productoActual && nuevoValor >= 1 && nuevoValor <= productoActual.stock) {
+        producto.cantidad = nuevoValor;
+        sincronizarLocalStorage();
     }
+}
 
-    item.cantidad = cantidad;
+// Elimina un artículo del carrito
+function eliminarItemCarrito(index) {
+    if (index < 0 || index >= carritoVirtual.length) return;
+    carritoVirtual.splice(index, 1);
     sincronizarLocalStorage();
-    return true;
-};
+}
 
-const eliminarItemCarrito = (indice) => {
-    if (!Number.isInteger(indice) || indice < 0 || indice >= carritoVirtual.length) {
-        return false;
-    }
-
-    carritoVirtual.splice(indice, 1);
-    sincronizarLocalStorage();
-    return true;
-};
-
-const vaciarCarrito = () => {
+// Vacía el carrito conservando su almacenamiento sincronizado
+function vaciarCarrito() {
     carritoVirtual = [];
     sincronizarLocalStorage();
-};
+}
