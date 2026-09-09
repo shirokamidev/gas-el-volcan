@@ -58,6 +58,35 @@ function iniciarFormularioAdminProductos() {
         mostrarMensaje("Completa los campos obligatorios para registrar un producto.", true)
     }
 
+    // Revisa los datos del inventario al escribir, antes del envío
+    function validarDatoProducto(campo) {
+        if (!campo || campo.readOnly) return true
+        const valor = campo.value.trim()
+        let valido = true
+
+        if (campo === campos.codigo && valor) {
+            const codigo = valor.toUpperCase()
+            valido = /^[A-Z0-9-]{3,20}$/.test(codigo)
+                && !obtenerProductos().some(producto =>
+                    producto.codigo.toUpperCase() === codigo && producto.id !== identificadorEdicion)
+        } else if ([campos.precioResidencial, campos.precioComercial, campos.stock].includes(campo) && valor !== "") {
+            const cantidad = Number(valor)
+            valido = Number.isSafeInteger(cantidad) && cantidad >= 0
+        } else if (campo === campos.imagen && valor) {
+            valido = valor.startsWith("assets/images/") && !valor.includes("..")
+        }
+
+        campo.classList.toggle("campo-producto-invalido", !valido)
+        campo.setAttribute("aria-invalid", String(!valido))
+        return valido
+    }
+
+    Object.values(campos).forEach(campo => {
+        if (!campo) return
+        campo.addEventListener("input", () => validarDatoProducto(campo))
+        campo.addEventListener("change", () => validarDatoProducto(campo))
+    })
+
     formulario.addEventListener("submit", evento => {
         evento.preventDefault()
         const productos = obtenerProductos()
@@ -69,6 +98,12 @@ function iniciarFormularioAdminProductos() {
         const stock = Number(campos.stock.value)
         const descripcion = campos.descripcion.value.trim()
         const imagen = campos.imagen.value.trim()
+
+        const camposValidos = Object.values(campos).every(campo => validarDatoProducto(campo))
+        if (!camposValidos) {
+            mostrarMensaje("Corrige el código, los valores numéricos o la ruta de la imagen.", false)
+            return
+        }
 
         if (!formulario.checkValidity()) {
             formulario.reportValidity()
