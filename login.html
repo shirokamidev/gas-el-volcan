@@ -36,13 +36,16 @@
                     <header class="cabecera-tarjeta">
                         <img src="assets/img/logo-volcan.svg" alt="Gas El Volcán" class="logo-empresa">
                         <h1 class="titulo-acceso fw-bold">Bienvenido a Sucursal Virtual</h1>
-                        <p class="subtitulo-acceso">Ingresa con tu Rut y contraseña</p>
+                        <p class="subtitulo-acceso">Ingresa con tu correo y contraseña</p>
                     </header>
                     
-                    <form action="#" class="formulario-generico">
+                    <!-- Formulario con IDs y validación desactivada nativamente (novalidate) -->
+                    <form id="form-login" action="#" class="formulario-generico" novalidate>
+                        
                         <div class="grupo-input">
-                            <input type="text" placeholder="Ingresa tu Rut" class="input-campo" required>
-                            <span class="texto-ayuda">Sin puntos ni guion, Ej: 19011022K</span>
+                            <input type="email" id="correo-login" placeholder="E-mail" class="input-campo">
+                            <span class="texto-ayuda">Solo correos con @duoc.cl, @profesor.duoc.cl y @gmail.com</span>
+                            <span id="error-correo-login" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: block; margin-top: 0.3rem;"></span>
                         </div>
                         
                         <div class="grupo-input">
@@ -52,19 +55,23 @@
                                     <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                                 </svg>
                                 
-                                <input type="password" placeholder="Escribe tu contraseña" class="input-limpio" required>
+                                <input type="password" id="password-login" placeholder="Contraseña de acceso" class="input-limpio">
                                 
-                                <span class="icono-derecho">
+                                <span id="toggle-password" class="icono-derecho" style="cursor: pointer; color: var(--volcan-azul);">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                         <circle cx="12" cy="12" r="3"></circle>
                                     </svg>
                                 </span>
                             </div>
+                            <span class="texto-ayuda">Entre 4 a 10 caracteres.</span>
+                            <span id="error-password-login" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: block; margin-top: 0.3rem;"></span>
                         </div>
                         
                         <a href="#" class="enlace-recuperar">¿Olvidaste tu contraseña? Recuperar</a>
                         
+                        <div id="mensaje-login" style="text-align: center; font-weight: 600; margin-top: 0.5rem;"></div>
+
                         <button type="submit" class="boton boton-naranja boton-bloque boton-grande">Ingresar</button>
                     </form>
                     
@@ -84,5 +91,8 @@
             </footer>
             
         </main>
+
+        <!-- Enlace al JS -->
+        <script src="assets/js/validaciones.js"></script>
     </body>
 </html>

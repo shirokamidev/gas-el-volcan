@@ -59,7 +59,7 @@
                     <li class="ocultar-en-pc"><a href="login.html">INICIAR SESIÓN</a></li>
                     <li class="ocultar-en-pc"><a href="registro.html">REGISTRARSE</a></li>
                     
-                    <li><a href="carrito.html" class="icono-carrito fw-bold activo">CARRITO (1)</a></li>
+                    <li><a href="carrito.html" class="icono-carrito fw-bold activo">CARRITO (0)</a></li>
                 </ul>
             </nav>
         </header>
@@ -74,50 +74,13 @@
                     
                     <!-- Columna de lista de productos -->
                     <div class="columna-productos-carrito">
-                        <section class="lista-productos-carrito" id="contenedor-items-carrito">
-                            
-                            <!-- Item del carrito -->
-                            <article class="item-carrito">
-                                <div class="item-imagen">
-                                    <img src="assets/img/productos/cilindros/cilindro-15kg.svg" alt="Cilindro GLP 15 kg" class="img-producto-carrito">
-                                </div>
-                                
-                                <div class="item-detalles-texto">
-                                    <span class="item-categoria">CILINDROS</span>
-                                    <h3 class="item-nombre">Cilindro GLP 15 kg</h3>
-                                </div>
-                                
-                                <div class="item-precios">
-                                    <span class="precio-principal">$16.000</span>
-                                    <span class="precio-secundario">$14.500</span>
-                                </div>
-                                
-                                <div class="item-controles-stock">
-                                    <div class="control-cantidad-carrito">
-                                        <button type="button" class="btn-restar">-</button>
-                                        <input type="number" value="1" min="1" max="80" class="input-cantidad" readonly>
-                                        <button type="button" class="btn-sumar">+</button>
-                                    </div>
-                                    <span class="texto-stock">80 disponibles</span>
-                                </div>
-                                
-                                <div class="item-acciones">
-                                    <button type="button" class="btn-eliminar-item" aria-label="Eliminar producto">
-                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <polyline points="3 6 5 6 21 6"></polyline>
-                                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                                            <line x1="10" y1="11" x2="10" y2="17"></line>
-                                            <line x1="14" y1="11" x2="14" y2="17"></line>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </article>
-
+                        <section class="lista-productos-carrito" id="contenedor-items-carrito-js">
+                            <!-- Los items se renderizan desde JavaScript -->
                         </section>
 
                         <!-- Acciones globales -->
                         <div class="acciones-globales-carrito">
-                            <button type="button" class="btn-vaciar-carrito" id="btn-vaciar-todo">
+                            <button type="button" class="btn-vaciar-carrito" id="btn-vaciar-todo-js">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
                                 Vaciar carrito
                             </button>
@@ -129,7 +92,7 @@
                         <div class="resumen-caja">
                             <div class="resumen-total">
                                 <h2>TOTAL:</h2>
-                                <h2 class="monto-total" id="monto-total-carrito">$ 16.000</h2>
+                                <h2 class="monto-total" id="monto-total-carrito-js">$ 0</h2>
                             </div>
                             
                             <hr class="divisor-resumen">
@@ -138,15 +101,15 @@
                                 <label for="cupon-descuento">Ingrese el cupón de descuento</label>
                                 <div class="input-grupo-cupon">
                                     <input type="text" id="cupon-descuento" placeholder="Ej: VOLCAN15">
-                                    <button type="button" class="btn-aplicar-cupon" id="btn-aplicar">APLICAR</button>
+                                    <button type="button" class="btn-aplicar-cupon" id="btn-aplicar-cupon">APLICAR</button>
                                 </div>
+                                <span id="mensaje-cupon" style="display: block; font-size: 0.85rem; margin-top: 0.5rem; font-weight: 600;"></span>
                             </div>
 
                             <a href="#" class="boton-continuar" id="btn-continuar">Continuar</a>
                             <a href="productos.html" class="enlace-seguir-comprando">Seguir comprando</a>
                         </div>
                     </aside>
-
                 </div>
             </div>
         </main>
@@ -204,5 +167,9 @@
                 <p>&copy; 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
             </div>
         </footer>
+
+        <!-- Scripts -->
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/tienda.js"></script>
     </body>
 </html>

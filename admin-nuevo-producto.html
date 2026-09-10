@@ -5,11 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Gas El Volcán | Nuevo Producto</title>
         <link rel="icon" type="image/svg+xml" href="assets/img/favicon-volcan.svg" />
-        
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-        
+
         <link rel="stylesheet" href="assets/css/admin-layout.css" />
         <link rel="stylesheet" href="assets/css/admin-nuevo-producto.css" />
     </head>
@@ -32,7 +32,7 @@
                     <span>Admin Volcán</span>
                 </div>
             </div>
-            
+
             <div class="cabecera-der">
                 <span class="saludo-admin">Hola, <strong>Administradora</strong></span>
                 <a href="login.html" class="btn-salir">
@@ -53,11 +53,11 @@
                     <li>
                         <a href="admin-index.html">Inicio</a>
                     </li>
-                    
+
                     <li class="separador">Módulo Productos</li>
                     <li><a href="admin-lista-productos.html">Listar productos</a></li>
                     <li><a href="admin-nuevo-producto.html" class="activo">Nuevo producto</a></li>
-                    
+
                     <li class="separador">Módulo Usuarios</li>
                     <li><a href="admin-lista-usuarios.html">Listar usuarios</a></li>
                     <li><a href="admin-nuevo-usuario.html">Nuevo usuario</a></li>
@@ -68,7 +68,7 @@
         <!-- Contenido dinámico principal -->
         <main class="admin-main">
             <div class="contenedor-vista">
-                
+
                 <div class="cabecera-modulo">
                     <h1>Crear Nuevo Producto</h1>
                     <a href="admin-lista-productos.html" class="btn-secundario">
@@ -77,26 +77,28 @@
                 </div>
 
                 <section class="caja-formulario-admin">
-                    <form action="#" class="formulario-generico">
-                        
+                    <form id="form-nuevo-producto" action="#" class="formulario-generico" novalidate>
+
                         <!-- Sección 1: Información Básica -->
                         <fieldset class="seccion-fieldset">
                             <legend class="titulo-legend">Información General</legend>
                             <div class="linea-separadora"></div>
-                            
+
                             <p class="texto-obligatorio">* Completa la información solicitada a continuación:</p>
-                            
+
                             <div class="grilla-formulario">
                                 <div class="grupo-input col-completa">
                                     <label class="label-campo">Código del Producto <span class="asterisco">*</span></label>
-                                    <input type="text" placeholder="Ej: CL001" class="input-campo" minlength="3" required>
+                                    <input type="text" id="codigo-producto" placeholder="Ej: CL001" class="input-campo">
                                     <span class="texto-ayuda">Obligatorio. Mínimo 3 caracteres. No tiene límite de máximo.</span>
+                                    <span id="error-codigo" class="texto-peligro"></span>
                                 </div>
-                                
+
                                 <div class="grupo-input col-completa">
                                     <label class="label-campo">Nombre del Producto <span class="asterisco">*</span></label>
-                                    <input type="text" placeholder="Ej: Cilindro GLP 15 kg" class="input-campo" maxlength="100" required>
+                                    <input type="text" id="nombre-producto" placeholder="Ej: Cilindro GLP 15 kg" class="input-campo" maxlength="100">
                                     <span class="texto-ayuda">Obligatorio. Máximo 100 caracteres.</span>
+                                    <span id="error-nombre" class="texto-peligro"></span>
                                 </div>
 
                                 <div class="grupo-input">
@@ -127,29 +129,32 @@
                         <fieldset class="seccion-fieldset espaciado-seccion">
                             <legend class="titulo-legend">Tarifas e Inventario</legend>
                             <div class="linea-separadora"></div>
-                            
+
                             <div class="grilla-formulario">
                                 <div class="grupo-input">
                                     <label class="label-campo">Precio Residencial (CLP) <span class="asterisco">*</span></label>
-                                    <input type="number" placeholder="Ej: 16000" class="input-campo" min="0" required>
+                                    <input type="number" id="precio-residencial" placeholder="Ej: 16000" class="input-campo">
                                     <span class="texto-ayuda">Obligatorio. Mínimo 0. Precio para cliente final.</span>
+                                    <span id="error-precio-res" class="texto-peligro"></span>
                                 </div>
-                                
+
                                 <div class="grupo-input">
                                     <label class="label-campo">Precio Comercial (CLP) <span class="asterisco">*</span></label>
-                                    <input type="number" placeholder="Ej: 14500" class="input-campo" min="0" required>
+                                    <input type="number" id="precio-comercial" placeholder="Ej: 14500" class="input-campo">
                                     <span class="texto-ayuda">Obligatorio. Mínimo 0. Precio para empresas/locales.</span>
+                                    <span id="error-precio-com" class="texto-peligro"></span>
                                 </div>
 
                                 <div class="grupo-input">
                                     <label class="label-campo">Stock Actual <span class="asterisco">*</span></label>
-                                    <input type="number" placeholder="Ej: 80" class="input-campo" min="0" step="1" required>
+                                    <input type="number" id="stock-actual" placeholder="Ej: 80" class="input-campo">
                                     <span class="texto-ayuda">Obligatorio. Solo números enteros. Mínimo 0.</span>
+                                    <span id="error-stock" class="texto-peligro"></span>
                                 </div>
 
                                 <div class="grupo-input">
                                     <label class="label-campo">Stock Crítico (Opcional)</label>
-                                    <input type="number" placeholder="Ej: 10" class="input-campo" min="0" step="1">
+                                    <input type="number" placeholder="Ej: 10" class="input-campo">
                                     <span class="texto-ayuda">Opcional. Límite para mostrar alerta de escasez.</span>
                                 </div>
                             </div>
@@ -159,14 +164,14 @@
                         <fieldset class="seccion-fieldset espaciado-seccion">
                             <legend class="titulo-legend">Detalles y Multimedia</legend>
                             <div class="linea-separadora"></div>
-                            
+
                             <div class="grilla-formulario">
                                 <div class="grupo-input col-completa">
                                     <label class="label-campo">Descripción del Producto (Opcional)</label>
                                     <textarea placeholder="Describe brevemente las características del producto..." class="input-campo textarea-campo" maxlength="500"></textarea>
                                     <span class="texto-ayuda">Opcional. Máximo 500 caracteres.</span>
                                 </div>
-                                
+
                                 <div class="grupo-input col-completa">
                                     <label class="label-campo">Ruta de Imagen (Opcional)</label>
                                     <input type="text" placeholder="Ej: assets/img/productos/nuevo.svg" class="input-campo">
@@ -174,6 +179,9 @@
                                 </div>
                             </div>
                         </fieldset>
+
+                        <!-- Contenedor para mensajes de validación -->
+                        <div id="mensaje-producto" class="mensaje-final"></div>
 
                         <!-- Acciones finales -->
                         <div class="acciones-registro">
@@ -185,5 +193,9 @@
 
             </div>
         </main>
+
+        <!-- Scripts -->
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/admin.js"></script>
     </body>
 </html>

@@ -38,7 +38,7 @@
                         <h1 class="titulo-acceso fw-bold">Formulario de registro</h1>
                     </header>
                     
-                    <form action="#" class="formulario-generico">
+                    <form id="form-registro" class="formulario-generico" novalidate>
                         
                         <!-- Seccion de datos personales -->
                         <fieldset class="seccion-fieldset">
@@ -50,20 +50,22 @@
                             
                             <div class="grilla-formulario">
                                 <div class="grupo-input col-completa">
-                                    <input type="text" placeholder="Rut" class="input-campo" required>
+                                    <input type="text" id="rut-registro" placeholder="Rut" class="input-campo">
                                     <span class="texto-ayuda">Sin puntos ni guion, Ej: 19011022K</span>
+                                    <span id="error-rut-registro" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: block; margin-top: 0.3rem;"></span>
                                 </div>
                                 
                                 <div class="grupo-input col-completa">
-                                    <input type="text" placeholder="Nombre" class="input-campo" required>
+                                    <input type="text" id="nombre-registro" placeholder="Nombre" class="input-campo">
+                                    <span id="error-nombre-registro" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: block; margin-top: 0.3rem;"></span>
                                 </div>
                                 
                                 <div class="grupo-input">
-                                    <input type="text" placeholder="Apellido Paterno" class="input-campo" required>
+                                    <input type="text" id="apellido-p-registro" placeholder="Apellido Paterno" class="input-campo">
                                 </div>
                                 
                                 <div class="grupo-input">
-                                    <input type="text" placeholder="Apellido Materno" class="input-campo" required>
+                                    <input type="text" id="apellido-m-registro" placeholder="Apellido Materno" class="input-campo">
                                 </div>
                                 
                                 <div class="grupo-input">
@@ -73,9 +75,9 @@
                                             <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                                         </svg>
                                         
-                                        <input type="password" placeholder="Contraseña de acceso" class="input-limpio" required>
+                                        <input type="password" id="password-registro" placeholder="Contraseña de acceso" class="input-limpio">
                                         
-                                        <span class="icono-derecho">
+                                        <span id="toggle-password-registro" class="icono-derecho" style="cursor: pointer; color: var(--volcan-azul);">
                                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                                 <circle cx="12" cy="12" r="3"></circle>
@@ -92,15 +94,16 @@
                                             <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                                         </svg>
                                         
-                                        <input type="password" placeholder="Repetir contraseña" class="input-limpio" required>
+                                        <input type="password" id="password-confirm-registro" placeholder="Repetir contraseña" class="input-limpio">
                                         
-                                        <span class="icono-derecho">
+                                        <span id="toggle-password-confirm" class="icono-derecho" style="cursor: pointer; color: var(--volcan-azul);">
                                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                                 <circle cx="12" cy="12" r="3"></circle>
                                             </svg>
                                         </span>
                                     </div>
+                                    <span id="error-password-registro" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: block; margin-top: 0.3rem;"></span>
                                 </div>
                             </div>
                         </fieldset>
@@ -112,17 +115,18 @@
                             
                             <div class="grilla-formulario">
                                 <div class="grupo-input col-completa">
-                                    <input type="tel" placeholder="Teléfono (Opcional)" pattern="[0-9]{9}" class="input-campo">
+                                    <input type="tel" id="telefono-registro" placeholder="Teléfono (Opcional)" pattern="[0-9]{9}" class="input-campo">
                                     <span class="texto-ayuda">Ej: 912345678</span>
                                 </div>
                                 
                                 <div class="grupo-input col-completa">
-                                    <input type="email" placeholder="E-mail" class="input-campo" required>
+                                    <input type="email" id="correo-registro" placeholder="E-mail" class="input-campo">
                                     <span class="texto-ayuda">Solo correos con @duoc.cl, @profesor.duoc.cl y @gmail.com</span>
                                 </div>
                                 
                                 <div class="grupo-input col-completa">
-                                    <input type="email" placeholder="Repetir e-mail" class="input-campo" required>
+                                    <input type="email" id="correo-confirm-registro" placeholder="Repetir e-mail" class="input-campo">
+                                    <span id="error-correo-registro" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: block; margin-top: 0.3rem;"></span>
                                 </div>
                             </div>
                         </fieldset>
@@ -134,7 +138,7 @@
                             
                             <div class="grilla-formulario">
                                 <div class="grupo-input">
-                                    <select class="input-campo select-campo" required>
+                                    <select id="region-registro" class="input-campo select-campo">
                                         <option value="" disabled selected>Seleccione región</option>
                                         <option value="nuble">Región de Ñuble</option>
                                         <option value="biobio">Región del Biobío</option>
@@ -142,7 +146,7 @@
                                 </div>
                                 
                                 <div class="grupo-input">
-                                    <select id="comuna" class="input-campo select-campo" required>
+                                    <select id="comuna-registro" class="input-campo select-campo">
                                         <option value="" disabled selected>Seleccione comuna</option>
                                         <option value="chillan">Chillán</option>
                                         <option value="chillan-viejo">Chillán Viejo</option>
@@ -155,7 +159,7 @@
                                 </div>
                                 
                                 <div class="grupo-input col-completa">
-                                    <input type="text" placeholder="Calle y Número (Ej: Los Puelches 123)" class="input-campo" required>
+                                    <input type="text" id="calle-registro" placeholder="Calle y Número (Ej: Los Puelches 123)" class="input-campo">
                                 </div>
                             </div>
                         </fieldset>
@@ -175,10 +179,13 @@
 
                         <!-- Checkbox y politicas -->
                         <div class="grupo-checkbox">
-                            <input type="checkbox" id="terminos" required>
-                            <label for="terminos">Acepto los <a href="legales.html#terminos">términos y condiciones</a> y la <a href="legales.html#privacidad">política de privacidad</a>.</label>
+                            <input type="checkbox" id="terminos-registro">
+                            <label for="terminos-registro">Acepto los <a href="legales.html#terminos">términos y condiciones</a> y la <a href="legales.html#privacidad">política de privacidad</a>.</label>
                         </div>
+                        <span id="error-terminos-registro" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: block; margin-top: 0.3rem;"></span>
                         
+                        <div id="mensaje-registro" style="text-align: center; font-weight: 600; margin-top: 1rem;"></div>
+
                         <!-- Botones de accion final -->
                         <div class="acciones-registro">
                             <a href="login.html" class="enlace-volver-login">
@@ -197,5 +204,8 @@
             </footer>
             
         </main>
+
+        <!-- Enlace al JS -->
+        <script src="assets/js/validaciones.js"></script>
     </body>
 </html>
