@@ -53,7 +53,7 @@
                         <div class="stat-info">
                             <h3>Productos registrados</h3>
                             <span class="stat-numero" id="stat-total-productos">—</span>
-                            <p class="stat-nota">Conteo disponible próximamente.</p>
+                            <p class="stat-nota">Total actualizado desde el inventario guardado.</p>
                         </div>
                         <div class="stat-icono icono-naranja" aria-hidden="true">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -67,7 +67,7 @@
                         <div class="stat-info">
                             <h3>Usuarios activos</h3>
                             <span class="stat-numero" id="stat-total-usuarios">—</span>
-                            <p class="stat-nota">Conteo disponible próximamente.</p>
+                            <p class="stat-nota">Total actualizado desde los usuarios guardados.</p>
                         </div>
                         <div class="stat-icono icono-azul" aria-hidden="true">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -81,5 +81,10 @@
                 </section>
             </main>
         </div>
+        <!-- Datos locales y conteos del panel -->
+        <script defer src="assets/js/data/productosData.js"></script>
+        <script defer src="assets/js/data/usuariosData.js"></script>
+        <script defer src="assets/js/services/almacenamiento-local.js"></script>
+        <script defer src="assets/js/admin/admin-metricas.js"></script>
     </body>
 </html>
