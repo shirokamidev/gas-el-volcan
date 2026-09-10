@@ -4,94 +4,110 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Gas El Volcán | Lista de Productos</title>
-        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-        <link rel="stylesheet" href="assets/css/admin-layout.css">
-        <link rel="stylesheet" href="assets/css/pages/admin-lista-productos.css">
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+        
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/admin-layout.css" />
+        <link rel="stylesheet" href="assets/css/utils/admin-tablas.css" />
+        <link rel="stylesheet" href="assets/css/pages/admin-lista-productos.css" />
     </head>
     <body>
-        <!-- Control del menú administrativo para dispositivos móviles -->
-        <input type="checkbox" id="menu-admin-movil" class="admin-control-menu">
+        <!-- Control del menú móvil -->
+        <input type="checkbox" id="toggle-menu" class="toggle-menu-checkbox">
 
-        <!-- Cabecera compartida del panel de administración -->
+        <!-- Cabecera principal -->
         <header class="admin-cabecera">
-            <label for="menu-admin-movil" class="admin-boton-menu">
-                <span aria-hidden="true">☰</span>
-                <span>Menú administrativo</span>
-            </label>
-            <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
-            <h1>Gestión de productos</h1>
-            <a class="admin-enlace-sitio" href="index.html">Volver al sitio</a>
+            <div class="cabecera-izq">
+                <label for="toggle-menu" class="btn-hamburguesa">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </label>
+                <a href="admin-index.html" class="logo-admin">
+                    <img src="assets/images/favicon.ico" alt="Icono Gas El Volcán">
+                    <span>Admin Volcán</span>
+                </a>
+            </div>
+            <div class="cabecera-der">
+                <span class="saludo-admin">Hola, <strong>Administradora</strong></span>
+                <a href="login.html" class="btn-salir">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg> 
+                    Salir
+                </a>
+            </div>
         </header>
 
-        <div class="admin-estructura">
-            <!-- Navegación compartida entre módulos administrativos -->
-            <aside class="admin-sidebar" id="navegacion-admin">
-                <nav aria-label="Menú de administración">
-                    <h2>Menú principal</h2>
-                    <ul>
-                        <li><a href="admin-index.html">Inicio</a></li>
-                        <li class="admin-separador">Módulo productos</li>
-                        <li><a href="admin-lista-productos.html" aria-current="page">Listar productos</a></li>
-                        <li><a href="admin-nuevo-producto.html">Nuevo producto</a></li>
-                        <li class="admin-separador">Módulo usuarios</li>
-                        <li><a href="admin-lista-usuarios.html">Listar usuarios</a></li>
-                        <li><a href="admin-nuevo-usuario.html">Nuevo usuario</a></li>
-                    </ul>
-                </nav>
-            </aside>
+        <!-- Barra de navegación lateral -->
+        <aside class="admin-sidebar">
+            <nav class="nav-lateral">
+                <ul>
+                    <li><a href="admin-index.html">Inicio</a></li>
+                    
+                    <li class="separador">Módulo Productos</li>
+                    <li><a href="admin-lista-productos.html" class="activo">Listar productos</a></li>
+                    <li><a href="admin-nuevo-producto.html">Nuevo producto</a></li>
+                    
+                    <li class="separador">Módulo Usuarios</li>
+                    <li><a href="admin-lista-usuarios.html">Listar usuarios</a></li>
+                    <li><a href="admin-nuevo-usuario.html">Nuevo usuario</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-            <main class="admin-main">
-                <!-- Presentación del listado -->
-                <section class="panel-titulo" aria-labelledby="titulo-productos">
-                    <h2 id="titulo-productos">Lista de Productos</h2>
-                    <p>Consulta y administra los productos de Gas El Volcán.</p>
-                </section>
+        <!-- Contenido dinámico principal -->
+        <main class="admin-main">
+            <div class="contenedor-vista">
+                
+                <!-- Cabecera del módulo -->
+                <div class="cabecera-modulo">
+                    <h1>Lista de Productos</h1>
+                    <a href="admin-nuevo-producto.html" class="btn-nuevo-registro">NUEVO PRODUCTO</a>
+                </div>
 
-                <!-- Tabla conectada al almacenamiento de productos -->
-                <section class="panel-productos" aria-labelledby="subtitulo-productos">
-                    <div class="encabezado-listado">
-                        <h2 id="subtitulo-productos">Productos registrados</h2>
-                        <a class="enlace-nuevo-producto" href="admin-nuevo-producto.html">Nuevo producto</a>
-                    </div>
-                    <p class="mensaje-demo" id="aviso-datos-productos">Cargando productos disponibles...</p>
-
-                    <!-- Los productos se construyen desde los datos locales -->
-                    <div class="tabla-contenedor" role="region" aria-label="Tabla de productos, con desplazamiento horizontal" tabindex="0">
-                        <table class="tabla-productos" aria-describedby="aviso-datos-productos">
-                            <caption class="texto-oculto">Productos con precios, stock y acciones de administración</caption>
+                <!-- Contenedor de la tabla de datos -->
+                <section class="caja-tabla-admin">
+                    <div class="tabla-responsiva">
+                        <table class="tabla-datos">
                             <thead>
                                 <tr>
-                                    <th scope="col">Código</th>
-                                    <th scope="col">Categoría</th>
-                                    <th scope="col">Producto</th>
-                                    <th scope="col">Descripción</th>
-                                    <th scope="col">Unidad</th>
-                                    <th scope="col">P. residencial</th>
-                                    <th scope="col">P. comercial</th>
-                                    <th scope="col">Stock</th>
-                                    <th scope="col">Acciones</th>
+                                    <th>Código</th>
+                                    <th>Categoría</th>
+                                    <th>Producto</th>
+                                    <th>Descripción</th>
+                                    <th>Unidad</th>
+                                    <th>P. Residencial</th>
+                                    <th>P. Comercial</th>
+                                    <th>Stock</th>
+                                    <th>Stock crítico</th>
+                                    <th class="columna-centro">Acciones</th>
                                 </tr>
                             </thead>
+                            
+                            <!-- Inyección dinámica de productos -->
                             <tbody id="tbody-productos-admin">
-                                <!-- JavaScript presenta aquí los productos del inventario -->
                             </tbody>
                         </table>
                     </div>
 
-                    <!-- Navegación por páginas de siete productos -->
-                    <nav class="paginacion-admin" aria-label="Páginas del listado de productos">
-                        <button type="button" class="btn-pagina" id="btn-pag-ant" aria-label="Página anterior" disabled>Anterior</button>
-                        <button type="button" class="btn-pagina activo" id="btn-pag-1" aria-current="page">1</button>
-                        <button type="button" class="btn-pagina" id="btn-pag-2">2</button>
-                        <button type="button" class="btn-pagina" id="btn-pag-sig" aria-label="Página siguiente" disabled>Siguiente</button>
-                    </nav>
+                    <!-- Paginación de la tabla -->
+                    <div class="paginacion-admin">
+                        <button type="button" id="btn-pag-ant" class="btn-pagina flecha" disabled>&laquo;</button>
+                        <button type="button" id="btn-pag-1" class="btn-pagina activo">1</button>
+                        <button type="button" id="btn-pag-2" class="btn-pagina">2</button>
+                        <button type="button" id="btn-pag-sig" class="btn-pagina flecha">&raquo;</button>
+                    </div>
                 </section>
-            </main>
-        </div>
-        <!-- Tabla administrativa vinculada a los productos del inventario -->
-        <script defer src="assets/js/data/productosData.js"></script>
-        <script defer src="assets/js/data/usuariosData.js"></script>
-        <script defer src="assets/js/services/almacenamiento-local.js"></script>
-        <script defer src="assets/js/admin/admin-tablas.js"></script>
+                
+            </div>
+        </main>
+
+        <!-- Datos maestros y motor de renderizado para las tablas de administración -->
+        <script defer src="assets/js/app.js"></script>
     </body>
 </html>

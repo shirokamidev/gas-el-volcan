@@ -4,133 +4,191 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Gas El Volcán | Editar Producto</title>
-        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-        <link rel="stylesheet" href="assets/css/admin-layout.css">
-        <link rel="stylesheet" href="assets/css/pages/admin-nuevo-producto.css">
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+        
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/admin-layout.css" />
+        <link rel="stylesheet" href="assets/css/utils/admin-formularios.css" />
     </head>
-        <body>
-        <!-- Control del menú administrativo para dispositivos móviles -->
-        <input type="checkbox" id="menu-admin-movil" class="admin-control-menu">
+    <body>
+        <!-- Control del menú móvil -->
+        <input type="checkbox" id="toggle-menu" class="toggle-menu-checkbox">
 
-        <!-- Cabecera compartida del panel de administración -->
+        <!-- Cabecera principal -->
         <header class="admin-cabecera">
-            <label for="menu-admin-movil" class="admin-boton-menu">
-                <span aria-hidden="true">☰</span>
-                <span>Menú administrativo</span>
-            </label>
-            <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
-            <h1>Gestión de productos</h1>
-            <a class="admin-enlace-sitio" href="index.html">Volver al sitio</a>
+            <div class="cabecera-izq">
+                <label for="toggle-menu" class="btn-hamburguesa">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </label>
+                <a href="admin-index.html" class="logo-admin">
+                    <img src="assets/images/favicon.ico" alt="Icono Gas El Volcán">
+                    <span>Admin Volcán</span>
+                </a>
+            </div>
+
+            <div class="cabecera-der">
+                <span class="saludo-admin">Hola, <strong>Administradora</strong></span>
+                <a href="login.html" class="btn-salir">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    Salir
+                </a>
+            </div>
         </header>
 
-        <div class="admin-estructura">
-            <!-- Navegación compartida entre módulos administrativos -->
-            <aside class="admin-sidebar" id="navegacion-admin">
-                <nav aria-label="Menú de administración">
-                    <h2>Menú principal</h2>
-                    <ul>
-                        <li><a href="admin-index.html">Inicio</a></li>
-                        <li class="admin-separador">Módulo productos</li>
-                        <li><a href="admin-lista-productos.html" aria-current="page">Listar productos</a></li>
-                        <li><a href="admin-nuevo-producto.html">Nuevo producto</a></li>
-                        <li class="admin-separador">Módulo usuarios</li>
-                        <li><a href="admin-lista-usuarios.html">Listar usuarios</a></li>
-                        <li><a href="admin-nuevo-usuario.html">Nuevo usuario</a></li>
-                    </ul>
-                </nav>
-            </aside>
+        <!-- Barra de navegación lateral -->
+        <aside class="admin-sidebar">
+            <nav class="nav-lateral">
+                <ul>
+                    <li><a href="admin-index.html">Inicio</a></li>
 
-            <main class="admin-main">
-                <!-- Presentación del formulario -->
-                <section class="panel-titulo" aria-labelledby="titulo-editar-producto">
-                    <div class="titulo-acciones">
-                        <div>
-                            <h2 id="titulo-editar-producto">Editar producto</h2>
-                            <p>Revisa la información del cilindro de 11 kg. Los datos son de ejemplo.</p>
-                        </div>
-                        <a class="enlace-volver" href="admin-lista-productos.html">Volver a la lista</a>
-                    </div>
-                </section>
+                    <li class="separador">Módulo Productos</li>
+                    <li><a href="admin-lista-productos.html">Listar productos</a></li>
+                    <li><a href="admin-nuevo-producto.html">Nuevo producto</a></li>
+                    <li><span class="activo" aria-current="page">Editar producto</span></li>
 
-                <!-- Formulario de demostración: el guardado se habilitará con JavaScript -->
-                <section class="panel-formulario" aria-labelledby="subtitulo-edicion">
-                    <h2 id="subtitulo-edicion">Información del producto</h2>
-                    <p class="aviso-formulario">Datos de demostración. La edición es visual y no guarda cambios todavía.</p>
+                    <li class="separador">Módulo Usuarios</li>
+                    <li><a href="admin-lista-usuarios.html">Listar usuarios</a></li>
+                    <li><a href="admin-nuevo-usuario.html">Nuevo usuario</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-                    <form id="form-editar-producto" action="#" class="formulario-producto">
-                        <fieldset class="grupo-campos">
-                            <legend>Información general</legend>
-                            <div class="grilla-campos">
-                                <div class="campo-formulario">
-                                    <label for="codigo-producto">Código del producto <span aria-hidden="true">*</span></label>
-                                    <input id="codigo-producto" name="codigo" type="text" minlength="3" readonly required>
+        <!-- Contenido dinámico principal -->
+        <main class="admin-main">
+            <div class="contenedor-vista">
+
+                <!-- Cabecera del módulo -->
+                <div class="cabecera-modulo">
+                    <h1>Editar Producto</h1>
+                    <a href="admin-lista-productos.html" class="btn-secundario">
+                        <span>&larr;</span> Volver a la lista
+                    </a>
+                </div>
+
+                <!-- Contenedor del formulario -->
+                <section class="caja-formulario-admin">
+                    <form id="form-editar-producto" action="#" class="formulario-generico" novalidate>
+                        
+                        <!-- Identificador del registro -->
+                        <input type="hidden" id="producto-id">
+
+                        <!-- Sección 1: Información básica -->
+                        <fieldset class="seccion-fieldset">
+                            <legend class="titulo-legend">Información General</legend>
+                            <div class="linea-separadora"></div>
+
+                            <p class="texto-obligatorio">* Modifica la información solicitada a continuación:</p>
+
+                            <div class="grilla-formulario">
+                                <div class="grupo-input col-completa">
+                                    <label class="label-campo" for="codigo-producto">Código del Producto <span class="asterisco">*</span></label>
+                                    <input type="text" id="codigo-producto" class="input-campo">
+                                    <span class="texto-ayuda">Obligatorio. Mínimo 3 caracteres. No tiene límite de máximo.</span>
+                                    <span id="error-codigo" class="texto-peligro"></span>
                                 </div>
-                                <div class="campo-formulario">
-                                    <label for="nombre-producto">Nombre del producto <span aria-hidden="true">*</span></label>
-                                    <input id="nombre-producto" name="nombre" type="text" maxlength="100" required>
+
+                                <div class="grupo-input col-completa">
+                                    <label class="label-campo" for="nombre-producto">Nombre del Producto <span class="asterisco">*</span></label>
+                                    <input type="text" id="nombre-producto" class="input-campo">
+                                    <span class="texto-ayuda">Obligatorio. Máximo 100 caracteres.</span>
+                                    <span id="error-nombre" class="texto-peligro"></span>
                                 </div>
-                                <div class="campo-formulario campo-completo">
-                                    <label for="categoria-producto">Categoría <span aria-hidden="true">*</span></label>
-                                    <select id="categoria-producto" name="categoria" required>
-                                        <option value="" disabled>Selecciona una categoría</option>
-                                        <option value="cilindros">Cilindros de gas</option>
+
+                                <div class="grupo-input col-completa">
+                                    <label class="label-campo" for="categoria-producto">Categoría <span class="asterisco">*</span></label>
+                                    <select id="categoria-producto" class="input-campo select-campo" required>
+                                        <option value="" disabled>-- Seleccione una categoría --</option>
+                                        <option value="cilindros">Cilindros de Gas</option>
                                         <option value="reguladores">Reguladores</option>
-                                        <option value="mangueras">Mangueras y conexiones</option>
+                                        <option value="mangueras">Mangueras y Conexiones</option>
                                         <option value="accesorios">Accesorios</option>
-                                    </select>
+                                    </select> 
+                                    <span class="texto-ayuda">Obligatorio. Determina la sección en la tienda.</span>
+                                    <span id="error-categoria" class="texto-peligro"></span>
                                 </div>
                             </div>
                         </fieldset>
 
-                        <fieldset class="grupo-campos">
-                            <legend>Precios e inventario</legend>
-                            <div class="grilla-campos">
-                                <div class="campo-formulario">
-                                    <label for="precio-residencial">Precio residencial (CLP) <span aria-hidden="true">*</span></label>
-                                    <input id="precio-residencial" name="precioResidencial" type="number" min="0" step="1" required>
+                        <!-- Sección 2: Tarifas e inventario -->
+                        <fieldset class="seccion-fieldset espaciado-seccion">
+                            <legend class="titulo-legend">Tarifas e Inventario</legend>
+                            <div class="linea-separadora"></div>
+
+                            <div class="grilla-formulario">
+                                <div class="grupo-input">
+                                    <label class="label-campo" for="precio-residencial">Precio Residencial (CLP) <span class="asterisco">*</span></label>
+                                    <input type="text" id="precio-residencial" class="input-campo">
+                                    <span class="texto-ayuda">Obligatorio. Mínimo 0. Precio para cliente final.</span>
+                                    <span id="error-precio-res" class="texto-peligro"></span>
                                 </div>
-                                <div class="campo-formulario">
-                                    <label for="precio-comercial">Precio comercial (CLP) <span aria-hidden="true">*</span></label>
-                                    <input id="precio-comercial" name="precioComercial" type="number" min="0" step="1" required>
+
+                                <div class="grupo-input">
+                                    <label class="label-campo" for="precio-comercial">Precio Comercial (CLP) <span class="asterisco">*</span></label>
+                                    <input type="text" id="precio-comercial" class="input-campo">
+                                    <span class="texto-ayuda">Obligatorio. Mínimo 0. Precio para empresas/locales.</span>
+                                    <span id="error-precio-com" class="texto-peligro"></span>
                                 </div>
-                                <div class="campo-formulario campo-completo">
-                                    <label for="stock-actual">Stock actual <span aria-hidden="true">*</span></label>
-                                    <input id="stock-actual" name="stock" type="number" min="0" step="1" required>
+
+                                <div class="grupo-input">
+                                    <label class="label-campo" for="stock-actual">Stock Actual <span class="asterisco">*</span></label>
+                                    <input type="text" id="stock-actual" class="input-campo">
+                                    <span class="texto-ayuda">Obligatorio. Solo números enteros. Mínimo 0.</span>
+                                    <span id="error-stock" class="texto-peligro"></span>
+                                </div>
+
+                                <div class="grupo-input">
+                                    <label class="label-campo" for="stock-critico">Stock Crítico (Opcional)</label>
+                                    <input type="text" id="stock-critico" placeholder="Ej: 15" class="input-campo" inputmode="numeric">
+                                    <span class="texto-ayuda">Opcional. Solo números enteros desde 0. Se avisará cuando el stock llegue al valor indicado.</span>
+                                    <span id="error-stock-critico" class="texto-peligro"></span>
                                 </div>
                             </div>
                         </fieldset>
 
-                        <fieldset class="grupo-campos">
-                            <legend>Detalles opcionales</legend>
-                            <div class="grilla-campos">
-                                <div class="campo-formulario campo-completo">
-                                    <label for="descripcion-producto">Descripción del producto</label>
-                                    <textarea id="descripcion-producto" name="descripcion" maxlength="500" rows="4" placeholder="Características principales del producto..."></textarea>
+                        <!-- Sección 3: Detalles y multimedia -->
+                        <fieldset class="seccion-fieldset espaciado-seccion">
+                            <legend class="titulo-legend">Detalles y Multimedia</legend>
+                            <div class="linea-separadora"></div>
+
+                            <div class="grilla-formulario">
+                                <div class="grupo-input col-completa">
+                                    <label class="label-campo" for="descripcion-producto">Descripción del Producto (Opcional)</label>
+                                    <textarea id="descripcion-producto" class="input-campo textarea-campo"></textarea>
+                                    <span class="texto-ayuda">Opcional. Máximo 500 caracteres.</span>
+                                    <span id="error-descripcion" class="texto-peligro"></span>
                                 </div>
-                                <div class="campo-formulario campo-completo">
-                                    <label for="imagen-producto">Ruta de la imagen</label>
-                                    <input id="imagen-producto" name="imagen" type="text">
-                                    <small>La imagen se vinculará a una ruta local del proyecto.</small>
+
+                                <div class="grupo-input col-completa">
+                                    <label class="label-campo" for="imagen-producto">Ruta de Imagen (Opcional)</label>
+                                    <input type="text" id="imagen-producto" class="input-campo">
+                                    <span class="texto-ayuda">Opcional. Ruta relativa de la imagen del producto.</span>
                                 </div>
                             </div>
                         </fieldset>
 
-                        <div id="mensaje-producto" class="mensaje-formulario" role="status" aria-live="polite">
-                            La actualización de productos todavía no está disponible.
+                        <!-- Contenedor para mensajes de validación -->
+                        <div id="mensaje-producto" class="mensaje-final"></div>
+
+                        <!-- Acciones finales del formulario -->
+                        <div class="acciones-registro">
+                            <button type="submit" class="boton-guardar">Guardar Cambios</button>
                         </div>
 
-                        <a id="enlace-inventario-productos" href="admin-lista-productos.html" class="enlace-inventario-productos" hidden>Volver al inventario</a>
-                        <div class="acciones-formulario">
-                            <button class="boton-guardar" type="submit">Guardar cambios</button>
-                        </div>
                     </form>
                 </section>
-            </main>
-        </div>
-        <!-- Datos de inventario y lógica de creación y edición de productos -->
-        <script defer src="assets/js/data/productosData.js"></script>
-        <script defer src="assets/js/data/usuariosData.js"></script>
-        <script defer src="assets/js/services/almacenamiento-local.js"></script>
-        <script defer src="assets/js/admin/admin-formularios.js"></script>
+
+            </div>
+        </main>
+
+        <!-- Validadores estructurales e inserción de datos para la edición de registros -->
+        <script defer src="assets/js/app.js"></script>
     </body>
 </html>
