@@ -12,7 +12,7 @@
     font-weight: 700;
 }
 
-/* Botón secundario para volver */
+/* Boton secundario */
 .btn-secundario {
     background-color: #ffffff;
     color: var(--volcan-oscuro);
@@ -33,7 +33,7 @@
     border-color: #d1d1d1;
 }
 
-/* Contenedor del formulario */
+/* Contenedor principal del formulario */
 .caja-formulario-admin {
     background-color: #ffffff;
     border-radius: 0.6rem;
@@ -42,7 +42,7 @@
     padding: 2.5rem;
 }
 
-/* Formulario genérico y fieldsets */
+/* Formulario generico y fieldsets */
 .formulario-generico {
     display: flex;
     flex-direction: column;
@@ -96,7 +96,7 @@
     flex-direction: column;
 }
 
-/* Etiquetas e Inputs */
+/* Etiquetas e inputs */
 .label-campo {
     font-size: 0.95rem;
     font-weight: 600;
@@ -130,7 +130,7 @@
     color: #a0a0a0;
 }
 
-/* Selectores y Textareas específicos */
+/* Selector estilizado */
 .select-campo {
     cursor: pointer;
     appearance: none;
@@ -147,7 +147,7 @@
     line-height: 1.5;
 }
 
-/* Textos de validación o ayuda debajo de los inputs */
+/* Textos de ayuda debajo de los inputs */
 .texto-ayuda {
     font-size: 0.8rem;
     color: #888888;
@@ -155,9 +155,32 @@
     font-weight: 500;
 }
 
+/* Mensajes de validacion inyectados por js */
+.texto-peligro {
+    color: #dc3545;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 0.4rem;
+}
+
+.mensaje-final {
+    text-align: center;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.mensaje-error {
+    color: #dc3545;
+}
+
+.mensaje-exito {
+    color: var(--volcan-azul);
+}
+
 /* Acciones finales del formulario */
 .acciones-registro {
-    margin-top: 3rem;
     display: flex;
     justify-content: flex-end;
     padding-top: 1.5rem;
@@ -205,6 +228,7 @@
     }
     
     .btn-secundario {
+        align-self: flex-start;
         padding: 0.6rem 1rem;
         font-size: 0.85rem;
     }
