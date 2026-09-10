@@ -7,6 +7,10 @@
         <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
         <link rel="stylesheet" href="assets/css/layout.css">
         <link rel="stylesheet" href="assets/css/pages/sucursales.css">
+        <!-- Datos geográficos y búsqueda local de puntos de atención -->
+        <script defer src="assets/js/data/sucursalesData.js"></script>
+        <script defer src="assets/js/utils/ubicaciones.js"></script>
+        <script defer src="assets/js/pages/sucursales.js"></script>
     </head>
     <body>
         <!-- Control accesible del menú móvil -->
@@ -67,7 +71,7 @@
                 <form class="formulario-buscador" aria-describedby="aviso-buscador">
                     <div class="grupo-campo">
                         <label for="region">Región</label>
-                        <select id="region" name="region" disabled>
+                        <select id="region" name="region" required>
                             <option value="" selected>Selecciona tu región...</option>
                             <option value="nuble">Región de Ñuble</option>
                             <option value="biobio">Región del Biobío</option>
@@ -75,13 +79,14 @@
                     </div>
                     <div class="grupo-campo">
                         <label for="comuna">Comuna</label>
-                        <select id="comuna" name="comuna" disabled>
+                        <select id="comuna" name="comuna" required disabled>
                             <option value="" selected>Selecciona tu comuna...</option>
                         </select>
                     </div>
-                    <button type="button" disabled>Buscar sucursal</button>
+                    <button type="submit" id="btn-buscar-sucursal">Buscar sucursal</button>
+                    <button type="button" id="reset-sucursal" class="boton-restablecer-sucursal">Mostrar todas</button>
                 </form>
-                <p id="aviso-buscador" class="aviso-buscador">La búsqueda por región y comuna estará disponible en una próxima etapa.</p>
+                <p id="aviso-buscador" class="aviso-buscador" role="status" aria-live="polite">Selecciona una región y una comuna para encontrar zonas de atención.</p>
             </section>
 
             <!-- Directorio ampliado con horarios y puntos de atención -->
