@@ -5,11 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Gas El Volcán | Nuevo Usuario</title>
         <link rel="icon" type="image/svg+xml" href="assets/img/favicon-volcan.svg" />
-        
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-        
+
         <link rel="stylesheet" href="assets/css/admin-layout.css" />
         <link rel="stylesheet" href="assets/css/admin-nuevo-usuario.css" />
     </head>
@@ -32,7 +32,7 @@
                     <span>Admin Volcán</span>
                 </div>
             </div>
-            
+
             <div class="cabecera-der">
                 <span class="saludo-admin">Hola, <strong>Administradora</strong></span>
                 <a href="login.html" class="btn-salir">
@@ -53,11 +53,11 @@
                     <li>
                         <a href="admin-index.html">Inicio</a>
                     </li>
-                    
+
                     <li class="separador">Módulo Productos</li>
                     <li><a href="admin-lista-productos.html">Listar productos</a></li>
                     <li><a href="admin-nuevo-producto.html">Nuevo producto</a></li>
-                    
+
                     <li class="separador">Módulo Usuarios</li>
                     <li><a href="admin-lista-usuarios.html">Listar usuarios</a></li>
                     <li><a href="admin-nuevo-usuario.html" class="activo">Nuevo usuario</a></li>
@@ -68,7 +68,7 @@
         <!-- Contenido dinámico principal -->
         <main class="admin-main">
             <div class="contenedor-vista">
-                
+
                 <div class="cabecera-modulo">
                     <h1>Crear Nuevo Usuario</h1>
                     <a href="admin-lista-usuarios.html" class="btn-secundario">
@@ -77,36 +77,38 @@
                 </div>
 
                 <section class="caja-formulario-admin">
-                    <form action="#" class="formulario-generico">
-                        
+                    <form id="form-nuevo-usuario" action="#" class="formulario-generico" novalidate>
+
                         <!-- Seccion de Datos Personales -->
                         <fieldset class="seccion-fieldset">
                             <legend class="titulo-legend">Datos Personales</legend>
                             <div class="linea-separadora"></div>
-                            
+
                             <p class="texto-obligatorio">* Completa la información solicitada a continuación:</p>
-                            
+
                             <div class="grilla-formulario">
                                 <div class="grupo-input col-completa">
                                     <label class="label-campo">RUT <span class="asterisco">*</span></label>
-                                    <input type="text" placeholder="Ej: 21456789K" class="input-campo" minlength="7" maxlength="9" required>
-                                    <span class="texto-ayuda">Obligatorio. Sin puntos ni guion.</span>
+                                    <input type="text" id="rut-usuario" placeholder="Ej: 21456789K" class="input-campo" minlength="7" maxlength="9">
+                                    <span class="texto-ayuda">Sin puntos ni guion, Ej: 19011022K</span>
+                                    <span id="error-rut" class="texto-peligro"></span>
                                 </div>
-                                
+
                                 <div class="grupo-input col-completa">
                                     <label class="label-campo">Nombre <span class="asterisco">*</span></label>
-                                    <input type="text" placeholder="Ej: Rocío" class="input-campo" maxlength="50" required>
+                                    <input type="text" id="nombre-usuario" placeholder="Ej: Rocío" class="input-campo" maxlength="50">
                                     <span class="texto-ayuda">Obligatorio. Máximo 50 caracteres.</span>
+                                    <span id="error-nombre-usu" class="texto-peligro"></span>
                                 </div>
 
                                 <div class="grupo-input">
                                     <label class="label-campo">Apellido Paterno <span class="asterisco">*</span></label>
-                                    <input type="text" placeholder="Ej: Contreras" class="input-campo" maxlength="50" required>
+                                    <input type="text" placeholder="Ej: Contreras" class="input-campo" maxlength="100">
                                 </div>
 
                                 <div class="grupo-input">
                                     <label class="label-campo">Apellido Materno <span class="asterisco">*</span></label>
-                                    <input type="text" placeholder="Ej: Águila" class="input-campo" maxlength="50" required>
+                                    <input type="text" placeholder="Ej: Águila" class="input-campo" maxlength="100">
                                 </div>
                             </div>
                         </fieldset>
@@ -115,24 +117,26 @@
                         <fieldset class="seccion-fieldset espaciado-seccion">
                             <legend class="titulo-legend">Contacto y Credenciales</legend>
                             <div class="linea-separadora"></div>
-                            
+
                             <div class="grilla-formulario">
                                 <div class="grupo-input">
                                     <label class="label-campo">Teléfono (Opcional)</label>
                                     <input type="tel" placeholder="Ej: 987654321" pattern="[0-9]{9}" class="input-campo">
                                     <span class="texto-ayuda">Opcional. 9 dígitos numéricos.</span>
                                 </div>
-                                
+
                                 <div class="grupo-input">
                                     <label class="label-campo">Correo Electrónico <span class="asterisco">*</span></label>
-                                    <input type="email" placeholder="Ej: roc.contreras@profesor.duoc.cl" class="input-campo" maxlength="100" required>
-                                    <span class="texto-ayuda">Solo correos @duoc.cl, @profesor.duoc.cl y @gmail.com</span>
+                                    <input type="email" id="correo-usuario" placeholder="Ej: roc.contreras@profesor.duoc.cl" class="input-campo" maxlength="100">
+                                    <span class="texto-ayuda">Solo correos con @duoc.cl, @profesor.duoc.cl y @gmail.com</span>
+                                    <span id="error-correo-usu" class="texto-peligro"></span>
                                 </div>
 
                                 <div class="grupo-input col-completa">
                                     <label class="label-campo">Contraseña Temporal <span class="asterisco">*</span></label>
-                                    <input type="password" placeholder="Ingresar contraseña" class="input-campo" minlength="4" maxlength="10" required>
+                                    <input type="password" id="password-usuario" placeholder="Ingresar contraseña" class="input-campo" minlength="4" maxlength="10">
                                     <span class="texto-ayuda">Obligatorio. Entre 4 a 10 caracteres.</span>
+                                    <span id="error-pass" class="texto-peligro"></span>
                                 </div>
                             </div>
                         </fieldset>
@@ -141,35 +145,29 @@
                         <fieldset class="seccion-fieldset espaciado-seccion">
                             <legend class="titulo-legend">Dirección</legend>
                             <div class="linea-separadora"></div>
-                            
+
                             <div class="grilla-formulario">
                                 <div class="grupo-input">
                                     <label class="label-campo">Región <span class="asterisco">*</span></label>
-                                    <select class="input-campo select-campo" required>
+                                    <select id="region-admin" class="input-campo select-campo" required>
                                         <option value="" disabled selected>-- Seleccione región --</option>
                                         <option value="nuble">Región de Ñuble</option>
                                         <option value="biobio">Región del Biobío</option>
                                     </select> 
                                 </div>
-                                
+
                                 <div class="grupo-input">
                                     <label class="label-campo">Comuna <span class="asterisco">*</span></label>
-                                    <select class="input-campo select-campo" required>
+                                    <select id="comuna-admin" class="input-campo select-campo" required>
                                         <option value="" disabled selected>Seleccione comuna</option>
-                                        <option value="chillan">Chillán</option>
-                                        <option value="chillan-viejo">Chillán Viejo</option>
-                                        <option value="el-carmen">El Carmen</option>
-                                        <option value="pinto">Pinto</option>
-                                        <option value="san-ignacio">San Ignacio</option>
-                                        <option value="bulnes">Bulnes</option>
-                                        <option value="quillon">Quillón</option>
                                     </select> 
                                 </div>
 
                                 <div class="grupo-input col-completa">
                                     <label class="label-campo">Calle y Número <span class="asterisco">*</span></label>
-                                    <input type="text" placeholder="Ej: Caupolicán 450, Depto 3B" class="input-campo" maxlength="300" required>
+                                    <input type="text" id="direccion-usuario" placeholder="Ej: Caupolicán 450, Depto 3B" class="input-campo" maxlength="300">
                                     <span class="texto-ayuda">Obligatorio. Máximo 300 caracteres.</span>
+                                    <span id="error-direccion" class="texto-peligro"></span>
                                 </div>
                             </div>
                         </fieldset>
@@ -178,7 +176,7 @@
                         <fieldset class="seccion-fieldset espaciado-seccion">
                             <legend class="titulo-legend">Rol del Sistema</legend>
                             <div class="linea-separadora"></div>
-                            
+
                             <div class="grilla-formulario">
                                 <div class="grupo-input col-completa">
                                     <label class="label-campo">Tipo de Usuario <span class="asterisco">*</span></label>
@@ -193,6 +191,9 @@
                             </div>
                         </fieldset>
 
+                        <!-- Contenedor para mensajes de validación -->
+                        <div id="mensaje-usuario" class="mensaje-final"></div>
+
                         <!-- Acciones finales -->
                         <div class="acciones-registro">
                             <button type="submit" class="boton-guardar">Guardar Usuario</button>
@@ -203,5 +204,9 @@
 
             </div>
         </main>
+
+        <!-- Scripts -->
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/admin.js"></script>
     </body>
 </html>
