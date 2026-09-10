@@ -123,11 +123,11 @@
                         <!-- Controles para agregar al carrito -->
                         <div class="producto-controles">
                             <div class="control-cantidad">
-                                <button type="button" class="btn-restar">-</button>
-                                <input type="number" value="1" min="1" class="input-cantidad" readonly />
-                                <button type="button" class="btn-sumar">+</button>
+                                <button type="button" class="btn-restar" onclick="var inp=document.getElementById('ind-cant-1'); inp.value=Math.max(1, parseInt(inp.value)-1);">-</button>
+                                <input type="number" id="ind-cant-1" value="1" min="1" class="input-cantidad" readonly />
+                                <button type="button" class="btn-sumar" onclick="var inp=document.getElementById('ind-cant-1'); inp.value=parseInt(inp.value)+1;">+</button>
                             </div>
-                            <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                            <button type="button" class="boton boton-naranja boton-bloque" onclick="window.agregarAlCarrito(1, parseInt(document.getElementById('ind-cant-1').value))">AGREGAR AL CARRITO</button>
                         </div>
                     </article>
 
@@ -146,11 +146,11 @@
                         
                         <div class="producto-controles">
                             <div class="control-cantidad">
-                                <button type="button" class="btn-restar">-</button>
-                                <input type="number" value="1" min="1" class="input-cantidad" readonly />
-                                <button type="button" class="btn-sumar">+</button>
+                                <button type="button" class="btn-restar" onclick="var inp=document.getElementById('ind-cant-2'); inp.value=Math.max(1, parseInt(inp.value)-1);">-</button>
+                                <input type="number" id="ind-cant-2" value="1" min="1" class="input-cantidad" readonly />
+                                <button type="button" class="btn-sumar" onclick="var inp=document.getElementById('ind-cant-2'); inp.value=parseInt(inp.value)+1;">+</button>
                             </div>
-                            <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                            <button type="button" class="boton boton-naranja boton-bloque" onclick="window.agregarAlCarrito(2, parseInt(document.getElementById('ind-cant-2').value))">AGREGAR AL CARRITO</button>
                         </div>
                     </article>
 
@@ -169,11 +169,11 @@
 
                         <div class="producto-controles">
                             <div class="control-cantidad">
-                                <button type="button" class="btn-restar">-</button>
-                                <input type="number" value="1" min="1" class="input-cantidad" readonly />
-                                <button type="button" class="btn-sumar">+</button>
+                                <button type="button" class="btn-restar" onclick="var inp=document.getElementById('ind-cant-3'); inp.value=Math.max(1, parseInt(inp.value)-1);">-</button>
+                                <input type="number" id="ind-cant-3" value="1" min="1" class="input-cantidad" readonly />
+                                <button type="button" class="btn-sumar" onclick="var inp=document.getElementById('ind-cant-3'); inp.value=parseInt(inp.value)+1;">+</button>
                             </div>
-                            <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                            <button type="button" class="boton boton-naranja boton-bloque" onclick="window.agregarAlCarrito(3, parseInt(document.getElementById('ind-cant-3').value))">AGREGAR AL CARRITO</button>
                         </div>
                     </article>
 
@@ -192,11 +192,11 @@
 
                         <div class="producto-controles">
                             <div class="control-cantidad">
-                                <button type="button" class="btn-restar">-</button>
-                                <input type="number" value="1" min="1" class="input-cantidad" readonly />
-                                <button type="button" class="btn-sumar">+</button>
+                                <button type="button" class="btn-restar" onclick="var inp=document.getElementById('ind-cant-4'); inp.value=Math.max(1, parseInt(inp.value)-1);">-</button>
+                                <input type="number" id="ind-cant-4" value="1" min="1" class="input-cantidad" readonly />
+                                <button type="button" class="btn-sumar" onclick="var inp=document.getElementById('ind-cant-4'); inp.value=parseInt(inp.value)+1;">+</button>
                             </div>
-                            <button type="button" class="boton boton-naranja boton-bloque">AGREGAR AL CARRITO</button>
+                            <button type="button" class="boton boton-naranja boton-bloque" onclick="window.agregarAlCarrito(4, parseInt(document.getElementById('ind-cant-4').value))">AGREGAR AL CARRITO</button>
                         </div>
                     </article>
                 </div>
@@ -282,5 +282,8 @@
                 <p>&copy; 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
             </div>
         </footer>
+
+        <!-- Scripts -->
+        <script src="assets/js/main.js"></script>
     </body>
 </html>
