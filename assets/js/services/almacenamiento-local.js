@@ -43,19 +43,39 @@ const guardarLocalStorageJSON = function(clave, dato) {
     }
 };
 
-// Actualiza las rutas antiguas de las imágenes sin modificar los demás datos
-const normalizarImagenProducto = function(producto) {
-    if (producto && typeof producto.imagen === "string" && producto.imagen.startsWith("assets/img/")) {
-        return { ...producto, imagen: producto.imagen.replace("assets/img/", "assets/images/") };
+// Completa la información de los productos guardados anteriormente
+const normalizarProducto = function(producto) {
+    let productoActualizado = producto
+
+    if (typeof productoActualizado.imagen === "string" && productoActualizado.imagen.startsWith("assets/img/")) {
+        productoActualizado = { ...productoActualizado, imagen: productoActualizado.imagen.replace("assets/img/", "assets/images/") }
     }
-    return producto;
-};
+
+    if (!Number.isSafeInteger(productoActualizado.stockCritico) || productoActualizado.stockCritico < 0) {
+        const productoInicial = productosData.find(registro => registro.id === productoActualizado.id && registro.codigo === productoActualizado.codigo)
+        let stockCriticoInicial = 0
+        if (productoInicial) {
+            stockCriticoInicial = productoInicial.stockCritico
+        }
+        productoActualizado = { ...productoActualizado, stockCritico: stockCriticoInicial }
+    }
+
+    return productoActualizado
+}
+
+// Obtiene el umbral crítico configurado para un producto
+const obtenerStockCritico = function(producto) {
+    if (Number.isSafeInteger(producto.stockCritico) && producto.stockCritico >= 0) {
+        return producto.stockCritico
+    }
+    return 0
+}
 
 // Obtiene los productos guardados o recurre a la base estática
 const obtenerProductos = function() {
     const productosGuardados = leerLocalStorageJSON("productosVolcan");
     if (Array.isArray(productosGuardados)) {
-        const productosActualizados = productosGuardados.map(normalizarImagenProducto);
+        const productosActualizados = productosGuardados.map(normalizarProducto);
 
         if (productosActualizados.some((producto, indice) => producto !== productosGuardados[indice])) {
             guardarProductos(productosActualizados);

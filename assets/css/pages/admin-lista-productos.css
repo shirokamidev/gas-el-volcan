@@ -1,261 +1,86 @@
-/* Encabezado y listado inicial de productos */
-.panel-titulo,
-.panel-productos {
-    padding: 1.5rem;
-    background-color: var(--volcan-blanco);
-    border: 0.0625rem solid #e5e7eb;
-    border-radius: 0.5rem;
-}
-
-.panel-titulo {
+/* Ajustes de la tabla de productos */
+.tabla-responsiva {
     margin-bottom: 1.5rem;
 }
 
-.panel-titulo h2 {
-    margin: 0 0 0.5rem;
-    color: var(--volcan-azul);
-    font-size: 1.6rem;
+.tabla-datos {
+    min-width: 78.125rem;
 }
 
-.panel-titulo p,
-.mensaje-demo {
-    margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.6;
+/* Valores de stock y encabezados en una sola línea */
+.tabla-datos th:nth-child(6),
+.tabla-datos th:nth-child(7),
+.tabla-datos th:nth-child(9),
+.tabla-datos td:nth-child(8) {
+    white-space: nowrap;
 }
 
-.panel-productos h2 {
-    margin: 0;
-    color: var(--volcan-azul);
-    font-size: 1.2rem;
+.celda-acciones {
+    white-space: nowrap;
 }
 
-/* Acceso a la vista de registro de productos */
-.encabezado-listado {
+.columna-descripcion {
+    min-width: 20rem;
+    text-align: justify;
+    line-height: 1.5;
+    color: var(--volcan-gris);
+}
+
+.texto-peligro {
+    color: var(--volcan-rojo);
+}
+
+/* Paginación de productos */
+.paginacion-admin {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.enlace-nuevo-producto {
-    display: inline-block;
-    padding: 0.75rem 1.1rem;
-    border-radius: 0.375rem;
-    background-color: var(--volcan-naranja);
-    color: var(--volcan-oscuro);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 700;
-}
-
-.enlace-nuevo-producto:hover,
-.enlace-nuevo-producto:focus-visible {
-    background-color: #ff984f;
-}
-
-.mensaje-demo {
-    margin-bottom: 1.5rem;
-    color: #555555;
-}
-
-/* Tabla de productos con desplazamiento horizontal en pantallas pequeñas */
-.tabla-contenedor {
-    width: 100%;
-    overflow-x: auto;
-}
-
-.tabla-productos {
-    width: 100%;
-    min-width: 78rem;
-    border-collapse: collapse;
-    text-align: left;
-}
-
-.tabla-productos th,
-.tabla-productos td {
-    padding: 0.9rem 0.75rem;
-    border-bottom: 0.0625rem solid #e5e7eb;
-    font-size: 0.9rem;
-    vertical-align: middle;
-}
-
-.tabla-productos th {
-    background-color: var(--volcan-azul);
-    color: var(--volcan-blanco);
-    font-weight: 600;
-}
-
-.producto-resumen {
-    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 0.75rem;
-    font-weight: 600;
+    gap: 0.4rem;
+    padding-top: 0.5rem;
+    margin-top: 1rem;
 }
 
-.producto-resumen img {
-    display: block;
-    flex-shrink: 0;
-    width: 3.25rem;
-    height: 3.25rem;
-    object-fit: contain;
-}
-
-.boton-accion {
-    padding: 0.55rem 0.85rem;
-    border: 0;
+.btn-pagina {
+    background-color: var(--volcan-blanco);
+    border: 0.0625rem solid var(--volcan-borde);
+    color: var(--volcan-azul);
+    width: 2.2rem;
+    height: 2.2rem;
     border-radius: 0.3rem;
-    background-color: #e5e7eb;
-    color: #555555;
-    font-family: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 600;
+    font-family: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-pagina:hover:not(:disabled):not(.activo) {
+    background-color: var(--volcan-fondo);
+}
+
+.btn-pagina.activo {
+    background-color: var(--volcan-oscuro);
+    color: var(--volcan-blanco);
+    border-color: var(--volcan-oscuro);
+}
+
+.btn-pagina.flecha:disabled {
+    color: var(--volcan-borde-oscuro);
     cursor: not-allowed;
+    background-color: var(--volcan-blanco);
+    border-color: var(--volcan-borde);
+}
+
+.btn-pagina.flecha {
+    color: var(--volcan-gris-claro);
 }
 
 /* Adaptabilidad para pantallas medianas (Tablets) */
 @media (min-width: 768px) {
-    .encabezado-listado {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+    .paginacion-admin {
+        justify-content: flex-end;
     }
-}
-
-/* Adaptabilidad para dispositivos grandes (Escritorio) */
-@media (min-width: 992px) {
-    .panel-titulo,
-    .panel-productos {
-        padding: 2rem;
-    }
-
-    .panel-titulo h2 {
-        font-size: 1.9rem;
-    }
-}
-
-/* Acceso visual al formulario de edición de un producto de ejemplo */
-.enlace-editar-producto {
-    display: inline-block;
-    padding: 0.55rem 0.85rem;
-    border: 0.0625rem solid var(--volcan-azul);
-    border-radius: 0.3rem;
-    color: var(--volcan-azul);
-    background-color: var(--volcan-blanco);
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-decoration: none;
-    white-space: nowrap;
-}
-
-.enlace-editar-producto:hover,
-.enlace-editar-producto:focus-visible {
-    background-color: #e7f1fa;
-    text-decoration: underline;
-}
-
-.enlace-editar-producto:focus-visible {
-    outline: 0.1875rem solid var(--volcan-naranja);
-    outline-offset: 0.1875rem;
-}
-
-/* Contenido adicional y preparación de la tabla para datos dinámicos */
-.tabla-contenedor:focus-visible {
-    outline: 0.1875rem solid var(--volcan-naranja);
-    outline-offset: 0.1875rem;
-}
-
-.tabla-productos tbody tr:nth-child(even) {
-    background-color: #f7f9fb;
-}
-
-.celda-descripcion {
-    min-width: 13rem;
-    max-width: 18rem;
-    color: #555555;
-}
-
-.texto-oculto {
-    position: absolute;
-    width: 0.0625rem;
-    height: 0.0625rem;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-/* Paginación del inventario con JavaScript */
-.paginacion-admin {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1.5rem;
-}
-
-.btn-pagina {
-    min-width: 2.75rem;
-    min-height: 2.75rem;
-    padding: 0.5rem 0.85rem;
-    border: 0.0625rem solid #cbd5df;
-    border-radius: 0.375rem;
-    background-color: var(--volcan-blanco);
-    color: var(--volcan-azul);
-    font: inherit;
-    font-size: 0.875rem;
-    font-weight: 700;
-}
-
-.btn-pagina.activo {
-    background-color: var(--volcan-azul);
-    border-color: var(--volcan-azul);
-    color: var(--volcan-blanco);
-}
-
-.btn-pagina:disabled:not(.activo) {
-    opacity: 0.55;
-    cursor: not-allowed;
-}
-
-
-/* Acciones activas del inventario */
-.acciones-tabla-producto {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.boton-eliminar-producto {
-    padding: 0.55rem 0.85rem;
-    border: 0.0625rem solid #b42318;
-    border-radius: 0.3rem;
-    background-color: var(--volcan-blanco);
-    color: #b42318;
-    font-size: 0.9rem;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.boton-eliminar-producto:hover,
-.boton-eliminar-producto:focus-visible {
-    background-color: #fff0ed;
-}
-
-.stock-bajo {
-    color: #b42318;
-    font-weight: 700;
-}
-
-.producto-sin-resultados {
-    padding: 2rem 1rem;
-    text-align: center;
-}
-
-.boton-eliminar-producto:focus-visible,
-.btn-pagina:focus-visible {
-    outline: 0.1875rem solid var(--volcan-naranja);
-    outline-offset: 0.1875rem;
 }

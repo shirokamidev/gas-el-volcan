@@ -21,9 +21,10 @@ if (tbodyProductosAdmin) {
 
         productosPagina.forEach((producto) => {
             let claseStock = "";
-            if (producto.stock <= 20) {
+            if (producto.stock <= obtenerStockCritico(producto)) {
                 claseStock = "texto-peligro fw-bold";
             }
+            const stockMostrado = producto.stock === 0 ? "Sin stock" : producto.stock;
 
             const fila = document.createElement("tr");
             fila.innerHTML = `
@@ -34,7 +35,8 @@ if (tbodyProductosAdmin) {
                 <td>Unidad</td>
                 <td class="fw-bold">$${producto.precioResidencial.toLocaleString("es-CL")}</td>
                 <td class="texto-secundario">$${producto.precioComercial.toLocaleString("es-CL")}</td>
-                <td class="${claseStock}">${producto.stock}</td>
+                <td class="${claseStock}">${stockMostrado}</td>
+                <td>${obtenerStockCritico(producto)}</td>
                 <td class="celda-acciones">
                     <a href="admin-editar-producto.html?id=${producto.id}" class="btn-accion btn-editar" aria-label="Editar">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>

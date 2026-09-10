@@ -18,6 +18,7 @@ const inicializarFormularioProducto = (identificadorFormulario) => {
     const precioResidencial = document.getElementById("precio-residencial");
     const precioComercial = document.getElementById("precio-comercial");
     const stock = document.getElementById("stock-actual");
+    const stockCritico = document.getElementById("stock-critico");
     const descripcion = document.getElementById("descripcion-producto");
     const imagen = document.getElementById("imagen-producto");
     
@@ -27,10 +28,11 @@ const inicializarFormularioProducto = (identificadorFormulario) => {
     const errorPrecioResidencial = document.getElementById("error-precio-res");
     const errorPrecioComercial = document.getElementById("error-precio-com");
     const errorStock = document.getElementById("error-stock");
+    const errorStockCritico = document.getElementById("error-stock-critico");
     const errorDescripcion = document.getElementById("error-descripcion");
     const mensajeGeneral = document.getElementById("mensaje-producto");
 
-    // Llenar campos dinámicamente si la vista corresponde a la edición de un registro
+    // Carga los datos existentes en el formulario de edición
     if (identificadorFormulario === "form-editar-producto") {
         const parametrosUrl = new URLSearchParams(location.search);
         const identificadorProductoEditar = Number(parametrosUrl.get("id"))
@@ -46,6 +48,7 @@ const inicializarFormularioProducto = (identificadorFormulario) => {
             if (precioResidencial) { precioResidencial.value = productoEncontrado.precioResidencial; precioResidencial.placeholder = productoEncontrado.precioResidencial; }
             if (precioComercial) { precioComercial.value = productoEncontrado.precioComercial; precioComercial.placeholder = productoEncontrado.precioComercial; }
             if (stock) { stock.value = productoEncontrado.stock; stock.placeholder = productoEncontrado.stock; }
+            if (stockCritico) { stockCritico.value = obtenerStockCritico(productoEncontrado); }
             if (descripcion) { descripcion.value = productoEncontrado.descripcion || ""; descripcion.placeholder = productoEncontrado.descripcion || "Sin descripción..."; }
             if (imagen) { imagen.value = productoEncontrado.imagen || ""; imagen.placeholder = productoEncontrado.imagen || "Sin imagen..."; }
         } else {
@@ -92,6 +95,13 @@ const inicializarFormularioProducto = (identificadorFormulario) => {
         return ""
     }
 
+    function validarStockCriticoProducto(valor) {
+        if (valor.trim() === "") return ""
+        if (!/^\d+$/.test(valor.trim())) return "El stock crítico debe ser un número entero mayor o igual a 0."
+        if (!Number.isSafeInteger(Number(valor))) return "El stock crítico debe ser un número entero mayor o igual a 0."
+        return ""
+    }
+
     function validarDescripcionProducto(valor) {
         if (valor.trim().length > 500) return "Máximo 500 caracteres permitidos."
         return ""
@@ -104,6 +114,7 @@ const inicializarFormularioProducto = (identificadorFormulario) => {
         [precioResidencial, errorPrecioResidencial, valor => validarPrecioProducto(valor, "residencial"), "input"],
         [precioComercial, errorPrecioComercial, valor => validarPrecioProducto(valor, "comercial"), "input"],
         [stock, errorStock, validarStockProducto, "input"],
+        [stockCritico, errorStockCritico, validarStockCriticoProducto, "input"],
         [descripcion, errorDescripcion, validarDescripcionProducto, "input"]
     ]
 
@@ -142,6 +153,7 @@ const inicializarFormularioProducto = (identificadorFormulario) => {
                 precioResidencial: Number(precioResidencial.value),
                 precioComercial: Number(precioComercial.value),
                 stock: Number(stock.value),
+                stockCritico: Number(stockCritico.value.trim()),
                 imagen: imagenProducto
             };
 
@@ -230,7 +242,7 @@ const inicializarFormularioUsuario = (identificadorFormulario) => {
         poblarSelectComunas(selectRegionAdmin, selectComunaAdmin)
     }
 
-    // Llenar campos dinámicamente si la vista corresponde a la edición de un registro
+    // Carga los datos existentes en el formulario de edición
     if (identificadorFormulario === "form-editar-usuario") {
         const parametrosUrl = new URLSearchParams(location.search);
         const identificadorUsuarioEditar = Number(parametrosUrl.get("id"))
