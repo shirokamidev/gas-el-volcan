@@ -76,13 +76,13 @@
 
             <!-- Barra de herramientas y filtros -->
             <section class="seccion-filtros-blogs contenedor">
-                <form class="barra-filtros" action="#" method="GET">
+                <form class="barra-filtros" id="form-filtros-blog" action="#" method="GET">
                     
                     <div class="grupo-filtro filtro-buscar">
                         <label for="buscar-blog">Buscar</label>
                         <div class="caja-buscador">
                             <input type="text" id="buscar-blog" name="q" placeholder="Buscar...">
-                            <button type="submit" class="boton-lupa" aria-label="Buscar">
+                            <button type="button" id="btn-buscar-lupa" class="boton-lupa" aria-label="Buscar">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <circle cx="11" cy="11" r="8"></circle>
                                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
@@ -110,7 +110,7 @@
                     </div>
 
                     <div class="grupo-filtro-accion">
-                        <button type="button" class="boton boton-naranja boton-bloque btn-filtrar">FILTRAR</button>
+                        <button type="button" id="btn-filtrar-cat" class="boton boton-naranja boton-bloque">FILTRAR</button>
                     </div>
 
                 </form>
@@ -118,10 +118,10 @@
 
             <!-- Grilla de noticias -->
             <section class="seccion-grilla-blogs contenedor">
-                <div class="grilla-blogs">
+                <div class="grilla-blogs" id="grilla-blogs-js">
                     
                     <!-- Noticia 1: Subsidio -->
-                    <article class="tarjeta-blog">
+                    <article class="tarjeta-blog" data-categoria="negocio" data-fecha="2026">
                         <a href="detalle-blog-1.html" class="blog-enlace-img">
                             <img src="assets/img/blogs/noticia-subsidio.jpg" alt="Familia ahorrando en calefacción" class="blog-img">
                         </a>
@@ -146,7 +146,7 @@
                     </article>
 
                     <!-- Noticia 2: Fugas de gas -->
-                    <article class="tarjeta-blog">
+                    <article class="tarjeta-blog" data-categoria="comunidad" data-fecha="2026">
                         <a href="detalle-blog-2.html" class="blog-enlace-img">
                             <img src="assets/img/blogs/seguridad-fugas.png" alt="Revisión de válvula y regulador" class="blog-img">
                         </a>
@@ -227,5 +227,9 @@
                 <p>&copy; 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
             </div>
         </footer>
+
+        <!-- Scripts -->
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/tienda.js"></script>
     </body>
 </html>
