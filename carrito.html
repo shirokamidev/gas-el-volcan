@@ -3,137 +3,119 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Revisa los productos seleccionados y el resumen de compra en Gas El Volcán.">
         <title>Gas El Volcán | Mi Carrito</title>
-        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-        <link rel="stylesheet" href="assets/css/layout.css">
-        <link rel="stylesheet" href="assets/css/utils/botones.css">
-        <link rel="stylesheet" href="assets/css/pages/carrito.css">
-        <link rel="stylesheet" href="assets/css/utils/footer.css">
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+        
+        <!-- Fuentes de Google -->
+        
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/layout.css" />
+        <link rel="stylesheet" href="assets/css/pages/carrito.css" />
     </head>
     <body>
-        <!-- Cabecera inicial del carrito -->
-        <header class="carrito-cabecera">
-            <div class="contenedor carrito-cabecera-contenido">
-                <a class="carrito-enlace-logo" href="index.html" aria-label="Ir al inicio de Gas El Volcán">
-                    <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180" height="64">
-                </a>
-                <nav aria-label="Navegación del carrito">
-                    <a href="index.html">Inicio</a>
-                    <a href="catalogo.html">Productos</a>
-                    <a href="carrito.html" aria-current="page">Mi carrito</a>
-                </nav>
+        <!-- Control del menú móvil -->
+        <input type="checkbox" id="menu-hamburguesa" class="toggle-hamburguesa">
+
+        <!-- Cabecera principal -->
+        <header class="cabecera-principal">
+            <div class="barra-superior">
+                <div class="contenedor contenido-barra-superior">
+                    <span>Atención al Cliente: <strong>800 50 9000</strong></span>
+                    <span class="texto-peligro">Emergencia: <strong>800 50 9111</strong></span>
+                </div>
             </div>
+
+            <nav class="barra-navegacion contenedor">
+                <a href="index.html" class="enlace-logo">
+                    <img src="assets/images/logo-volcan.svg" alt="Logo Gas El Volcán" class="logo-navegacion" />
+                </a>
+                
+                <label for="menu-hamburguesa" class="icono-hamburguesa">
+                    <span class="icono-abrir">☰</span>
+                    <span class="icono-cerrar">×</span>
+                </label>
+                
+                <ul class="enlaces-navegacion">
+                    <li class="grupo-navegacion-principal">
+                        <ul class="enlaces-principales">
+                            <li><a href="index.html">INICIO</a></li>
+                            <li><a href="catalogo.html">PRODUCTOS</a></li>
+                            <li><a href="sucursales.html">SUCURSALES</a></li>
+                            <li><a href="nosotros.html">NOSOTROS</a></li>
+                            <li><a href="blogs.html">BLOGS</a></li>
+                            <li><a href="contacto.html">CONTACTO</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-desplegable ocultar-en-movil">
+                        <input type="checkbox" id="activar-sucursal" class="toggle-desplegable">
+                        <label for="activar-sucursal" class="boton boton-oscuro">SUCURSAL VIRTUAL</label>
+                        <ul class="sub-menu">
+                            <li><a href="login.html">Iniciar Sesión</a></li>
+                            <li class="divisor"></li>
+                            <li><a href="registro.html">Registrarse</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="ocultar-en-pc"><a href="login.html">INICIAR SESIÓN</a></li>
+                    <li class="ocultar-en-pc"><a href="registro.html">REGISTRARSE</a></li>
+                    
+                    <li><a href="carrito.html" class="icono-carrito fw-bold activo">CARRITO (0)</a></li>
+                </ul>
+            </nav>
         </header>
 
-        <main class="carrito-pagina">
+        <!-- Contenido principal del carrito -->
+        <main class="seccion-fondo-gris">
             <div class="contenedor">
-                <!-- Presentación y acceso al catálogo -->
-                <div class="carrito-introduccion">
-                    <p class="carrito-ruta"><a href="index.html">Inicio</a> / Mi carrito</p>
-                    <h1>Mi carrito de compras</h1>
-                    <p>Revisa tus productos antes de continuar con tu pedido.</p>
-                </div>
-
-                <!-- Estructura preparada para la futura gestión de productos -->
+                <h1 class="titulo-carrito">Mi carrito de compras</h1>
+                
+                <!-- Contenedor general del carrito -->
                 <div class="layout-carrito" id="layout-carrito-activo">
+                    
+                    <!-- Columna de lista de productos -->
                     <div class="columna-productos-carrito">
-                        <section class="lista-productos-carrito" id="contenedor-items-carrito-js" aria-label="Productos del carrito">
-                            <!-- Estado inicial mientras no se incorpora JavaScript -->
-                            <div class="carrito-estado-vacio" id="carrito-estado-vacio">
-                                <div class="carrito-icono-vacio" aria-hidden="true">🛒</div>
-                                <h2>Tu carrito está vacío</h2>
-                                <p>Aún no tienes productos agregados. Explora nuestros cilindros y accesorios para comenzar.</p>
-                                <a class="carrito-boton-catalogo" href="catalogo.html">Explorar productos</a>
-                            </div>
+                        <section class="lista-productos-carrito" id="contenedor-items-carrito-js">
+                            <!-- Los items se renderizan desde JavaScript -->
                         </section>
 
-                        <!-- Plantilla oculta: se utilizará al incorporar el controlador del carrito -->
-                        <template id="plantilla-item-carrito">
-                            <article class="tarjeta-item-carrito" data-producto-id="">
-                                <img class="item-imagen" src="assets/images/productos/cilindros/cilindro-11kg.svg" alt="Imagen del producto" width="116" height="116">
-                                <div class="item-informacion">
-                                    <h3 class="item-nombre">Producto seleccionado</h3>
-                                    <p class="item-precio-unitario">Precio unitario: <span>$ 0</span></p>
-                                    <div class="item-acciones">
-                                        <div class="item-selector-cantidad" role="group" aria-label="Cantidad del producto">
-                                            <button type="button" class="item-disminuir" aria-label="Disminuir cantidad" disabled>−</button>
-                                            <span class="item-cantidad" aria-label="Cantidad seleccionada">1</span>
-                                            <button type="button" class="item-aumentar" aria-label="Aumentar cantidad" disabled>+</button>
-                                        </div>
-                                        <button type="button" class="item-eliminar" disabled>Quitar</button>
-                                    </div>
-                                </div>
-                                <p class="item-subtotal">Subtotal <strong>$ 0</strong></p>
-                            </article>
-                        </template>
-
-                        <!-- La acción de vaciar se habilitará cuando existan productos -->
-                        <div class="acciones-globales-carrito" hidden>
-                            <button type="button" class="btn-vaciar-carrito" id="btn-vaciar-todo-js" disabled>
+                        <!-- Acciones globales -->
+                        <div class="acciones-globales-carrito">
+                            <button type="button" class="btn-vaciar-carrito" id="btn-vaciar-todo-js">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
                                 Vaciar carrito
                             </button>
                         </div>
                     </div>
 
-                    <!-- Resumen de compra todavía sin cálculos dinámicos -->
-                    <aside class="resumen-compra-carrito" aria-labelledby="titulo-resumen-carrito">
+                    <!-- Columna de resumen de compra -->
+                    <aside class="resumen-compra-carrito">
                         <div class="resumen-caja">
-                            <h2 id="titulo-resumen-carrito">Resumen de compra</h2>
                             <div class="resumen-total">
-                                <span>Total</span>
-                                <strong class="monto-total" id="monto-total-carrito-js">$ 0</strong>
+                                <h2>TOTAL:</h2>
+                                <h2 class="monto-total" id="monto-total-carrito-js">$ 0</h2>
                             </div>
+                            
+                            <hr class="divisor-resumen">
 
                             <div class="seccion-cupon">
-                                <label for="cupon-descuento">Cupón de descuento</label>
+                                <label for="cupon-descuento">Ingrese el cupón de descuento</label>
                                 <div class="input-grupo-cupon">
-                                    <input type="text" id="cupon-descuento" placeholder="Ej: VOLCAN15" autocomplete="off" disabled>
-                                    <button type="button" id="btn-aplicar-cupon" disabled>Aplicar</button>
+                                    <input type="text" id="cupon-descuento" placeholder="Ej: VOLCAN15">
+                                    <button type="button" class="btn-aplicar-cupon" id="btn-aplicar-cupon">APLICAR</button>
                                 </div>
-                                <p class="mensaje-cupon" id="mensaje-cupon">Disponible cuando incorporemos la gestión del carrito.</p>
+                                <span id="mensaje-cupon" class="mensaje-cupon"></span>
                             </div>
 
-                            <button type="button" class="boton-continuar" id="btn-continuar" disabled>Continuar compra</button>
-                            <a class="enlace-seguir-comprando" href="catalogo.html">Seguir comprando</a>
+                            <button type="button" class="boton-continuar" id="btn-continuar">Continuar</button>
+                            <a href="catalogo.html" class="enlace-seguir-comprando">Seguir comprando</a>
                         </div>
                     </aside>
                 </div>
-
-                <!-- Orientaciones de compra que pueden consultarse sin JavaScript -->
-                <section class="carrito-guia" aria-labelledby="titulo-guia-compra">
-                    <h2 id="titulo-guia-compra">Prepara tu próxima compra</h2>
-                    <p>Mientras preparamos el carrito interactivo, puedes consultar los productos y solicitar información a nuestro equipo.</p>
-                    <ol class="carrito-guia-pasos">
-                        <li>
-                            <span class="guia-paso-numero" aria-hidden="true">1</span>
-                            <div>
-                                <h3>Explora el catálogo</h3>
-                                <p>Conoce los cilindros, reguladores y accesorios disponibles.</p>
-                                <a href="catalogo.html">Ver productos</a>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="guia-paso-numero" aria-hidden="true">2</span>
-                            <div>
-                                <h3>Revisa los detalles</h3>
-                                <p>Consulta características y precios referenciales antes de elegir.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="guia-paso-numero" aria-hidden="true">3</span>
-                            <div>
-                                <h3>Resuelve tus dudas</h3>
-                                <p>Comunícate con nuestro equipo si necesitas orientación.</p>
-                                <a href="contacto.html">Ir a Contacto</a>
-                            </div>
-                        </li>
-                    </ol>
-                </section>
             </div>
         </main>
 
-        <!-- Pie de página corporativo compartido -->
+        <!-- Pie de página -->
         <footer class="pie-pagina">
             <div class="contenedor grilla-pie">
                 <div class="pie-columna">
@@ -165,23 +147,35 @@
                         <li><a href="legales.html#privacidad">Política de Privacidad</a></li>
                     </ul>
                 </div>
+                
                 <div class="pie-columna pie-boletin">
                     <h6>Suscríbete para recibir ofertas exclusivas.</h6>
-                    <div class="buscador-footer">
-                        <input type="email" placeholder="Ingresa tu correo" aria-label="Correo para suscripción">
-                        <a href="registro.html" class="boton boton-naranja texto-blanco">Suscríbete</a>
-                    </div>
+                    <form class="buscador-footer" data-formulario-suscripcion novalidate>
+                        <input type="email" name="correoSuscripcion" placeholder="Ingresa tu correo" aria-label="Correo para suscribirse" aria-describedby="mensaje-suscripcion" maxlength="100" required>
+                        <button type="submit" class="boton boton-naranja texto-blanco">Suscríbete</button>
+                    </form>
+                    <p id="mensaje-suscripcion" class="mensaje-estado-formulario error mensaje-suscripcion" role="alert" aria-live="polite"></p>
+                    
                     <h6>Medios de Pago</h6>
                     <div class="pie-pagos">
-                        <img src="assets/images/pagos/visa.svg" alt="Visa" class="pago-icono">
-                        <img src="assets/images/pagos/mastercard.svg" alt="Mastercard" class="pago-icono">
-                        <img src="assets/images/pagos/amex.svg" alt="AMEX" class="pago-icono">
+                        <img src="assets/images/pagos/visa.svg" alt="Visa" class="pago-icono" />
+                        <img src="assets/images/pagos/mastercard.svg" alt="Mastercard" class="pago-icono" />
+                        <img src="assets/images/pagos/amex.svg" alt="AMEX" class="pago-icono" />
                     </div>
                 </div>
             </div>
+            
             <div class="contenedor pie-copyright">
                 <p>© 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
             </div>
         </footer>
+
+        <!-- Carga del controlador del carrito -->
+        <script defer src="assets/js/data/productosData.js"></script>
+        <script defer src="assets/js/data/usuariosData.js"></script>
+        <script defer src="assets/js/services/almacenamiento-local.js"></script>
+        <script defer src="assets/js/utils/validaciones.js"></script>
+        <script defer src="assets/js/services/operaciones-carrito.js"></script>
+        <script defer src="assets/js/pages/interfaz-carrito.js"></script>
     </body>
 </html>
