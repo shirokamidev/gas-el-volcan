@@ -115,6 +115,15 @@ if (contenedorCarrito) {
       const totalItem = producto.precioResidencial * producto.cantidad;
       subtotal += totalItem;
 
+      // Logica de bajo stock
+      let claseAlertaStock = "";
+      let textoAlertaStock = `${producto.stock} disponibles`;
+      
+      if (producto.stock <= 20) {
+          claseAlertaStock = "texto-peligro fw-bold";
+          textoAlertaStock = `¡Últimas ${producto.stock} unidades!`;
+      }
+
       const articulo = document.createElement("article");
       articulo.classList.add("item-carrito");
       
@@ -136,7 +145,7 @@ if (contenedorCarrito) {
                 <input type="number" value="${producto.cantidad}" class="input-cantidad" readonly>
                 <button type="button" class="btn-sumar" onclick="window.cambiarCantidadCarrito(${index}, 1)">+</button>
             </div>
-            <span class="texto-stock">${producto.stock} disponibles</span>
+            <span class="texto-stock ${claseAlertaStock}">${textoAlertaStock}</span>
         </div>
         <div class="item-acciones">
             <button type="button" class="btn-eliminar-item" onclick="window.eliminarItemCarrito(${index})" aria-label="Eliminar producto">
