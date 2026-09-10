@@ -3,114 +3,167 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Formulario de registro de la Sucursal Virtual de Gas El Volcán.">
         <title>Gas El Volcán | Registrar Cuenta</title>
-        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-        <link rel="stylesheet" href="assets/css/pages/registro.css">
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+        
+        <!-- Fuentes de Google -->
+        
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/layout.css" />
+        <link rel="stylesheet" href="assets/css/pages/registro.css" />
     </head>
     <body class="cuerpo-autenticacion">
+        
         <main class="pantalla-autenticacion">
-            <!-- Navegación inicial de autenticación -->
-            <nav class="navegacion-superior" aria-label="Volver a la tienda">
-                <a href="index.html" class="enlace-regresar">← Regresar a Inicio</a>
+            
+            <!-- Navegación superior -->
+            <nav class="navegacion-superior">
+                <a href="index.html" class="enlace-regresar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Regresar a Inicio
+                </a>
             </nav>
 
-            <!-- Tarjeta principal del registro de clientes -->
-            <section class="escena-tarjeta" aria-labelledby="titulo-registro">
-                <div class="tarjeta-registro">
+            <!-- Tarjeta principal de registro -->
+            <section class="escena-tarjeta">
+                <article class="tarjeta-registro">
                     <header class="cabecera-tarjeta">
-                        <a href="index.html" class="enlace-logo" aria-label="Gas El Volcán - Ir a Inicio">
-                            <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" class="logo-empresa" width="185">
+                        <a href="index.html">
+                            <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" class="logo-empresa">
                         </a>
-                        <h1 id="titulo-registro">Formulario de registro</h1>
-                        <p>Completa tus datos para crear una cuenta en la Sucursal Virtual.</p>
+                        <h1 class="titulo-acceso fw-bold">Formulario de registro</h1>
                     </header>
-
-                    <!-- Formulario inicial, pendiente de validaciones con JavaScript -->
-                    <form id="form-registro" action="#" method="post" class="formulario-registro">
+                    
+                    <form id="form-registro" class="formulario-generico" novalidate>
+                        
+                        <!-- Sección de datos personales -->
                         <fieldset class="seccion-fieldset">
-                            <legend>Datos personales</legend>
-                            <p class="indicacion-obligatoria">Los campos marcados con * son obligatorios.</p>
+                            <legend class="titulo-legend">Datos personales</legend>
+                            <div class="linea-separadora"></div>
+                            
+                            <p class="texto-obligatorio">* Completa la información solicitada a continuación:</p>
+                            <p class="texto-intro-registro"><strong>Ingresa los datos solicitados para poder crear tu cuenta en la Sucursal Virtual. Este proceso te tomará menos de 2 minutos.</strong></p>
+                            
                             <div class="grilla-formulario">
                                 <div class="grupo-input col-completa">
-                                    <label for="rut-registro">RUT *</label>
-                                    <input type="text" id="rut-registro" name="rut" placeholder="Ej: 19011022K" autocomplete="off" required>
-                                    <small>Sin puntos ni guion.</small>
-                                    <span id="error-rut-registro" class="mensaje-error-input" aria-live="polite"></span>
+                                    <label class="label-campo" for="rut-registro">RUT <span class="asterisco">*</span></label>
+                                    <input type="text" id="rut-registro" placeholder="Ej: 19011022K" class="input-campo">
+                                    <span class="texto-ayuda">Sin puntos ni guion.</span>
+                                    <span id="error-rut-registro" class="texto-peligro mensaje-error-input"></span>
                                 </div>
+                                
                                 <div class="grupo-input col-completa">
-                                    <label for="nombre-registro">Nombre *</label>
-                                    <input type="text" id="nombre-registro" name="nombre" autocomplete="given-name" required>
-                                    <span id="error-nombre-registro" class="mensaje-error-input" aria-live="polite"></span>
+                                    <label class="label-campo" for="nombre-registro">Nombre <span class="asterisco">*</span></label>
+                                    <input type="text" id="nombre-registro" placeholder="Ej: Juan" class="input-campo">
+                                    <span id="error-nombre-registro" class="texto-peligro mensaje-error-input"></span>
                                 </div>
+                                
                                 <div class="grupo-input">
-                                    <label for="apellido-p-registro">Apellido paterno *</label>
-                                    <input type="text" id="apellido-p-registro" name="apellido_paterno" required>
-                                    <span id="error-apellido-p-registro" class="mensaje-error-input" aria-live="polite"></span>
+                                    <label for="apellido-p-registro" class="label-campo">Apellido Paterno <span class="asterisco">*</span></label>
+                                    <input type="text" id="apellido-p-registro" placeholder="Ej: Pérez" class="input-campo" required>
+                                    <span id="error-apellido-p-registro" class="texto-peligro mensaje-error-input"></span>
                                 </div>
+                                
                                 <div class="grupo-input">
-                                    <label for="apellido-m-registro">Apellido materno (opcional)</label>
-                                    <input type="text" id="apellido-m-registro" name="apellido_materno">
+                                    <label for="apellido-m-registro" class="label-campo">Apellido Materno (Opcional)</label>
+                                    <input type="text" id="apellido-m-registro" placeholder="Ej: González" class="input-campo">
+                                    <span id="error-apellido-m-registro" class="texto-peligro mensaje-error-input"></span>
                                 </div>
+                                
                                 <div class="grupo-input">
-                                    <label for="password-registro">Contraseña *</label>
-                                    <div class="caja-password">
-                                        <input type="password" id="password-registro" name="password" autocomplete="new-password" minlength="4" maxlength="10" required>
-                                        <button type="button" id="toggle-password-registro" class="boton-ver-password" aria-label="Mostrar contraseña" aria-controls="password-registro" aria-pressed="false" disabled>Mostrar</button>
+                                    <label class="label-campo" for="password-registro">Contraseña <span class="asterisco">*</span></label>
+                                    <div class="caja-input-flex">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icono-izquierdo">
+                                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                        </svg>
+                                        
+                                        <input type="password" id="password-registro" placeholder="Contraseña de acceso" class="input-limpio">
+                                        
+                                        <button type="button" id="toggle-password-registro" class="icono-derecho icono-toggle-password">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                <circle cx="12" cy="12" r="3"></circle>
+                                            </svg>
+                                        </button>
                                     </div>
-                                    <small>Entre 4 y 10 caracteres, según los requisitos de esta demostración.</small>
-                                    <span id="error-password-registro" class="mensaje-error-input" aria-live="polite"></span>
+                                    <span class="texto-ayuda">Entre 4 a 10 caracteres.</span>
+                                    <span id="error-password-registro" class="texto-peligro mensaje-error-input"></span>
                                 </div>
+
                                 <div class="grupo-input">
-                                    <label for="password-confirm-registro">Repetir contraseña *</label>
-                                    <div class="caja-password">
-                                        <input type="password" id="password-confirm-registro" name="password_confirm" autocomplete="new-password" minlength="4" maxlength="10" required>
-                                        <button type="button" id="toggle-password-confirm" class="boton-ver-password" aria-label="Mostrar contraseña" aria-controls="password-confirm-registro" aria-pressed="false" disabled>Mostrar</button>
+                                    <label class="label-campo" for="password-confirm-registro">Repetir Contraseña <span class="asterisco">*</span></label>
+                                    <div class="caja-input-flex">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icono-izquierdo">
+                                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                        </svg>
+                                        
+                                        <input type="password" id="password-confirm-registro" placeholder="Repetir contraseña" class="input-limpio">
+                                        
+                                        <button type="button" id="toggle-password-confirm" class="icono-derecho icono-toggle-password">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                <circle cx="12" cy="12" r="3"></circle>
+                                            </svg>
+                                        </button>
                                     </div>
-                                    <span id="error-password-confirm-registro" class="mensaje-error-input" aria-live="polite"></span>
+                                    <span id="error-password-confirm-registro" class="texto-peligro mensaje-error-input"></span>
                                 </div>
                             </div>
                         </fieldset>
 
-                        <!-- Datos de contacto para la cuenta -->
-                        <fieldset class="seccion-fieldset">
-                            <legend>Datos de contacto</legend>
+                        <!-- Sección de datos de contacto -->
+                        <fieldset class="seccion-fieldset espaciado-seccion">
+                            <legend class="titulo-legend">Datos de contacto</legend>
+                            <div class="linea-separadora"></div>
+                            
                             <div class="grilla-formulario">
-                                <div class="grupo-input">
-                                    <label for="telefono-registro">Teléfono (opcional)</label>
-                                    <input type="tel" id="telefono-registro" name="telefono" placeholder="Ej: 912345678" autocomplete="tel">
-                                    <span id="error-telefono-registro" class="mensaje-error-input" aria-live="polite"></span>
-                                </div>
-                                <div class="grupo-input">
-                                    <label for="correo-registro">Correo electrónico *</label>
-                                    <input type="email" id="correo-registro" name="correo" placeholder="Ej: usuario@gmail.com" autocomplete="email" required>
-                                    <span id="error-correo-registro" class="mensaje-error-input" aria-live="polite"></span>
-                                </div>
                                 <div class="grupo-input col-completa">
-                                    <label for="correo-confirm-registro">Repetir correo electrónico *</label>
-                                    <input type="email" id="correo-confirm-registro" name="correo_confirm" required>
-                                    <span id="error-correo-confirm-registro" class="mensaje-error-input" aria-live="polite"></span>
+                                    <label class="label-campo" for="telefono-registro">Teléfono (Opcional)</label>
+                                    <input type="tel" id="telefono-registro" placeholder="Ej: 912345678" class="input-campo">
+                                    <span class="texto-ayuda">Ej: 912345678</span>
+                                    <span id="error-telefono-registro" class="texto-peligro mensaje-error-input"></span>
+                                </div>
+                                
+                                <div class="grupo-input col-completa">
+                                    <label class="label-campo" for="correo-registro">Correo Electrónico <span class="asterisco">*</span></label>
+                                    <input type="email" id="correo-registro" placeholder="E-mail" class="input-campo">
+                                    <span class="texto-ayuda">Solo correos con @duoc.cl, @profesor.duoc.cl y @gmail.com</span>
+                                    <span id="error-correo-registro" class="texto-peligro mensaje-error-input"></span>
+                                </div>
+                                
+                                <div class="grupo-input col-completa">
+                                    <label class="label-campo" for="correo-confirm-registro">Repetir Correo <span class="asterisco">*</span></label>
+                                    <input type="email" id="correo-confirm-registro" placeholder="Repetir e-mail" class="input-campo">
+                                    <span id="error-correo-confirm-registro" class="texto-peligro mensaje-error-input"></span>
                                 </div>
                             </div>
                         </fieldset>
 
-                        <!-- Dirección inicial, con comunas estáticas en esta etapa -->
-                        <fieldset class="seccion-fieldset">
-                            <legend>Dirección</legend>
+                        <!-- Sección de dirección -->
+                        <fieldset class="seccion-fieldset espaciado-seccion">
+                            <legend class="titulo-legend">Dirección</legend>
+                            <div class="linea-separadora"></div>
+                            
                             <div class="grilla-formulario">
                                 <div class="grupo-input">
-                                    <label for="region-registro">Región *</label>
-                                    <select id="region-registro" name="region" required>
-                                        <option value="">Selecciona una región</option>
+                                    <label class="label-campo" for="region-registro">Región <span class="asterisco">*</span></label>
+                                    <select id="region-registro" class="input-campo select-campo">
+                                        <option value="" disabled selected>Seleccione región</option>
                                         <option value="nuble">Región de Ñuble</option>
                                         <option value="biobio">Región del Biobío</option>
                                     </select>
-                                    <span id="error-region-registro" class="mensaje-error-input" aria-live="polite"></span>
+                                    <span id="error-region-registro" class="texto-peligro mensaje-error-input"></span>   
                                 </div>
+                                
                                 <div class="grupo-input">
-                                    <label for="comuna-registro">Comuna *</label>
-                                    <select id="comuna-registro" name="comuna" required>
-                                        <option value="">Selecciona una comuna</option>
+                                    <label class="label-campo" for="comuna-registro">Comuna <span class="asterisco">*</span></label>
+                                    <select id="comuna-registro" class="input-campo select-campo">
+                                        <option value="" disabled selected>Seleccione comuna</option>
                                         <option value="chillan">Chillán</option>
                                         <option value="chillan-viejo">Chillán Viejo</option>
                                         <option value="el-carmen">El Carmen</option>
@@ -119,37 +172,64 @@
                                         <option value="bulnes">Bulnes</option>
                                         <option value="quillon">Quillón</option>
                                     </select>
-                                    <small>La selección de comunas por región llegará con JavaScript.</small>
-                                    <span id="error-comuna-registro" class="mensaje-error-input" aria-live="polite"></span>
+                                    <span id="error-comuna-registro" class="texto-peligro mensaje-error-input"></span>
                                 </div>
+                                
                                 <div class="grupo-input col-completa">
-                                    <label for="calle-registro">Calle y número *</label>
-                                    <input type="text" id="calle-registro" name="calle" maxlength="300" placeholder="Ej: Calle Volcán 125, Chillán" autocomplete="street-address" required>
-                                    <span id="error-calle-registro" class="mensaje-error-input" aria-live="polite"></span>
+                                    <label class="label-campo" for="calle-registro">Calle y Número <span class="asterisco">*</span></label>
+                                    <input type="text" id="calle-registro" placeholder="Ej: Calle Volcán 125" class="input-campo">
+                                    <span class="texto-ayuda">Obligatorio. Máximo 300 caracteres.</span>
+                                    <span id="error-calle-registro" class="texto-peligro mensaje-error-input"></span>
                                 </div>
                             </div>
                         </fieldset>
 
-                        <!-- Consentimiento y acciones iniciales -->
-                        <div class="grupo-terminos">
-                            <input type="checkbox" id="terminos-registro" name="terminos" required>
+                        <!-- Mensaje informativo -->
+                        <div class="caja-informacion">
+                            <h4 class="titulo-info">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                </svg>
+                                ¿Por qué solicitamos estos datos?
+                            </h4>
+                            <p class="texto-info">No es de curiosos, estos datos nos ayudan a entregarte una mejor y más personalizada experiencia. ¡Muchas gracias!</p>
+                        </div>
+
+                        <!-- Aceptación de términos y políticas -->
+                        <div class="grupo-checkbox">
+                            <input type="checkbox" id="terminos-registro">
                             <label for="terminos-registro">Acepto los <a href="legales.html#terminos">términos y condiciones</a> y la <a href="legales.html#privacidad">política de privacidad</a>.</label>
                         </div>
-                        <span id="error-terminos-registro" class="mensaje-error-input" aria-live="polite"></span>
-                        <div id="mensaje-registro" class="mensaje-estado-formulario" role="status" aria-live="polite"></div>
-                        <p class="aviso-preliminar">Formulario de demostración: el registro estará disponible cuando se implemente la validación JavaScript.</p>
+                        <span id="error-terminos-registro" class="texto-peligro mensaje-error-input"></span>
+                        
+                        <div id="mensaje-registro" class="mensaje-estado-formulario"></div>
+
+                        <!-- Acciones finales del formulario -->
                         <div class="acciones-registro">
-                            <a href="login.html" class="enlace-volver-login">← Volver a Iniciar Sesión</a>
-                            <button type="submit" class="boton-registro" disabled>Crear cuenta</button>
+                            <a href="login.html" class="enlace-volver-login">
+                                <span>&larr;</span> Volver a Iniciar Sesión
+                            </a>
+                            <button type="submit" class="boton boton-naranja boton-grande">Continuar</button>
                         </div>
                     </form>
-                </div>
+                </article>
             </section>
 
-            <!-- Pie de página inicial -->
+            <!-- Pie de página -->
             <footer class="pie-autenticacion">
-                <p>© 2026 Gas El Volcán. Chillán, Región de Ñuble.</p>
+                <p class="texto-copyright">&copy; 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
+                <div class="banda-degradada-inferior"></div>
             </footer>
+            
         </main>
+
+        <!-- Validaciones y control del formulario de registro -->
+        <!-- Validaciones compartidas y búsqueda de comunas para el formulario -->
+        <script defer src="assets/js/data/sucursalesData.js"></script>
+        <script defer src="assets/js/utils/ubicaciones.js"></script>
+        <script defer src="assets/js/utils/validaciones.js"></script>
+        <script defer src="assets/js/pages/autenticacion.js"></script>
     </body>
 </html>

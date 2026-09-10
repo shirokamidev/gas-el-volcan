@@ -26,7 +26,7 @@
                         <p>Ingresa con tu correo y contraseña para acceder a tu cuenta.</p>
                     </header>
 
-                    <!-- Formulario visual, pendiente de validación con JavaScript -->
+                    <!-- Acceso de demostración con validación JavaScript -->
                     <form id="form-login" class="formulario-autenticacion" action="#" method="post">
                         <div class="grupo-input">
                             <label for="correo-login">Correo electrónico <span aria-hidden="true">*</span></label>
@@ -39,7 +39,7 @@
                             <label for="password-login">Contraseña <span aria-hidden="true">*</span></label>
                             <div class="caja-password">
                                 <input type="password" id="password-login" name="password" placeholder="Ingresa tu contraseña" autocomplete="current-password" minlength="4" maxlength="10" required>
-                                <button type="button" id="toggle-password" class="boton-ver-password" aria-label="Mostrar contraseña" aria-controls="password-login" aria-pressed="false" disabled>Mostrar</button>
+                                <button type="button" id="toggle-password" class="boton-ver-password" aria-label="Mostrar contraseña" aria-controls="password-login" aria-pressed="false">Mostrar</button>
                             </div>
                             <small>Entre 4 y 10 caracteres, según los requisitos de esta demostración.</small>
                             <span class="mensaje-error-input" id="error-password-login" aria-live="polite"></span>
@@ -51,8 +51,8 @@
                             La recuperación de contraseña requerirá integración con un servicio de cuentas.
                         </div>
                         <div id="mensaje-login" class="mensaje-estado-formulario" role="status" aria-live="polite"></div>
-                        <button type="submit" class="boton-ingresar" disabled>Ingresar</button>
-                        <p class="aviso-preliminar">Formulario de demostración: el inicio de sesión aún no está habilitado.</p>
+                        <button type="submit" class="boton-ingresar">Ingresar</button>
+                        <p class="aviso-preliminar">Acceso de prueba: admin@duoc.cl y contraseña admin.</p>
                     </form>
 
                     <!-- Enlace a la página de registro de esta misma rama -->
@@ -68,5 +68,7 @@
                 <p>© 2026 Gas El Volcán. Chillán, Región de Ñuble.</p>
             </footer>
         </main>
+        <script defer src="assets/js/utils/validaciones.js"></script>
+        <script defer src="assets/js/pages/autenticacion.js"></script>
     </body>
 </html>
