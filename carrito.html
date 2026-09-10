@@ -110,7 +110,6 @@
                             <a href="productos.html" class="enlace-seguir-comprando">Seguir comprando</a>
                         </div>
                     </aside>
-
                 </div>
             </div>
         </main>
@@ -171,122 +170,6 @@
 
         <!-- Scripts -->
         <script src="assets/js/main.js"></script>
-        <!-- Inyectamos temporalmente la lógica del resumen de carrito en la vista misma para asegurar su independencia (luego se pasa a tienda.js si se requiere limpieza) -->
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const contenedorCarrito = document.getElementById("contenedor-items-carrito-js");
-                const montoTotalDOM = document.getElementById("monto-total-carrito-js");
-                const btnVaciar = document.getElementById("btn-vaciar-todo-js");
-                
-                // Sistema de Cupon
-                const inputCupon = document.getElementById("cupon-descuento");
-                const btnAplicarCupon = document.getElementById("btn-aplicar-cupon");
-                const mensajeCupon = document.getElementById("mensaje-cupon");
-                let descuentoActivo = 0;
-
-                function renderizarCarrito() {
-                    contenedorCarrito.innerHTML = "";
-                    
-                    if (carritoVirtual.length === 0) {
-                        contenedorCarrito.innerHTML = "<p style='padding: 2rem; text-align: center; font-weight: 600;'>Tu carrito está vacío.</p>";
-                        montoTotalDOM.textContent = "$ 0";
-                        return;
-                    }
-
-                    let subtotal = 0;
-
-                    carritoVirtual.forEach((producto, index) => {
-                        const totalItem = producto.precioResidencial * producto.cantidad;
-                        subtotal += totalItem;
-
-                        const articulo = document.createElement("article");
-                        articulo.classList.add("item-carrito");
-                        
-                        articulo.innerHTML = `
-                            <div class="item-imagen">
-                                <img src="${producto.imagen}" alt="${producto.nombre}" class="img-producto-carrito">
-                            </div>
-                            <div class="item-detalles-texto">
-                                <span class="item-categoria">${producto.categoria.toUpperCase()}</span>
-                                <h3 class="item-nombre">${producto.nombre}</h3>
-                            </div>
-                            <div class="item-precios">
-                                <span class="precio-principal">$${producto.precioResidencial.toLocaleString("es-CL")}</span>
-                                <span class="precio-secundario">$${producto.precioComercial.toLocaleString("es-CL")}</span>
-                            </div>
-                            <div class="item-controles-stock">
-                                <div class="control-cantidad-carrito">
-                                    <button type="button" class="btn-restar" onclick="cambiarCantidad(${index}, -1)">-</button>
-                                    <input type="number" value="${producto.cantidad}" min="1" max="${producto.stock}" class="input-cantidad" readonly>
-                                    <button type="button" class="btn-sumar" onclick="cambiarCantidad(${index}, 1)">+</button>
-                                </div>
-                                <span class="texto-stock">${producto.stock} disponibles</span>
-                            </div>
-                            <div class="item-acciones">
-                                <button type="button" class="btn-eliminar-item" onclick="eliminarItem(${index})" aria-label="Eliminar producto">
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="3 6 5 6 21 6"></polyline>
-                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                                        <line x1="10" y1="11" x2="10" y2="17"></line>
-                                        <line x1="14" y1="11" x2="14" y2="17"></line>
-                                    </svg>
-                                </button>
-                            </div>
-                        `;
-                        contenedorCarrito.appendChild(articulo);
-                    });
-
-                    // Calculo final
-                    const totalDescuento = subtotal * descuentoActivo;
-                    const totalFinal = subtotal - totalDescuento;
-                    montoTotalDOM.textContent = "$ " + totalFinal.toLocaleString("es-CL");
-                }
-
-                // Exponemos las funciones al entorno global para los botones
-                window.cambiarCantidad = function(index, cambio) {
-                    const nuevoValor = carritoVirtual[index].cantidad + cambio;
-                    if (nuevoValor >= 1 && nuevoValor <= carritoVirtual[index].stock) {
-                        carritoVirtual[index].cantidad = nuevoValor;
-                        sincronizarLocalStorage();
-                        renderizarCarrito();
-                    }
-                };
-
-                window.eliminarItem = function(index) {
-                    carritoVirtual.splice(index, 1);
-                    sincronizarLocalStorage();
-                    renderizarCarrito();
-                };
-
-                // Limpiar todo el carrito
-                if(btnVaciar){
-                    btnVaciar.addEventListener("click", () => {
-                        carritoVirtual = [];
-                        sincronizarLocalStorage();
-                        renderizarCarrito();
-                    });
-                }
-
-                // Sistema Basico de Cupones (VOLCAN15 = 15%)
-                if(btnAplicarCupon){
-                    btnAplicarCupon.addEventListener("click", () => {
-                        const cuponStr = inputCupon.value.trim().toUpperCase();
-                        if(cuponStr === "VOLCAN15") {
-                            descuentoActivo = 0.15;
-                            mensajeCupon.textContent = "Cupón del 15% aplicado.";
-                            mensajeCupon.style.color = "var(--volcan-azul)";
-                        } else {
-                            descuentoActivo = 0;
-                            mensajeCupon.textContent = "Cupón inválido.";
-                            mensajeCupon.style.color = "#dc3545";
-                        }
-                        renderizarCarrito();
-                    });
-                }
-
-                // Carga Inicial
-                renderizarCarrito();
-            });
-        </script>
+        <script src="assets/js/tienda.js"></script>
     </body>
 </html>
