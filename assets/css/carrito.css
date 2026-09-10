@@ -1,13 +1,8 @@
-/* Indicador de navegación activa */
-.enlaces-navegacion a.activo {
-    color: var(--volcan-naranja);
-}
-
-/* Fondo general de la sección */
+/* Entorno principal de procesamiento de compras */
 .seccion-fondo-gris {
     background-color: var(--volcan-claro);
     padding: 4rem 0;
-    min-height: calc(100vh - 200px);
+    min-height: calc(100vh - 12.5rem);
 }
 
 .titulo-carrito {
@@ -17,7 +12,7 @@
     font-weight: 700;
 }
 
-/* Contenedor principal del carrito */
+/* Estructura general */
 .layout-carrito {
     display: flex;
     flex-direction: row;
@@ -40,13 +35,13 @@
     width: 100%;
 }
 
-/* Tarjeta de producto */
+/* Tarjeta individual de selección */
 .item-carrito {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
+    background-color: var(--volcan-blanco);
+    border: 0.0625rem solid var(--volcan-borde-medio);
     border-radius: 0.625rem;
     padding: 1.5rem;
     box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.04);
@@ -74,14 +69,10 @@
     height: 6rem;
     width: 100%;
     object-fit: contain;
-}
-
-/* Efecto de zoom al pasar el mouse sobre la imagen del producto en el carrito */
-.item-imagen img {
     transition: transform 0.4s ease-out;
 }
 
-.item-imagen:hover img {
+.item-imagen:hover .img-producto-carrito {
     transform: scale(1.05);
 }
 
@@ -129,14 +120,13 @@
 .precio-secundario {
     font-size: 1.05rem;
     font-weight: 600;
-    color: #888888;
+    color: var(--volcan-gris-claro);
     margin-top: 0.2rem;
 }
 
-/* Estilos para precio tachado y precio con descuento en el carrito */
 .precio-tachado {
     text-decoration: line-through;
-    color: #888888;
+    color: var(--volcan-gris-claro);
     font-size: 1.15rem;
     font-weight: 600;
     line-height: 1.2;
@@ -149,6 +139,7 @@
     line-height: 1.1;
 }
 
+/* Modificadores de cantidad */
 .item-controles-stock {
     display: flex;
     flex-direction: column;
@@ -158,17 +149,17 @@
     flex-shrink: 0;
 }
 
-/* Controles de cantidad de stock */
+/* Entradas y controles interactivos del carrito */
 .control-cantidad-carrito {
     display: grid;
     grid-template-columns: 2.2rem 1fr 2.2rem;
     align-items: center;
-    border: 1px solid #e0e0e0;
+    border: 0.0625rem solid var(--volcan-borde-medio);
     border-radius: 0.3125rem;
     overflow: hidden;
     height: 2.6rem;
     width: 7.5rem;
-    background-color: #f8f9fa;
+    background-color: var(--volcan-claro);
 }
 
 .control-cantidad-carrito button {
@@ -188,7 +179,7 @@
 }
 
 .control-cantidad-carrito button:hover {
-    background-color: #e2e6ea;
+    background-color: var(--volcan-borde-claro);
 }
 
 .control-cantidad-carrito input {
@@ -198,18 +189,17 @@
     padding: 0;
     margin: 0;
     border: none;
-    border-left: 1px solid #e0e0e0;
-    border-right: 1px solid #e0e0e0;
+    border-left: 0.0625rem solid var(--volcan-borde-medio);
+    border-right: 0.0625rem solid var(--volcan-borde-medio);
     border-radius: 0;
     font-family: inherit;
     font-weight: 700;
     font-size: 1.15rem;
     color: var(--volcan-oscuro);
-    background-color: #ffffff;
+    background-color: var(--volcan-blanco);
     outline: none;
 }
 
-/* Oculta las flechas de los campos numéricos */
 .control-cantidad-carrito input::-webkit-outer-spin-button,
 .control-cantidad-carrito input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -218,7 +208,7 @@
 
 .texto-stock {
     font-size: 0.85rem;
-    color: #666666;
+    color: var(--volcan-gris);
     font-weight: 600;
     text-align: center;
     width: 100%;
@@ -226,7 +216,7 @@
 }
 
 .texto-stock.texto-peligro {
-    color: #dc3545;
+    color: var(--volcan-rojo);
 }
 
 .item-acciones {
@@ -234,14 +224,14 @@
     align-items: center;
     justify-content: center;
     padding-left: 1.25rem;
-    border-left: 1px solid #eeeeee;
+    border-left: 0.0625rem solid var(--volcan-borde-claro);
     flex-shrink: 0;
 }
 
 .btn-eliminar-item {
     background: none;
     border: none;
-    color: #dc3545;
+    color: var(--volcan-rojo);
     cursor: pointer;
     padding: 0.5rem;
     border-radius: 0.3rem;
@@ -256,7 +246,6 @@
     color: #a71d2a;
 }
 
-/* Acciones globales del carrito */
 .acciones-globales-carrito {
     display: flex;
     justify-content: center;
@@ -268,8 +257,8 @@
     align-items: center;
     gap: 0.5rem;
     background-color: transparent;
-    border: 1.5px solid #dc3545;
-    color: #dc3545;
+    border: 0.125rem solid var(--volcan-rojo);
+    color: var(--volcan-rojo);
     padding: 0.7rem 1.5rem;
     border-radius: 2rem;
     font-family: inherit;
@@ -280,20 +269,20 @@
 }
 
 .btn-vaciar-carrito:hover {
-    background-color: #dc3545;
-    color: #ffffff;
+    background-color: var(--volcan-rojo);
+    color: var(--volcan-blanco);
 }
 
-/* Resumen de compra */
+/* Modulo lateral de finalización de compra */
 .resumen-compra-carrito {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
+    background-color: var(--volcan-blanco);
+    border: 0.0625rem solid var(--volcan-borde-medio);
     border-radius: 0.625rem;
     padding: 2rem;
     box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.04);
     width: 24rem;
     flex-shrink: 0;
-    align-self: start;
+    align-self: flex-start;
 }
 
 .resumen-caja {
@@ -322,10 +311,10 @@
 
 .divisor-resumen {
     border: 0;
-    border-top: 1px solid #e0e0e0;
+    border-top: 0.0625rem solid var(--volcan-borde-medio);
 }
 
-/* Cupon de descuento */
+/* Cupones y validacion */
 .seccion-cupon {
     display: flex;
     flex-direction: column;
@@ -334,7 +323,7 @@
 
 .seccion-cupon label {
     font-size: 0.9rem;
-    color: #666666;
+    color: var(--volcan-gris);
     font-weight: 600;
 }
 
@@ -343,8 +332,8 @@
     height: 3rem;
     border-radius: 0.3125rem;
     overflow: hidden;
-    border: 1px solid #d1d1d1;
-    background-color: #ffffff;
+    border: 0.0625rem solid var(--volcan-borde-oscuro);
+    background-color: var(--volcan-blanco);
     width: 100%;
 }
 
@@ -360,7 +349,7 @@
 
 .btn-aplicar-cupon {
     background-color: var(--volcan-naranja);
-    color: #ffffff;
+    color: var(--volcan-blanco);
     border: none;
     padding: 0 1.25rem;
     font-family: inherit;
@@ -370,7 +359,6 @@
     transition: background-color 0.3s ease;
 }
 
-/* Mensajes de validacion cupon */
 .mensaje-cupon {
     font-size: 0.85rem;
     margin-top: 0.5rem;
@@ -387,10 +375,9 @@
 }
 
 .mensaje-cupon.error {
-    color: #dc3545;
+    color: var(--volcan-rojo);
 }
 
-/* Estado vacio del carrito */
 .mensaje-carrito-vacio {
     display: flex;
     justify-content: center;
@@ -400,13 +387,12 @@
 
 .mensaje-carrito-vacio p {
     font-weight: 600;
-    color: #555555;
+    color: var(--volcan-gris);
 }
 
-/* Botones de accion final */
 .boton-continuar {
     background-color: var(--volcan-naranja);
-    color: #ffffff;
+    color: var(--volcan-blanco);
     font-family: inherit;
     font-size: 1rem;
     font-weight: 700;
@@ -429,18 +415,19 @@
     display: block;
 }
 
-/* Media queries para pantallas medianas */
+/* Adaptabilidad para pantallas medianas (Tablets) */
 @media (max-width: 64rem) {
     .layout-carrito {
         flex-direction: column;
         gap: 2rem;
     }
+
     .resumen-compra-carrito {
         width: 100%;
     }
 }
 
-/* Media queries para dispositivos móviles */
+/* Adaptabilidad para dispositivos móviles (Celulares) */
 @media (max-width: 48rem) {
     .seccion-fondo-gris {
         padding: 2rem 0;

@@ -1,14 +1,10 @@
-/* Indicador de página activa en navegación */
-.enlaces-navegacion a.activo {
-    color: var(--volcan-naranja);
-}
-
+/* Posicionamiento de anclajes de sección */
 #quienes-somos,
 #mision-vision {
     scroll-margin-top: 7.8rem; 
 }
 
-/* Sección Hero de Nosotros */
+/* Estilos principales de la portada de la empresa */
 .nosotros-hero-fondo {
     width: 100%;
     min-height: 28rem; 
@@ -25,15 +21,7 @@
     text-shadow: 0 0.25rem 0.625rem rgba(0,0,0,0.5);
 }
 
-/* Títulos de sección compartidos */
-.titulo-centrado {
-    text-align: center;
-    color: var(--volcan-oscuro);
-    font-size: 2.2rem;
-    margin-bottom: 3rem;
-}
-
-/* Sección Quiénes Somos */
+/* Módulo de historia corporativa */
 .seccion-quienes-somos {
     padding: 6rem 1.25rem;
 }
@@ -46,13 +34,13 @@
 }
 
 .quienes-somos-texto h2 {
-    color: var(--volcan-oscuro);
+    color: var(--volcan-gris);
     font-size: 2.2rem;
     margin-bottom: 1.5rem;
 }
 
 .quienes-somos-texto p {
-    color: #444;
+    color: var(--volcan-gris);
     margin-bottom: 1.2rem;
     line-height: 1.7;
     font-size: 1rem;
@@ -72,7 +60,7 @@
     box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.1);
 }
 
-/* Sección Misión y Visión */
+/* Contenedor interactivo de propósito y valores */
 .seccion-proposito {
     background-color: var(--volcan-claro);
     padding: 5rem 0;
@@ -85,10 +73,13 @@
 }
 
 .tarjeta-mv {
-    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: 26rem;
     border-radius: 0.8rem;
     overflow: hidden;
-    min-height: 26rem;
     box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.1);
 }
 
@@ -97,33 +88,43 @@
 }
 
 .mv-label {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1fr) auto;
     width: 100%;
     height: 100%;
+    min-height: 0;
     cursor: default; 
 }
 
+/* Superposición de elementos visuales de las tarjetas */
+.mv-fondo,
+.mv-capa-color {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+}
+
 .mv-fondo {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
     object-fit: cover;
     z-index: 1;
     transition: filter 0.6s ease-out;
 }
 
 .mv-capa-color {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,0.7) 100%);
     z-index: 2;
     transition: background 0.6s ease-out;
 }
 
 .mv-contenido {
-    position: absolute;
-    bottom: 0; 
-    left: 0;
+    grid-column: 1;
+    grid-row: 2;
+    align-self: end;
     width: 100%;
+    min-height: 0;
     padding: 2rem;
     z-index: 3;
     text-align: center;
@@ -131,7 +132,7 @@
 
 .mv-contenido h3 {
     font-size: 2rem; 
-    color: #ffffff;
+    color: var(--volcan-blanco);
     margin: 0;
     text-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.6);
 }
@@ -140,7 +141,6 @@
     display: none; 
 }
 
-/* Comportamiento base del texto en tarjetas de misión y visión */
 .mv-texto {
     font-size: 1.05rem;
     line-height: 1.6;
@@ -153,26 +153,24 @@
     transition: max-height 0.6s ease-out, opacity 0.6s ease-out, margin-top 0.6s ease-out;
 }
 
-/* Interacción hover en escritorio para tarjetas */
-@media (min-width: 48.01rem) {
-    .tarjeta-mv:hover .mv-fondo {
-        filter: blur(3px); 
-    }
-
-    .tarjeta-mv:hover .mv-capa-color {
-        background: linear-gradient(rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%);
-    }
-
-    .tarjeta-mv:hover .mv-texto {
-        max-height: 9.5rem; 
-        opacity: 1;
-        margin-top: 1rem; 
-    }
+/* Comportamiento interactivo de las tarjetas en escritorio */
+.tarjeta-mv:hover .mv-fondo {
+    filter: blur(0.1875rem); 
 }
 
-/* Sección Equipo de Desarrollo */
+.tarjeta-mv:hover .mv-capa-color {
+    background: linear-gradient(rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%);
+}
+
+.tarjeta-mv:hover .mv-texto {
+    max-height: 9.5rem; 
+    opacity: 1;
+    margin-top: 1rem; 
+}
+
+/* Módulo de presentación del equipo corporativo */
 .seccion-equipo {
-    background-color: #ffffff;
+    background-color: var(--volcan-blanco);
     padding: 5rem 1.25rem;
 }
 
@@ -182,7 +180,7 @@
 
 .subtitulo-centrado {
     text-align: center;
-    color: #666;
+    color: var(--volcan-gris);
     margin-top: 0; 
     margin-bottom: 4rem;
     font-size: 1.1rem;
@@ -196,10 +194,10 @@
 
 .tarjeta-miembro {
     text-align: center;
-    background-color: #ffffff;
+    background-color: var(--volcan-blanco);
     padding: 2.5rem 1.5rem;
     border-radius: 0.8rem;
-    border: 1px solid #eef0f2;
+    border: 0.0625rem solid var(--volcan-borde-claro);
     box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.03);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -215,7 +213,7 @@
     margin: 0 auto 1.5rem auto;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid #f8f9fa;
+    border: 0.25rem solid var(--volcan-claro);
     box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
 }
 
@@ -232,7 +230,7 @@
 }
 
 .miembro-nombre {
-    color: #666666;
+    color: var(--volcan-gris);
     font-size: 1.1rem;
     margin-bottom: 0.8rem;
 }
@@ -245,12 +243,12 @@
 }
 
 .miembro-desc {
-    color: #555;
+    color: var(--volcan-gris);
     font-size: 0.9rem;
     line-height: 1.6;
 }
 
-/* Media queries para pantallas medianas */
+/* Adaptabilidad para pantallas medianas (Tablets) */
 @media (max-width: 64rem) {
     #quienes-somos,
     #mision-vision {
@@ -280,7 +278,7 @@
     }
 }
 
-/* Media queries para dispositivos móviles */
+/* Adaptabilidad para dispositivos móviles (Celulares) */
 @media (max-width: 48rem) {
     .nosotros-hero-fondo {
         min-height: 20rem;
@@ -300,18 +298,13 @@
         padding: 4rem 1.25rem;
     }
 
-    .titulo-centrado {
-        font-size: 1.8rem;
-        margin-bottom: 2rem;
-    }
-
     .grilla-proposito {
         grid-template-columns: 1fr; 
         gap: 2rem;
     }
 
     .tarjeta-mv {
-        min-height: 28rem; 
+        height: 28rem;
     }
 
     .mv-label {
@@ -328,7 +321,7 @@
 
     .ver-mas {
         display: block;
-        color: #ffffff;
+        color: var(--volcan-blanco);
         font-size: 1rem;
         font-weight: 600;
         margin-top: 0.3rem; 
@@ -338,8 +331,23 @@
         transition: max-height 0.6s ease-out, opacity 0.6s ease-out, margin-top 0.6s ease-out;
     }
 
+    /* Desactiva el comportamiento de escritorio en dispositivos móviles */
+    .tarjeta-mv:hover .mv-fondo {
+        filter: none;
+    }
+
+    .tarjeta-mv:hover .mv-capa-color {
+        background: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,0.7) 100%);
+    }
+
+    .tarjeta-mv:hover .mv-texto {
+        max-height: 0;
+        opacity: 0;
+        margin-top: 0;
+    }
+
     .mv-checkbox:checked ~ .mv-label .mv-fondo {
-        filter: blur(3px); 
+        filter: blur(0.1875rem); 
     }
 
     .mv-checkbox:checked ~ .mv-label .mv-capa-color {

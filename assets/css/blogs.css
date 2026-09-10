@@ -1,16 +1,10 @@
-/* Indicador de navegación activa */
-.enlaces-navegacion a.activo {
-    color: var(--volcan-naranja);
-}
-
-/* Fondo general de la página */
+/* Entorno principal de noticias corporativas */
 .pagina-blogs {
-    background-color: #f9f9fa;
-    min-height: calc(100vh - 200px);
+    background-color: var(--volcan-claro);
+    min-height: calc(100vh - 12.5rem);
     padding-bottom: 3rem;
 }
 
-/* Hero de noticias */
 .hero-blogs {
     width: 100%;
     background: linear-gradient(135deg, var(--volcan-azul) 0%, #002c52 100%);
@@ -25,16 +19,17 @@
 .hero-blogs h1 {
     font-size: 3rem;
     margin-bottom: 0.8rem;
+    color: var(--volcan-blanco);
 }
 
 .bajada-blogs {
     font-size: 1.15rem;
-    color: #e0e0e0;
+    color: var(--volcan-borde-medio);
     margin: 0 auto;
-    max-width: 600px;
+    max-width: 37.5rem;
 }
 
-/* Barra de herramientas y filtros */
+/* Herramientas de segmentación e investigación */
 .seccion-filtros-blogs {
     margin-top: 3rem;
     margin-bottom: 2.5rem;
@@ -44,7 +39,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr 1fr auto;
     gap: 1.5rem;
-    align-items: flex-end;
+    align-items: end;
 }
 
 .grupo-filtro {
@@ -59,17 +54,17 @@
     margin-bottom: 0.6rem;
 }
 
-/* Buscador de noticias */
 .caja-buscador {
     display: flex;
     width: 100%;
+    height: 3rem;
 }
 
 .caja-buscador input {
     flex: 1;
     min-width: 0;
     padding: 0.8rem 1rem;
-    border: 1px solid #d1d1d1;
+    border: 0.0625rem solid var(--volcan-borde-oscuro);
     border-right: none;
     border-radius: 0.3125rem 0 0 0.3125rem;
     font-family: inherit;
@@ -83,7 +78,7 @@
 
 .boton-lupa {
     background-color: var(--volcan-naranja);
-    color: #ffffff;
+    color: var(--volcan-blanco);
     border: none;
     padding: 0 1.2rem;
     border-radius: 0 0.3125rem 0.3125rem 0;
@@ -95,42 +90,41 @@
 }
 
 .boton-lupa:hover {
-    background-color: #e06015;
+    background-color: var(--volcan-naranja-oscuro);
 }
 
-/* Selectores de filtros */
 .grupo-filtro select {
     width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid #d1d1d1;
+    height: 3rem;
+    padding: 0 1rem;
+    border: 0.0625rem solid var(--volcan-borde-oscuro);
     border-radius: 0.3125rem;
     font-family: inherit;
     font-size: 1rem;
+    line-height: 1.5;
     color: var(--volcan-texto);
     outline: none;
-    background-color: #ffffff;
+    background-color: var(--volcan-blanco);
     cursor: pointer;
+    margin: 0;
 }
 
 .grupo-filtro select:focus {
     border-color: var(--volcan-naranja);
 }
 
-/* Botón de filtrado */
-.btn-filtrar {
-    height: 47px;
+#btn-filtrar-cat {
+    height: 3rem;
     padding: 0 2rem;
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
+    border: 0.0625rem solid transparent;
+    margin: 0;
 }
 
-/* Mensaje de estado vacio */
 .mensaje-vacio-blogs {
     text-align: center;
     width: 100%;
     padding: 3rem;
-    color: #666666;
+    color: var(--volcan-gris);
     font-weight: 600;
     display: none;
 }
@@ -139,19 +133,18 @@
     display: block;
 }
 
-/* Grilla de noticias */
+/* Grilla visual de artículos */
 .grilla-blogs {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 2.5rem;
 }
 
-/* Tarjeta de noticia */
 .tarjeta-blog {
-    background-color: #ffffff;
+    background-color: var(--volcan-blanco);
     border-radius: 0.625rem;
     overflow: hidden;
-    border: 1px solid #e0e0e0;
+    border: 0.0625rem solid var(--volcan-borde-medio);
     box-shadow: 0 0.2rem 0.8rem rgba(0,0,0,0.04);
     display: flex;
     flex-direction: column;
@@ -159,18 +152,11 @@
 }
 
 .tarjeta-blog:hover {
-    transform: translateY(-4px);
+    transform: translateY(-0.25rem);
     box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.08);
 }
 
-/* Clase para ocultar dinamicamente desde JS */
-.grilla-blogs .tarjeta-blog.oculto {
-    display: none;
-}
-
-/* Contenedor de imagen */
 .blog-enlace-img {
-    display: block;
     width: 100%;
     height: 14rem;
     overflow: hidden;
@@ -188,7 +174,6 @@
     transform: scale(1.05);
 }
 
-/* Cuerpo y metadatos */
 .blog-cuerpo {
     padding: 1.8rem 1.5rem;
     display: flex;
@@ -202,7 +187,7 @@
     align-items: center;
     margin-bottom: 1rem;
     font-size: 0.9rem;
-    color: #888888;
+    color: var(--volcan-gris-claro);
 }
 
 .meta-item {
@@ -211,7 +196,6 @@
     gap: 0.4rem;
 }
 
-/* Título y resumen */
 .blog-titulo {
     color: var(--volcan-oscuro);
     font-size: 1.35rem;
@@ -221,7 +205,7 @@
 }
 
 .blog-resumen {
-    color: #666666;
+    color: var(--volcan-gris);
     font-size: 1rem;
     line-height: 1.6;
     text-align: justify;
@@ -229,7 +213,6 @@
     flex: 1;
 }
 
-/* Enlace de lectura */
 .blog-enlace-leer {
     display: flex;
     align-items: center;
@@ -243,40 +226,40 @@
 }
 
 .blog-enlace-leer:hover {
-    color: #e06015;
+    color: var(--volcan-naranja-oscuro);
 }
 
-/* Media queries para pantallas medianas */
+.grilla-blogs .tarjeta-blog.oculto {
+    display: none;
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
 @media (max-width: 64rem) {
     .barra-filtros {
         grid-template-columns: 1fr 1fr;
     }
-    
+
     .filtro-buscar {
         grid-column: span 2;
     }
-    
+
     .grupo-filtro-accion {
         grid-column: span 2;
     }
-
-    .btn-filtrar {
-        width: 100%;
-    }
 }
 
-/* Media queries para dispositivos móviles */
+/* Adaptabilidad para dispositivos móviles (Celulares) */
 @media (max-width: 48rem) {
     .hero-blogs {
         padding: 3rem 1.25rem;
     }
-    
+
     .hero-blogs h1 {
         font-size: 1.9rem;
     }
 
     .bajada-blogs {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .seccion-filtros-blogs {
@@ -292,11 +275,11 @@
     .grupo-filtro-accion {
         grid-column: span 1;
     }
-    
+
     .grilla-blogs {
         grid-template-columns: 1fr;
     }
-    
+
     .blog-enlace-img {
         height: 12rem;
     }
