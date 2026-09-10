@@ -1,0 +1,30 @@
+/* Ajustes de la tabla de usuarios */
+.tabla-datos th,
+.tabla-datos td {
+    white-space: nowrap;
+}
+
+.etiqueta-rol {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.rol-admin {
+    background-color: rgba(0, 76, 151, 0.1);
+    color: var(--volcan-azul);
+}
+
+.rol-vendedor {
+    background-color: rgba(224, 96, 21, 0.1);
+    color: var(--volcan-naranja);
+}
+
+.rol-cliente {
+    background-color: var(--volcan-fondo);
+    color: var(--volcan-gris);
+}

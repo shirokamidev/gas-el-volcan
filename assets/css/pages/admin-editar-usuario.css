@@ -1,0 +1,20 @@
+/* Modificadores visuales para inputs bloqueados */
+.input-readonly,
+input[readonly] {
+    background-color: var(--volcan-fondo);
+    color: #6c757d;
+    cursor: not-allowed;
+    border-color: var(--volcan-borde);
+}
+
+.input-readonly:focus,
+input[readonly]:focus {
+    border-color: var(--volcan-borde-oscuro);
+    background-color: var(--volcan-fondo);
+    outline: none;
+}
+
+/* Espacio adicional del mensaje de edición */
+.mensaje-final {
+    margin-bottom: 1.5rem;
+}

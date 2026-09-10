@@ -1,0 +1,131 @@
+/* Cabecera y barra de navegación principal */
+.cabecera-principal {
+    background-color: var(--volcan-blanco);
+    isolation: isolate;
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    border-bottom: 0.0625rem solid var(--volcan-borde-medio);
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.04);
+}
+
+.barra-superior {
+    background-color: var(--volcan-claro);
+    font-size: 0.85rem;
+    padding: 0.5rem 0;
+    display: none;
+}
+
+.contenido-barra-superior {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 1.25rem;
+    row-gap: 0.25rem;
+}
+
+.barra-navegacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: var(--alto-navegacion);
+    position: relative;
+}
+
+.logo-navegacion {
+    max-height: 3.75rem;
+    width: auto;
+    max-width: 11.5rem;
+}
+
+.enlace-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 70%;
+}
+
+.icono-hamburguesa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 1.25rem;
+    min-width: 2.5rem;
+    color: var(--volcan-oscuro);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.icono-cerrar {
+    display: none;
+}
+
+.toggle-hamburguesa:checked ~ .cabecera-principal .icono-abrir {
+    display: none;
+}
+
+.toggle-hamburguesa:checked ~ .cabecera-principal .icono-cerrar {
+    display: inline;
+    font-size: 2.4rem;
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (min-width: 768px) {
+    .logo-navegacion {
+        max-width: 15.625rem;
+    }
+
+    .icono-hamburguesa {
+        font-size: 2.2rem;
+    }
+}
+
+/* Adaptabilidad para dispositivos grandes (Escritorio) */
+@media (min-width: 992px) {
+    .barra-superior {
+        display: block;
+    }
+
+    .barra-navegacion {
+        justify-content: space-between;
+        position: unset;
+    }
+
+    .enlace-logo {
+        display: unset;
+        align-items: unset;
+        justify-content: unset;
+        max-width: unset;
+    }
+
+    .icono-hamburguesa {
+        display: none;
+        align-items: unset;
+        justify-content: unset;
+        position: unset;
+        top: unset;
+        bottom: unset;
+        left: unset;
+        min-width: unset;
+        color: unset;
+        font-size: unset;
+        cursor: unset;
+    }
+
+    .icono-cerrar {
+        display: unset;
+    }
+
+    .toggle-hamburguesa:checked ~ .cabecera-principal .icono-abrir {
+        display: unset;
+    }
+
+    .toggle-hamburguesa:checked ~ .cabecera-principal .icono-cerrar {
+        display: unset;
+        font-size: unset;
+    }
+}

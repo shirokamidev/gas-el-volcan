@@ -1,0 +1,474 @@
+/* Cabecera y ambiente visual */
+.seccion-banner-gris {
+    background-color: var(--volcan-claro);
+    padding: 0;
+}
+
+.imagen-banner {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0;
+}
+
+/* Buscador de localizaciones y sucursales */
+.seccion-buscador {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+#seccion-busqueda {
+    scroll-margin-top: 5.5rem;
+}
+
+.titulo-buscador {
+    color: var(--volcan-oscuro);
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.formulario-buscador {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    background-color: var(--volcan-blanco);
+    padding: 1.5rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.05);
+    border: 0.0625rem solid var(--volcan-borde-medio);
+}
+
+.grupo-select {
+    min-width: 0;
+}
+
+.grupo-select select {
+    width: 100%;
+    min-width: 0;
+    padding: 0.9rem 1.2rem;
+    border: 0.0625rem solid var(--volcan-borde-oscuro);
+    border-radius: 0.3125rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--volcan-texto);
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    cursor: pointer;
+    background-color: var(--volcan-blanco);
+}
+
+.grupo-select select:focus {
+    outline: none;
+    border-color: var(--volcan-azul);
+    box-shadow: 0 0 0 0.2rem rgba(0, 75, 135, 0.1);
+}
+
+.boton-buscar {
+    width: 100%;
+    min-width: 0;
+    padding: 0.9rem 2.5rem;
+    font-size: 1.05rem;
+    grid-column: auto;
+}
+
+/* Módulo de red de mapas y direcciones */
+.seccion-mapa-directorio {
+    padding-bottom: 3rem;
+}
+
+.grilla-directorio {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: stretch;
+}
+
+.columna-mapa {
+    position: relative;
+    background-color: var(--volcan-borde-medio);
+    border-radius: 0.625rem;
+    overflow: hidden;
+    border: 0.0625rem solid var(--volcan-borde-oscuro);
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 20rem;
+    order: 2;
+}
+
+/* Aviso informativo del mapa de referencia */
+.aviso-mapa-referencia {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: max-content;
+    height: max-content;
+    max-width: 10.5rem;
+    margin: auto;
+    padding: 0.55rem 0.75rem;
+    border-radius: 0.4rem;
+    background-color: rgba(255,255,255,0.95);
+    color: var(--volcan-oscuro);
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+    box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.12);
+    pointer-events: none;
+}
+
+.aviso-mapa-referencia span {
+    display: block;
+    margin-top: 0.2rem;
+    color: var(--volcan-gris);
+    font-size: 0.7rem;
+    font-weight: 400;
+}
+
+.columna-mapa iframe {
+    width: 100%;
+    flex: 1;
+    min-height: 100%;
+    border: 0;
+}
+
+.columna-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 0;
+    order: 1;
+}
+
+.radio-oculto {
+    display: none;
+}
+
+/* Visualización resumida por tarjeta */
+.vista-lista-general {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tarjeta-resumen {
+    display: block;
+    background-color: var(--volcan-blanco);
+    border: 0.0625rem solid var(--volcan-borde-medio);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* Oculta las zonas de la región no seleccionada */
+.tarjeta-resumen[hidden] {
+    display: none;
+}
+
+.tarjeta-resumen:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.06);
+    border-color: var(--volcan-naranja);
+}
+
+.titulo-naranja {
+    color: var(--volcan-naranja);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.texto-direccion {
+    color: var(--volcan-gris);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Puntos de atención incluidos en cada zona */
+.seccion-puntos-atencion {
+    width: 100%;
+}
+
+.lista-puntos-atencion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.2rem 0 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.punto-atencion {
+    position: relative;
+    padding-left: 1rem;
+    color: var(--volcan-texto);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.punto-atencion::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "•";
+    color: var(--volcan-naranja);
+    font-weight: 700;
+}
+
+.punto-atencion strong {
+    color: var(--volcan-oscuro);
+}
+
+.punto-atencion .texto-direccion {
+    display: inline;
+    font-size: inherit;
+}
+
+/* Renderizado dinámico para información extendida */
+.vistas-detalles {
+    display: none;
+}
+
+.detalle-card {
+    display: none;
+    scroll-margin-top: 7.6rem;
+    background-color: var(--volcan-blanco);
+    border: 0.0625rem solid var(--volcan-borde-medio);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.05);
+}
+
+.tarjeta-detalle-encabezado {
+    background-color: #fcfcfc;
+    padding: 1.5rem;
+    border-bottom: 0.0625rem solid var(--volcan-borde-claro);
+}
+
+.tarjeta-detalle-cuerpo {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tarjeta-detalle-cuerpo h4 {
+    color: var(--volcan-oscuro);
+    font-size: 1.05rem;
+    margin-bottom: 0.2rem;
+}
+
+.dato-despacho {
+    color: #555555;
+    font-size: 0.95rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dato-despacho::before {
+    content: "•";
+    color: var(--volcan-naranja);
+    font-weight: bold;
+}
+
+.info-contacto-detalle {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 0.0625rem dashed var(--volcan-borde-oscuro);
+    font-style: normal;
+}
+
+.enlace-azul {
+    color: var(--volcan-azul);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.enlace-azul:hover,
+.enlace-azul:focus-visible {
+    color: var(--volcan-azul);
+    text-decoration: underline;
+}
+
+.texto-naranja {
+    color: var(--volcan-naranja);
+    font-size: 0.95rem;
+}
+
+.texto-rojo {
+    color: var(--volcan-rojo);
+    font-size: 0.95rem;
+}
+
+.enlace-volver-zonas {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: 1.5rem;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--volcan-naranja);
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.enlace-volver-zonas:hover,
+.enlace-volver-zonas:focus-visible {
+    color: var(--volcan-azul);
+    text-decoration: none;
+}
+
+#suc-1:checked ~ .vista-lista-general,
+#suc-2:checked ~ .vista-lista-general,
+#suc-3:checked ~ .vista-lista-general,
+#suc-4:checked ~ .vista-lista-general,
+#suc-5:checked ~ .vista-lista-general,
+#suc-6:checked ~ .vista-lista-general,
+#suc-7:checked ~ .vista-lista-general,
+#suc-8:checked ~ .vista-lista-general {
+    display: none;
+}
+
+#suc-1:checked ~ .vistas-detalles,
+#suc-2:checked ~ .vistas-detalles,
+#suc-3:checked ~ .vistas-detalles,
+#suc-4:checked ~ .vistas-detalles,
+#suc-5:checked ~ .vistas-detalles,
+#suc-6:checked ~ .vistas-detalles,
+#suc-7:checked ~ .vistas-detalles,
+#suc-8:checked ~ .vistas-detalles {
+    display: block;
+}
+
+#suc-1:checked ~ .vistas-detalles #detalle-1 {
+    display: block;
+}
+
+#suc-2:checked ~ .vistas-detalles #detalle-2 {
+    display: block;
+}
+
+#suc-3:checked ~ .vistas-detalles #detalle-3 {
+    display: block;
+}
+
+#suc-4:checked ~ .vistas-detalles #detalle-4 {
+    display: block;
+}
+
+#suc-5:checked ~ .vistas-detalles #detalle-5,
+#suc-6:checked ~ .vistas-detalles #detalle-6,
+#suc-7:checked ~ .vistas-detalles #detalle-7,
+#suc-8:checked ~ .vistas-detalles #detalle-8 {
+    display: block;
+}
+
+.seccion-banner-gris .contenedor {
+    padding: 0;
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (min-width: 768px) {
+    .aviso-mapa-referencia {
+        top: 0.75rem;
+        right: 0.75rem;
+        bottom: auto;
+        left: auto;
+        width: auto;
+        height: auto;
+        margin: 0;
+    }
+
+    .seccion-banner-gris {
+        padding: 2.5rem 0;
+    }
+
+    .imagen-banner {
+        border-radius: 0.625rem;
+        display: unset;
+    }
+
+    .seccion-buscador {
+        padding-top: 2.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .titulo-buscador {
+        font-size: 2rem;
+        text-align: left;
+    }
+
+    .formulario-buscador {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 2rem;
+    }
+
+    .boton-buscar {
+        grid-column: span 2;
+    }
+
+    .columna-mapa {
+        min-height: 25rem;
+        scroll-margin-top: 8rem;
+    }
+
+    .seccion-banner-gris .contenedor {
+        padding: 0 1.25rem;
+        max-width: 84rem;
+    }
+}
+
+/* Adaptabilidad para dispositivos grandes (Escritorio) */
+@media (min-width: 992px) {
+    .seccion-banner-gris {
+        padding: 3rem 0;
+    }
+
+    #seccion-busqueda {
+        scroll-margin-top: 7.8rem;
+    }
+
+    .formulario-buscador {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) auto;
+    }
+
+    .boton-buscar {
+        grid-column: unset;
+        width: auto;
+    }
+
+    .grilla-directorio {
+        grid-template-columns: minmax(0, 1fr) 24rem;
+    }
+
+    .columna-mapa {
+        min-height: unset;
+        scroll-margin-top: 9.3rem;
+        order: unset;
+    }
+
+    .columna-lista {
+        order: unset;
+    }
+}

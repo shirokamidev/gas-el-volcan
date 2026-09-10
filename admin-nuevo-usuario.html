@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gas El Volcán | Nuevo Usuario</title>
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/admin-layout.css" />
+        <link rel="stylesheet" href="assets/css/utils/admin-formularios.css" />
+    </head>
+    <body>
+        <!-- Control del menú móvil -->
+        <input type="checkbox" id="toggle-menu" class="toggle-menu-checkbox">
+
+        <!-- Cabecera principal -->
+        <header class="admin-cabecera">
+            <div class="cabecera-izq">
+                <label for="toggle-menu" class="btn-hamburguesa">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </label>
+                <a href="admin-index.html" class="logo-admin">
+                    <img src="assets/images/favicon.ico" alt="Icono Gas El Volcán">
+                    <span>Admin Volcán</span>
+                </a>
+            </div>
+
+            <div class="cabecera-der">
+                <span class="saludo-admin">Hola, <strong>Administradora</strong></span>
+                <a href="login.html" class="btn-salir">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    Salir
+                </a>
+            </div>
+        </header>
+
+        <!-- Barra de navegación lateral -->
+        <aside class="admin-sidebar">
+            <nav class="nav-lateral">
+                <ul>
+                    <li>
+                        <a href="admin-index.html">Inicio</a>
+                    </li>
+
+                    <li class="separador">Módulo Productos</li>
+                    <li><a href="admin-lista-productos.html">Listar productos</a></li>
+                    <li><a href="admin-nuevo-producto.html">Nuevo producto</a></li>
+
+                    <li class="separador">Módulo Usuarios</li>
+                    <li><a href="admin-lista-usuarios.html">Listar usuarios</a></li>
+                    <li><a href="admin-nuevo-usuario.html" class="activo">Nuevo usuario</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido dinámico principal -->
+        <main class="admin-main">
+            <div class="contenedor-vista">
+
+                <!-- Cabecera del módulo -->
+                <div class="cabecera-modulo">
+                    <h1>Crear Nuevo Usuario</h1>
+                    <a href="admin-lista-usuarios.html" class="btn-secundario">
+                        <span>&larr;</span> Volver a la lista
+                    </a>
+                </div>
+
+                <!-- Contenedor del formulario -->
+                <section class="caja-formulario-admin">
+                    <form id="form-nuevo-usuario" action="#" class="formulario-generico" novalidate>
+
+                        <!-- Sección 1: Datos personales -->
+                        <fieldset class="seccion-fieldset">
+                            <legend class="titulo-legend">Datos Personales</legend>
+                            <div class="linea-separadora"></div>
+
+                            <p class="texto-obligatorio">* Completa la información solicitada a continuación:</p>
+
+                            <div class="grilla-formulario">
+                                <div class="grupo-input col-completa">
+                                    <label class="label-campo" for="rut-usuario">RUT <span class="asterisco">*</span></label>
+                                    <input type="text" id="rut-usuario" placeholder="Ej: 21456789K" class="input-campo">
+                                    <span class="texto-ayuda">Sin puntos ni guion, Ej: 19011022K</span>
+                                    <span id="error-rut" class="texto-peligro"></span>
+                                </div>
+
+                                <div class="grupo-input col-completa">
+                                    <label class="label-campo" for="nombre-usuario">Nombre <span class="asterisco">*</span></label>
+                                    <input type="text" id="nombre-usuario" placeholder="Ej: Juan" class="input-campo">
+                                    <span class="texto-ayuda">Obligatorio. Máximo 50 caracteres.</span>
+                                    <span id="error-nombre-usu" class="texto-peligro"></span>
+                                </div>
+
+                                <div class="grupo-input">
+                                    <label class="label-campo" for="apellidop-usuario">Apellido Paterno <span class="asterisco">*</span></label>
+                                    <input type="text" id="apellidop-usuario" placeholder="Ej: Pérez" class="input-campo">
+                                    <span id="error-apellidop-usu" class="texto-peligro"></span>
+                                </div>
+
+                                <div class="grupo-input">
+                                    <label class="label-campo" for="apellidom-usuario">Apellido Materno (Opcional)</label>
+                                    <input type="text" id="apellidom-usuario" placeholder="Ej: González" class="input-campo">
+                                    <span id="error-apellidom-usu" class="texto-peligro"></span>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Sección 2: Contacto y credenciales -->
+                        <fieldset class="seccion-fieldset espaciado-seccion">
+                            <legend class="titulo-legend">Contacto y Credenciales</legend>
+                            <div class="linea-separadora"></div>
+
+                            <div class="grilla-formulario">
+                                <div class="grupo-input">
+                                    <label class="label-campo" for="telefono-usuario">Teléfono (Opcional)</label>
+                                    <input type="tel" id="telefono-usuario" placeholder="Ej: 987654321" class="input-campo">
+                                    <span class="texto-ayuda">Opcional. 9 dígitos numéricos.</span>
+                                    <span id="error-telefono" class="texto-peligro"></span>
+                                </div>
+
+                                <div class="grupo-input">
+                                    <label class="label-campo" for="correo-usuario">Correo Electrónico <span class="asterisco">*</span></label>
+                                    <input type="email" id="correo-usuario" placeholder="Ej: juan.perez@gmail.com" class="input-campo">
+                                    <span class="texto-ayuda">Solo correos con @duoc.cl, @profesor.duoc.cl y @gmail.com</span>
+                                    <span id="error-correo-usu" class="texto-peligro"></span>
+                                </div>
+
+                                <div class="grupo-input col-completa">
+                                    <label class="label-campo" for="password-usuario">Contraseña Temporal <span class="asterisco">*</span></label>
+                                    <input type="password" id="password-usuario" placeholder="Ingresar contraseña" class="input-campo">
+                                    <span class="texto-ayuda">Obligatorio. Entre 4 a 10 caracteres.</span>
+                                    <span id="error-pass" class="texto-peligro"></span>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Sección 3: Dirección -->
+                        <fieldset class="seccion-fieldset espaciado-seccion">
+                            <legend class="titulo-legend">Dirección</legend>
+                            <div class="linea-separadora"></div>
+
+                            <div class="grilla-formulario">
+                                <div class="grupo-input">
+                                    <label class="label-campo" for="region-admin">Región <span class="asterisco">*</span></label>
+                                    <select id="region-admin" class="input-campo select-campo" required>
+                                        <option value="" disabled selected>-- Seleccione región --</option>
+                                        <option value="nuble">Región de Ñuble</option>
+                                        <option value="biobio">Región del Biobío</option>
+                                    </select>
+                                    <span id="error-region-admin" class="texto-peligro mensaje-error-input"></span> 
+                                </div>
+
+                                <div class="grupo-input">
+                                    <label class="label-campo" for="comuna-admin">Comuna <span class="asterisco">*</span></label>
+                                    <select id="comuna-admin" class="input-campo select-campo" required>
+                                        <option value="" disabled selected>Seleccione comuna</option>
+                                    </select>
+                                    <span id="error-comuna-admin" class="texto-peligro mensaje-error-input"></span> 
+                                </div>
+
+                                <div class="grupo-input col-completa">
+                                    <label class="label-campo" for="direccion-usuario">Calle y Número <span class="asterisco">*</span></label>
+                                    <input type="text" id="direccion-usuario" placeholder="Ej: Calle Volcán 125" class="input-campo">
+                                    <span class="texto-ayuda">Obligatorio. Máximo 300 caracteres.</span>
+                                    <span id="error-direccion" class="texto-peligro"></span>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Sección 4: Rol del sistema -->
+                        <fieldset class="seccion-fieldset espaciado-seccion">
+                            <legend class="titulo-legend">Rol del Sistema</legend>
+                            <div class="linea-separadora"></div>
+
+                            <div class="grilla-formulario">
+                                <div class="grupo-input col-completa">
+                                    <label class="label-campo" for="rol-usuario">Tipo de Usuario <span class="asterisco">*</span></label>
+                                    <select id="rol-usuario" class="input-campo select-campo" required>
+                                        <option value="" disabled selected>-- Seleccione el perfil de acceso --</option>
+                                        <option value="cliente">Cliente (Acceso solo a la tienda)</option>
+                                        <option value="vendedor">Vendedor (Gestión básica)</option>
+                                        <option value="administrador">Administrador (Acceso total)</option>
+                                    </select>
+                                    <span id="error-rol-usuario" class="texto-peligro"></span>
+                                    <span class="texto-ayuda">Obligatorio. Define los permisos y vistas a las que tendrá acceso el usuario.</span>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Contenedor para mensajes de validación -->
+                        <div id="mensaje-usuario" class="mensaje-final"></div>
+
+                        <!-- Acciones finales del formulario -->
+                        <div class="acciones-registro">
+                            <button type="submit" class="boton-guardar">Guardar Usuario</button>
+                        </div>
+
+                    </form>
+                </section>
+
+            </div>
+        </main>
+
+        <!-- Validadores estructurales e inserción de datos para nuevos registros -->
+        <script defer src="assets/js/app.js"></script>
+    </body>
+</html>

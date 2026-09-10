@@ -1,0 +1,103 @@
+/* Estilos de botones generales */
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.3125rem;
+    font-family: inherit;
+    font-weight: var(--peso-texto-boton);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.boton-redondeado {
+    border-radius: 3.125rem;
+}
+
+.boton-bloque {
+    width: 100%;
+}
+
+.boton-naranja {
+    background-color: var(--volcan-naranja);
+    color: var(--volcan-blanco);
+}
+
+.boton-naranja:hover {
+    background-color: var(--volcan-naranja-oscuro);
+    color: var(--volcan-blanco);
+}
+
+.boton-blanco {
+    background-color: var(--volcan-blanco);
+    color: var(--volcan-oscuro);
+}
+
+.boton-blanco:hover {
+    background-color: var(--volcan-borde-claro);
+    color: var(--volcan-oscuro);
+}
+
+.boton-oscuro {
+    background-color: var(--volcan-oscuro);
+    color: var(--volcan-blanco);
+    border-radius: 3.125rem;
+    padding: 0.6rem 1.5rem;
+}
+
+.boton-oscuro:hover {
+    background-color: var(--volcan-texto);
+    color: var(--volcan-blanco);
+}
+
+.boton-azul {
+    background-color: var(--volcan-azul);
+    color: var(--volcan-blanco);
+}
+
+.boton-azul:hover {
+    background-color: var(--volcan-azul-oscuro);
+    color: var(--volcan-blanco);
+}
+
+.boton-borde-oscuro {
+    border: 0.125rem solid var(--volcan-oscuro);
+    color: var(--volcan-oscuro);
+    background: transparent;
+}
+
+.boton-borde-oscuro:hover {
+    background-color: var(--volcan-oscuro);
+    color: var(--volcan-blanco);
+}
+
+.boton-borde-blanco {
+    border: 0.125rem solid var(--volcan-blanco);
+    color: var(--volcan-blanco);
+    background: transparent;
+}
+
+.boton-borde-blanco:hover {
+    background-color: var(--volcan-blanco);
+    color: var(--volcan-oscuro);
+}
+
+/* Texto de botones en las páginas públicas de la tienda */
+body:not(.cuerpo-autenticacion) main button,
+body:not(.cuerpo-autenticacion) main a[class*="boton"],
+body:not(.cuerpo-autenticacion) main a[class*="btn-"],
+body:not(.cuerpo-autenticacion) main label[class*="boton"],
+body:not(.cuerpo-autenticacion) main label[class*="btn-"] {
+    text-transform: uppercase;
+}
+
+/* Botones de formularios de acceso */
+.boton-grande {
+    padding: 0.9rem;
+    font-size: 1.1rem;
+    border-radius: 0.4rem;
+}

@@ -1,0 +1,432 @@
+/* Posicionamiento de anclajes de sección */
+#quienes-somos,
+#mision-vision {
+    scroll-margin-top: 5.5rem;
+}
+
+/* Estilos principales de la portada de la empresa */
+.nosotros-hero-fondo {
+    width: 100%;
+    min-height: 20rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/nosotros/hero-nosotros.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--volcan-azul);
+}
+
+.nosotros-hero-contenido h1 {
+    font-size: 2.2rem;
+    text-shadow: 0 0.25rem 0.625rem rgba(0,0,0,0.5);
+}
+
+/* Módulo de historia corporativa */
+.seccion-quienes-somos {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.grilla-quienes-somos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.quienes-somos-texto h2 {
+    color: var(--volcan-azul);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.quienes-somos-texto p {
+    color: var(--volcan-oscuro);
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.quienes-somos-imagen {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.quienes-somos-imagen img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 27rem;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.1);
+}
+
+/* Contenedor interactivo de propósito y valores */
+.seccion-proposito {
+    background-color: var(--volcan-claro);
+    padding: 4rem 0;
+}
+
+.grilla-proposito {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.tarjeta-mv {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    min-height: 20rem;
+    height: auto;
+    aspect-ratio: 1.1;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.1);
+}
+
+.mv-checkbox {
+    display: none;
+}
+
+.mv-label {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1fr) auto;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    cursor: pointer;
+}
+
+/* Superposición de elementos visuales de las tarjetas */
+.mv-fondo,
+.mv-capa-color {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+}
+
+.mv-fondo {
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+    transition: filter 0.65s ease-in-out;
+}
+
+.mv-capa-color {
+    background: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,0.7) 100%);
+    z-index: 2;
+    transition: background 0.65s ease-in-out;
+}
+
+.mv-contenido {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: end;
+    width: 100%;
+    min-height: 0;
+    padding: 1.5rem;
+    z-index: 3;
+    text-align: center;
+}
+
+.mv-contenido h3 {
+    font-size: 1.8rem;
+    color: var(--volcan-blanco);
+    margin: 0;
+    text-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.6);
+}
+
+.ver-mas {
+    display: block;
+    color: var(--volcan-blanco);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 0.3rem;
+    max-height: 2rem;
+    opacity: 1;
+    overflow: hidden;
+    transition: max-height 0.65s ease-in-out, opacity 0.65s ease-in-out, margin-top 0.65s ease-in-out;
+}
+
+.mv-texto {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #f1f1f1;
+    text-align: justify;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.65s ease-in-out, opacity 0.65s ease-in-out, margin-top 0.65s ease-in-out;
+}
+
+/* Comportamiento interactivo de las tarjetas en escritorio */
+.tarjeta-mv:hover .mv-fondo {
+    filter: none;
+}
+
+.tarjeta-mv:hover .mv-capa-color {
+    background: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,0.7) 100%);
+}
+
+.tarjeta-mv:hover .mv-texto {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+}
+
+/* Módulo de presentación del equipo corporativo */
+.seccion-equipo {
+    background-color: var(--volcan-blanco);
+    padding: 3rem 0;
+}
+
+.seccion-equipo .titulo-centrado {
+    margin-bottom: 1rem;
+}
+
+.subtitulo-centrado {
+    text-align: center;
+    color: var(--volcan-gris);
+    margin-top: 0;
+    margin-bottom: 4rem;
+    font-size: 1.1rem;
+}
+
+.grilla-equipo {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+.tarjeta-miembro {
+    text-align: center;
+    background-color: var(--volcan-blanco);
+    padding: 2.5rem 1.5rem;
+    border-radius: 0.8rem;
+    border: 0.0625rem solid var(--volcan-borde-claro);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.03);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    height: 100%;
+}
+
+.tarjeta-miembro:hover {
+    transform: scale(1.025);
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.08);
+}
+
+.miembro-foto-contenedor {
+    width: 10rem;
+    height: 10rem;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 0.25rem solid var(--volcan-claro);
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
+}
+
+.foto-perfil {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.tarjeta-miembro h3 {
+    color: var(--volcan-oscuro);
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+}
+
+.miembro-nombre {
+    color: var(--volcan-gris);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}
+
+.miembro-rol {
+    color: var(--volcan-naranja);
+    font-weight: 600;
+    font-size: 0.95rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 0.5rem;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.miembro-desc {
+    color: var(--volcan-gris);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.seccion-quienes-somos,
+.seccion-equipo {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.mv-checkbox:checked ~ .mv-label .mv-fondo {
+    filter: blur(0.1875rem);
+}
+
+.mv-checkbox:checked ~ .mv-label .mv-capa-color {
+    background: linear-gradient(rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.9) 100%);
+}
+
+.mv-checkbox:checked ~ .mv-label .mv-texto {
+    max-height: 16rem;
+    opacity: 1;
+    margin-top: 1rem;
+}
+
+.mv-checkbox:checked ~ .mv-label .ver-mas {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (min-width: 768px) {
+    .quienes-somos-texto h2 {
+        text-align: left;
+    }
+
+    .nosotros-hero-fondo {
+        min-height: 28rem;
+    }
+
+    .nosotros-hero-contenido h1 {
+        font-size: 2.8rem;
+    }
+
+    .seccion-proposito {
+        padding: 5rem 0;
+    }
+
+    .tarjeta-mv {
+        aspect-ratio: 1.35;
+    }
+
+    .mv-label {
+        cursor: default;
+    }
+
+    .mv-contenido {
+        padding: 2rem;
+    }
+
+    .mv-texto {
+        font-size: 1.05rem;
+        line-height: 1.6;
+    }
+
+    .mv-contenido h3 {
+        font-size: 2rem;
+    }
+
+    .ver-mas {
+        display: none;
+        color: unset;
+        font-size: unset;
+        font-weight: unset;
+        margin-top: unset;
+        max-height: unset;
+        opacity: unset;
+        overflow: unset;
+        transition: unset;
+    }
+
+    .tarjeta-mv:hover .mv-fondo {
+        filter: blur(0.1875rem);
+    }
+
+    .tarjeta-mv:hover .mv-capa-color {
+        background: linear-gradient(rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%);
+    }
+
+    .tarjeta-mv:hover .mv-texto {
+        max-height: 9.5rem;
+        opacity: 1;
+        margin-top: 1rem;
+    }
+
+    .seccion-quienes-somos,
+    .seccion-equipo {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .mv-checkbox:checked ~ .mv-label .mv-fondo {
+        filter: unset;
+    }
+
+    .mv-checkbox:checked ~ .mv-label .mv-capa-color {
+        background: unset;
+    }
+
+    .mv-checkbox:checked ~ .mv-label .mv-texto {
+        max-height: unset;
+        opacity: unset;
+        margin-top: unset;
+    }
+
+    .mv-checkbox:checked ~ .mv-label .ver-mas {
+        max-height: unset;
+        opacity: unset;
+        margin-top: unset;
+    }
+}
+
+/* Adaptabilidad para dispositivos grandes (Escritorio) */
+@media (min-width: 992px) {
+    .nosotros-hero-contenido h1 {
+        font-size: 3.5rem;
+    }
+
+    .grilla-quienes-somos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 3rem;
+        align-items: start;
+    }
+
+    .seccion-quienes-somos,
+    .seccion-equipo {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .grilla-proposito {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tarjeta-mv {
+        aspect-ratio: 1.4;
+    }
+
+    .grilla-equipo {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+
+    #quienes-somos,
+    #mision-vision {
+        scroll-margin-top: 7.8rem;
+    }
+}

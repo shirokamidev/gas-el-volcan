@@ -1,0 +1,86 @@
+@page {
+    size: A4;
+    margin: 12mm;
+}
+
+@media print {
+    .cabecera-principal,
+    .pie-pagina,
+    .pagina-productos .hero-catalogo,
+    .pagina-productos .columna-filtros,
+    .pagina-productos .herramientas-catalogo,
+    .pagina-productos .enlace-restablecer,
+    .pagina-productos .overlay-filtros,
+    .pagina-productos .producto-controles {
+        display: none;
+    }
+
+    body,
+    .pagina-productos .seccion-catalogo-fondo {
+        background-color: var(--volcan-blanco);
+    }
+
+    .pagina-productos .seccion-catalogo-fondo {
+        padding: 0;
+    }
+
+    .pagina-productos .contenedor-catalogo-principal {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .pagina-productos .layout-catalogo,
+    .pagina-productos .columna-productos {
+        display: block;
+    }
+
+    .pagina-productos .columna-productos::before {
+        content: "Gas El Volcán · Catálogo de Productos";
+        display: block;
+        margin-bottom: 7mm;
+        font-size: 17pt;
+        font-weight: 700;
+        color: var(--volcan-azul);
+    }
+
+    .pagina-productos .texto-resultados.activo {
+        display: block;
+        margin-bottom: 5mm;
+    }
+
+    .pagina-productos .grilla-productos {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 5mm;
+        margin: 0;
+    }
+
+    .pagina-productos .tarjeta-producto {
+        padding: 4mm;
+        border: 0.0625rem solid var(--volcan-borde-medio);
+        box-shadow: none;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .pagina-productos .producto-enlace-img {
+        height: 28mm;
+        margin-bottom: 3mm;
+    }
+
+    .pagina-productos .producto-img {
+        object-fit: contain;
+    }
+
+    .pagina-productos .producto-detalle {
+        margin-bottom: 3mm;
+    }
+
+    .pagina-productos .producto-nombre {
+        font-size: 12pt;
+    }
+
+    .pagina-productos .precio-principal {
+        font-size: 11pt;
+    }
+}

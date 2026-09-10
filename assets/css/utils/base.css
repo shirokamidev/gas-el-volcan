@@ -1,0 +1,57 @@
+/* Reseteo general de estilos del navegador */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 100%;
+    overscroll-behavior-y: none;
+}
+
+body {
+    font-family: "Montserrat", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--volcan-texto);
+    line-height: 1.5;
+    background-color: var(--volcan-blanco);
+}
+
+
+/* Peso del texto de los botones, excepto los controles de cantidad */
+button:not(.btn-restar):not(.btn-sumar):not(.btn-restar-detalle):not(.btn-sumar-detalle),
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+a[class*="boton"],
+a[class*="btn-"],
+label[class*="boton"],
+label[class*="btn-"] {
+    font-weight: var(--peso-texto-boton);
+    font-size: var(--tamano-texto-boton);
+}
+
+/* Estilos de texto compartidos */
+.fw-bold {
+    font-weight: 700;
+}
+
+.texto-blanco {
+    color: var(--volcan-blanco);
+}
+
+.texto-peligro {
+    color: var(--volcan-rojo);
+}
+
+.asterisco {
+    color: var(--volcan-rojo);
+}
+
+.titulo-centrado {
+    text-align: center;
+    color: var(--volcan-azul);
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+}

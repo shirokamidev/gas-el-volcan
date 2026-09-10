@@ -1,0 +1,325 @@
+/* Entorno de la visualización en detalle */
+.seccion-detalle-blanca {
+    background-color: var(--volcan-blanco);
+    padding: 1.5rem 0 3rem;
+}
+
+.layout-detalle {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-width: 0;
+}
+
+.detalle-principal {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: stretch;
+    gap: 1.5rem;
+}
+
+.columna-informacion {
+    min-width: 0;
+    padding: 0.25rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Rutas de navegación */
+.ruta-navegacion {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 0.88rem;
+    color: var(--volcan-gris-claro);
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    margin-bottom: 0.5rem;
+}
+
+.ruta-navegacion a {
+    color: var(--volcan-azul);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.ruta-navegacion a:hover {
+    text-decoration: underline;
+}
+
+/* Encabezados y textos descriptivos */
+.categoria-detalle {
+    display: block;
+    color: var(--volcan-naranja);
+    font-size: 0.9rem;
+    margin-bottom: 0.45rem;
+}
+
+.titulo-detalle {
+    color: var(--volcan-azul);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.descripcion-detalle {
+    color: var(--volcan-gris);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 0.75rem;
+}
+
+.meta-producto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: var(--volcan-gris);
+    margin-bottom: 0.75rem;
+}
+
+.subtitulo-detalle {
+    color: var(--volcan-azul);
+    font-size: 1.45rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+/* Listado de especificaciones técnicas */
+.ficha-caracteristicas {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.6rem;
+    background-color: #f5f6f7;
+}
+
+.lista-especificaciones {
+    padding-left: 1.25rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.lista-especificaciones li {
+    color: var(--volcan-texto);
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+.lista-especificaciones strong {
+    color: var(--volcan-oscuro);
+}
+
+/* Configuración de medios visuales y precios */
+.bloque-imagen-detalle {
+    position: relative;
+    width: 100%;
+    min-height: 18rem;
+    aspect-ratio: 1 / 1;
+    padding: 1.75rem;
+    border: 0.0625rem solid var(--volcan-borde-medio);
+    border-radius: 0.65rem;
+    background-color: #f5f6f7;
+    overflow: hidden;
+}
+
+.imagen-detalle-producto {
+    position: absolute;
+    display: block;
+    inset: 0;
+    width: calc(100% - 3.5rem);
+    height: calc(100% - 3.5rem);
+    max-width: 22rem;
+    max-height: 23rem;
+    margin: auto;
+    object-fit: contain;
+    transition: transform 0.4s ease-out;
+}
+
+/* Efecto de zoom en la imagen sin navegación */
+.bloque-imagen-detalle:hover .imagen-detalle-producto {
+    transform: scale(1.05);
+}
+
+.bloque-precios-detalle {
+    margin-bottom: 0.75rem;
+}
+
+.precio-residencial-detalle {
+    margin-bottom: 0.2rem;
+    color: var(--volcan-oscuro);
+    font-size: 1.9rem;
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+.precio-comercial-detalle {
+    color: var(--volcan-gris-claro);
+    font-size: 0.84rem;
+    line-height: 1.5;
+}
+
+/* Controles de selección de volumen */
+.bloque-controles-detalle {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 0;
+}
+
+.etiqueta-cantidad-detalle {
+    color: var(--volcan-oscuro);
+    font-size: 0.94rem;
+    font-weight: 700;
+}
+
+.control-cantidad-detalle {
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    width: 100%;
+    height: 3rem;
+    border: 0.0625rem solid var(--volcan-borde-medio);
+    border-radius: 0.3125rem;
+    background-color: var(--volcan-blanco);
+}
+
+.btn-restar-detalle,
+.btn-sumar-detalle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 3rem;
+    border: 0;
+    background-color: var(--volcan-claro);
+    color: var(--volcan-oscuro);
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-restar-detalle:hover,
+.btn-sumar-detalle:hover {
+    background-color: var(--volcan-borde-medio);
+}
+
+.input-cantidad-detalle {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    border-left: 0.0625rem solid var(--volcan-borde-medio);
+    border-right: 0.0625rem solid var(--volcan-borde-medio);
+    background-color: transparent;
+    color: var(--volcan-texto);
+    text-align: center;
+    font: inherit;
+    font-weight: 700;
+    font-size: 1.1rem;
+    outline: none;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.input-cantidad-detalle::-webkit-outer-spin-button,
+.input-cantidad-detalle::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.bloque-controles-detalle .boton {
+    width: 100%;
+    min-height: 3rem;
+    margin-top: 0.25rem;
+}
+
+.bloque-controles-detalle button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+/* Grilla inferior de sugerencias */
+.seccion-relacionados-gris {
+    background-color: var(--volcan-claro);
+    padding: 3rem 0;
+}
+
+.titulo-relacionados {
+    text-align: center;
+    color: var(--volcan-azul);
+    font-size: 1.65rem;
+    margin-bottom: 2rem;
+}
+
+.grilla-relacionados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.75rem;
+}
+
+/* Reutiliza las mismas tarjetas y controles del catálogo */
+.grilla-relacionados .tarjeta-producto {
+    min-width: 0;
+    flex: 0 1 100%;
+}
+
+.alerta-stock {
+    color: var(--volcan-rojo);
+    font-weight: 700;
+}
+
+.seccion-relacionados-gris[hidden] {
+    display: none;
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (min-width: 768px) {
+    .seccion-detalle-blanca {
+        padding: 2rem 0 3.5rem;
+    }
+
+    .layout-detalle {
+        gap: 2rem;
+    }
+
+    .detalle-principal {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+    }
+
+    .bloque-imagen-detalle {
+        min-height: 0;
+        aspect-ratio: auto;
+    }
+
+    .columna-informacion {
+        padding-top: 0.15rem;
+    }
+
+    .ficha-caracteristicas {
+        padding: 2rem 2.25rem;
+    }
+
+    .grilla-relacionados .tarjeta-producto {
+        flex-basis: calc((100% - 1.75rem) / 2);
+    }
+}
+
+/* Adaptabilidad para dispositivos grandes (Escritorio) */
+@media (min-width: 992px) {
+    .detalle-principal {
+        gap: 2.5rem;
+    }
+
+    .grilla-relacionados .tarjeta-producto {
+        flex-basis: calc((100% - 3.5rem) / 3);
+    }
+}

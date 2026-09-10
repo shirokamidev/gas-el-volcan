@@ -1,0 +1,86 @@
+/* Ajustes de la tabla de productos */
+.tabla-responsiva {
+    margin-bottom: 1.5rem;
+}
+
+.tabla-datos {
+    min-width: 78.125rem;
+}
+
+/* Valores de stock y encabezados en una sola línea */
+.tabla-datos th:nth-child(6),
+.tabla-datos th:nth-child(7),
+.tabla-datos th:nth-child(9),
+.tabla-datos td:nth-child(8) {
+    white-space: nowrap;
+}
+
+.celda-acciones {
+    white-space: nowrap;
+}
+
+.columna-descripcion {
+    min-width: 20rem;
+    text-align: justify;
+    line-height: 1.5;
+    color: var(--volcan-gris);
+}
+
+.texto-peligro {
+    color: var(--volcan-rojo);
+}
+
+/* Paginación de productos */
+.paginacion-admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    padding-top: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn-pagina {
+    background-color: var(--volcan-blanco);
+    border: 0.0625rem solid var(--volcan-borde);
+    color: var(--volcan-azul);
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-family: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-pagina:hover:not(:disabled):not(.activo) {
+    background-color: var(--volcan-fondo);
+}
+
+.btn-pagina.activo {
+    background-color: var(--volcan-oscuro);
+    color: var(--volcan-blanco);
+    border-color: var(--volcan-oscuro);
+}
+
+.btn-pagina.flecha:disabled {
+    color: var(--volcan-borde-oscuro);
+    cursor: not-allowed;
+    background-color: var(--volcan-blanco);
+    border-color: var(--volcan-borde);
+}
+
+.btn-pagina.flecha {
+    color: var(--volcan-gris-claro);
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (min-width: 768px) {
+    .paginacion-admin {
+        justify-content: flex-end;
+    }
+}

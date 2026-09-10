@@ -1,0 +1,377 @@
+/* Portada principal de inicio */
+.seccion-hero {
+    background-color: var(--volcan-blanco);
+    width: 100%;
+}
+
+.hero-fondo {
+    width: 100%;
+    min-height: 26rem;
+    background: linear-gradient(rgba(0, 40, 70, 0.4), rgba(0, 40, 70, 0.4)), url("../../images/hero-volcan.jpg") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 11rem;
+}
+
+.hero-contenido {
+    text-align: center;
+    padding: 0 1.25rem;
+}
+
+.hero-titulo {
+    color: var(--volcan-blanco);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-shadow: 0 0.25rem 0.625rem rgba(0,0,0,0.5);
+    margin-bottom: 0.4rem;
+}
+
+.hero-bajada {
+    color: var(--volcan-blanco);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.5);
+}
+
+/* Componente de búsqueda en cabecera */
+.contenedor-tarjeta-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 0;
+    width: 100%;
+    padding: 0 0.75rem;
+    z-index: 10;
+}
+
+.tarjeta-hero {
+    background: rgba(0, 75, 135, 0.95);
+    border-radius: 0.8rem;
+    color: var(--volcan-blanco);
+    padding: 1.25rem;
+    box-shadow: 0 0.625rem 1.875rem rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 35rem;
+    margin: 0 auto;
+}
+
+.tarjeta-cabecera h1 {
+    font-size: 1.35rem;
+    line-height: 1.3;
+    font-weight: 700;
+    text-align: center;
+}
+
+.tarjeta-cuerpo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+}
+
+.buscador-principal {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.buscador-principal input {
+    flex: none;
+    min-width: 0;
+    padding: 0.75rem 0.7rem;
+    border: none;
+    border-radius: 0.3125rem;
+    outline: none;
+    font-family: inherit;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.buscador-principal input:focus {
+    background-color: #fff9f5;
+}
+
+.buscador-principal .boton {
+    border-radius: 0.3125rem;
+    margin: 0;
+    width: 100%;
+}
+
+.botones-hero {
+    display: flex;
+    gap: 0.9375rem;
+    width: 100%;
+    flex-direction: column;
+}
+
+.botones-hero .boton {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    font-size: 0.85rem;
+}
+
+.separador-gris {
+    background-color: var(--volcan-claro);
+    width: 100%;
+    padding-bottom: 14rem;
+}
+
+/* Catálogo de productos destacados */
+.seccion-productos {
+    padding: 3.75rem 1.25rem;
+    text-align: center;
+}
+
+.seccion-productos h2 {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+}
+
+.grilla-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Las tarjetas destacadas conservan el tamaño de imagen de Inicio */
+.seccion-productos .producto-enlace-img {
+    height: 11rem;
+}
+
+/* Sección de novedades y promociones */
+.seccion-noticias {
+    position: relative;
+    isolation: isolate;
+    background-color: var(--volcan-claro);
+    width: 100%;
+    padding: 4rem 0;
+}
+
+.seccion-noticias::before {
+    content: "";
+    position: absolute;
+    top: 3rem;
+    right: 0;
+    bottom: 3rem;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 0;
+    background: linear-gradient(rgba(0, 40, 70, 0.88), rgba(0, 40, 70, 0.88)), url("../../images/blogs/noticia-subsidio.jpg") center/cover no-repeat;
+    transition: top 0.4s ease, bottom 0.4s ease, width 0.4s ease, max-width 0.4s ease, border-radius 0.4s ease;
+}
+
+.seccion-noticias:hover::before,
+.seccion-noticias:focus-within::before {
+    top: 0;
+    bottom: 0;
+}
+
+.noticias-fondo {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    min-height: 24rem;
+    margin: 0 auto;
+    padding: 4.5rem 1.25rem;
+    text-align: center;
+    color: var(--volcan-blanco);
+}
+
+.contenedor-interno-noticias {
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+.contenedor-interno-noticias h2 {
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+}
+
+.grilla-promociones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5rem 0;
+    flex-direction: column;
+    gap: 0;
+}
+
+.promocion-item {
+    flex: 1;
+    max-width: 25rem;
+}
+
+.promo-borde {
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 0.0625rem solid rgba(255,255,255,0.3);
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.promo-espacio {
+    padding-left: 0;
+}
+
+.promocion-item .numero-promocion {
+    font-weight: 700;
+    font-size: 4.5rem;
+    margin-bottom: 0.625rem;
+    line-height: 1;
+}
+
+.noticia-fuente {
+    display: block;
+    margin-top: 2.5rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    text-align: center;
+    min-height: 1.5rem;
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (min-width: 768px) {
+    .hero-fondo {
+        min-height: 28rem;
+        padding-bottom: 7rem;
+    }
+
+    .hero-titulo {
+        font-size: 3.2rem;
+    }
+
+    .hero-bajada {
+        font-size: 1.1rem;
+    }
+
+    .hero-contenido {
+        width: 100%;
+    }
+
+    .tarjeta-hero {
+        padding: 2rem 2.5rem;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .tarjeta-cabecera h1 {
+        font-size: 1.7rem;
+    }
+
+    .buscador-principal {
+        flex-direction: unset;
+        gap: unset;
+    }
+
+    .buscador-principal input {
+        flex: 1;
+        border-radius: 0.3125rem 0 0 0.3125rem;
+        width: unset;
+    }
+
+    .buscador-principal .boton {
+        border-radius: 0 0.3125rem 0.3125rem 0;
+        width: unset;
+    }
+
+    .botones-hero {
+        gap: 1rem;
+        flex-direction: unset;
+    }
+
+    .botones-hero .boton {
+        width: unset;
+    }
+
+    .separador-gris {
+        padding-bottom: 11rem;
+    }
+
+    .seccion-noticias::before {
+        width: calc(100% - 2.5rem);
+        border-radius: 1rem;
+    }
+
+    .seccion-noticias:hover::before,
+    .seccion-noticias:focus-within::before {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .grilla-promociones {
+        flex-direction: unset;
+        gap: unset;
+    }
+
+    .promo-borde {
+        border-right: 0.0625rem solid rgba(255,255,255,0.4);
+        padding-right: 3rem;
+        border-bottom: unset;
+        padding-bottom: unset;
+        margin-bottom: unset;
+    }
+
+    .promo-espacio {
+        padding-left: 3rem;
+    }
+
+    .noticia-fuente {
+        margin-top: 2rem;
+        text-align: right;
+    }
+}
+
+/* Adaptabilidad para dispositivos grandes (Escritorio) */
+@media (min-width: 992px) {
+    .seccion-noticias::before {
+        max-width: 75rem;
+    }
+
+    .seccion-noticias:hover::before,
+    .seccion-noticias:focus-within::before {
+        max-width: 100%;
+    }
+
+    .hero-contenido {
+        max-width: 84rem;
+        margin: 0 auto;
+    }
+
+    .hero-titulo {
+        font-size: clamp(2.25rem, 3.6vw, 3.2rem);
+    }
+
+    .tarjeta-hero {
+        max-width: 48rem;
+    }
+
+    .botones-hero .boton {
+        font-size: 1rem;
+    }
+
+    .seccion-noticias::before {
+        top: 4rem;
+        bottom: 4rem;
+        max-width: 84rem;
+    }
+
+    .seccion-noticias:hover::before,
+    .seccion-noticias:focus-within::before {
+        top: 0;
+        bottom: 0;
+        max-width: 100%;
+    }
+}
