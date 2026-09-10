@@ -4,113 +4,107 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Gas El Volcán | Lista de Usuarios</title>
-        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-        <link rel="stylesheet" href="assets/css/admin-layout.css">
-        <link rel="stylesheet" href="assets/css/pages/admin-lista-usuarios.css">
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+        
+        <!-- Fuentes de Google -->
+        
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/admin-layout.css" />
+        <link rel="stylesheet" href="assets/css/utils/admin-tablas.css" />
+        <link rel="stylesheet" href="assets/css/pages/admin-lista-usuarios.css" />
     </head>
-        <body>
-        <!-- Control del menú administrativo para dispositivos móviles -->
-        <input type="checkbox" id="menu-admin-movil" class="admin-control-menu">
+    <body>
+        <!-- Control del menú móvil -->
+        <input type="checkbox" id="toggle-menu" class="toggle-menu-checkbox">
 
-        <!-- Cabecera compartida del panel de administración -->
+        <!-- Cabecera principal -->
         <header class="admin-cabecera">
-            <label for="menu-admin-movil" class="admin-boton-menu">
-                <span aria-hidden="true">☰</span>
-                <span>Menú administrativo</span>
-            </label>
-            <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
-            <h1>Gestión de usuarios</h1>
-            <a class="admin-enlace-sitio" href="index.html">Volver al sitio</a>
+            <div class="cabecera-izq">
+                <label for="toggle-menu" class="btn-hamburguesa">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </label>
+                <a href="admin-index.html" class="logo-admin">
+                    <img src="assets/images/favicon.ico" alt="Icono Gas El Volcán">
+                    <span>Admin Volcán</span>
+                </a>
+            </div>
+            <div class="cabecera-der">
+                <span class="saludo-admin">Hola, <strong>Administradora</strong></span>
+                <a href="login.html" class="btn-salir">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg> 
+                    Salir
+                </a>
+            </div>
         </header>
 
-        <div class="admin-estructura">
-            <!-- Navegación compartida entre módulos administrativos -->
-            <aside class="admin-sidebar" id="navegacion-admin">
-                <nav aria-label="Menú de administración">
-                    <h2>Menú principal</h2>
-                    <ul>
-                        <li><a href="admin-index.html">Inicio</a></li>
-                        <li class="admin-separador">Módulo productos</li>
-                        <li><a href="admin-lista-productos.html">Listar productos</a></li>
-                        <li><a href="admin-nuevo-producto.html">Nuevo producto</a></li>
-                        <li class="admin-separador">Módulo usuarios</li>
-                        <li><a href="admin-lista-usuarios.html" aria-current="page">Listar usuarios</a></li>
-                        <li><a href="admin-nuevo-usuario.html">Nuevo usuario</a></li>
-                    </ul>
-                </nav>
-            </aside>
+        <!-- Barra de navegación lateral -->
+        <aside class="admin-sidebar">
+            <nav class="nav-lateral">
+                <ul>
+                    <li><a href="admin-index.html">Inicio</a></li>
+                    
+                    <li class="separador">Módulo Productos</li>
+                    <li><a href="admin-lista-productos.html">Listar productos</a></li>
+                    <li><a href="admin-nuevo-producto.html">Nuevo producto</a></li>
+                    
+                    <li class="separador">Módulo Usuarios</li>
+                    <li><a href="admin-lista-usuarios.html" class="activo">Listar usuarios</a></li>
+                    <li><a href="admin-nuevo-usuario.html">Nuevo usuario</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-            <main class="admin-main">
-                <!-- Presentación del listado -->
-                <section class="panel-titulo" aria-labelledby="titulo-usuarios">
-                    <h2 id="titulo-usuarios">Lista de Usuarios</h2>
-                    <p>Consulta inicial de los perfiles que se administrarán en la sucursal virtual.</p>
-                    <a href="admin-nuevo-usuario.html" class="enlace-nuevo-usuario">Nuevo usuario</a>
-                </section>
+        <!-- Contenido dinámico principal -->
+        <main class="admin-main">
+            <div class="contenedor-vista">
+                
+                <!-- Cabecera del módulo -->
+                <div class="cabecera-modulo">
+                    <h1>Lista de Usuarios</h1>
+                    <a href="admin-nuevo-usuario.html" class="btn-nuevo-registro">NUEVO USUARIO</a>
+                </div>
 
-                <!-- Tabla preliminar con datos de demostración -->
-                <section class="panel-usuarios" aria-labelledby="subtitulo-usuarios">
-                    <h2 id="subtitulo-usuarios">Usuarios registrados</h2>
-                    <p class="mensaje-demo" id="aviso-demo">Datos de demostración, no corresponden a personas reales. La primera fila permite visualizar el formulario de edición de demostración. Los cambios todavía no se guardan.</p>
-
-                    <!-- Orientación para revisar todas las columnas desde el celular -->
-                    <p class="ayuda-desplazamiento" id="ayuda-tabla-usuarios">Desliza la tabla hacia los lados para revisar todos los datos y las acciones disponibles.</p>
-
-                    <div class="tabla-contenedor" role="region" aria-label="Tabla de usuarios, desplazamiento horizontal disponible" aria-describedby="ayuda-tabla-usuarios" tabindex="0">
-                        <table class="tabla-usuarios" aria-describedby="aviso-demo">
-                            <caption class="texto-oculto">Usuarios de ejemplo con datos personales, roles y acciones futuras</caption>
+                <!-- Contenedor de la tabla de datos -->
+                <section class="caja-tabla-admin">
+                    <div class="tabla-responsiva">
+                        <table class="tabla-datos">
                             <thead>
                                 <tr>
-                                    <th scope="col">RUT</th>
-                                    <th scope="col">Nombre completo</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Teléfono</th>
-                                    <th scope="col">Región</th>
-                                    <th scope="col">Comuna</th>
-                                    <th scope="col">Dirección</th>
-                                    <th scope="col">Rol</th>
-                                    <th scope="col">Acciones</th>
+                                    <th>RUT</th>
+                                    <th>Nombre Completo</th>
+                                    <th>Email</th>
+                                    <th>Teléfono</th>
+                                    <th>Región</th>
+                                    <th>Comuna</th>
+                                    <th>Calle y Número</th>
+                                    <th>Rol</th>
+                                    <th class="columna-centro">Acciones</th>
                                 </tr>
                             </thead>
+                            
+                            <!-- Inyección dinámica de usuarios -->
                             <tbody id="tbody-usuarios-admin">
-                                <tr>
-                                    <td>Pendiente</td>
-                                    <td>Perfil de administración</td>
-                                    <td>admin@example.com</td>
-                                    <td>Pendiente</td>
-                                    <td>Ñuble</td>
-                                    <td>Chillán</td>
-                                    <td>Pendiente</td>
-                                    <td><span class="etiqueta-rol rol-admin">Administrador</span></td>
-                                    <td><a href="admin-editar-usuario.html" class="enlace-editar" aria-label="Ver formulario de edición del perfil de administración (demostración)">Ver edición</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Pendiente</td>
-                                    <td>Perfil de ventas</td>
-                                    <td>ventas@example.com</td>
-                                    <td>Pendiente</td>
-                                    <td>Ñuble</td>
-                                    <td>Chillán</td>
-                                    <td>Pendiente</td>
-                                    <td><span class="etiqueta-rol rol-vendedor">Vendedor</span></td>
-                                    <td><button type="button" class="boton-accion" disabled aria-label="Editar perfil de ventas, no disponible">Editar</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Pendiente</td>
-                                    <td>Perfil de cliente</td>
-                                    <td>cliente@example.com</td>
-                                    <td>Pendiente</td>
-                                    <td>Ñuble</td>
-                                    <td>Chillán</td>
-                                    <td>Pendiente</td>
-                                    <td><span class="etiqueta-rol rol-cliente">Cliente</span></td>
-                                    <td><button type="button" class="boton-accion" disabled aria-label="Editar perfil de cliente, no disponible">Editar</button></td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </section>
-            </main>
-        </div>
+                
+            </div>
+        </main>
+
+        <!-- Datos maestros y motor de renderizado para las tablas de administración -->
+        <script defer src="assets/js/data/productosData.js"></script>
+        <script defer src="assets/js/data/usuariosData.js"></script>
+        <script defer src="assets/js/services/almacenamiento-local.js"></script>
+        <script defer src="assets/js/utils/validaciones.js"></script>
+        <script defer src="assets/js/admin/admin-tablas.js"></script>
     </body>
 </html>

@@ -63,17 +63,17 @@
                             <div class="grilla-campos">
                                 <div class="campo-formulario">
                                     <label for="codigo-producto">Código del producto <span aria-hidden="true">*</span></label>
-                                    <input id="codigo-producto" name="codigo" type="text" minlength="3" value="PROD-001" readonly required>
+                                    <input id="codigo-producto" name="codigo" type="text" minlength="3" readonly required>
                                 </div>
                                 <div class="campo-formulario">
                                     <label for="nombre-producto">Nombre del producto <span aria-hidden="true">*</span></label>
-                                    <input id="nombre-producto" name="nombre" type="text" maxlength="100" value="Cilindro de gas 11 kg" required>
+                                    <input id="nombre-producto" name="nombre" type="text" maxlength="100" required>
                                 </div>
                                 <div class="campo-formulario campo-completo">
                                     <label for="categoria-producto">Categoría <span aria-hidden="true">*</span></label>
                                     <select id="categoria-producto" name="categoria" required>
                                         <option value="" disabled>Selecciona una categoría</option>
-                                        <option value="cilindros" selected>Cilindros de gas</option>
+                                        <option value="cilindros">Cilindros de gas</option>
                                         <option value="reguladores">Reguladores</option>
                                         <option value="mangueras">Mangueras y conexiones</option>
                                         <option value="accesorios">Accesorios</option>
@@ -87,15 +87,15 @@
                             <div class="grilla-campos">
                                 <div class="campo-formulario">
                                     <label for="precio-residencial">Precio residencial (CLP) <span aria-hidden="true">*</span></label>
-                                    <input id="precio-residencial" name="precioResidencial" type="number" min="0" step="1" value="12000" required>
+                                    <input id="precio-residencial" name="precioResidencial" type="number" min="0" step="1" required>
                                 </div>
                                 <div class="campo-formulario">
                                     <label for="precio-comercial">Precio comercial (CLP) <span aria-hidden="true">*</span></label>
-                                    <input id="precio-comercial" name="precioComercial" type="number" min="0" step="1" value="11000" required>
+                                    <input id="precio-comercial" name="precioComercial" type="number" min="0" step="1" required>
                                 </div>
                                 <div class="campo-formulario campo-completo">
                                     <label for="stock-actual">Stock actual <span aria-hidden="true">*</span></label>
-                                    <input id="stock-actual" name="stock" type="number" min="0" step="1" value="80" required>
+                                    <input id="stock-actual" name="stock" type="number" min="0" step="1" required>
                                 </div>
                             </div>
                         </fieldset>
@@ -105,26 +105,32 @@
                             <div class="grilla-campos">
                                 <div class="campo-formulario campo-completo">
                                     <label for="descripcion-producto">Descripción del producto</label>
-                                    <textarea id="descripcion-producto" name="descripcion" maxlength="500" rows="4" placeholder="Características principales del producto...">Cilindro de gas de 11 kg para uso doméstico.</textarea>
+                                    <textarea id="descripcion-producto" name="descripcion" maxlength="500" rows="4" placeholder="Características principales del producto..."></textarea>
                                 </div>
                                 <div class="campo-formulario campo-completo">
                                     <label for="imagen-producto">Ruta de la imagen</label>
-                                    <input id="imagen-producto" name="imagen" type="text" value="assets/images/productos/cilindros/cilindro-11kg.svg">
+                                    <input id="imagen-producto" name="imagen" type="text">
                                     <small>La imagen se vinculará a una ruta local del proyecto.</small>
                                 </div>
                             </div>
                         </fieldset>
 
-                        <div id="mensaje-producto" class="mensaje-formulario" role="status">
+                        <div id="mensaje-producto" class="mensaje-formulario" role="status" aria-live="polite">
                             La actualización de productos todavía no está disponible.
                         </div>
 
+                        <a id="enlace-inventario-productos" href="admin-lista-productos.html" class="enlace-inventario-productos" hidden>Volver al inventario</a>
                         <div class="acciones-formulario">
-                            <button class="boton-guardar" type="submit" disabled>Guardar cambios</button>
+                            <button class="boton-guardar" type="submit">Guardar cambios</button>
                         </div>
                     </form>
                 </section>
             </main>
         </div>
+        <!-- Datos de inventario y lógica de creación y edición de productos -->
+        <script defer src="assets/js/data/productosData.js"></script>
+        <script defer src="assets/js/data/usuariosData.js"></script>
+        <script defer src="assets/js/services/almacenamiento-local.js"></script>
+        <script defer src="assets/js/admin/admin-formularios.js"></script>
     </body>
 </html>

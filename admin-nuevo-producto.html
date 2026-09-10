@@ -115,16 +115,22 @@
                             </div>
                         </fieldset>
 
-                        <div id="mensaje-producto" class="mensaje-formulario" role="status">
+                        <div id="mensaje-producto" class="mensaje-formulario" role="status" aria-live="polite">
                             La creación de productos todavía no está disponible.
                         </div>
 
+                        <a id="enlace-inventario-productos" href="admin-lista-productos.html" class="enlace-inventario-productos" hidden>Volver al inventario</a>
                         <div class="acciones-formulario">
-                            <button class="boton-guardar" type="submit" disabled>Guardar producto</button>
+                            <button class="boton-guardar" type="submit">Guardar producto</button>
                         </div>
                     </form>
                 </section>
             </main>
         </div>
+        <!-- Datos de inventario y lógica de creación y edición de productos -->
+        <script defer src="assets/js/data/productosData.js"></script>
+        <script defer src="assets/js/data/usuariosData.js"></script>
+        <script defer src="assets/js/services/almacenamiento-local.js"></script>
+        <script defer src="assets/js/admin/admin-formularios.js"></script>
     </body>
 </html>
