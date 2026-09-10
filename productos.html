@@ -94,7 +94,7 @@
                         <!-- Panel lateral de filtros -->
                         <aside class="columna-filtros">
                             <div class="cabecera-filtros-movil">
-                                <h2 class="fw-bold" style="display: flex; align-items: center; gap: 0.5rem; color: var(--volcan-oscuro);">
+                                <h2 class="fw-bold titulo-filtros-movil">
                                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                         <line x1="4" y1="21" x2="4" y2="14"></line>
                                         <line x1="4" y1="10" x2="4" y2="3"></line>
@@ -155,8 +155,8 @@
                                 </div>
                                 
                                 <!-- Opcion de impresion -->
-                                <button type="button" class="boton boton-imprimir" onclick="window.print()">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                                <button type="button" id="btn-imprimir-catalogo" class="boton boton-imprimir">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icono-impresion">
                                         <polyline points="6 9 6 2 18 2 18 9"></polyline>
                                         <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
                                         <rect x="6" y="14" width="12" height="8"></rect>
@@ -165,7 +165,7 @@
                                 </button>
                             </div>
 
-                            <p class="texto-resultados" id="texto-resultados-js">Mostrando resultados</p>
+                            <p class="texto-resultados oculto" id="texto-resultados-js">Mostrando resultados</p>
 
                             <!-- Grilla de productos -->
                             <div class="grilla-productos" id="grilla-productos-js"></div>

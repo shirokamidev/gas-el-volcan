@@ -125,6 +125,20 @@
     text-transform: uppercase;
 }
 
+/* Mensaje de estado vacio */
+.mensaje-vacio-blogs {
+    text-align: center;
+    width: 100%;
+    padding: 3rem;
+    color: #666666;
+    font-weight: 600;
+    display: none;
+}
+
+.mensaje-vacio-blogs.activo {
+    display: block;
+}
+
 /* Grilla de noticias */
 .grilla-blogs {
     display: grid;
@@ -147,6 +161,11 @@
 .tarjeta-blog:hover {
     transform: translateY(-4px);
     box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.08);
+}
+
+/* Clase para ocultar dinamicamente desde JS */
+.grilla-blogs .tarjeta-blog.oculto {
+    display: none;
 }
 
 /* Contenedor de imagen */

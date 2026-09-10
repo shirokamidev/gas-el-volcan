@@ -123,6 +123,39 @@
     text-align: justify;
 }
 
+/* Estados y validaciones de formulario */
+.mensaje-error-input {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 0.3rem;
+    text-align: justify;
+    display: none;
+}
+
+.mensaje-error-input.activo {
+    display: block;
+}
+
+.mensaje-estado-formulario {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+.mensaje-estado-formulario.activo {
+    display: block;
+}
+
+.mensaje-estado-formulario.exito {
+    color: var(--volcan-azul);
+}
+
+.mensaje-estado-formulario.error {
+    color: #dc3545;
+}
+
 /* Banner Sucursal Virtual */
 .seccion-banner-sucursal {
     background-color: #ffffff;
@@ -268,6 +301,7 @@ details p {
     text-align: justify;
 }
 
+/* Media queries para pantallas medianas */
 @media (max-width: 64rem) {
     #contacto,
     #faq {
@@ -298,6 +332,7 @@ details p {
     }
 }
 
+/* Media queries para dispositivos moviles */
 @media (max-width: 48rem) {
     .contacto-hero-fondo {
         padding: 3rem 1.25rem;
