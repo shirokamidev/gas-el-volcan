@@ -27,7 +27,7 @@ if (contenedorDetalle) {
             <li><strong>${escaparCaracteresHtml(etiqueta)}:</strong> ${escaparCaracteresHtml(valor)}</li>
         `).join("")
         let avisoStock = '<span class="alerta-stock">Sin stock disponible</span>'
-        if (producto.stock > 20) {
+        if (producto.stock > obtenerStockCritico(producto)) {
             avisoStock = `<span>Disponibles: ${producto.stock} unidades</span>`
         } else if (producto.stock > 0) {
             avisoStock = `<span class="alerta-stock">¡Últimas ${producto.stock} unidades!</span>`

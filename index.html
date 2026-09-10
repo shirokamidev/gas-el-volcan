@@ -3,17 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Gas El Volcán, distribuidora de gas para hogares de la Región de Ñuble.">
         <title>Gas El Volcán | Inicio</title>
-        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-        <link rel="stylesheet" href="assets/css/layout.css">
-        <link rel="stylesheet" href="assets/css/pages/index.css">
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+        
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/layout.css" />
+        <link rel="stylesheet" href="assets/css/pages/index.css" />
     </head>
     <body>
-        <!-- Control accesible del menú móvil -->
-        <input type="checkbox" id="menu-hamburguesa" class="toggle-hamburguesa" aria-controls="enlaces-principales" aria-label="Mostrar u ocultar menú principal">
+        <!-- Control del menú móvil -->
+        <input type="checkbox" id="menu-hamburguesa" class="toggle-hamburguesa">
 
-        <!-- Cabecera principal de la empresa -->
+        <!-- Cabecera principal -->
         <header class="cabecera-principal">
             <div class="barra-superior">
                 <div class="contenedor contenido-barra-superior">
@@ -22,136 +23,174 @@
                 </div>
             </div>
 
-            <nav class="barra-navegacion contenedor" aria-label="Navegación principal">
-                <a href="index.html" class="enlace-logo" aria-label="Gas El Volcán, inicio">
-                    <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" class="logo-navegacion" width="180">
+            <nav class="barra-navegacion contenedor">
+                <a href="index.html" class="enlace-logo">
+                    <img src="assets/images/logo-volcan.svg" alt="Logo Gas El Volcán" class="logo-navegacion" />
                 </a>
-
-                <!-- Desplegable básico preparado para futuras opciones -->
-                <label for="menu-hamburguesa" class="icono-hamburguesa" aria-label="Abrir o cerrar navegación">
-                    <span class="icono-abrir" aria-hidden="true">☰</span>
-                    <span class="icono-cerrar" aria-hidden="true">×</span>
+                
+                <label for="menu-hamburguesa" class="icono-hamburguesa">
+                    <span class="icono-abrir">&#9776;</span>
+                    <span class="icono-cerrar">&#10005;</span>
                 </label>
-
-                <ul class="enlaces-navegacion" id="enlaces-principales">
+                
+                <ul class="enlaces-navegacion">
                     <li class="grupo-navegacion-principal">
                         <ul class="enlaces-principales">
-                            <li><a href="index.html" aria-current="page">Inicio</a></li>
-                            <li><a href="catalogo.html">Productos</a></li>
-                            <li><a href="sucursales.html">Sucursales</a></li>
-                            <li><a href="nosotros.html">Nosotros</a></li>
-                            <li><a href="blogs.html">Blogs</a></li>
-                            <li><a href="contacto.html">Contacto</a></li>
+                            <li><a href="index.html" class="activo" aria-current="page">INICIO</a></li>
+                            <li><a href="catalogo.html">PRODUCTOS</a></li>
+                            <li><a href="sucursales.html">SUCURSALES</a></li>
+                            <li><a href="nosotros.html">NOSOTROS</a></li>
+                            <li><a href="blogs.html">BLOGS</a></li>
+                            <li><a href="contacto.html">CONTACTO</a></li>
                         </ul>
                     </li>
-                    <li class="enlace-cuenta"><a href="login.html">Sucursal Virtual</a></li>
-                    <li class="enlace-carrito"><a href="carrito.html">Carrito (0)</a></li>
+
+                    <li class="menu-desplegable ocultar-en-movil">
+                        <input type="checkbox" id="activar-sucursal" class="toggle-desplegable">
+                        <label for="activar-sucursal" class="boton boton-oscuro">SUCURSAL VIRTUAL</label>
+                        <ul class="sub-menu">
+                            <li><a href="login.html">Iniciar Sesión</a></li>
+                            <li class="divisor"></li>
+                            <li><a href="registro.html">Registrarse</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="ocultar-en-pc"><a href="login.html">INICIAR SESIÓN</a></li>
+                    <li class="ocultar-en-pc"><a href="registro.html">REGISTRARSE</a></li>
+                    
+                    <li><a href="carrito.html" class="icono-carrito fw-bold">CARRITO (0)</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
-            <!-- Presentación inicial de la distribuidora -->
-            <section class="seccion-hero" aria-labelledby="titulo-inicio">
-                <img
-                    src="assets/images/hero-volcan.jpg"
-                    alt="Distribución de gas para el hogar"
-                    class="imagen-hero"
-                    width="1200"
-                >
-
-                <div class="hero-contenido">
-                    <h1 id="titulo-inicio">¡Bienvenido a Gas El Volcán!</h1>
-                    <p>Llevando la energía que tu hogar necesita, con seguridad y rapidez en cada entrega.</p>
-                    <a href="#productos" class="boton boton-naranja">Conoce nuestros productos</a>
+            <!-- Hero principal -->
+            <section class="seccion-hero">
+                <div class="hero-fondo">
+                    <div class="hero-contenido">
+                        <h2 class="hero-titulo">¡Bienvenido a Gas El Volcán!</h2>
+                        <p class="hero-bajada limite-ancho">Llevando la energía que tu hogar necesita, con seguridad y rapidez en cada entrega.</p>
+                    </div>
                 </div>
-
-                <!-- Accesos iniciales para consultar puntos de atención y productos -->
-                <div class="hero-tarjeta-contenedor">
-                    <article class="hero-tarjeta" aria-labelledby="titulo-pedido-rapido">
-                        <h2 id="titulo-pedido-rapido">Gas confiable a tu puerta. Pide fácil y rápido.</h2>
-
-                        <div class="hero-buscador">
-                            <label for="buscador-punto-volcan">Busca tu Punto Volcán</label>
-                            <div class="hero-buscador-controles">
-                                <input
-                                    id="buscador-punto-volcan"
-                                    name="punto-volcan"
-                                    type="search"
-                                    placeholder="Ingresa tu comuna o dirección"
-                                    aria-describedby="aviso-punto-volcan"
-                                    disabled
-                                >
-                                <a href="sucursales.html" class="hero-boton-buscar">Ver puntos de atención</a>
+                
+                <!-- Contenedor de la tarjeta principal -->
+                <div class="contenedor-tarjeta-hero">
+                    <article class="tarjeta-hero limite-ancho">
+                        <div class="tarjeta-cabecera">
+                            <h1>
+                                <span class="texto-bloque">Gas confiable a tu puerta.</span>
+                                <span class="texto-bloque">Pide fácil y rápido.</span>
+                            </h1>
+                        </div>
+                        
+                        <div class="tarjeta-cuerpo">
+                            <div class="buscador-principal">
+                                <input type="text" id="input-buscador-index" placeholder="Busca tu Punto Volcán o inicia sesión..." aria-label="Buscar Punto Volcán">
+                                <a href="sucursales.html" id="btn-buscador-index" class="boton boton-naranja">BUSCAR</a>
                             </div>
-                            <p class="hero-buscador-aviso" id="aviso-punto-volcan">La búsqueda por dirección estará disponible próximamente.</p>
-                        </div>
-
-                        <div class="hero-acciones">
-                            <a href="catalogo.html" class="hero-accion-principal">Hacer pedido rápido</a>
-                            <a href="login.html" class="hero-accion-secundaria">Iniciar sesión</a>
+                            <div class="botones-hero">
+                                <a href="catalogo.html" class="boton boton-blanco">HACER PEDIDO RÁPIDO</a>
+                                <a href="login.html" class="boton boton-naranja" data-accion="rastrear-pedido">RASTREAR PEDIDO</a>
+                            </div>
                         </div>
                     </article>
                 </div>
+
+                <!-- Separador visual -->
+                <div class="separador-gris"></div>
             </section>
 
-            <!-- Primera presentación estática del catálogo -->
-            <section class="seccion-productos" id="productos" aria-labelledby="titulo-productos">
-                <h2 id="titulo-productos">Nuestros productos</h2>
-
-                <div class="grilla-productos">
-                    <article class="tarjeta-producto">
-                        <img src="assets/images/productos/cilindros/cilindro-5kg.svg" alt="Cilindro de gas de 5 kilos" width="220">
-                        <h3>Cilindro de gas 5 kg</h3>
-                    </article>
-
-                    <article class="tarjeta-producto">
-                        <img src="assets/images/productos/cilindros/cilindro-11kg.svg" alt="Cilindro de gas de 11 kilos" width="220">
-                        <h3>Cilindro de gas 11 kg</h3>
-                    </article>
-
-                    <article class="tarjeta-producto">
-                        <img src="assets/images/productos/cilindros/cilindro-15kg.svg" alt="Cilindro de gas de 15 kilos" width="220">
-                        <h3>Cilindro de gas 15 kg</h3>
-                    </article>
-                </div>
+            <!-- Listado de productos destacados -->
+            <section class="seccion-productos contenedor">
+                <h2>Nuestros Productos Destacados</h2>
+                
+                <!-- Grilla inyectada de forma dinámica mediante JS -->
+                <div class="grilla-productos" id="grilla-destacados-js"></div>
+                
+                <a href="catalogo.html" class="boton boton-borde-oscuro boton-redondeado">VER MÁS PRODUCTOS</a>
             </section>
 
-            <!-- Primer espacio de novedades y consejos -->
-            <section class="seccion-noticias" id="noticias" aria-labelledby="titulo-noticias">
-                <div class="contenedor-noticias">
-                    <header class="encabezado-noticias">
-                        <h2 id="titulo-noticias">Noticias y consejos para tu hogar</h2>
-                        <p>Encuentra recomendaciones útiles para el uso cotidiano del gas.</p>
-                    </header>
-
-                    <div class="grilla-noticias">
-                        <article class="tarjeta-noticia">
-                            <h3>Revisa tu instalación de gas</h3>
-                            <p>Comprueba periódicamente el estado de la manguera y del regulador, y sigue siempre las indicaciones de seguridad.</p>
-                        </article>
-
-                        <article class="tarjeta-noticia">
-                            <h3>Elige el cilindro adecuado</h3>
-                            <p>Conoce los formatos disponibles y selecciona el que mejor se adapte a las necesidades de tu hogar.</p>
-                        </article>
+            <!-- Promociones y noticias -->
+            <section class="seccion-noticias">
+                <div class="noticias-fondo">
+                    <div class="contenedor relativo contenedor-interno-noticias">
+                        <h2>CONSEJOS PARA EL SUBSIDIO DE GAS Y AHORRO EN EL HOGAR</h2>
+                        
+                        <div class="grilla-promociones">
+                            <article class="promocion-item promo-borde">
+                                <p class="texto-blanco numero-promocion">15%</p>
+                                <p>de descuento pagando con tarjetas asociadas en tu primera compra.</p>
+                            </article>
+                            <article class="promocion-item promo-espacio">
+                                <p class="texto-blanco numero-promocion">84%</p>
+                                <p>de las familias de Chile, eligen gas licuado para su calefacción.</p>
+                            </article>
+                        </div>
+                        
+                        <a href="blogs.html" class="boton boton-borde-blanco boton-redondeado">CONOCE MÁS NOTICIAS Y CONSEJOS</a>
+                        
+                        <small class="noticia-fuente">Fuente: Ministerio de Energía, Gobierno de Chile, 2026.</small>
                     </div>
                 </div>
             </section>
-
-            <!-- Información básica de atención -->
-            <section class="seccion-contacto" id="contacto" aria-labelledby="titulo-contacto">
-                <h2 id="titulo-contacto">Estamos para ayudarte</h2>
-                <p>Contáctanos para conocer nuestros puntos de atención y productos disponibles.</p>
-                <a href="tel:800509000">Llamar a Atención al Cliente</a>
-            </section>
         </main>
 
-        <!-- Información corporativa de cierre -->
+        <!-- Pie de página -->
         <footer class="pie-pagina">
-            <p>© 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
+            <div class="contenedor grilla-pie">
+                <div class="pie-columna">
+                    <h6>Nuestra Empresa</h6>
+                    <ul>
+                        <li><a href="nosotros.html#quienes-somos">Historia</a></li>
+                        <li><a href="nosotros.html#mision-vision">Misión y Visión</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Atención al Cliente</h6>
+                    <ul>
+                        <li><a href="contacto.html#contacto">Contacto y Soporte</a></li>
+                        <li><a href="contacto.html#faq">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Sucursal Virtual</h6>
+                    <ul>
+                        <li><a href="login.html">Iniciar Sesión</a></li>
+                        <li><a href="registro.html">Registrarse</a></li>
+                        <li><a href="sucursales.html" data-accion="rastrear-pedido">Rastrear Pedido</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Términos y Condiciones</h6>
+                    <ul>
+                        <li><a href="legales.html#terminos">Términos del Servicio</a></li>
+                        <li><a href="legales.html#privacidad">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                
+                <div class="pie-columna pie-boletin">
+                    <h6>Suscríbete para recibir ofertas exclusivas.</h6>
+                    <form class="buscador-footer" data-formulario-suscripcion novalidate>
+                        <input type="email" name="correoSuscripcion" placeholder="Ingresa tu correo" aria-label="Correo para suscribirse" aria-describedby="mensaje-suscripcion" maxlength="100" required>
+                        <button type="submit" class="boton boton-naranja texto-blanco">Suscríbete</button>
+                    </form>
+                    <p id="mensaje-suscripcion" class="mensaje-estado-formulario error mensaje-suscripcion" role="alert" aria-live="polite"></p>
+                    
+                    <h6>Medios de Pago</h6>
+                    <div class="pie-pagos">
+                        <img src="assets/images/pagos/visa.svg" alt="Visa" class="pago-icono" />
+                        <img src="assets/images/pagos/mastercard.svg" alt="Mastercard" class="pago-icono" />
+                        <img src="assets/images/pagos/amex.svg" alt="AMEX" class="pago-icono" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contenedor pie-copyright">
+                <p>&copy; 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
+            </div>
         </footer>
-        <!-- Interacciones compartidas de la navegación pública -->
+
+        <!-- Carga del controlador de Inicio -->
         <script defer src="assets/js/app.js"></script>
     </body>
 </html>

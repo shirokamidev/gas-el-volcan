@@ -4,19 +4,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Gas El Volcán | Sucursales</title>
-        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-        <link rel="stylesheet" href="assets/css/layout.css">
-        <link rel="stylesheet" href="assets/css/pages/sucursales.css">
-        <!-- Datos geográficos y búsqueda local de puntos de atención -->
-        <script defer src="assets/js/data/sucursalesData.js"></script>
-        <script defer src="assets/js/utils/ubicaciones.js"></script>
-        <script defer src="assets/js/pages/sucursales.js"></script>
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+        
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/layout.css" />
+        <link rel="stylesheet" href="assets/css/pages/sucursales.css" />
     </head>
     <body>
-        <!-- Control accesible del menú móvil -->
-        <input type="checkbox" id="menu-hamburguesa" class="toggle-hamburguesa" aria-controls="enlaces-principales" aria-label="Mostrar u ocultar menú principal">
+        <!-- Control del menú móvil -->
+        <input type="checkbox" id="menu-hamburguesa" class="toggle-hamburguesa">
 
-        <!-- Cabecera principal de la empresa -->
+        <!-- Cabecera principal -->
         <header class="cabecera-principal">
             <div class="barra-superior">
                 <div class="contenedor contenido-barra-superior">
@@ -25,217 +23,427 @@
                 </div>
             </div>
 
-            <nav class="barra-navegacion contenedor" aria-label="Navegación principal">
-                <a href="index.html" class="enlace-logo" aria-label="Gas El Volcán, inicio">
-                    <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" class="logo-navegacion" width="180">
+            <nav class="barra-navegacion contenedor">
+                <a href="index.html" class="enlace-logo">
+                    <img src="assets/images/logo-volcan.svg" alt="Logo Gas El Volcán" class="logo-navegacion" />
                 </a>
-
-                <!-- Desplegable básico preparado para futuras opciones -->
-                <label for="menu-hamburguesa" class="icono-hamburguesa" aria-label="Abrir o cerrar navegación">
-                    <span class="icono-abrir" aria-hidden="true">☰</span>
-                    <span class="icono-cerrar" aria-hidden="true">×</span>
+                
+                <label for="menu-hamburguesa" class="icono-hamburguesa">
+                    <span class="icono-abrir">&#9776;</span>
+                    <span class="icono-cerrar">&#10005;</span>
                 </label>
-
-                <ul class="enlaces-navegacion" id="enlaces-principales">
+                
+                <ul class="enlaces-navegacion">
                     <li class="grupo-navegacion-principal">
                         <ul class="enlaces-principales">
-                            <li><a href="index.html">Inicio</a></li>
-                            <li><a href="catalogo.html">Productos</a></li>
-                            <li><a href="sucursales.html" aria-current="page">Sucursales</a></li>
-                            <li><a href="nosotros.html">Nosotros</a></li>
-                            <li><a href="blogs.html">Blogs</a></li>
-                            <li><a href="contacto.html">Contacto</a></li>
+                            <li><a href="index.html">INICIO</a></li>
+                            <li><a href="catalogo.html">PRODUCTOS</a></li>
+                            <li><a href="sucursales.html" class="activo">SUCURSALES</a></li>
+                            <li><a href="nosotros.html">NOSOTROS</a></li>
+                            <li><a href="blogs.html">BLOGS</a></li>
+                            <li><a href="contacto.html">CONTACTO</a></li>
                         </ul>
                     </li>
-                    <li class="enlace-cuenta"><a href="login.html">Sucursal Virtual</a></li>
-                    <li class="enlace-carrito"><a href="carrito.html">Carrito (0)</a></li>
+
+                    <li class="menu-desplegable ocultar-en-movil">
+                        <input type="checkbox" id="activar-sucursal" class="toggle-desplegable">
+                        <label for="activar-sucursal" class="boton boton-oscuro">SUCURSAL VIRTUAL</label>
+                        <ul class="sub-menu">
+                            <li><a href="login.html">Iniciar Sesión</a></li>
+                            <li class="divisor"></li>
+                            <li><a href="registro.html">Registrarse</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="ocultar-en-pc"><a href="login.html">INICIAR SESIÓN</a></li>
+                    <li class="ocultar-en-pc"><a href="registro.html">REGISTRARSE</a></li>
+                    
+                    <li><a href="carrito.html" class="icono-carrito fw-bold">CARRITO (0)</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
-            <!-- Banner de presentación -->
-            <section class="banner-sucursales" aria-label="Puntos Volcán">
+            <!-- Banner informativo -->
+            <section class="seccion-banner-gris">
                 <div class="contenedor">
-                    <img src="assets/images/sucursales/banner-sucursales.png" alt="Siempre hay un Punto Volcán cerca de ti">
+                    <img src="assets/images/sucursales/banner-sucursales.png" alt="Siempre hay un Punto Volcán cerca de ti" class="imagen-banner">
                 </div>
             </section>
 
-            <!-- Formulario visual para la futura búsqueda -->
-            <section class="seccion-buscador contenedor" aria-labelledby="titulo-buscador">
-                <div class="introduccion-buscador">
-                    <h1 id="titulo-buscador">Encuentra tu Punto Volcán más cercano</h1>
-                    <p>Conoce las zonas de atención incluidas en nuestro directorio.</p>
-                </div>
-
-                <form class="formulario-buscador" aria-describedby="aviso-buscador">
-                    <div class="grupo-campo">
-                        <label for="region">Región</label>
-                        <select id="region" name="region" required>
-                            <option value="" selected>Selecciona tu región...</option>
+            <!-- Buscador de sucursales -->
+            <section id="seccion-busqueda" class="seccion-buscador contenedor">
+                <h1 class="titulo-buscador fw-bold">Encuentra tu Punto Volcán más cercano</h1>
+                <div class="formulario-buscador">
+                    <div class="grupo-select">
+                        <select id="region" aria-label="Región">
+                            <option value="" disabled selected>Selecciona tu región...</option>
                             <option value="nuble">Región de Ñuble</option>
                             <option value="biobio">Región del Biobío</option>
                         </select>
                     </div>
-                    <div class="grupo-campo">
-                        <label for="comuna">Comuna</label>
-                        <select id="comuna" name="comuna" required disabled>
-                            <option value="" selected>Selecciona tu comuna...</option>
+                    <div class="grupo-select">
+                        <select id="comuna" aria-label="Comuna">
+                            <option value="" disabled selected>Selecciona tu comuna...</option>
                         </select>
                     </div>
-                    <button type="submit" id="btn-buscar-sucursal">Buscar sucursal</button>
-                    <button type="button" id="reset-sucursal" class="boton-restablecer-sucursal">Mostrar todas</button>
-                </form>
-                <p id="aviso-buscador" class="aviso-buscador" role="status" aria-live="polite">Selecciona una región y una comuna para encontrar zonas de atención.</p>
-            </section>
-
-            <!-- Directorio ampliado con horarios y puntos de atención -->
-            <section class="seccion-directorio contenedor" aria-labelledby="titulo-directorio">
-                <h2 id="titulo-directorio">Zonas de atención</h2>
-                <div class="distribucion-directorio">
-                    <div class="lista-zonas">
-                        <article class="tarjeta-zona">
-                            <h3>Zona Centro</h3>
-                            <p>Chillán: sectores centro, norte y sur.</p>
-                            <span class="etiqueta-zona">Región de Ñuble</span>
-                            <details>
-                                <summary>Ver horarios y puntos de atención</summary>
-                                <p><strong>Atención:</strong> Lunes a sábado de 08:00 a 20:00 hrs.</p>
-                                <p><strong>Tiempo estimado:</strong> 1 a 3 horas.</p>
-                                <ul>
-                                    <li><strong>Punto Volcán Centro:</strong> Calle Volcán 125, Chillán.</li>
-                                </ul>
-                                <a href="catalogo.html">Realizar pedido online</a>
-                            </details>
-                        </article>
-                        <article class="tarjeta-zona">
-                            <h3>Zona Oriente</h3>
-                            <p>Chillán: sector oriente y Chillán Viejo.</p>
-                            <span class="etiqueta-zona">Región de Ñuble</span>
-                            <details>
-                                <summary>Ver horarios y puntos de atención</summary>
-                                <p><strong>Atención:</strong> Lunes a viernes de 08:00 a 18:00 hrs.</p>
-                                <p><strong>Tiempo estimado:</strong> 2 a 4 horas.</p>
-                                <ul>
-                                    <li><strong>Punto Volcán Oriente:</strong> Pasaje Cordillera 340, Chillán.</li>
-                                    <li><strong>Punto Volcán Chillán Viejo:</strong> Calle Las Araucarias 215, Chillán Viejo.</li>
-                                </ul>
-                                <a href="catalogo.html">Realizar pedido online</a>
-                            </details>
-                        </article>
-                        <article class="tarjeta-zona">
-                            <h3>Zona Rural</h3>
-                            <p>El Carmen, Pinto y San Ignacio.</p>
-                            <span class="etiqueta-zona">Región de Ñuble</span>
-                            <details>
-                                <summary>Ver horarios y puntos de atención</summary>
-                                <p><strong>Atención:</strong> Martes y jueves de 08:00 a 16:00 hrs.</p>
-                                <p><strong>Tiempo estimado:</strong> 3 a 6 horas.</p>
-                                <ul>
-                                    <li><strong>Punto Volcán Pinto:</strong> Calle Los Copihues 180, Pinto.</li>
-                                    <li><strong>Punto Volcán El Carmen:</strong> Pasaje Las Vertientes 290, El Carmen.</li>
-                                    <li><strong>Punto Volcán San Ignacio:</strong> Calle Los Robles 145, San Ignacio.</li>
-                                </ul>
-                                <a href="catalogo.html">Realizar pedido online</a>
-                            </details>
-                        </article>
-                        <article class="tarjeta-zona">
-                            <h3>Zona Sur</h3>
-                            <p>Bulnes y Quillón.</p>
-                            <span class="etiqueta-zona">Región de Ñuble</span>
-                            <details>
-                                <summary>Ver horarios y puntos de atención</summary>
-                                <p><strong>Atención:</strong> Miércoles de 08:00 a 16:00 hrs.</p>
-                                <p><strong>Tiempo estimado:</strong> 4 a 6 horas.</p>
-                                <ul>
-                                    <li><strong>Punto Volcán Bulnes:</strong> Calle Las Camelias 310, Bulnes.</li>
-                                    <li><strong>Punto Volcán Quillón:</strong> Pasaje El Mirador 220, Quillón.</li>
-                                </ul>
-                                <a href="catalogo.html">Realizar pedido online</a>
-                            </details>
-                        </article>
-                        <article class="tarjeta-zona">
-                            <h3>Zona Comercial</h3>
-                            <p>Parques industriales y locales comerciales.</p>
-                            <span class="etiqueta-zona">Región de Ñuble</span>
-                            <details>
-                                <summary>Ver horarios y puntos de atención</summary>
-                                <p><strong>Atención:</strong> Lunes a viernes de 07:00 a 17:00 hrs.</p>
-                                <p><strong>Tiempo estimado:</strong> Según agenda.</p>
-                                <ul>
-                                    <li><strong>Punto Volcán Comercial:</strong> Calle Los Mañíos 455, Chillán.</li>
-                                </ul>
-                                <a href="catalogo.html">Realizar pedido online</a>
-                            </details>
-                        </article>
-                        <article class="tarjeta-zona">
-                            <h3>Zona Concepción</h3>
-                            <p>Concepción.</p>
-                            <span class="etiqueta-zona">Región del Biobío</span>
-                            <details>
-                                <summary>Ver horarios y puntos de atención</summary>
-                                <p><strong>Atención:</strong> Lunes a sábado de 08:00 a 19:00 hrs.</p>
-                                <p><strong>Tiempo estimado:</strong> 2 a 4 horas.</p>
-                                <ul>
-                                    <li><strong>Punto Volcán Concepción:</strong> Calle Los Avellanos 235, Concepción.</li>
-                                </ul>
-                                <a href="catalogo.html">Realizar pedido online</a>
-                            </details>
-                        </article>
-                        <article class="tarjeta-zona">
-                            <h3>Zona Talcahuano</h3>
-                            <p>Talcahuano.</p>
-                            <span class="etiqueta-zona">Región del Biobío</span>
-                            <details>
-                                <summary>Ver horarios y puntos de atención</summary>
-                                <p><strong>Atención:</strong> Lunes a viernes de 09:00 a 18:00 hrs.</p>
-                                <p><strong>Tiempo estimado:</strong> 2 a 5 horas.</p>
-                                <ul>
-                                    <li><strong>Punto Volcán Talcahuano:</strong> Pasaje El Faro 170, Talcahuano.</li>
-                                </ul>
-                                <a href="catalogo.html">Realizar pedido online</a>
-                            </details>
-                        </article>
-                        <article class="tarjeta-zona">
-                            <h3>Zona Los Ángeles</h3>
-                            <p>Los Ángeles.</p>
-                            <span class="etiqueta-zona">Región del Biobío</span>
-                            <details>
-                                <summary>Ver horarios y puntos de atención</summary>
-                                <p><strong>Atención:</strong> Lunes a sábado de 08:30 a 18:30 hrs.</p>
-                                <p><strong>Tiempo estimado:</strong> 2 a 5 horas.</p>
-                                <ul>
-                                    <li><strong>Punto Volcán Los Ángeles:</strong> Calle Los Maitenes 380, Los Ángeles.</li>
-                                </ul>
-                                <a href="catalogo.html">Realizar pedido online</a>
-                            </details>
-                        </article>
-                    </div>
-
-                    <div class="contenedor-mapa">
-                        <h3>Mapa referencial de Chillán</h3>
-                        <div class="marco-mapa">
-                            <iframe
-                                title="Mapa referencial de la ciudad de Chillán"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102029.35123067205!2d-72.17935497931326!3d-36.60830491790409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9668d7cc91e57199%3A0x6431e5f88421b068!2sChill%C3%A1n%2C%20B%C3%ADo%20B%C3%ADo!5e0!3m2!1ses-419!2scl!4v1700000000000!5m2!1ses-419!2scl"
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                        <p class="nota-mapa">El mapa muestra la ciudad como referencia. Las ubicaciones individuales de los puntos se incorporarán más adelante.</p>
-                    </div>
+                    <button type="button" id="btn-buscar-sucursal" class="boton boton-naranja boton-buscar">Buscar</button>
                 </div>
             </section>
+
+            <!-- Directorio y mapa interactivo -->
+            <section class="seccion-mapa-directorio contenedor">
+                <div class="grilla-directorio">
+                    
+                    <!-- Columna del mapa -->
+                    <div class="columna-mapa">
+                        <p class="aviso-mapa-referencia">
+                            Mapa de muestra
+                            <span>Leaflet en una próxima versión</span>
+                        </p>
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102029.35123067205!2d-72.17935497931326!3d-36.60830491790409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9668d7cc91e57199%3A0x6431e5f88421b068!2sChill%C3%A1n%2C%20B%C3%ADo%20B%C3%ADo!5e0!3m2!1ses-419!2scl!4v1700000000000!5m2!1ses-419!2scl" 
+                            width="100%" height="100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de sucursales Gas El Volcán">
+                        </iframe>
+                    </div>
+
+                    <!-- Columna de navegación de sucursales -->
+                    <aside class="columna-lista">
+                        
+                        <!-- Controladores de estado ocultos -->
+                        <input type="radio" name="sucursal" id="reset-sucursal" class="radio-oculto" checked aria-label="Restablecer búsqueda de sucursales">
+                        <input type="radio" name="sucursal" id="suc-1" class="radio-oculto">
+                        <input type="radio" name="sucursal" id="suc-2" class="radio-oculto">
+                        <input type="radio" name="sucursal" id="suc-3" class="radio-oculto">
+                        <input type="radio" name="sucursal" id="suc-4" class="radio-oculto">
+                        <input type="radio" name="sucursal" id="suc-5" class="radio-oculto">
+                        <input type="radio" name="sucursal" id="suc-6" class="radio-oculto">
+                        <input type="radio" name="sucursal" id="suc-7" class="radio-oculto">
+                        <input type="radio" name="sucursal" id="suc-8" class="radio-oculto">
+
+                        <!-- Lista general de zonas -->
+                        <nav class="vista-lista-general" id="lista-zonas-sucursales" aria-label="Zonas de atención">
+                            <label for="suc-1" class="tarjeta-resumen">
+                                <h3 class="titulo-naranja">Zona Centro</h3>
+                                <p class="texto-direccion">Chillán (sectores centro, norte y sur)</p>
+                            </label>
+                            
+                            <label for="suc-2" class="tarjeta-resumen">
+                                <h3 class="titulo-naranja">Zona Oriente</h3>
+                                <p class="texto-direccion">Chillán (sector oriente), Chillán Viejo</p>
+                            </label>
+                            
+                            <label for="suc-3" class="tarjeta-resumen">
+                                <h3 class="titulo-naranja">Zona Rural</h3>
+                                <p class="texto-direccion">El Carmen, Pinto, San Ignacio</p>
+                            </label>
+                            
+                            <label for="suc-4" class="tarjeta-resumen">
+                                <h3 class="titulo-naranja">Zona Sur</h3>
+                                <p class="texto-direccion">Bulnes, Quillón</p>
+                            </label>
+
+                            <label for="suc-5" class="tarjeta-resumen">
+                                <h3 class="titulo-naranja">Zona Comercial</h3>
+                                <p class="texto-direccion">Parques industriales y locales comerciales</p>
+                            </label>
+                            <label for="suc-6" class="tarjeta-resumen" data-region="biobio">
+                                <h3 class="titulo-naranja">Zona Concepción</h3>
+                                <p class="texto-direccion">Concepción</p>
+                            </label>
+                            <label for="suc-7" class="tarjeta-resumen" data-region="biobio">
+                                <h3 class="titulo-naranja">Zona Talcahuano</h3>
+                                <p class="texto-direccion">Talcahuano</p>
+                            </label>
+                            <label for="suc-8" class="tarjeta-resumen" data-region="biobio">
+                                <h3 class="titulo-naranja">Zona Los Ángeles</h3>
+                                <p class="texto-direccion">Los Ángeles</p>
+                            </label>
+                        </nav>
+
+                        <!-- Contenedor de detalles por zona -->
+                        <section class="vistas-detalles">
+                            
+                            <article class="detalle-card" id="detalle-1">
+                                <header class="tarjeta-detalle-encabezado">
+                                    <h3 class="titulo-naranja">Zona Centro</h3>
+                                    <p class="texto-direccion">Chillán (sectores centro, norte y sur)</p>
+                                </header>
+                                <section class="tarjeta-detalle-cuerpo">
+                                    <h4 class="fw-bold">Haz tu pedido de gas aquí:</h4>
+                                    <p class="dato-despacho">Lunes a Sábado | 08:00 a 20:00 hrs.</p>
+                                    <p class="dato-despacho">Tiempo estimado: 1 a 3 horas</p>
+
+                                    <!-- Puntos de atención de la zona -->
+                                    <div class="seccion-puntos-atencion">
+                                        <h4 class="fw-bold">Puntos de atención:</h4>
+                                        <ul class="lista-puntos-atencion">
+                                            <li class="punto-atencion"><strong>Punto Volcán Centro:</strong> <span class="texto-direccion">Calle Volcán 125, Chillán</span></li>
+                                        </ul>
+                                    </div>
+
+                                    <address class="info-contacto-detalle">
+                                        <a href="catalogo.html" class="enlace-azul">Realizar pedido online</a>
+                                        <span class="texto-naranja fw-bold">Call Center: 800 20 9000</span>
+                                        <span class="texto-rojo fw-bold">Emergencia: 800 50 9111</span>
+                                    </address>
+                                    <a href="#lista-zonas-sucursales" class="enlace-volver-zonas">&lt; Ir atrás</a>
+                                </section>
+                            </article>
+
+                            <article class="detalle-card" id="detalle-2">
+                                <header class="tarjeta-detalle-encabezado">
+                                    <h3 class="titulo-naranja">Zona Oriente</h3>
+                                    <p class="texto-direccion">Chillán (sector oriente), Chillán Viejo</p>
+                                </header>
+                                <section class="tarjeta-detalle-cuerpo">
+                                    <h4 class="fw-bold">Haz tu pedido de gas aquí:</h4>
+                                    <p class="dato-despacho">Lunes a Viernes | 08:00 a 18:00 hrs.</p>
+                                    <p class="dato-despacho">Tiempo estimado: 2 a 4 horas</p>
+
+                                    <!-- Puntos de atención de la zona -->
+                                    <div class="seccion-puntos-atencion">
+                                        <h4 class="fw-bold">Puntos de atención:</h4>
+                                        <ul class="lista-puntos-atencion">
+                                            <li class="punto-atencion"><strong>Punto Volcán Oriente:</strong> <span class="texto-direccion">Pasaje Cordillera 340, Chillán</span></li>
+                                            <li class="punto-atencion"><strong>Punto Volcán Chillán Viejo:</strong> <span class="texto-direccion">Calle Las Araucarias 215, Chillán Viejo</span></li>
+                                        </ul>
+                                    </div>
+
+                                    <address class="info-contacto-detalle">
+                                        <a href="catalogo.html" class="enlace-azul">Realizar pedido online</a>
+                                        <span class="texto-naranja fw-bold">Call Center: 800 20 9000</span>
+                                        <span class="texto-rojo fw-bold">Emergencia: 800 50 9111</span>
+                                    </address>
+                                    <a href="#lista-zonas-sucursales" class="enlace-volver-zonas">&lt; Ir atrás</a>
+                                </section>
+                            </article>
+
+                            <article class="detalle-card" id="detalle-3">
+                                <header class="tarjeta-detalle-encabezado">
+                                    <h3 class="titulo-naranja">Zona Rural</h3>
+                                    <p class="texto-direccion">El Carmen, Pinto, San Ignacio</p>
+                                </header>
+                                <section class="tarjeta-detalle-cuerpo">
+                                    <h4 class="fw-bold">Haz tu pedido de gas aquí:</h4>
+                                    <p class="dato-despacho">Martes y Jueves | 08:00 a 16:00 hrs.</p>
+                                    <p class="dato-despacho">Tiempo estimado: 3 a 6 horas</p>
+
+                                    <!-- Puntos de atención de la zona -->
+                                    <div class="seccion-puntos-atencion">
+                                        <h4 class="fw-bold">Puntos de atención:</h4>
+                                        <ul class="lista-puntos-atencion">
+                                            <li class="punto-atencion"><strong>Punto Volcán Pinto:</strong> <span class="texto-direccion">Calle Los Copihues 180, Pinto</span></li>
+                                            <li class="punto-atencion"><strong>Punto Volcán El Carmen:</strong> <span class="texto-direccion">Pasaje Las Vertientes 290, El Carmen</span></li>
+                                            <li class="punto-atencion"><strong>Punto Volcán San Ignacio:</strong> <span class="texto-direccion">Calle Los Robles 145, San Ignacio</span></li>
+                                        </ul>
+                                    </div>
+
+                                    <address class="info-contacto-detalle">
+                                        <a href="catalogo.html" class="enlace-azul">Realizar pedido online</a>
+                                        <span class="texto-naranja fw-bold">Call Center: 800 20 9000</span>
+                                        <span class="texto-rojo fw-bold">Emergencia: 800 50 9111</span>
+                                    </address>
+                                    <a href="#lista-zonas-sucursales" class="enlace-volver-zonas">&lt; Ir atrás</a>
+                                </section>
+                            </article>
+
+                            <article class="detalle-card" id="detalle-4">
+                                <header class="tarjeta-detalle-encabezado">
+                                    <h3 class="titulo-naranja">Zona Sur</h3>
+                                    <p class="texto-direccion">Bulnes, Quillón</p>
+                                </header>
+                                <section class="tarjeta-detalle-cuerpo">
+                                    <h4 class="fw-bold">Haz tu pedido de gas aquí:</h4>
+                                    <p class="dato-despacho">Miércoles | 08:00 a 16:00 hrs.</p>
+                                    <p class="dato-despacho">Tiempo estimado: 4 a 6 horas</p>
+
+                                    <!-- Puntos de atención de la zona -->
+                                    <div class="seccion-puntos-atencion">
+                                        <h4 class="fw-bold">Puntos de atención:</h4>
+                                        <ul class="lista-puntos-atencion">
+                                            <li class="punto-atencion"><strong>Punto Volcán Bulnes:</strong> <span class="texto-direccion">Calle Las Camelias 310, Bulnes</span></li>
+                                            <li class="punto-atencion"><strong>Punto Volcán Quillón:</strong> <span class="texto-direccion">Pasaje El Mirador 220, Quillón</span></li>
+                                        </ul>
+                                    </div>
+
+                                    <address class="info-contacto-detalle">
+                                        <a href="catalogo.html" class="enlace-azul">Realizar pedido online</a>
+                                        <span class="texto-naranja fw-bold">Call Center: 800 20 9000</span>
+                                        <span class="texto-rojo fw-bold">Emergencia: 800 50 9111</span>
+                                    </address>
+                                    <a href="#lista-zonas-sucursales" class="enlace-volver-zonas">&lt; Ir atrás</a>
+                                </section>
+                            </article>
+
+                            <article class="detalle-card" id="detalle-5">
+                                <header class="tarjeta-detalle-encabezado">
+                                    <h3 class="titulo-naranja">Zona Comercial</h3>
+                                    <p class="texto-direccion">Parques industriales y locales comerciales</p>
+                                </header>
+                                <section class="tarjeta-detalle-cuerpo">
+                                    <h4 class="fw-bold">Haz tu pedido de gas aquí:</h4>
+                                    <p class="dato-despacho">Lunes a Viernes | 07:00 a 17:00 hrs.</p>
+                                    <p class="dato-despacho">Tiempo estimado: Según agenda</p>
+
+                                    <!-- Puntos de atención de la zona -->
+                                    <div class="seccion-puntos-atencion">
+                                        <h4 class="fw-bold">Puntos de atención:</h4>
+                                        <ul class="lista-puntos-atencion">
+                                            <li class="punto-atencion"><strong>Punto Volcán Comercial:</strong> <span class="texto-direccion">Calle Los Mañíos 455, Chillán</span></li>
+                                        </ul>
+                                    </div>
+
+                                    <address class="info-contacto-detalle">
+                                        <a href="catalogo.html" class="enlace-azul">Realizar pedido online</a>
+                                        <span class="texto-naranja fw-bold">Call Center: 800 20 9000</span>
+                                        <span class="texto-rojo fw-bold">Emergencia: 800 50 9111</span>
+                                    </address>
+                                    <a href="#lista-zonas-sucursales" class="enlace-volver-zonas">&lt; Ir atrás</a>
+                                </section>
+                            </article>
+
+                            <article class="detalle-card" id="detalle-6">
+                                <header class="tarjeta-detalle-encabezado">
+                                    <h3 class="titulo-naranja">Zona Concepción</h3>
+                                    <p class="texto-direccion">Concepción</p>
+                                </header>
+                                <section class="tarjeta-detalle-cuerpo">
+                                    <h4 class="fw-bold">Haz tu pedido de gas aquí:</h4>
+                                    <p class="dato-despacho">Lunes a Sábado | 08:00 a 19:00 hrs.</p>
+                                    <p class="dato-despacho">Tiempo estimado: 2 a 4 horas</p>
+
+                                    <!-- Puntos de atención de la zona -->
+                                    <div class="seccion-puntos-atencion">
+                                        <h4 class="fw-bold">Puntos de atención:</h4>
+                                        <ul class="lista-puntos-atencion">
+                                            <li class="punto-atencion"><strong>Punto Volcán Concepción:</strong> <span class="texto-direccion">Calle Los Avellanos 235, Concepción</span></li>
+                                        </ul>
+                                    </div>
+
+                                    <address class="info-contacto-detalle">
+                                        <a href="catalogo.html" class="enlace-azul">Realizar pedido online</a>
+                                        <span class="texto-naranja fw-bold">Call Center: 800 20 9000</span>
+                                        <span class="texto-rojo fw-bold">Emergencia: 800 50 9111</span>
+                                    </address>
+                                    <a href="#lista-zonas-sucursales" class="enlace-volver-zonas">&lt; Ir atrás</a>
+                                </section>
+                            </article>
+                            <article class="detalle-card" id="detalle-7">
+                                <header class="tarjeta-detalle-encabezado">
+                                    <h3 class="titulo-naranja">Zona Talcahuano</h3>
+                                    <p class="texto-direccion">Talcahuano</p>
+                                </header>
+                                <section class="tarjeta-detalle-cuerpo">
+                                    <h4 class="fw-bold">Haz tu pedido de gas aquí:</h4>
+                                    <p class="dato-despacho">Lunes a Viernes | 09:00 a 18:00 hrs.</p>
+                                    <p class="dato-despacho">Tiempo estimado: 2 a 5 horas</p>
+
+                                    <!-- Puntos de atención de la zona -->
+                                    <div class="seccion-puntos-atencion">
+                                        <h4 class="fw-bold">Puntos de atención:</h4>
+                                        <ul class="lista-puntos-atencion">
+                                            <li class="punto-atencion"><strong>Punto Volcán Talcahuano:</strong> <span class="texto-direccion">Pasaje El Faro 170, Talcahuano</span></li>
+                                        </ul>
+                                    </div>
+
+                                    <address class="info-contacto-detalle">
+                                        <a href="catalogo.html" class="enlace-azul">Realizar pedido online</a>
+                                        <span class="texto-naranja fw-bold">Call Center: 800 20 9000</span>
+                                        <span class="texto-rojo fw-bold">Emergencia: 800 50 9111</span>
+                                    </address>
+                                    <a href="#lista-zonas-sucursales" class="enlace-volver-zonas">&lt; Ir atrás</a>
+                                </section>
+                            </article>
+                            <article class="detalle-card" id="detalle-8">
+                                <header class="tarjeta-detalle-encabezado">
+                                    <h3 class="titulo-naranja">Zona Los Ángeles</h3>
+                                    <p class="texto-direccion">Los Ángeles</p>
+                                </header>
+                                <section class="tarjeta-detalle-cuerpo">
+                                    <h4 class="fw-bold">Haz tu pedido de gas aquí:</h4>
+                                    <p class="dato-despacho">Lunes a Sábado | 08:30 a 18:30 hrs.</p>
+                                    <p class="dato-despacho">Tiempo estimado: 2 a 5 horas</p>
+
+                                    <!-- Puntos de atención de la zona -->
+                                    <div class="seccion-puntos-atencion">
+                                        <h4 class="fw-bold">Puntos de atención:</h4>
+                                        <ul class="lista-puntos-atencion">
+                                            <li class="punto-atencion"><strong>Punto Volcán Los Ángeles:</strong> <span class="texto-direccion">Calle Los Maitenes 380, Los Ángeles</span></li>
+                                        </ul>
+                                    </div>
+
+                                    <address class="info-contacto-detalle">
+                                        <a href="catalogo.html" class="enlace-azul">Realizar pedido online</a>
+                                        <span class="texto-naranja fw-bold">Call Center: 800 20 9000</span>
+                                        <span class="texto-rojo fw-bold">Emergencia: 800 50 9111</span>
+                                    </address>
+                                    <a href="#lista-zonas-sucursales" class="enlace-volver-zonas">&lt; Ir atrás</a>
+                                </section>
+                            </article>
+                        </section>
+                    </aside>
+                </div>
+            </section>
+        
         </main>
 
-        <!-- Pie de página inicial -->
+        <!-- Pie de página -->
         <footer class="pie-pagina">
-            <div class="contenedor">
-                <p>© 2026 Gas El Volcán. Todos los derechos reservados.</p>
+            <div class="contenedor grilla-pie">
+                <div class="pie-columna">
+                    <h6>Nuestra Empresa</h6>
+                    <ul>
+                        <li><a href="nosotros.html#quienes-somos">Historia</a></li>
+                        <li><a href="nosotros.html#mision-vision">Misión y Visión</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Atención al Cliente</h6>
+                    <ul>
+                        <li><a href="contacto.html#contacto">Contacto y Soporte</a></li>
+                        <li><a href="contacto.html#faq">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Sucursal Virtual</h6>
+                    <ul>
+                        <li><a href="login.html">Iniciar Sesión</a></li>
+                        <li><a href="registro.html">Registrarse</a></li>
+                        <li><a href="sucursales.html" data-accion="rastrear-pedido">Rastrear Pedido</a></li>
+                    </ul>
+                </div>
+                <div class="pie-columna">
+                    <h6>Términos y Condiciones</h6>
+                    <ul>
+                        <li><a href="legales.html#terminos">Términos del Servicio</a></li>
+                        <li><a href="legales.html#privacidad">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                
+                <div class="pie-columna pie-boletin">
+                    <h6>Suscríbete para recibir ofertas exclusivas.</h6>
+                    <form class="buscador-footer" data-formulario-suscripcion novalidate>
+                        <input type="email" name="correoSuscripcion" placeholder="Ingresa tu correo" aria-label="Correo para suscribirse" aria-describedby="mensaje-suscripcion" maxlength="100" required>
+                        <button type="submit" class="boton boton-naranja texto-blanco">Suscríbete</button>
+                    </form>
+                    <p id="mensaje-suscripcion" class="mensaje-estado-formulario error mensaje-suscripcion" role="alert" aria-live="polite"></p>
+                    
+                    <h6>Medios de Pago</h6>
+                    <div class="pie-pagos">
+                        <img src="assets/images/pagos/visa.svg" alt="Visa" class="pago-icono" />
+                        <img src="assets/images/pagos/mastercard.svg" alt="Mastercard" class="pago-icono" />
+                        <img src="assets/images/pagos/amex.svg" alt="AMEX" class="pago-icono" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contenedor pie-copyright">
+                <p>&copy; 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
             </div>
         </footer>
-        <!-- Interacciones compartidas de la navegación pública -->
+
+        <!-- Carga del controlador de Sucursales -->
         <script defer src="assets/js/app.js"></script>
     </body>
 </html>

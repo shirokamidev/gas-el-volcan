@@ -1,64 +1,49 @@
-/* Cabecera corporativa compartida */
+/* Cabecera y barra de navegación principal */
 .cabecera-principal {
+    background-color: var(--volcan-blanco);
+    isolation: isolate;
     position: sticky;
     top: 0;
     z-index: 3000;
-    background-color: var(--volcan-blanco);
     border-bottom: 0.0625rem solid var(--volcan-borde-medio);
     box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.04);
 }
 
 .barra-superior {
-    display: none;
-    padding: 0.5rem 0;
     background-color: var(--volcan-claro);
     font-size: 0.85rem;
+    padding: 0.5rem 0;
+    display: none;
 }
 
 .contenido-barra-superior {
     display: flex;
-    flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
+    flex-wrap: wrap;
     column-gap: 1.25rem;
     row-gap: 0.25rem;
 }
 
-.texto-peligro {
-    color: var(--volcan-rojo);
-}
-
 .barra-navegacion {
     display: flex;
-    align-items: center;
     justify-content: center;
-    position: relative;
+    align-items: center;
     min-height: var(--alto-navegacion);
-}
-
-.enlace-logo {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 70%;
+    position: relative;
 }
 
 .logo-navegacion {
-    display: block;
-    width: auto;
-    max-width: 100%;
     max-height: 3.75rem;
+    width: auto;
+    max-width: 11.5rem;
 }
 
-/* Control de la navegación móvil sin JavaScript */
-.toggle-hamburguesa {
-    position: absolute;
-    width: 0.0625rem;
-    height: 0.0625rem;
-    padding: 0;
-    opacity: 0;
-    overflow: hidden;
-    clip-path: inset(50%);
+.enlace-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 70%;
 }
 
 .icono-hamburguesa {
@@ -66,12 +51,13 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    inset-block: 0;
-    left: 1rem;
-    min-width: 2.75rem;
-    font-size: 1.85rem;
-    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    left: 1.25rem;
+    min-width: 2.5rem;
     color: var(--volcan-oscuro);
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 .icono-cerrar {
@@ -84,11 +70,18 @@
 
 .toggle-hamburguesa:checked ~ .cabecera-principal .icono-cerrar {
     display: inline;
+    font-size: 2.4rem;
 }
 
-.toggle-hamburguesa:focus-visible ~ .cabecera-principal .icono-hamburguesa {
-    outline: 0.1875rem solid var(--volcan-naranja);
-    outline-offset: 0.1875rem;
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (min-width: 768px) {
+    .logo-navegacion {
+        max-width: 15.625rem;
+    }
+
+    .icono-hamburguesa {
+        font-size: 2.2rem;
+    }
 }
 
 /* Adaptabilidad para dispositivos grandes (Escritorio) */
@@ -99,13 +92,40 @@
 
     .barra-navegacion {
         justify-content: space-between;
+        position: unset;
     }
 
     .enlace-logo {
-        max-width: 12rem;
+        display: unset;
+        align-items: unset;
+        justify-content: unset;
+        max-width: unset;
     }
 
     .icono-hamburguesa {
         display: none;
+        align-items: unset;
+        justify-content: unset;
+        position: unset;
+        top: unset;
+        bottom: unset;
+        left: unset;
+        min-width: unset;
+        color: unset;
+        font-size: unset;
+        cursor: unset;
+    }
+
+    .icono-cerrar {
+        display: unset;
+    }
+
+    .toggle-hamburguesa:checked ~ .cabecera-principal .icono-abrir {
+        display: unset;
+    }
+
+    .toggle-hamburguesa:checked ~ .cabecera-principal .icono-cerrar {
+        display: unset;
+        font-size: unset;
     }
 }

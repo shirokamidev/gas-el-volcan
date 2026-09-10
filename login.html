@@ -3,72 +3,94 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Accede a tu cuenta de la Sucursal Virtual de Gas El Volcán.">
         <title>Gas El Volcán | Iniciar Sesión</title>
-        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-        <link rel="stylesheet" href="assets/css/pages/login.css">
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+        
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/layout.css" />
+        <link rel="stylesheet" href="assets/css/pages/login.css" />
     </head>
     <body class="cuerpo-autenticacion">
+        
         <main class="pantalla-autenticacion">
-            <!-- Navegación inicial de autenticación -->
-            <nav class="navegacion-superior" aria-label="Volver a la tienda">
-                <a href="index.html" class="enlace-regresar">← Regresar a Inicio</a>
+            
+            <!-- Navegación superior -->
+            <nav class="navegacion-superior">
+                <a href="index.html" class="enlace-regresar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Regresar a Inicio
+                </a>
             </nav>
 
-            <!-- Tarjeta inicial de inicio de sesión -->
-            <section class="escena-tarjeta" aria-labelledby="titulo-login">
-                <div class="tarjeta-ingreso">
+            <!-- Tarjeta principal de ingreso -->
+            <section class="escena-tarjeta">
+                <article class="tarjeta-ingreso">
                     <header class="cabecera-tarjeta">
-                        <a href="index.html" class="enlace-logo" aria-label="Gas El Volcán - Ir a Inicio">
-                            <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" class="logo-empresa" width="185">
+                        <a href="index.html">
+                            <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" class="logo-empresa">
                         </a>
-                        <h1 id="titulo-login">Bienvenido a Sucursal Virtual</h1>
-                        <p>Ingresa con tu correo y contraseña para acceder a tu cuenta.</p>
+                        <h1 class="titulo-acceso fw-bold">Bienvenido a Sucursal Virtual</h1>
+                        <p class="subtitulo-acceso">Ingresa con tu correo y contraseña</p>
                     </header>
-
-                    <!-- Acceso de demostración con validación JavaScript -->
-                    <form id="form-login" class="formulario-autenticacion" action="#" method="post">
+                    
+                    <!-- Formulario con IDs y validación desactivada nativamente (novalidate) -->
+                    <form id="form-login" action="#" class="formulario-generico" novalidate>
+                        
                         <div class="grupo-input">
-                            <label for="correo-login">Correo electrónico <span aria-hidden="true">*</span></label>
-                            <input type="email" id="correo-login" name="correo" placeholder="Ej: usuario@gmail.com" autocomplete="email" required>
-                            <small>Se aceptarán correos @duoc.cl, @profesor.duoc.cl y @gmail.com.</small>
-                            <span class="mensaje-error-input" id="error-correo-login" aria-live="polite"></span>
+                            <input type="email" id="correo-login" placeholder="E-mail" class="input-campo" aria-label="Correo electrónico">
+                            <span class="texto-ayuda">Solo correos con @duoc.cl, @profesor.duoc.cl y @gmail.com</span>
+                            <span id="error-correo-login" class="texto-peligro mensaje-error-input"></span>
                         </div>
-
+                        
                         <div class="grupo-input">
-                            <label for="password-login">Contraseña <span aria-hidden="true">*</span></label>
-                            <div class="caja-password">
-                                <input type="password" id="password-login" name="password" placeholder="Ingresa tu contraseña" autocomplete="current-password" minlength="4" maxlength="10" required>
-                                <button type="button" id="toggle-password" class="boton-ver-password" aria-label="Mostrar contraseña" aria-controls="password-login" aria-pressed="false">Mostrar</button>
+                            <div class="caja-input-flex">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icono-izquierdo">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                </svg>
+                                
+                                <input type="password" id="password-login" placeholder="Contraseña de acceso" class="input-limpio" aria-label="Contraseña">
+                                
+                                <button type="button" id="toggle-password" class="icono-derecho icono-toggle-password">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
                             </div>
-                            <small>Entre 4 y 10 caracteres, según los requisitos de esta demostración.</small>
-                            <span class="mensaje-error-input" id="error-password-login" aria-live="polite"></span>
+                            <span class="texto-ayuda">Entre 4 a 10 caracteres.</span>
+                            <span id="error-password-login" class="texto-peligro mensaje-error-input"></span>
                         </div>
-
-                        <!-- Enlace y aviso preparados para la futura recuperación de acceso -->
+                        
                         <a href="#recuperacion-clave" id="enlace-recuperar" class="enlace-recuperar">¿Olvidaste tu contraseña?</a>
-                        <div id="recuperacion-clave" class="aviso-recuperacion" role="status" aria-live="polite">
-                            La recuperación de contraseña requerirá integración con un servicio de cuentas.
-                        </div>
+                        
+                        <div id="recuperacion-clave" class="mensaje-estado-formulario" role="status" aria-live="polite"></div>
                         <div id="mensaje-login" class="mensaje-estado-formulario" role="status" aria-live="polite"></div>
-                        <button type="submit" class="boton-ingresar">Ingresar</button>
-                        <p class="aviso-preliminar">Acceso de prueba: admin@duoc.cl y contraseña admin.</p>
-                    </form>
 
-                    <!-- Enlace a la página de registro de esta misma rama -->
-                    <div class="seccion-registro">
-                        <p>¿No tienes una cuenta?</p>
-                        <a class="enlace-registro" href="registro.html">Crear una cuenta</a>
+                        <button type="submit" class="boton boton-naranja boton-bloque boton-grande">Ingresar</button>
+                    </form>
+                    
+                    <!-- Separador visual de registro -->
+                    <div class="divisor-formulario">
+                        <span>¿No tienes una cuenta?</span>
                     </div>
-                </div>
+                    
+                    <a href="registro.html" class="boton boton-oscuro boton-bloque boton-grande">Registrarme</a>
+                </article>
             </section>
 
-            <!-- Pie de página inicial -->
+            <!-- Pie de página -->
             <footer class="pie-autenticacion">
-                <p>© 2026 Gas El Volcán. Chillán, Región de Ñuble.</p>
+                <p class="texto-copyright">&copy; 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
+                <div class="banda-degradada-inferior"></div>
             </footer>
+            
         </main>
-        <script defer src="assets/js/utils/validaciones.js"></script>
-        <script defer src="assets/js/pages/autenticacion.js"></script>
+
+        <!-- Variables globales, control de menú y validadores de autenticación -->
+        <script defer src="assets/js/app.js"></script>
     </body>
 </html>

@@ -1,424 +1,432 @@
-/* Tipografía y colores iniciales de Nosotros */
-@font-face {
-    font-family: "Montserrat";
-    src: url("../../fonts/montserrat/Montserrat-Variable.woff2") format("woff2");
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: swap;
+/* Posicionamiento de anclajes de sección */
+#quienes-somos,
+#mision-vision {
+    scroll-margin-top: 5.5rem;
 }
 
-:root {
-    --volcan-azul: #004b87;
-    --volcan-naranja: #f37021;
-    --volcan-blanco: #ffffff;
-    --volcan-oscuro: #1a1a1a;
-    --volcan-claro: #f5f6f7;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    color: var(--volcan-oscuro);
-    background-color: var(--volcan-blanco);
-    font-family: "Montserrat", Arial, sans-serif;
-    line-height: 1.6;
-}
-
-.contenedor {
-    width: 90%;
-    max-width: 75rem;
-    margin: 0 auto;
-}
-
-/* Cabecera y navegación por secciones */
-.nosotros-cabecera {
-    border-bottom: 0.0625rem solid #e5e7eb;
-    background-color: var(--volcan-blanco);
-}
-
-.nosotros-barra {
+/* Estilos principales de la portada de la empresa */
+.nosotros-hero-fondo {
+    width: 100%;
+    min-height: 20rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/nosotros/hero-nosotros.png") center/cover no-repeat;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    padding: 1.25rem 0;
-}
-
-.nosotros-logo img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-.nosotros-navegacion {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 0.75rem 1.25rem;
+    text-align: center;
+    background-color: var(--volcan-azul);
 }
 
-.nosotros-navegacion a {
+.nosotros-hero-contenido h1 {
+    font-size: 2.2rem;
+    text-shadow: 0 0.25rem 0.625rem rgba(0,0,0,0.5);
+}
+
+/* Módulo de historia corporativa */
+.seccion-quienes-somos {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.grilla-quienes-somos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.quienes-somos-texto h2 {
     color: var(--volcan-azul);
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
-.nosotros-navegacion a:hover,
-.nosotros-navegacion a:focus-visible {
-    color: var(--volcan-naranja);
-    text-decoration: underline;
+.quienes-somos-texto p {
+    color: var(--volcan-oscuro);
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+    font-size: 1rem;
+    text-align: justify;
 }
 
-/* Presentación con imagen corporativa */
-.nosotros-hero {
+.quienes-somos-imagen {
+    width: 100%;
+    height: auto;
     display: flex;
-    min-height: 19rem;
-    align-items: center;
-    background-color: var(--volcan-azul);
-    background-image: linear-gradient(rgba(0, 35, 65, 0.7), rgba(0, 35, 65, 0.7)), url("../../images/nosotros/hero-nosotros.png");
-    background-position: center;
-    background-size: cover;
-    color: var(--volcan-blanco);
-    text-align: center;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.nosotros-hero-contenido {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
-
-.nosotros-hero h1 {
-    margin: 0 0 1rem;
-    font-size: 2rem;
-    line-height: 1.25;
-}
-
-.nosotros-hero p {
-    max-width: 43rem;
-    margin: 0 auto;
-}
-
-/* Historia de la empresa */
-.seccion-nosotros {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
-
-.nosotros-grilla-historia {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1.75rem;
-    align-items: center;
-}
-
-.nosotros-historia-texto h2,
-.seccion-proposito h2,
-.seccion-equipo h2 {
-    margin: 0 0 1.25rem;
-    color: var(--volcan-azul);
-    font-size: 1.6rem;
-    line-height: 1.3;
-}
-
-.nosotros-historia-texto p {
-    margin: 0 0 1rem;
-}
-
-.nosotros-foto-historia {
+.quienes-somos-imagen img {
     display: block;
     width: 100%;
-    max-height: 25rem;
-    object-fit: contain;
-}
-
-/* Tarjetas de misión y visión */
-.seccion-proposito {
-    padding: 3rem 0;
-    background-color: var(--volcan-claro);
-}
-
-.seccion-proposito h2,
-.seccion-equipo h2 {
-    text-align: center;
-}
-
-.nosotros-grilla-proposito {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1.5rem;
-}
-
-.nosotros-tarjeta-proposito {
-    position: relative;
-    min-width: 0;
-    min-height: 21rem;
-    overflow: hidden;
-    border: 0.0625rem solid #e5e7eb;
-    border-radius: 0.75rem;
-    background-color: var(--volcan-azul);
-}
-
-.nosotros-tarjeta-proposito img {
-    display: block;
-    width: 100%;
-    height: 11rem;
+    height: auto;
+    max-height: 27rem;
     object-fit: cover;
+    object-position: center top;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.1);
 }
 
-.nosotros-contenido-proposito {
-    padding: 1.5rem;
+/* Contenedor interactivo de propósito y valores */
+.seccion-proposito {
+    background-color: var(--volcan-claro);
+    padding: 4rem 0;
 }
 
-.nosotros-contenido-proposito h3 {
-    margin: 0 0 0.75rem;
-    color: var(--volcan-azul);
-    font-size: 1.25rem;
+.grilla-proposito {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
 }
 
-.nosotros-contenido-proposito p {
-    margin: 0;
-}
-
-/* Superposición y control accesible de las tarjetas */
-.mv-checkbox {
-    position: absolute;
-    width: 0.0625rem;
-    height: 0.0625rem;
-    padding: 0;
+.tarjeta-mv {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    min-height: 20rem;
+    height: auto;
+    aspect-ratio: 1.1;
+    border-radius: 0.8rem;
     overflow: hidden;
-    opacity: 0;
-    clip-path: inset(50%);
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.1);
+}
+
+.mv-checkbox {
+    display: none;
 }
 
 .mv-label {
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    min-width: 0;
-    min-height: 21rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1fr) auto;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
     cursor: pointer;
 }
 
-.nosotros-tarjeta-proposito .mv-fondo,
+/* Superposición de elementos visuales de las tarjetas */
+.mv-fondo,
 .mv-capa-color {
-    position: absolute;
-    inset: 0;
-    display: block;
+    grid-column: 1;
+    grid-row: 1 / -1;
     width: 100%;
     height: 100%;
+    min-height: 0;
 }
 
-.nosotros-tarjeta-proposito .mv-fondo {
+.mv-fondo {
     object-fit: cover;
+    object-position: center;
     z-index: 1;
-    transition: filter 0.3s ease;
+    transition: filter 0.65s ease-in-out;
 }
 
 .mv-capa-color {
+    background: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,0.7) 100%);
     z-index: 2;
-    background: linear-gradient(rgba(0, 0, 0, 0.1) 15%, rgba(0, 0, 0, 0.85) 100%);
-    transition: background 0.3s ease;
+    transition: background 0.65s ease-in-out;
 }
 
 .mv-contenido {
-    position: relative;
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.3rem;
+    grid-column: 1;
+    grid-row: 2;
+    align-self: end;
     width: 100%;
-    min-width: 0;
+    min-height: 0;
     padding: 1.5rem;
-    color: var(--volcan-blanco);
+    z-index: 3;
     text-align: center;
 }
 
-.mv-titulo {
-    font-size: 1.65rem;
-    font-weight: 700;
-    line-height: 1.3;
+.mv-contenido h3 {
+    font-size: 1.8rem;
+    color: var(--volcan-blanco);
+    margin: 0;
+    text-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.6);
 }
 
-.mv-ver-mas {
-    font-size: 0.9rem;
+.ver-mas {
+    display: block;
+    color: var(--volcan-blanco);
+    font-size: 1rem;
     font-weight: 600;
+    margin-top: 0.3rem;
+    max-height: 2rem;
+    opacity: 1;
+    overflow: hidden;
+    transition: max-height 0.65s ease-in-out, opacity 0.65s ease-in-out, margin-top 0.65s ease-in-out;
 }
 
 .mv-texto {
-    display: none;
-    max-width: 36rem;
-    padding-top: 0.5rem;
-    color: var(--volcan-blanco);
     font-size: 0.9rem;
-    line-height: 1.55;
-    text-align: left;
+    line-height: 1.5;
+    color: #f1f1f1;
+    text-align: justify;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.65s ease-in-out, opacity 0.65s ease-in-out, margin-top 0.65s ease-in-out;
 }
 
-.mv-checkbox:checked ~ .mv-label .mv-texto {
-    display: block;
+/* Comportamiento interactivo de las tarjetas en escritorio */
+.tarjeta-mv:hover .mv-fondo {
+    filter: none;
 }
 
-.mv-checkbox:checked ~ .mv-label .mv-ver-mas {
-    display: none;
+.tarjeta-mv:hover .mv-capa-color {
+    background: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,0.7) 100%);
+}
+
+.tarjeta-mv:hover .mv-texto {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+}
+
+/* Módulo de presentación del equipo corporativo */
+.seccion-equipo {
+    background-color: var(--volcan-blanco);
+    padding: 3rem 0;
+}
+
+.seccion-equipo .titulo-centrado {
+    margin-bottom: 1rem;
+}
+
+.subtitulo-centrado {
+    text-align: center;
+    color: var(--volcan-gris);
+    margin-top: 0;
+    margin-bottom: 4rem;
+    font-size: 1.1rem;
+}
+
+.grilla-equipo {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+.tarjeta-miembro {
+    text-align: center;
+    background-color: var(--volcan-blanco);
+    padding: 2.5rem 1.5rem;
+    border-radius: 0.8rem;
+    border: 0.0625rem solid var(--volcan-borde-claro);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.03);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    height: 100%;
+}
+
+.tarjeta-miembro:hover {
+    transform: scale(1.025);
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.08);
+}
+
+.miembro-foto-contenedor {
+    width: 10rem;
+    height: 10rem;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 0.25rem solid var(--volcan-claro);
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
+}
+
+.foto-perfil {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.tarjeta-miembro h3 {
+    color: var(--volcan-oscuro);
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+}
+
+.miembro-nombre {
+    color: var(--volcan-gris);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}
+
+.miembro-rol {
+    color: var(--volcan-naranja);
+    font-weight: 600;
+    font-size: 0.95rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 0.5rem;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.miembro-desc {
+    color: var(--volcan-gris);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.seccion-quienes-somos,
+.seccion-equipo {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 .mv-checkbox:checked ~ .mv-label .mv-fondo {
     filter: blur(0.1875rem);
 }
 
-.mv-checkbox:focus-visible ~ .mv-label {
-    outline: 0.1875rem solid var(--volcan-naranja);
-    outline-offset: 0.125rem;
+.mv-checkbox:checked ~ .mv-label .mv-capa-color {
+    background: linear-gradient(rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.9) 100%);
 }
 
-/* Presentación del equipo */
-.seccion-equipo {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+.mv-checkbox:checked ~ .mv-label .mv-texto {
+    max-height: 16rem;
+    opacity: 1;
+    margin-top: 1rem;
 }
 
-.equipo-introduccion {
-    margin: 0 0 2rem;
-    text-align: center;
-}
-
-.nosotros-grilla-equipo {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1.5rem;
-}
-
-.nosotros-tarjeta-miembro {
-    min-width: 0;
-    padding: 1.5rem;
-    border: 0.0625rem solid #e5e7eb;
-    border-top: 0.25rem solid var(--volcan-naranja);
-    border-radius: 0.75rem;
-    text-align: center;
-}
-
-.nosotros-tarjeta-miembro img {
-    display: block;
-    width: 8rem;
-    height: 8rem;
-    margin: 0 auto 1rem;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.nosotros-tarjeta-miembro h3 {
-    margin: 0 0 0.25rem;
-    color: var(--volcan-azul);
-    font-size: 1.1rem;
-}
-
-.nosotros-tarjeta-miembro p {
-    margin: 0 0 0.5rem;
-    font-weight: 600;
-}
-
-.nosotros-tarjeta-miembro span {
-    display: block;
-    margin: 0 auto;
-    color: var(--volcan-naranja);
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.nosotros-tarjeta-miembro .nosotros-miembro-descripcion {
-    margin-top: 0.75rem;
-    color: #555555;
-    font-size: 0.85rem;
-    font-weight: 400;
-    line-height: 1.6;
-}
-
-/* Pie de página inicial */
-.nosotros-pie {
-    padding: 1.5rem 0;
-    background-color: var(--volcan-azul);
-    color: var(--volcan-blanco);
-    text-align: center;
-}
-
-.nosotros-pie p {
-    margin: 0;
-    font-size: 0.9rem;
+.mv-checkbox:checked ~ .mv-label .ver-mas {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
 }
 
 /* Adaptabilidad para pantallas medianas (Tablets) */
 @media (min-width: 768px) {
-    .nosotros-barra {
-        flex-direction: row;
-        justify-content: space-between;
+    .quienes-somos-texto h2 {
+        text-align: left;
     }
 
-    .nosotros-hero h1 {
-        font-size: 2.5rem;
+    .nosotros-hero-fondo {
+        min-height: 28rem;
     }
 
-    .nosotros-grilla-historia,
-    .nosotros-grilla-proposito {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .nosotros-hero-contenido h1 {
+        font-size: 2.8rem;
     }
 
-    .nosotros-grilla-equipo {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+    .seccion-proposito {
+        padding: 5rem 0;
+    }
+
+    .tarjeta-mv {
+        aspect-ratio: 1.35;
     }
 
     .mv-label {
-        min-height: 25rem;
+        cursor: default;
     }
 
-    .mv-titulo {
-        font-size: 1.9rem;
+    .mv-contenido {
+        padding: 2rem;
     }
 
-    .nosotros-tarjeta-proposito:hover .mv-texto,
-    .nosotros-tarjeta-proposito:focus-within .mv-texto {
-        display: block;
+    .mv-texto {
+        font-size: 1.05rem;
+        line-height: 1.6;
     }
 
-    .nosotros-tarjeta-proposito:hover .mv-ver-mas,
-    .nosotros-tarjeta-proposito:focus-within .mv-ver-mas {
+    .mv-contenido h3 {
+        font-size: 2rem;
+    }
+
+    .ver-mas {
         display: none;
+        color: unset;
+        font-size: unset;
+        font-weight: unset;
+        margin-top: unset;
+        max-height: unset;
+        opacity: unset;
+        overflow: unset;
+        transition: unset;
+    }
+
+    .tarjeta-mv:hover .mv-fondo {
+        filter: blur(0.1875rem);
+    }
+
+    .tarjeta-mv:hover .mv-capa-color {
+        background: linear-gradient(rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%);
+    }
+
+    .tarjeta-mv:hover .mv-texto {
+        max-height: 9.5rem;
+        opacity: 1;
+        margin-top: 1rem;
+    }
+
+    .seccion-quienes-somos,
+    .seccion-equipo {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .mv-checkbox:checked ~ .mv-label .mv-fondo {
+        filter: unset;
+    }
+
+    .mv-checkbox:checked ~ .mv-label .mv-capa-color {
+        background: unset;
+    }
+
+    .mv-checkbox:checked ~ .mv-label .mv-texto {
+        max-height: unset;
+        opacity: unset;
+        margin-top: unset;
+    }
+
+    .mv-checkbox:checked ~ .mv-label .ver-mas {
+        max-height: unset;
+        opacity: unset;
+        margin-top: unset;
     }
 }
 
 /* Adaptabilidad para dispositivos grandes (Escritorio) */
 @media (min-width: 992px) {
-    .nosotros-hero {
-        min-height: 23rem;
+    .nosotros-hero-contenido h1 {
+        font-size: 3.5rem;
     }
 
-    .nosotros-hero h1 {
-        font-size: 3rem;
+    .grilla-quienes-somos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 3rem;
+        align-items: start;
     }
 
-    .seccion-nosotros,
+    .seccion-quienes-somos,
     .seccion-equipo {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-    }
-}
-
-/* Accesibilidad para personas con movimiento reducido */
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
     }
 
-    .nosotros-tarjeta-proposito .mv-fondo,
-    .mv-capa-color {
-        transition: none;
+    .grilla-proposito {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tarjeta-mv {
+        aspect-ratio: 1.4;
+    }
+
+    .grilla-equipo {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+
+    #quienes-somos,
+    #mision-vision {
+        scroll-margin-top: 7.8rem;
     }
 }

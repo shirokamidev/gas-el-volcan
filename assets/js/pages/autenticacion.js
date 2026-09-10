@@ -107,9 +107,15 @@ if (formLogin) {
         const passwordValido = validarPasswordLogin();
 
         if (correoValido && passwordValido) {
-            // Permite ingresar al panel con las credenciales de prueba de la evaluación
+            // Valida las credenciales de acceso al panel administrativo
             if (correoLogin.value.trim().toLowerCase() === "admin@duoc.cl" && passwordLogin.value === "admin") {
-                location.href = "admin-index.html"
+                try {
+                    sessionStorage.setItem("accesoAdministradorVolcan", "activo")
+                    location.href = "admin-index.html"
+                } catch (error) {
+                    mensajeLogin.textContent = "No se pudo iniciar la sesión en este navegador."
+                    mensajeLogin.className = "mensaje-estado-formulario activo error"
+                }
             } else {
                 mensajeLogin.textContent = "Las credenciales de administración no son correctas."
                 mensajeLogin.className = "mensaje-estado-formulario activo error"
