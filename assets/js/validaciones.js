@@ -31,7 +31,6 @@ if (formLogin) {
       const type = passwordLogin.getAttribute("type") === "password" ? "text" : "password";
       passwordLogin.setAttribute("type", type);
 
-      // Cambia el icono dependiendo de si se ve o no
       if (type === "text") {
         togglePassword.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>`;
       } else {
@@ -43,6 +42,7 @@ if (formLogin) {
   function validarCorreoLogin() {
     const error = validarCorreo(correoLogin.value);
     errorCorreoLogin.textContent = error;
+    errorCorreoLogin.style.display = error ? "block" : "none";
     return error === "";
   }
 
@@ -51,15 +51,18 @@ if (formLogin) {
 
     if (password === "") {
       errorPasswordLogin.textContent = "La contraseña es obligatoria.";
+      errorPasswordLogin.style.display = "block";
       return false;
     }
 
     if (password.length < 4 || password.length > 10) {
       errorPasswordLogin.textContent = "La contraseña debe tener entre 4 y 10 caracteres.";
+      errorPasswordLogin.style.display = "block";
       return false;
     }
 
     errorPasswordLogin.textContent = "";
+    errorPasswordLogin.style.display = "none";
     return true;
   }
 
@@ -73,19 +76,20 @@ if (formLogin) {
     const passwordValido = validarPasswordLogin();
 
     if (correoValido && passwordValido) {
-      // Redirección especial para el administrador
       if (correoLogin.value === "admin@duoc.cl" && passwordLogin.value === "admin") {
         window.location.href = "admin-index.html";
       } else {
         mensajeLogin.textContent = "Inicio de sesión validado correctamente.";
         mensajeLogin.style.color = "var(--volcan-azul)";
+        mensajeLogin.style.display = "block";
         formLogin.reset();
-        errorCorreoLogin.textContent = "";
-        errorPasswordLogin.textContent = "";
+        errorCorreoLogin.style.display = "none";
+        errorPasswordLogin.style.display = "none";
       }
     } else {
       mensajeLogin.textContent = "Revise los campos marcados antes de continuar.";
       mensajeLogin.style.color = "#dc3545";
+      mensajeLogin.style.display = "block";
     }
   });
 }
@@ -108,21 +112,25 @@ if (formContacto) {
 
     if (nombre === "") {
       errorNombreContacto.textContent = "El nombre es obligatorio.";
+      errorNombreContacto.style.display = "block";
       return false;
     }
 
     if (nombre.length > 100) {
       errorNombreContacto.textContent = "El nombre no puede superar los 100 caracteres.";
+      errorNombreContacto.style.display = "block";
       return false;
     }
 
     errorNombreContacto.textContent = "";
+    errorNombreContacto.style.display = "none";
     return true;
   }
 
   function validarCorreoContacto() {
     const error = validarCorreo(correoContacto.value);
     errorCorreoContacto.textContent = error;
+    errorCorreoContacto.style.display = error ? "block" : "none";
     return error === "";
   }
 
@@ -131,15 +139,18 @@ if (formContacto) {
 
     if (comentario === "") {
       errorComentarioContacto.textContent = "El comentario es obligatorio.";
+      errorComentarioContacto.style.display = "block";
       return false;
     }
 
     if (comentario.length > 500) {
       errorComentarioContacto.textContent = "El comentario no puede superar los 500 caracteres.";
+      errorComentarioContacto.style.display = "block";
       return false;
     }
 
     errorComentarioContacto.textContent = "";
+    errorComentarioContacto.style.display = "none";
     return true;
   }
 
@@ -157,13 +168,15 @@ if (formContacto) {
     if (nombreValido && correoValido && comentarioValido) {
       mensajeContacto.textContent = "Mensaje enviado correctamente. Gracias por contactarnos.";
       mensajeContacto.style.color = "var(--volcan-azul)";
+      mensajeContacto.style.display = "block";
       formContacto.reset();
-      errorNombreContacto.textContent = "";
-      errorCorreoContacto.textContent = "";
-      errorComentarioContacto.textContent = "";
+      errorNombreContacto.style.display = "none";
+      errorCorreoContacto.style.display = "none";
+      errorComentarioContacto.style.display = "none";
     } else {
       mensajeContacto.textContent = "Revise los campos marcados antes de enviar.";
       mensajeContacto.style.color = "#dc3545";
+      mensajeContacto.style.display = "block";
     }
   });
 }
@@ -216,60 +229,74 @@ if (formRegistro) {
     // Validar RUT (básico, sin puntos ni guion)
     if (rutRegistro.value.trim() === "" || rutRegistro.value.length < 8) {
       errorRutRegistro.textContent = "Ingrese un RUT válido sin puntos ni guion.";
+      errorRutRegistro.style.display = "block";
       formularioValido = false;
     } else {
       errorRutRegistro.textContent = "";
+      errorRutRegistro.style.display = "none";
     }
 
     // Validar Nombre
     if (nombreRegistro.value.trim() === "") {
       errorNombreRegistro.textContent = "El nombre es obligatorio.";
+      errorNombreRegistro.style.display = "block";
       formularioValido = false;
     } else {
       errorNombreRegistro.textContent = "";
+      errorNombreRegistro.style.display = "none";
     }
 
     // Validar Correos (Formato y coincidencia)
     const errorCorreo = validarCorreo(correoRegistro.value);
     if (errorCorreo !== "") {
       errorCorreoRegistro.textContent = errorCorreo;
+      errorCorreoRegistro.style.display = "block";
       formularioValido = false;
     } else if (correoRegistro.value !== correoConfirmRegistro.value) {
       errorCorreoRegistro.textContent = "Los correos electrónicos no coinciden.";
+      errorCorreoRegistro.style.display = "block";
       formularioValido = false;
     } else {
       errorCorreoRegistro.textContent = "";
+      errorCorreoRegistro.style.display = "none";
     }
 
     // Validar Contraseñas
     if (passwordRegistro.value.length < 4 || passwordRegistro.value.length > 10) {
       errorPasswordRegistro.textContent = "La contraseña debe tener entre 4 y 10 caracteres.";
+      errorPasswordRegistro.style.display = "block";
       formularioValido = false;
     } else if (passwordRegistro.value !== passwordConfirmRegistro.value) {
       errorPasswordRegistro.textContent = "Las contraseñas no coinciden.";
+      errorPasswordRegistro.style.display = "block";
       formularioValido = false;
     } else {
       errorPasswordRegistro.textContent = "";
+      errorPasswordRegistro.style.display = "none";
     }
 
     // Validar Términos
     if (!terminosRegistro.checked) {
       errorTerminosRegistro.textContent = "Debes aceptar los términos y condiciones.";
+      errorTerminosRegistro.style.display = "block";
       formularioValido = false;
     } else {
       errorTerminosRegistro.textContent = "";
+      errorTerminosRegistro.style.display = "none";
     }
 
     // Resultado final
     if (formularioValido) {
       mensajeRegistro.textContent = "Cuenta registrada exitosamente. Redirigiendo...";
       mensajeRegistro.style.color = "var(--volcan-azul)";
+      mensajeRegistro.style.display = "block";
       setTimeout(() => {
         window.location.href = "login.html";
       }, 2000);
     } else {
       mensajeRegistro.textContent = "Por favor, corrige los errores antes de continuar.";
       mensajeRegistro.style.color = "#dc3545";
+      mensajeRegistro.style.display = "block";
     }
   });
 }

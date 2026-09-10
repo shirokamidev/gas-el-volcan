@@ -115,15 +115,22 @@
 .caja-input-flex {
     display: flex;
     align-items: center;
-    padding: 0 1.2rem;
+    padding: 0 0.8rem;
+    width: 100%;
+    border: 1px solid #cccccc;
+    border-radius: 0.4rem;
+    background-color: #ffffff;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .input-limpio {
     flex: 1;
+    min-width: 0;
     border: none;
     outline: none;
     background: transparent;
-    padding: 0.9rem 0.8rem;
+    padding: 0.9rem 0.5rem;
     font-size: 1rem;
     color: var(--volcan-texto);
     font-family: inherit;
@@ -144,6 +151,9 @@
     cursor: pointer;
     flex-shrink: 0;
     transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .icono-derecho:hover {
@@ -157,6 +167,7 @@
     margin-top: 0.4rem;
     padding-left: 0.2rem;
     line-height: 1.3;
+    text-align: justify;
 }
 
 .enlace-recuperar {
@@ -191,7 +202,7 @@
 
 .divisor-formulario::before,
 .divisor-formulario::after {
-    content: ''; /* Obligatorio para dibujar los elementos */
+    content: ''; 
     flex: 1;
     border-bottom: 1px solid #e0e0e0;
 }

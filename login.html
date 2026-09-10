@@ -34,7 +34,9 @@
             <section class="escena-tarjeta">
                 <article class="tarjeta-ingreso">
                     <header class="cabecera-tarjeta">
-                        <img src="assets/img/logo-volcan.svg" alt="Gas El Volcán" class="logo-empresa">
+                        <a href="index.html">
+                            <img src="assets/img/logo-volcan.svg" alt="Gas El Volcán" class="logo-empresa">
+                        </a>
                         <h1 class="titulo-acceso fw-bold">Bienvenido a Sucursal Virtual</h1>
                         <p class="subtitulo-acceso">Ingresa con tu correo y contraseña</p>
                     </header>
@@ -45,7 +47,7 @@
                         <div class="grupo-input">
                             <input type="email" id="correo-login" placeholder="E-mail" class="input-campo">
                             <span class="texto-ayuda">Solo correos con @duoc.cl, @profesor.duoc.cl y @gmail.com</span>
-                            <span id="error-correo-login" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: block; margin-top: 0.3rem;"></span>
+                            <span id="error-correo-login" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: none; margin-top: 0.3rem; text-align: justify;"></span>
                         </div>
                         
                         <div class="grupo-input">
@@ -65,12 +67,12 @@
                                 </span>
                             </div>
                             <span class="texto-ayuda">Entre 4 a 10 caracteres.</span>
-                            <span id="error-password-login" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: block; margin-top: 0.3rem;"></span>
+                            <span id="error-password-login" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: none; margin-top: 0.3rem; text-align: justify;"></span>
                         </div>
                         
                         <a href="#" class="enlace-recuperar">¿Olvidaste tu contraseña? Recuperar</a>
                         
-                        <div id="mensaje-login" style="text-align: center; font-weight: 600; margin-top: 0.5rem;"></div>
+                        <div id="mensaje-login" style="text-align: center; font-weight: 600; margin-top: 0.5rem; display: none;"></div>
 
                         <button type="submit" class="boton boton-naranja boton-bloque boton-grande">Ingresar</button>
                     </form>
