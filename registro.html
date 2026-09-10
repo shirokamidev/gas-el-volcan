@@ -34,7 +34,9 @@
             <section class="escena-tarjeta">
                 <article class="tarjeta-registro">
                     <header class="cabecera-tarjeta">
-                        <img src="assets/img/logo-volcan.svg" alt="Gas El Volcán" class="logo-empresa">
+                        <a href="index.html">
+                            <img src="assets/img/logo-volcan.svg" alt="Gas El Volcán" class="logo-empresa">
+                        </a>
                         <h1 class="titulo-acceso fw-bold">Formulario de registro</h1>
                     </header>
                     
@@ -52,12 +54,12 @@
                                 <div class="grupo-input col-completa">
                                     <input type="text" id="rut-registro" placeholder="Rut" class="input-campo">
                                     <span class="texto-ayuda">Sin puntos ni guion, Ej: 19011022K</span>
-                                    <span id="error-rut-registro" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: block; margin-top: 0.3rem;"></span>
+                                    <span id="error-rut-registro" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: none; margin-top: 0.3rem; text-align: justify;"></span>
                                 </div>
                                 
                                 <div class="grupo-input col-completa">
                                     <input type="text" id="nombre-registro" placeholder="Nombre" class="input-campo">
-                                    <span id="error-nombre-registro" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: block; margin-top: 0.3rem;"></span>
+                                    <span id="error-nombre-registro" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: none; margin-top: 0.3rem; text-align: justify;"></span>
                                 </div>
                                 
                                 <div class="grupo-input">
@@ -103,7 +105,7 @@
                                             </svg>
                                         </span>
                                     </div>
-                                    <span id="error-password-registro" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: block; margin-top: 0.3rem;"></span>
+                                    <span id="error-password-registro" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: none; margin-top: 0.3rem; text-align: justify;"></span>
                                 </div>
                             </div>
                         </fieldset>
@@ -126,7 +128,7 @@
                                 
                                 <div class="grupo-input col-completa">
                                     <input type="email" id="correo-confirm-registro" placeholder="Repetir e-mail" class="input-campo">
-                                    <span id="error-correo-registro" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: block; margin-top: 0.3rem;"></span>
+                                    <span id="error-correo-registro" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: none; margin-top: 0.3rem; text-align: justify;"></span>
                                 </div>
                             </div>
                         </fieldset>
@@ -182,9 +184,9 @@
                             <input type="checkbox" id="terminos-registro">
                             <label for="terminos-registro">Acepto los <a href="legales.html#terminos">términos y condiciones</a> y la <a href="legales.html#privacidad">política de privacidad</a>.</label>
                         </div>
-                        <span id="error-terminos-registro" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: block; margin-top: 0.3rem;"></span>
+                        <span id="error-terminos-registro" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: none; margin-top: 0.3rem; text-align: justify;"></span>
                         
-                        <div id="mensaje-registro" style="text-align: center; font-weight: 600; margin-top: 1rem;"></div>
+                        <div id="mensaje-registro" style="text-align: center; font-weight: 600; margin-top: 1rem; display: none;"></div>
 
                         <!-- Botones de accion final -->
                         <div class="acciones-registro">
