@@ -25,7 +25,6 @@ if (formLogin) {
   const mensajeLogin = document.getElementById("mensaje-login");
   const togglePassword = document.getElementById("toggle-password");
 
-  // Mostrar u ocultar la contraseña
   if (togglePassword) {
     togglePassword.addEventListener("click", () => {
       const type = passwordLogin.getAttribute("type") === "password" ? "text" : "password";
@@ -200,7 +199,6 @@ if (formRegistro) {
   const errorTerminosRegistro = document.getElementById("error-terminos-registro");
   const mensajeRegistro = document.getElementById("mensaje-registro");
 
-  // Ojitos para las contraseñas de registro
   const togglePassReg = document.getElementById("toggle-password-registro");
   const togglePassConf = document.getElementById("toggle-password-confirm");
 
@@ -226,7 +224,6 @@ if (formRegistro) {
     event.preventDefault();
     let formularioValido = true;
 
-    // Validar RUT (básico, sin puntos ni guion)
     if (rutRegistro.value.trim() === "" || rutRegistro.value.length < 8) {
       errorRutRegistro.textContent = "Ingrese un RUT válido sin puntos ni guion.";
       errorRutRegistro.style.display = "block";
@@ -236,7 +233,6 @@ if (formRegistro) {
       errorRutRegistro.style.display = "none";
     }
 
-    // Validar Nombre
     if (nombreRegistro.value.trim() === "") {
       errorNombreRegistro.textContent = "El nombre es obligatorio.";
       errorNombreRegistro.style.display = "block";
@@ -246,7 +242,6 @@ if (formRegistro) {
       errorNombreRegistro.style.display = "none";
     }
 
-    // Validar Correos (Formato y coincidencia)
     const errorCorreo = validarCorreo(correoRegistro.value);
     if (errorCorreo !== "") {
       errorCorreoRegistro.textContent = errorCorreo;
@@ -261,7 +256,6 @@ if (formRegistro) {
       errorCorreoRegistro.style.display = "none";
     }
 
-    // Validar Contraseñas
     if (passwordRegistro.value.length < 4 || passwordRegistro.value.length > 10) {
       errorPasswordRegistro.textContent = "La contraseña debe tener entre 4 y 10 caracteres.";
       errorPasswordRegistro.style.display = "block";
@@ -275,7 +269,6 @@ if (formRegistro) {
       errorPasswordRegistro.style.display = "none";
     }
 
-    // Validar Términos
     if (!terminosRegistro.checked) {
       errorTerminosRegistro.textContent = "Debes aceptar los términos y condiciones.";
       errorTerminosRegistro.style.display = "block";
@@ -285,7 +278,6 @@ if (formRegistro) {
       errorTerminosRegistro.style.display = "none";
     }
 
-    // Resultado final
     if (formularioValido) {
       mensajeRegistro.textContent = "Cuenta registrada exitosamente. Redirigiendo...";
       mensajeRegistro.style.color = "var(--volcan-azul)";

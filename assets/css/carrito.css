@@ -51,6 +51,11 @@
     padding: 1.5rem;
     box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.04);
     width: 100%;
+    position: relative;
+}
+
+.item-carrito:hover {
+    z-index: 10;
 }
 
 .item-imagen {
@@ -59,12 +64,25 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    overflow: visible;
+    border-radius: 0.4rem;
+    position: relative;
+    z-index: 1;
 }
 
 .img-producto-carrito {
     height: 6rem;
     width: 100%;
     object-fit: contain;
+}
+
+/* Efecto de zoom al pasar el mouse sobre la imagen del producto en el carrito */
+.item-imagen img {
+    transition: transform 0.4s ease-out;
+}
+
+.item-imagen:hover img {
+    transform: scale(1.05);
 }
 
 .item-detalles-texto {
@@ -95,6 +113,7 @@
 .item-precios {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
     padding: 0 1rem;
     flex-shrink: 0;
@@ -112,6 +131,22 @@
     font-weight: 600;
     color: #888888;
     margin-top: 0.2rem;
+}
+
+/* Estilos para precio tachado y precio con descuento en el carrito */
+.precio-tachado {
+    text-decoration: line-through;
+    color: #888888;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.precio-con-descuento {
+    color: var(--volcan-oscuro);
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.1;
 }
 
 .item-controles-stock {
@@ -188,6 +223,10 @@
     text-align: center;
     width: 100%;
     display: block;
+}
+
+.texto-stock.texto-peligro {
+    color: #dc3545;
 }
 
 .item-acciones {
