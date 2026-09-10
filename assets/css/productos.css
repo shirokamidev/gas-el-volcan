@@ -28,8 +28,8 @@
 /* Contenedor principal del catalogo */
 .seccion-catalogo-fondo {
     background-color: var(--volcan-claro);
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 3rem;
 }
 
 .contenedor-catalogo-principal {
@@ -101,14 +101,6 @@
 #cat-accesorios:checked ~ .layout-catalogo .columna-filtros .etiqueta-accesorios {
     color: var(--volcan-naranja);
     font-weight: 700;
-}
-
-/* Filtrado de productos */
-#cat-cilindros:checked ~ .layout-catalogo .columna-productos .grilla-productos .tarjeta-producto:not(.cat-cilindros),
-#cat-reguladores:checked ~ .layout-catalogo .columna-productos .grilla-productos .tarjeta-producto:not(.cat-reguladores),
-#cat-mangueras:checked ~ .layout-catalogo .columna-productos .grilla-productos .tarjeta-producto:not(.cat-mangueras),
-#cat-accesorios:checked ~ .layout-catalogo .columna-productos .grilla-productos .tarjeta-producto:not(.cat-accesorios) {
-    display: none;
 }
 
 /* Contenedor de productos */

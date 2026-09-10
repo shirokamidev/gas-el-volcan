@@ -12,8 +12,9 @@ if (grillaProductos) {
     grillaProductos.innerHTML = "";
 
     if (listaDeProductos.length === 0) {
-      grillaProductos.innerHTML = "<p style='grid-column: 1/-1; text-align: center; padding: 2rem;'>No se encontraron productos.</p>";
+      grillaProductos.innerHTML = "<p style='grid-column: 1/-1; text-align: center; padding: 2rem; color: #666; font-weight: 600;'>No se encontraron productos.</p>";
       textoResultados.textContent = "Mostrando 0 resultados";
+      textoResultados.style.display = "block";
       return;
     }
 
@@ -66,6 +67,7 @@ if (grillaProductos) {
     });
 
     mostrarProductos(productosFiltrados);
+    textoResultados.style.display = "block";
   }
 
   radiosCategorias.forEach(radio => {
@@ -76,7 +78,22 @@ if (grillaProductos) {
     });
   });
 
-  if (btnMostrarMovil) btnMostrarMovil.addEventListener("click", aplicarFiltros);
+  if (btnMostrarMovil) {
+      btnMostrarMovil.addEventListener("click", () => {
+          aplicarFiltros();
+          
+          const cajaHerramientas = document.querySelector(".herramientas-catalogo");
+          if (cajaHerramientas) {
+              const rect = cajaHerramientas.getBoundingClientRect();
+              const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+              window.scrollTo({
+                  top: rect.top + scrollTop - 100,
+                  behavior: "smooth"
+              });
+          }
+      });
+  }
+
   if (btnBuscar) {
       btnBuscar.addEventListener("click", aplicarFiltros);
       buscadorInput.addEventListener("keyup", (e) => {
@@ -85,6 +102,7 @@ if (grillaProductos) {
   }
 
   mostrarProductos(window.productosBD);
+  textoResultados.style.display = "block";
 }
 
 // Logica visual de la pagina del carrito
@@ -100,22 +118,26 @@ if (contenedorCarrito) {
 
   window.renderizarCarrito = function() {
     contenedorCarrito.innerHTML = "";
+    const divAccionesGlobales = document.querySelector(".acciones-globales-carrito");
     
     if (window.carritoVirtual.length === 0) {
-      contenedorCarrito.innerHTML = "<p style='padding: 2rem; text-align: center; font-weight: 600;'>Tu carrito está vacío.</p>";
+      contenedorCarrito.innerHTML = "<div style='display: flex; justify-content: center; padding: 3rem; width: 100%;'><p style='font-weight: 600; color: #555;'>Tu carrito está vacío.</p></div>";
       montoTotalDOM.textContent = "$ 0";
+      if (divAccionesGlobales) divAccionesGlobales.style.display = "none";
       return;
     }
 
+    if (divAccionesGlobales) divAccionesGlobales.style.display = "flex";
     let subtotal = 0;
 
     window.carritoVirtual.forEach((producto, index) => {
       if (!producto || !producto.precioResidencial) return;
 
-      const totalItem = producto.precioResidencial * producto.cantidad;
-      subtotal += totalItem;
+      const precioUnitarioOriginal = producto.precioResidencial;
+      const precioUnitarioEfectivo = Math.round(precioUnitarioOriginal * (1 - descuentoActivo));
+      const totalItem = precioUnitarioEfectivo * producto.cantidad;
+      subtotal += (Math.round(precioUnitarioOriginal * producto.cantidad));
 
-      // Logica de bajo stock
       let claseAlertaStock = "";
       let textoAlertaStock = `${producto.stock} disponibles`;
       
@@ -124,20 +146,34 @@ if (contenedorCarrito) {
           textoAlertaStock = `¡Últimas ${producto.stock} unidades!`;
       }
 
+      let htmlPrecios = "";
+      if (descuentoActivo > 0) {
+          htmlPrecios = `
+            <span class="precio-tachado">$${precioUnitarioOriginal.toLocaleString("es-CL")}</span>
+            <span class="precio-con-descuento">$${precioUnitarioEfectivo.toLocaleString("es-CL")}</span>
+          `;
+      } else {
+          htmlPrecios = `
+            <span class="precio-principal">$${precioUnitarioOriginal.toLocaleString("es-CL")}</span>
+            <span class="precio-secundario">Comercial: $${producto.precioComercial.toLocaleString("es-CL")}</span>
+          `;
+      }
+
       const articulo = document.createElement("article");
       articulo.classList.add("item-carrito");
       
       articulo.innerHTML = `
         <div class="item-imagen">
-            <img src="${producto.imagen}" alt="${producto.nombre}" class="img-producto-carrito">
+            <a href="detalle-productos.html">
+                <img src="${producto.imagen}" alt="${producto.nombre}" class="img-producto-carrito">
+            </a>
         </div>
         <div class="item-detalles-texto">
             <span class="item-categoria">${producto.categoria.toUpperCase()}</span>
             <h3 class="item-nombre">${producto.nombre}</h3>
         </div>
         <div class="item-precios">
-            <span class="precio-principal">$${producto.precioResidencial.toLocaleString("es-CL")}</span>
-            <span class="precio-secundario">$${producto.precioComercial.toLocaleString("es-CL")}</span>
+            ${htmlPrecios}
         </div>
         <div class="item-controles-stock">
             <div class="control-cantidad-carrito">
@@ -161,8 +197,9 @@ if (contenedorCarrito) {
       contenedorCarrito.appendChild(articulo);
     });
 
-    const totalDescuento = subtotal * descuentoActivo;
-    const totalFinal = subtotal - totalDescuento;
+    const subtotalReal = window.carritoVirtual.reduce((acc, p) => acc + (p.precioResidencial * p.cantidad), 0);
+    const totalDescuento = Math.round(subtotalReal * descuentoActivo);
+    const totalFinal = Math.round(subtotalReal - totalDescuento);
     montoTotalDOM.textContent = "$ " + totalFinal.toLocaleString("es-CL");
   };
 
@@ -191,6 +228,13 @@ if (contenedorCarrito) {
 
   if(btnAplicarCupon){
     btnAplicarCupon.addEventListener("click", () => {
+      if (window.carritoVirtual.length === 0) {
+        mensajeCupon.textContent = "Agrega productos antes de aplicar un cupón.";
+        mensajeCupon.style.color = "#dc3545";
+        mensajeCupon.style.display = "block";
+        return;
+      }
+
       const cuponStr = inputCupon.value.trim().toUpperCase();
       if(cuponStr === "VOLCAN15") {
         descuentoActivo = 0.15;
@@ -201,6 +245,7 @@ if (contenedorCarrito) {
         mensajeCupon.textContent = "Cupón inválido.";
         mensajeCupon.style.color = "#dc3545";
       }
+      mensajeCupon.style.display = "block";
       window.renderizarCarrito();
     });
   }
@@ -231,10 +276,8 @@ if (selectRegion && selectComuna) {
     ]
   };
 
-  selectRegion.addEventListener("change", function() {
-    const regionSeleccionada = this.value;
+  function poblarComunas(regionSeleccionada) {
     selectComuna.innerHTML = '<option value="" disabled selected>Selecciona tu comuna...</option>';
-    
     if (comunasPorRegion[regionSeleccionada]) {
       comunasPorRegion[regionSeleccionada].forEach(comuna => {
         const option = document.createElement("option");
@@ -243,7 +286,41 @@ if (selectRegion && selectComuna) {
         selectComuna.appendChild(option);
       });
     }
+  }
+
+  selectRegion.addEventListener("change", function() {
+    poblarComunas(this.value);
   });
+
+  const busquedaPrevia = localStorage.getItem("busquedaIndexVolcan");
+  if (busquedaPrevia) {
+    const busqueda = busquedaPrevia.toLowerCase();
+    let regionDestino = ""; 
+    let comunaDestino = ""; 
+    let radioSucursalDestino = "";
+
+    if (busqueda.includes("chillan") || busqueda.includes("chillán") || busqueda.includes("centro") || busqueda.includes("viejo") || busqueda.includes("oriente") || busqueda.includes("comercial") || busqueda.includes("industrial")) {
+        regionDestino = "nuble";
+        if (busqueda.includes("viejo") || busqueda.includes("oriente")) { comunaDestino = "chillan-viejo"; radioSucursalDestino = "suc-2"; }
+        else if (busqueda.includes("comercial") || busqueda.includes("industrial")) { comunaDestino = "chillan"; radioSucursalDestino = "suc-5"; }
+        else { comunaDestino = "chillan"; radioSucursalDestino = "suc-1"; }
+    } else if (busqueda.includes("pinto") || busqueda.includes("carmen") || busqueda.includes("ignacio") || busqueda.includes("rural")) {
+        regionDestino = "nuble"; comunaDestino = "pinto"; radioSucursalDestino = "suc-3";
+    } else if (busqueda.includes("bulnes") || busqueda.includes("quillon") || busqueda.includes("quillón") || busqueda.includes("sur")) {
+        regionDestino = "nuble"; comunaDestino = "bulnes"; radioSucursalDestino = "suc-4";
+    }
+
+    if (regionDestino !== "") {
+        selectRegion.value = regionDestino;
+        poblarComunas(regionDestino);
+        if (comunaDestino !== "") selectComuna.value = comunaDestino;
+        if (radioSucursalDestino !== "") {
+            const radioEl = document.getElementById(radioSucursalDestino);
+            if (radioEl) radioEl.checked = true;
+        }
+    }
+    localStorage.removeItem("busquedaIndexVolcan");
+  }
 
   if (btnBuscarSucursal) {
     btnBuscarSucursal.addEventListener("click", () => {
@@ -253,19 +330,48 @@ if (selectRegion && selectComuna) {
             return;
         }
 
-        if (comuna === "chillan") {
-            document.getElementById("suc-1").checked = true;
-        } else if (comuna === "chillan-viejo") {
-            document.getElementById("suc-2").checked = true;
-        } else if (comuna === "el-carmen" || comuna === "pinto" || comuna === "san-ignacio") {
-            document.getElementById("suc-3").checked = true;
-        } else if (comuna === "bulnes" || comuna === "quillon") {
-            document.getElementById("suc-4").checked = true;
-        } else {
-            alert("Actualmente no contamos con Punto Volcán en esta comuna.");
-        }
+        if (comuna === "chillan") document.getElementById("suc-1").checked = true;
+        else if (comuna === "chillan-viejo") document.getElementById("suc-2").checked = true;
+        else if (comuna === "el-carmen" || comuna === "pinto" || comuna === "san-ignacio") document.getElementById("suc-3").checked = true;
+        else if (comuna === "bulnes" || comuna === "quillon") document.getElementById("suc-4").checked = true;
+        else alert("Actualmente no contamos con Punto Volcán en esta comuna.");
     });
   }
+}
+
+// Logica del buscador del index
+const inputBuscadorIndex = document.getElementById("input-buscador-index");
+const btnBuscadorIndex = document.getElementById("btn-buscador-index");
+
+if (inputBuscadorIndex && btnBuscadorIndex) {
+  function irASucursales(e) {
+    e.preventDefault();
+    const valor = inputBuscadorIndex.value.trim().toLowerCase();
+    
+    if (!valor) {
+        alert("Por favor ingresa una comuna o zona para buscar.");
+        return;
+    }
+
+    const tieneChillan = valor.includes("chillan") || valor.includes("chillán") || valor.includes("centro") || valor.includes("viejo") || valor.includes("oriente") || valor.includes("comercial") || valor.includes("industrial");
+    const tieneRural = valor.includes("pinto") || valor.includes("carmen") || valor.includes("ignacio") || valor.includes("rural");
+    const tieneSur = valor.includes("bulnes") || valor.includes("quillon") || valor.includes("quillón") || valor.includes("sur");
+    const tieneBiobio = valor.includes("concepcion") || valor.includes("concepción") || valor.includes("talcahuano") || valor.includes("angeles") || valor.includes("ángeles") || valor.includes("biobio") || valor.includes("biobío");
+
+    if (tieneChillan || tieneRural || tieneSur || tieneBiobio) {
+      localStorage.setItem("busquedaIndexVolcan", valor);
+      window.location.href = "punto-volcan.html#seccion-busqueda";
+    } else {
+      alert("Actualmente no contamos con Punto Volcán para esta búsqueda.");
+    }
+  }
+
+  btnBuscadorIndex.addEventListener("click", irASucursales);
+  inputBuscadorIndex.addEventListener("keyup", (e) => {
+    if (e.key === "Enter") {
+      irASucursales(e);
+    }
+  });
 }
 
 // Logica de busqueda de blogs
@@ -276,44 +382,64 @@ if (grillaBlogs) {
   const btnLupa = document.getElementById("btn-buscar-lupa");
   const inputBuscarBlog = document.getElementById("buscar-blog");
   const btnFiltrarCat = document.getElementById("btn-filtrar-cat");
+  
+  let mensajeError = document.getElementById("mensaje-no-blogs");
+  if (!mensajeError) {
+      mensajeError = document.createElement("p");
+      mensajeError.id = "mensaje-no-blogs";
+      mensajeError.style.display = "none";
+      mensajeError.style.textAlign = "center";
+      mensajeError.style.width = "100%";
+      mensajeError.style.padding = "3rem";
+      mensajeError.style.color = "#666666";
+      mensajeError.style.fontWeight = "600";
+      mensajeError.textContent = "No se encontraron noticias con los filtros seleccionados.";
+      grillaBlogs.parentNode.insertBefore(mensajeError, grillaBlogs);
+  }
+
+  function filtrarBlogs() {
+    const texto = inputBuscarBlog.value.toLowerCase().trim();
+    const cat = document.getElementById("categoria-blog").value;
+    const fecha = document.getElementById("fecha-blog").value;
+    let encontrados = 0;
+
+    articulosBlog.forEach(articulo => {
+      const titulo = articulo.querySelector(".blog-titulo").textContent.toLowerCase();
+      const resumen = articulo.querySelector(".blog-resumen").textContent.toLowerCase();
+      const catHTML = articulo.dataset.categoria;
+      const fechaHTML = articulo.dataset.fecha;
+
+      const coincideTexto = texto === "" || titulo.includes(texto) || resumen.includes(texto);
+      const coincideCat = cat === "todas" || catHTML === cat;
+      const coincideFecha = fecha === "todos" || fechaHTML === fecha;
+
+      if (coincideTexto && coincideCat && coincideFecha) {
+        articulo.style.display = "flex";
+        encontrados++;
+      } else {
+        articulo.style.display = "none";
+      }
+    });
+
+    if (mensajeError) {
+        mensajeError.style.display = encontrados === 0 ? "block" : "none";
+    }
+  }
 
   if (btnLupa) {
     btnLupa.addEventListener("click", (e) => {
       e.preventDefault();
-      const texto = inputBuscarBlog.value.toLowerCase().trim();
-      
-      articulosBlog.forEach(articulo => {
-        const titulo = articulo.querySelector(".blog-titulo").textContent.toLowerCase();
-        const resumen = articulo.querySelector(".blog-resumen").textContent.toLowerCase();
-        
-        if (texto === "" || titulo.includes(texto) || resumen.includes(texto)) {
-          articulo.style.display = "flex";
-        } else {
-          articulo.style.display = "none";
-        }
-      });
+      filtrarBlogs();
+    });
+    inputBuscarBlog.addEventListener("keyup", (e) => {
+        if (e.key === "Enter") filtrarBlogs();
     });
   }
 
   if (btnFiltrarCat) {
     btnFiltrarCat.addEventListener("click", (e) => {
       e.preventDefault();
-      const cat = document.getElementById("categoria-blog").value;
-      const fecha = document.getElementById("fecha-blog").value;
-
-      articulosBlog.forEach(articulo => {
-        const catHTML = articulo.dataset.categoria;
-        const fechaHTML = articulo.dataset.fecha;
-
-        const coincideCat = (cat === "todas" || catHTML === cat);
-        const coincideFecha = (fecha === "todos" || fechaHTML === fecha);
-
-        if (coincideCat && coincideFecha) {
-          articulo.style.display = "flex";
-        } else {
-          articulo.style.display = "none";
-        }
-      });
+      filtrarBlogs();
     });
   }
 }

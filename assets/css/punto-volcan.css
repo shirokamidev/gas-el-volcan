@@ -1,223 +1,242 @@
-/* Indicador de navegacion activa */
+/* Indicador de navegación activa */
 .enlaces-navegacion a.activo {
     color: var(--volcan-naranja);
 }
 
-/* Seccion banner principal */
+/* Banner superior */
 .seccion-banner-gris {
     background-color: var(--volcan-claro);
-    padding: 4rem 1.25rem; 
-    text-align: center;
+    padding: 3rem 0;
 }
 
-/* Imagen del banner */
 .imagen-banner {
     width: 100%;
-    border-radius: 0.8rem;
-    display: block;
-    margin: 0 auto;
-    box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.1);
     height: auto;
+    border-radius: 0.625rem;
+    display: block;
 }
 
-/* Seccion buscador de sucursales */
+/* Buscador de sucursales */
 .seccion-buscador {
-    text-align: center;
-    padding-top: 4rem; 
-    padding-bottom: 2rem; 
+    padding: 2.5rem 1.25rem 1.5rem;
 }
 
-/* Seccion directorio y mapa interactivo */
-.seccion-mapa-directorio {
-    padding-bottom: 5rem; 
+#seccion-busqueda {
+    scroll-margin-top: 7.8rem;
 }
 
 .titulo-buscador {
-    font-size: 2.2rem;
     color: var(--volcan-oscuro);
+    font-size: 2rem;
     margin-bottom: 2rem;
+    text-align: left;
 }
 
 .formulario-buscador {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
     gap: 1.5rem;
-    max-width: 60rem;
-    margin: 0 auto;
-}
-
-.grupo-select {
-    flex: 1;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.05);
+    border: 1px solid #e0e0e0;
 }
 
 .grupo-select select {
     width: 100%;
     padding: 0.9rem 1.2rem;
-    font-size: 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 0.3125rem;
     font-family: inherit;
-    color: #444;
-    border: 1px solid #ccc;
-    border-radius: 0.4rem;
-    outline: none;
-    background-color: #fff;
+    font-size: 1rem;
+    color: var(--volcan-texto);
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
     cursor: pointer;
-    transition: border-color 0.3s ease;
+    background-color: #ffffff;
 }
 
 .grupo-select select:focus {
-    border-color: var(--volcan-naranja);
+    outline: none;
+    border-color: var(--volcan-azul);
+    box-shadow: 0 0 0 3px rgba(0, 75, 135, 0.1);
 }
 
 .boton-buscar {
     padding: 0.9rem 2.5rem;
-    font-size: 1.1rem;
-    border-radius: 2rem; 
+    font-size: 1.05rem;
 }
 
-/* Grilla del directorio */
+/* Directorio y Mapa */
+.seccion-mapa-directorio {
+    padding-bottom: 3rem;
+}
+
 .grilla-directorio {
     display: grid;
-    grid-template-columns: 2.8fr 1fr; 
-    gap: 2rem;
+    grid-template-columns: 1fr 24rem;
+    gap: 2.5rem;
     align-items: stretch;
 }
 
-/* Contenedor del mapa */
+/* Columna del Mapa */
 .columna-mapa {
-    width: 100%;
-    height: 100%; 
-    border-radius: 0.8rem;
+    background-color: #e0e0e0;
+    border-radius: 0.625rem;
     overflow: hidden;
-    box-shadow: 0 0.3rem 1rem rgba(0,0,0,0.1);
+    border: 1px solid #cccccc;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Contenedor de la lista de sucursales */
-.columna-lista {
-    position: relative; 
+.columna-mapa iframe {
     width: 100%;
+    flex: 1;
+    min-height: 100%;
 }
 
-/* Controladores de estado */
+/* Columna de Lista de Sucursales */
+.columna-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 .radio-oculto {
     display: none;
 }
 
-/* Lista general de zonas */
+/* Vista General de Zonas */
 .vista-lista-general {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    transition: opacity 0.2s ease;
 }
 
 .tarjeta-resumen {
     display: block;
-    background: #ffffff;
+    background-color: #ffffff;
     border: 1px solid #e0e0e0;
     border-radius: 0.5rem;
-    padding: 1rem 1.25rem;
+    padding: 1.5rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .tarjeta-resumen:hover {
-    background-color: #fcfcfc;
+    transform: translateY(-2px);
+    box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.06);
     border-color: var(--volcan-naranja);
 }
 
 .titulo-naranja {
     color: var(--volcan-naranja);
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 0.4rem;
 }
 
 .texto-direccion {
-    color: #333333;
+    color: #666666;
     font-size: 0.95rem;
+    line-height: 1.4;
     margin: 0;
 }
 
-/* Contenedor de detalles por sucursal */
+/* Vistas de Detalle por Zona */
 .vistas-detalles {
-    width: 100%;
+    display: none;
 }
 
-.vistas-detalles .detalle-card {
-    display: none; 
+.detalle-card {
+    display: none;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.05);
+}
+
+.tarjeta-detalle-encabezado {
+    background-color: #fcfcfc;
+    padding: 1.5rem;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.tarjeta-detalle-cuerpo {
+    padding: 1.5rem;
+    display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.tarjeta-detalle-encabezado,
-.tarjeta-detalle-cuerpo {
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 0.5rem;
-    padding: 1.25rem 1.5rem;
-    box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.05);
-}
-
 .tarjeta-detalle-cuerpo h4 {
     color: var(--volcan-oscuro);
-    font-size: 1.15rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+    margin-bottom: 0.2rem;
 }
 
 .dato-despacho {
-    color: #333333;
+    color: #555555;
     font-size: 0.95rem;
-    margin-bottom: 0.5rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-/* Informacion de contacto en detalle */
+.dato-despacho::before {
+    content: "•";
+    color: var(--volcan-naranja);
+    font-weight: bold;
+}
+
 .info-contacto-detalle {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    font-style: normal; 
+    gap: 0.6rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #cccccc;
+    font-style: normal;
 }
 
-/* Estilos de enlaces de contacto */
 .enlace-azul {
     color: var(--volcan-azul);
     font-weight: 700;
-    text-decoration: none;
-    font-size: 1.05rem;
-}
-
-.enlace-azul:hover {
-    color: var(--volcan-naranja);
+    text-decoration: underline;
+    font-size: 0.95rem;
 }
 
 .texto-naranja {
     color: var(--volcan-naranja);
-    font-size: 1.05rem;
+    font-size: 0.95rem;
 }
 
 .texto-rojo {
     color: #dc3545;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
 }
 
-/* Boton de regreso */
 .btn-atras {
     display: inline-block;
+    margin-top: 1.5rem;
     color: var(--volcan-azul);
+    font-size: 0.95rem;
     font-weight: 700;
-    font-size: 1rem;
     cursor: pointer;
-    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 .btn-atras:hover {
     color: var(--volcan-naranja);
 }
 
-/* Logica de visualizacion normal sin absolute */
+/* Lógica de visualización con Radios */
 #suc-1:checked ~ .vista-lista-general,
 #suc-2:checked ~ .vista-lista-general,
 #suc-3:checked ~ .vista-lista-general,
@@ -226,82 +245,75 @@
     display: none;
 }
 
-#suc-1:checked ~ .vistas-detalles #detalle-1,
-#suc-2:checked ~ .vistas-detalles #detalle-2,
-#suc-3:checked ~ .vistas-detalles #detalle-3,
-#suc-4:checked ~ .vistas-detalles #detalle-4,
-#suc-5:checked ~ .vistas-detalles #detalle-5 {
-    display: flex;
+#suc-1:checked ~ .vistas-detalles,
+#suc-2:checked ~ .vistas-detalles,
+#suc-3:checked ~ .vistas-detalles,
+#suc-4:checked ~ .vistas-detalles,
+#suc-5:checked ~ .vistas-detalles {
+    display: block;
 }
 
-/* Adaptacion para tabletas */
+#suc-1:checked ~ .vistas-detalles #detalle-1 { display: block; }
+#suc-2:checked ~ .vistas-detalles #detalle-2 { display: block; }
+#suc-3:checked ~ .vistas-detalles #detalle-3 { display: block; }
+#suc-4:checked ~ .vistas-detalles #detalle-4 { display: block; }
+#suc-5:checked ~ .vistas-detalles #detalle-5 { display: block; }
+
+/* Media Queries */
 @media (max-width: 64rem) {
+    #seccion-busqueda {
+        scroll-margin-top: 5.5rem;
+    }
+
+    .formulario-buscador {
+        grid-template-columns: 1fr;
+    }
+    
     .grilla-directorio {
-        grid-template-columns: 1fr; 
-        align-items: start; 
+        grid-template-columns: 1fr;
     }
 
     .columna-mapa {
-        height: 28rem; 
+        min-height: 25rem;
+        order: 2; 
     }
 
     .columna-lista {
-        height: auto;
-    }
-
-    .vistas-detalles {
-        height: auto;
-    }
-
-    .formulario-buscador {
-        flex-wrap: wrap;
-        width: 100%;
-    }
-
-    .grupo-select {
-        flex: 1;
-        min-width: 40%;
-    }
-    
-    .boton-buscar {
-        width: 100%;
+        order: 1;
     }
 }
 
-/* Adaptacion para dispositivos moviles */
 @media (max-width: 48rem) {
     .seccion-banner-gris {
-        padding: 2.5rem 1.25rem; 
+        padding: 0;
+    }
+
+    .seccion-banner-gris .contenedor {
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .imagen-banner {
+        width: 100%;
+        height: 10rem;
+        object-fit: fill; 
+        border-radius: 0; 
+        display: block;
     }
 
     .seccion-buscador {
-        padding-top: 2.5rem; 
-        padding-bottom: 1.5rem;
-    }
-
-    .seccion-mapa-directorio {
-        padding-bottom: 4.5rem; 
+        padding: 3rem 1.25rem 2rem;
     }
 
     .titulo-buscador {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .formulario-buscador {
-        flex-direction: column;
-        width: 100%;
-        gap: 1rem;
+        padding: 1.5rem;
     }
 
-    .grupo-select {
-        width: 100%;
-    }
-    
-    .boton-buscar {
-        width: 100%;
-    }
-    
     .columna-mapa {
-        height: 22rem; 
+        min-height: 20rem;
     }
 }
