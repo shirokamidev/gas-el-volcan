@@ -6,10 +6,16 @@
 
 @import url("utils/contenedores.css");
 
+@import url("utils/autenticacion.css");
+
 @import url("utils/formularios.css");
 
 @import url("utils/botones.css");
 
-@import url("utils/header.css");
+@import url("utils/tarjeta-producto.css");
 
 @import url("utils/navbar.css");
+
+@import url("utils/header.css");
+
+@import url("utils/footer.css");
