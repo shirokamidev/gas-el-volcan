@@ -35,11 +35,11 @@ if (grillaProductos) {
         </div>
         <div class="producto-controles">
             <div class="control-cantidad">
-                <button type="button" class="btn-restar" onclick="var inp=document.getElementById('cat-cant-${producto.id}'); inp.value=Math.max(1, parseInt(inp.value)-1);">-</button>
+                <button type="button" class="btn-restar btn-restar-dinamico" data-target="cat-cant-${producto.id}">-</button>
                 <input type="number" value="1" min="1" max="${producto.stock}" class="input-cantidad" id="cat-cant-${producto.id}" readonly />
-                <button type="button" class="btn-sumar" onclick="var inp=document.getElementById('cat-cant-${producto.id}'); inp.value=Math.min(${producto.stock}, parseInt(inp.value)+1);">+</button>
+                <button type="button" class="btn-sumar btn-sumar-dinamico" data-target="cat-cant-${producto.id}" data-max="${producto.stock}">+</button>
             </div>
-            <button type="button" class="boton boton-naranja boton-bloque btn-agregar-carrito" onclick="window.agregarAlCarrito(${producto.id}, parseInt(document.getElementById('cat-cant-${producto.id}').value))">AGREGAR AL CARRITO</button>
+            <button type="button" class="boton boton-naranja boton-bloque btn-agregar-dinamico" data-id="${producto.id}" data-target="cat-cant-${producto.id}">AGREGAR AL CARRITO</button>
         </div>
       `;
       grillaProductos.appendChild(tarjeta);
@@ -177,15 +177,15 @@ if (contenedorCarrito) {
         </div>
         <div class="item-controles-stock">
             <div class="control-cantidad-carrito">
-                <button type="button" class="btn-restar" onclick="window.cambiarCantidadCarrito(${index}, -1)">-</button>
+                <button type="button" class="btn-restar btn-restar-carrito" data-index="${index}">-</button>
                 <input type="number" value="${producto.cantidad}" class="input-cantidad" readonly>
-                <button type="button" class="btn-sumar" onclick="window.cambiarCantidadCarrito(${index}, 1)">+</button>
+                <button type="button" class="btn-sumar btn-sumar-carrito" data-index="${index}">+</button>
             </div>
             <span class="texto-stock ${claseAlertaStock}">${textoAlertaStock}</span>
         </div>
         <div class="item-acciones">
-            <button type="button" class="btn-eliminar-item" onclick="window.eliminarItemCarrito(${index})" aria-label="Eliminar producto">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <button type="button" class="btn-eliminar-item" data-index="${index}" aria-label="Eliminar producto">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events:none;">
                     <polyline points="3 6 5 6 21 6"></polyline>
                     <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
                     <line x1="10" y1="11" x2="10" y2="17"></line>
@@ -440,3 +440,63 @@ if (grillaBlogs) {
     });
   }
 }
+
+// Delegacion global de eventos de la tienda
+document.addEventListener("click", (e) => {
+  // Manejo de botones de resta
+  if (e.target.closest(".btn-restar-estatico") || e.target.closest(".btn-restar-dinamico")) {
+      const btn = e.target.closest("button");
+      const inputId = btn.getAttribute("data-target");
+      if (inputId) {
+          const input = document.getElementById(inputId);
+          if (input) input.value = Math.max(1, parseInt(input.value) - 1);
+      }
+  }
+
+  // Manejo de botones de suma
+  if (e.target.closest(".btn-sumar-estatico") || e.target.closest(".btn-sumar-dinamico")) {
+      const btn = e.target.closest("button");
+      const inputId = btn.getAttribute("data-target");
+      const maximo = parseInt(btn.getAttribute("data-max")) || 999;
+      if (inputId) {
+          const input = document.getElementById(inputId);
+          if (input) input.value = Math.min(maximo, parseInt(input.value) + 1);
+      }
+  }
+
+  // Manejo de botones de carrito
+  if (e.target.closest(".btn-agregar-estatico") || e.target.closest(".btn-agregar-dinamico")) {
+      const btn = e.target.closest("button");
+      const idProducto = parseInt(btn.getAttribute("data-id"));
+      const inputId = btn.getAttribute("data-target");
+      
+      if (inputId && window.agregarAlCarrito) {
+          const input = document.getElementById(inputId);
+          if (input) window.agregarAlCarrito(idProducto, parseInt(input.value));
+      }
+  }
+
+  // Manejo de botones de interaccion del carrito
+  if (e.target.closest(".btn-restar-carrito")) {
+      const btn = e.target.closest(".btn-restar-carrito");
+      const index = parseInt(btn.getAttribute("data-index"));
+      if (window.cambiarCantidadCarrito) window.cambiarCantidadCarrito(index, -1);
+  }
+
+  if (e.target.closest(".btn-sumar-carrito")) {
+      const btn = e.target.closest(".btn-sumar-carrito");
+      const index = parseInt(btn.getAttribute("data-index"));
+      if (window.cambiarCantidadCarrito) window.cambiarCantidadCarrito(index, 1);
+  }
+
+  if (e.target.closest(".btn-eliminar-item")) {
+      const btn = e.target.closest(".btn-eliminar-item");
+      const index = parseInt(btn.getAttribute("data-index"));
+      if (window.eliminarItemCarrito) window.eliminarItemCarrito(index);
+  }
+
+  // Manejo de impresion
+  if (e.target.closest("#btn-imprimir-catalogo")) {
+      window.print();
+  }
+});
