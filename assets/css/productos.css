@@ -182,12 +182,31 @@
     color: #ffffff;
 }
 
+.icono-impresion {
+    margin-right: 0.5rem;
+}
+
+/* Mensajes de estado del catalogo */
 .texto-resultados {
     color: #666666;
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
+    display: none;
 }
 
+.texto-resultados.activo {
+    display: block;
+}
+
+.mensaje-vacio-catalogo {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2rem;
+    color: #666666;
+    font-weight: 600;
+}
+
+/* Grilla de productos */
 .grilla-productos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(14.5rem, 1fr));
@@ -375,9 +394,12 @@
         margin-bottom: 2rem;
     }
 
-    .cabecera-filtros-movil h2 {
-        font-size: 1.5rem;
+    .titulo-filtros-movil {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
         color: var(--volcan-oscuro);
+        font-size: 1.5rem;
     }
 
     .boton-cerrar-filtros {

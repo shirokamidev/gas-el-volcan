@@ -41,7 +41,11 @@ if (formLogin) {
   function validarCorreoLogin() {
     const error = validarCorreo(correoLogin.value);
     errorCorreoLogin.textContent = error;
-    errorCorreoLogin.style.display = error ? "block" : "none";
+    if (error) {
+      errorCorreoLogin.classList.add("activo");
+    } else {
+      errorCorreoLogin.classList.remove("activo");
+    }
     return error === "";
   }
 
@@ -50,18 +54,18 @@ if (formLogin) {
 
     if (password === "") {
       errorPasswordLogin.textContent = "La contraseña es obligatoria.";
-      errorPasswordLogin.style.display = "block";
+      errorPasswordLogin.classList.add("activo");
       return false;
     }
 
     if (password.length < 4 || password.length > 10) {
       errorPasswordLogin.textContent = "La contraseña debe tener entre 4 y 10 caracteres.";
-      errorPasswordLogin.style.display = "block";
+      errorPasswordLogin.classList.add("activo");
       return false;
     }
 
     errorPasswordLogin.textContent = "";
-    errorPasswordLogin.style.display = "none";
+    errorPasswordLogin.classList.remove("activo");
     return true;
   }
 
@@ -79,16 +83,14 @@ if (formLogin) {
         window.location.href = "admin-index.html";
       } else {
         mensajeLogin.textContent = "Inicio de sesión validado correctamente.";
-        mensajeLogin.style.color = "var(--volcan-azul)";
-        mensajeLogin.style.display = "block";
+        mensajeLogin.className = "mensaje-estado-formulario activo exito";
         formLogin.reset();
-        errorCorreoLogin.style.display = "none";
-        errorPasswordLogin.style.display = "none";
+        errorCorreoLogin.classList.remove("activo");
+        errorPasswordLogin.classList.remove("activo");
       }
     } else {
       mensajeLogin.textContent = "Revise los campos marcados antes de continuar.";
-      mensajeLogin.style.color = "#dc3545";
-      mensajeLogin.style.display = "block";
+      mensajeLogin.className = "mensaje-estado-formulario activo error";
     }
   });
 }
@@ -111,25 +113,29 @@ if (formContacto) {
 
     if (nombre === "") {
       errorNombreContacto.textContent = "El nombre es obligatorio.";
-      errorNombreContacto.style.display = "block";
+      errorNombreContacto.classList.add("activo");
       return false;
     }
 
     if (nombre.length > 100) {
       errorNombreContacto.textContent = "El nombre no puede superar los 100 caracteres.";
-      errorNombreContacto.style.display = "block";
+      errorNombreContacto.classList.add("activo");
       return false;
     }
 
     errorNombreContacto.textContent = "";
-    errorNombreContacto.style.display = "none";
+    errorNombreContacto.classList.remove("activo");
     return true;
   }
 
   function validarCorreoContacto() {
     const error = validarCorreo(correoContacto.value);
     errorCorreoContacto.textContent = error;
-    errorCorreoContacto.style.display = error ? "block" : "none";
+    if (error) {
+      errorCorreoContacto.classList.add("activo");
+    } else {
+      errorCorreoContacto.classList.remove("activo");
+    }
     return error === "";
   }
 
@@ -138,18 +144,18 @@ if (formContacto) {
 
     if (comentario === "") {
       errorComentarioContacto.textContent = "El comentario es obligatorio.";
-      errorComentarioContacto.style.display = "block";
+      errorComentarioContacto.classList.add("activo");
       return false;
     }
 
     if (comentario.length > 500) {
       errorComentarioContacto.textContent = "El comentario no puede superar los 500 caracteres.";
-      errorComentarioContacto.style.display = "block";
+      errorComentarioContacto.classList.add("activo");
       return false;
     }
 
     errorComentarioContacto.textContent = "";
-    errorComentarioContacto.style.display = "none";
+    errorComentarioContacto.classList.remove("activo");
     return true;
   }
 
@@ -166,16 +172,14 @@ if (formContacto) {
 
     if (nombreValido && correoValido && comentarioValido) {
       mensajeContacto.textContent = "Mensaje enviado correctamente. Gracias por contactarnos.";
-      mensajeContacto.style.color = "var(--volcan-azul)";
-      mensajeContacto.style.display = "block";
+      mensajeContacto.className = "mensaje-estado-formulario activo exito";
       formContacto.reset();
-      errorNombreContacto.style.display = "none";
-      errorCorreoContacto.style.display = "none";
-      errorComentarioContacto.style.display = "none";
+      errorNombreContacto.classList.remove("activo");
+      errorCorreoContacto.classList.remove("activo");
+      errorComentarioContacto.classList.remove("activo");
     } else {
       mensajeContacto.textContent = "Revise los campos marcados antes de enviar.";
-      mensajeContacto.style.color = "#dc3545";
-      mensajeContacto.style.display = "block";
+      mensajeContacto.className = "mensaje-estado-formulario activo error";
     }
   });
 }
@@ -226,69 +230,67 @@ if (formRegistro) {
 
     if (rutRegistro.value.trim() === "" || rutRegistro.value.length < 8) {
       errorRutRegistro.textContent = "Ingrese un RUT válido sin puntos ni guion.";
-      errorRutRegistro.style.display = "block";
+      errorRutRegistro.classList.add("activo");
       formularioValido = false;
     } else {
       errorRutRegistro.textContent = "";
-      errorRutRegistro.style.display = "none";
+      errorRutRegistro.classList.remove("activo");
     }
 
     if (nombreRegistro.value.trim() === "") {
       errorNombreRegistro.textContent = "El nombre es obligatorio.";
-      errorNombreRegistro.style.display = "block";
+      errorNombreRegistro.classList.add("activo");
       formularioValido = false;
     } else {
       errorNombreRegistro.textContent = "";
-      errorNombreRegistro.style.display = "none";
+      errorNombreRegistro.classList.remove("activo");
     }
 
     const errorCorreo = validarCorreo(correoRegistro.value);
     if (errorCorreo !== "") {
       errorCorreoRegistro.textContent = errorCorreo;
-      errorCorreoRegistro.style.display = "block";
+      errorCorreoRegistro.classList.add("activo");
       formularioValido = false;
     } else if (correoRegistro.value !== correoConfirmRegistro.value) {
       errorCorreoRegistro.textContent = "Los correos electrónicos no coinciden.";
-      errorCorreoRegistro.style.display = "block";
+      errorCorreoRegistro.classList.add("activo");
       formularioValido = false;
     } else {
       errorCorreoRegistro.textContent = "";
-      errorCorreoRegistro.style.display = "none";
+      errorCorreoRegistro.classList.remove("activo");
     }
 
     if (passwordRegistro.value.length < 4 || passwordRegistro.value.length > 10) {
       errorPasswordRegistro.textContent = "La contraseña debe tener entre 4 y 10 caracteres.";
-      errorPasswordRegistro.style.display = "block";
+      errorPasswordRegistro.classList.add("activo");
       formularioValido = false;
     } else if (passwordRegistro.value !== passwordConfirmRegistro.value) {
       errorPasswordRegistro.textContent = "Las contraseñas no coinciden.";
-      errorPasswordRegistro.style.display = "block";
+      errorPasswordRegistro.classList.add("activo");
       formularioValido = false;
     } else {
       errorPasswordRegistro.textContent = "";
-      errorPasswordRegistro.style.display = "none";
+      errorPasswordRegistro.classList.remove("activo");
     }
 
     if (!terminosRegistro.checked) {
       errorTerminosRegistro.textContent = "Debes aceptar los términos y condiciones.";
-      errorTerminosRegistro.style.display = "block";
+      errorTerminosRegistro.classList.add("activo");
       formularioValido = false;
     } else {
       errorTerminosRegistro.textContent = "";
-      errorTerminosRegistro.style.display = "none";
+      errorTerminosRegistro.classList.remove("activo");
     }
 
     if (formularioValido) {
       mensajeRegistro.textContent = "Cuenta registrada exitosamente. Redirigiendo...";
-      mensajeRegistro.style.color = "var(--volcan-azul)";
-      mensajeRegistro.style.display = "block";
+      mensajeRegistro.className = "mensaje-estado-formulario activo exito";
       setTimeout(() => {
         window.location.href = "login.html";
       }, 2000);
     } else {
       mensajeRegistro.textContent = "Por favor, corrige los errores antes de continuar.";
-      mensajeRegistro.style.color = "#dc3545";
-      mensajeRegistro.style.display = "block";
+      mensajeRegistro.className = "mensaje-estado-formulario activo error";
     }
   });
 }

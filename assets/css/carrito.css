@@ -6,7 +6,7 @@
 /* Fondo general de la sección */
 .seccion-fondo-gris {
     background-color: var(--volcan-claro);
-    padding: 3rem 0 5rem 0;
+    padding: 4rem 0;
     min-height: calc(100vh - 200px);
 }
 
@@ -293,6 +293,7 @@
     box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.04);
     width: 24rem;
     flex-shrink: 0;
+    align-self: start;
 }
 
 .resumen-caja {
@@ -367,6 +368,39 @@
     font-size: 0.9rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+/* Mensajes de validacion cupon */
+.mensaje-cupon {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    font-weight: 600;
+    display: none;
+}
+
+.mensaje-cupon.activo {
+    display: block;
+}
+
+.mensaje-cupon.exito {
+    color: var(--volcan-azul);
+}
+
+.mensaje-cupon.error {
+    color: #dc3545;
+}
+
+/* Estado vacio del carrito */
+.mensaje-carrito-vacio {
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    width: 100%;
+}
+
+.mensaje-carrito-vacio p {
+    font-weight: 600;
+    color: #555555;
 }
 
 /* Botones de accion final */

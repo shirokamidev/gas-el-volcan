@@ -47,7 +47,7 @@
                         <div class="grupo-input">
                             <input type="email" id="correo-login" placeholder="E-mail" class="input-campo">
                             <span class="texto-ayuda">Solo correos con @duoc.cl, @profesor.duoc.cl y @gmail.com</span>
-                            <span id="error-correo-login" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: none; margin-top: 0.3rem; text-align: justify;"></span>
+                            <span id="error-correo-login" class="texto-peligro mensaje-error-input"></span>
                         </div>
                         
                         <div class="grupo-input">
@@ -59,7 +59,7 @@
                                 
                                 <input type="password" id="password-login" placeholder="Contraseña de acceso" class="input-limpio">
                                 
-                                <span id="toggle-password" class="icono-derecho" style="cursor: pointer; color: var(--volcan-azul);">
+                                <span id="toggle-password" class="icono-derecho icono-toggle-password">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                         <circle cx="12" cy="12" r="3"></circle>
@@ -67,12 +67,12 @@
                                 </span>
                             </div>
                             <span class="texto-ayuda">Entre 4 a 10 caracteres.</span>
-                            <span id="error-password-login" class="texto-peligro" style="font-size: 0.85rem; font-weight: 600; display: none; margin-top: 0.3rem; text-align: justify;"></span>
+                            <span id="error-password-login" class="texto-peligro mensaje-error-input"></span>
                         </div>
                         
                         <a href="#" class="enlace-recuperar">¿Olvidaste tu contraseña? Recuperar</a>
                         
-                        <div id="mensaje-login" style="text-align: center; font-weight: 600; margin-top: 0.5rem; display: none;"></div>
+                        <div id="mensaje-login" class="mensaje-estado-formulario"></div>
 
                         <button type="submit" class="boton boton-naranja boton-bloque boton-grande">Ingresar</button>
                     </form>

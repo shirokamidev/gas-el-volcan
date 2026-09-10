@@ -12,9 +12,9 @@ if (grillaProductos) {
     grillaProductos.innerHTML = "";
 
     if (listaDeProductos.length === 0) {
-      grillaProductos.innerHTML = "<p style='grid-column: 1/-1; text-align: center; padding: 2rem; color: #666; font-weight: 600;'>No se encontraron productos.</p>";
+      grillaProductos.innerHTML = "<p class='mensaje-vacio-catalogo'>No se encontraron productos.</p>";
       textoResultados.textContent = "Mostrando 0 resultados";
-      textoResultados.style.display = "block";
+      textoResultados.classList.add("activo");
       return;
     }
 
@@ -67,7 +67,7 @@ if (grillaProductos) {
     });
 
     mostrarProductos(productosFiltrados);
-    textoResultados.style.display = "block";
+    textoResultados.classList.add("activo");
   }
 
   radiosCategorias.forEach(radio => {
@@ -102,7 +102,7 @@ if (grillaProductos) {
   }
 
   mostrarProductos(window.productosBD);
-  textoResultados.style.display = "block";
+  textoResultados.classList.add("activo");
 }
 
 // Logica visual de la pagina del carrito
@@ -121,7 +121,7 @@ if (contenedorCarrito) {
     const divAccionesGlobales = document.querySelector(".acciones-globales-carrito");
     
     if (window.carritoVirtual.length === 0) {
-      contenedorCarrito.innerHTML = "<div style='display: flex; justify-content: center; padding: 3rem; width: 100%;'><p style='font-weight: 600; color: #555;'>Tu carrito está vacío.</p></div>";
+      contenedorCarrito.innerHTML = "<div class='mensaje-carrito-vacio'><p>Tu carrito está vacío.</p></div>";
       montoTotalDOM.textContent = "$ 0";
       if (divAccionesGlobales) divAccionesGlobales.style.display = "none";
       return;
@@ -230,8 +230,7 @@ if (contenedorCarrito) {
     btnAplicarCupon.addEventListener("click", () => {
       if (window.carritoVirtual.length === 0) {
         mensajeCupon.textContent = "Agrega productos antes de aplicar un cupón.";
-        mensajeCupon.style.color = "#dc3545";
-        mensajeCupon.style.display = "block";
+        mensajeCupon.className = "mensaje-cupon activo error";
         return;
       }
 
@@ -239,13 +238,12 @@ if (contenedorCarrito) {
       if(cuponStr === "VOLCAN15") {
         descuentoActivo = 0.15;
         mensajeCupon.textContent = "Cupón del 15% aplicado.";
-        mensajeCupon.style.color = "var(--volcan-azul)";
+        mensajeCupon.className = "mensaje-cupon activo exito";
       } else {
         descuentoActivo = 0;
         mensajeCupon.textContent = "Cupón inválido.";
-        mensajeCupon.style.color = "#dc3545";
+        mensajeCupon.className = "mensaje-cupon activo error";
       }
-      mensajeCupon.style.display = "block";
       window.renderizarCarrito();
     });
   }
@@ -387,12 +385,7 @@ if (grillaBlogs) {
   if (!mensajeError) {
       mensajeError = document.createElement("p");
       mensajeError.id = "mensaje-no-blogs";
-      mensajeError.style.display = "none";
-      mensajeError.style.textAlign = "center";
-      mensajeError.style.width = "100%";
-      mensajeError.style.padding = "3rem";
-      mensajeError.style.color = "#666666";
-      mensajeError.style.fontWeight = "600";
+      mensajeError.className = "mensaje-vacio-blogs";
       mensajeError.textContent = "No se encontraron noticias con los filtros seleccionados.";
       grillaBlogs.parentNode.insertBefore(mensajeError, grillaBlogs);
   }
@@ -414,15 +407,19 @@ if (grillaBlogs) {
       const coincideFecha = fecha === "todos" || fechaHTML === fecha;
 
       if (coincideTexto && coincideCat && coincideFecha) {
-        articulo.style.display = "flex";
+        articulo.classList.remove("oculto");
         encontrados++;
       } else {
-        articulo.style.display = "none";
+        articulo.classList.add("oculto");
       }
     });
 
     if (mensajeError) {
-        mensajeError.style.display = encontrados === 0 ? "block" : "none";
+        if (encontrados === 0) {
+            mensajeError.classList.add("activo");
+        } else {
+            mensajeError.classList.remove("activo");
+        }
     }
   }
 

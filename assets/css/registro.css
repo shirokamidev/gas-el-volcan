@@ -227,6 +227,44 @@
     text-align: justify;
 }
 
+/* Estados y validaciones de formulario */
+.mensaje-error-input {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 0.3rem;
+    text-align: justify;
+    display: none;
+}
+
+.mensaje-error-input.activo {
+    display: block;
+}
+
+.icono-toggle-password {
+    cursor: pointer;
+    color: var(--volcan-azul);
+}
+
+.mensaje-estado-formulario {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+.mensaje-estado-formulario.activo {
+    display: block;
+}
+
+.mensaje-estado-formulario.exito {
+    color: var(--volcan-azul);
+}
+
+.mensaje-estado-formulario.error {
+    color: #dc3545;
+}
+
 /* Bloque informativo inferior */
 .caja-informacion {
     background-color: #f4f8fc; 
