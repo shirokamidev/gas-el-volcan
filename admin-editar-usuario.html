@@ -3,154 +3,225 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Formulario administrativo de demostración para editar perfiles de Gas El Volcán.">
         <title>Gas El Volcán | Editar Usuario</title>
-        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-        <!-- Se reutilizan los estilos del formulario de registro de este mismo módulo -->
-        <link rel="stylesheet" href="assets/css/admin-layout.css">
-        <link rel="stylesheet" href="assets/css/pages/admin-nuevo-usuario.css">
-        <link rel="stylesheet" href="assets/css/pages/admin-editar-usuario.css">
-    </head>
-        <body>
-        <!-- Control del menú administrativo para dispositivos móviles -->
-        <input type="checkbox" id="menu-admin-movil" class="admin-control-menu">
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
 
-        <!-- Cabecera compartida del panel de administración -->
+        <!-- Fuentes de Google -->
+
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/admin-layout.css" />
+        <link rel="stylesheet" href="assets/css/utils/admin-formularios.css" />
+        <link rel="stylesheet" href="assets/css/pages/admin-editar-usuario.css" />
+    </head>
+    <body>
+        <!-- Control del menú móvil -->
+        <input type="checkbox" id="toggle-menu" class="toggle-menu-checkbox">
+
+        <!-- Cabecera principal -->
         <header class="admin-cabecera">
-            <label for="menu-admin-movil" class="admin-boton-menu">
-                <span aria-hidden="true">☰</span>
-                <span>Menú administrativo</span>
-            </label>
-            <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
-            <h1>Gestión de usuarios</h1>
-            <a class="admin-enlace-sitio" href="index.html">Volver al sitio</a>
+            <div class="cabecera-izq">
+                <label for="toggle-menu" class="btn-hamburguesa">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </label>
+                <a href="admin-index.html" class="logo-admin">
+                    <img src="assets/images/favicon.ico" alt="Icono Gas El Volcán">
+                    <span>Admin Volcán</span>
+                </a>
+            </div>
+
+            <div class="cabecera-der">
+                <span class="saludo-admin">Hola, <strong>Administradora</strong></span>
+                <a href="login.html" class="btn-salir">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    Salir
+                </a>
+            </div>
         </header>
 
-        <div class="admin-estructura">
-            <!-- Navegación compartida entre módulos administrativos -->
-            <aside class="admin-sidebar" id="navegacion-admin">
-                <nav aria-label="Menú de administración">
-                    <h2>Menú principal</h2>
-                    <ul>
-                        <li><a href="admin-index.html">Inicio</a></li>
-                        <li class="admin-separador">Módulo productos</li>
-                        <li><a href="admin-lista-productos.html">Listar productos</a></li>
-                        <li><a href="admin-nuevo-producto.html">Nuevo producto</a></li>
-                        <li class="admin-separador">Módulo usuarios</li>
-                        <li><a href="admin-lista-usuarios.html" aria-current="page">Listar usuarios</a></li>
-                        <li><a href="admin-nuevo-usuario.html">Nuevo usuario</a></li>
-                    </ul>
-                </nav>
-            </aside>
+        <!-- Barra de navegación lateral -->
+        <aside class="admin-sidebar">
+            <nav class="nav-lateral">
+                <ul>
+                    <li><a href="admin-index.html">Inicio</a></li>
 
-            <main class="admin-main">
-                <!-- Presentación del formulario de edición -->
-                <section class="panel-titulo" aria-labelledby="titulo-editar-usuario">
-                    <div class="titulo-acciones">
-                        <div>
-                            <h2 id="titulo-editar-usuario">Editar usuario</h2>
-                            <p>Revisa la estructura para actualizar la información de un perfil existente.</p>
-                        </div>
-                        <a href="admin-lista-usuarios.html" class="enlace-volver">Volver a la lista</a>
-                    </div>
-                </section>
+                    <li class="separador">Módulo Productos</li>
+                    <li><a href="admin-lista-productos.html">Listar productos</a></li>
+                    <li><a href="admin-nuevo-producto.html">Nuevo producto</a></li>
 
-                <!-- Los valores corresponden a un perfil ficticio de demostración -->
-                <section class="panel-formulario" aria-labelledby="subtitulo-edicion">
-                    <h2 id="subtitulo-edicion">Información del usuario</h2>
-                    <p id="aviso-edicion" class="aviso-formulario">Ejemplo de edición del perfil de administración. No son datos reales y los cambios todavía no se guardan.</p>
+                    <li class="separador">Módulo Usuarios</li>
+                    <li><a href="admin-lista-usuarios.html">Listar usuarios</a></li>
+                    <li><a href="admin-nuevo-usuario.html">Nuevo usuario</a></li>
+                    <li><span class="activo" aria-current="page">Editar usuario</span></li>
+                </ul>
+            </nav>
+        </aside>
 
-                    <form id="form-editar-usuario" class="formulario-usuario" aria-describedby="aviso-edicion">
-                        <input type="hidden" id="usuario-id" name="usuarioId" value="demo-admin">
+        <!-- Contenido dinámico principal -->
+        <main class="admin-main">
+            <div class="contenedor-vista">
 
-                        <fieldset class="grupo-campos">
-                            <legend>Datos personales</legend>
-                            <div class="grilla-campos">
-                                <div class="campo-formulario campo-completo">
-                                    <label for="rut-usuario">RUT</label>
-                                    <input id="rut-usuario" name="rut" type="text" value="Por registrar" readonly>
-                                    <small>El RUT no se podrá modificar desde la edición de usuarios.</small>
+                <!-- Cabecera del módulo -->
+                <div class="cabecera-modulo">
+                    <h1>Editar Usuario</h1>
+                    <a href="admin-lista-usuarios.html" class="btn-secundario">
+                        <span>←</span> Volver a la lista
+                    </a>
+                </div>
+
+                <!-- Contenedor del formulario -->
+                <section class="caja-formulario-admin">
+                    <form id="form-editar-usuario" action="#" class="formulario-generico" novalidate>
+                        
+                        <!-- Identificador del registro -->
+                        <input type="hidden" id="usuario-id">
+
+                        <!-- Sección 1: Datos personales -->
+                        <fieldset class="seccion-fieldset">
+                            <legend class="titulo-legend">Datos Personales</legend>
+                            <div class="linea-separadora"></div>
+
+                            <p class="texto-obligatorio">* Modifica la información solicitada a continuación:</p>
+
+                            <div class="grilla-formulario">
+                                <div class="grupo-input col-completa">
+                                    <label class="label-campo" for="rut-usuario">RUT <span class="asterisco">*</span></label>
+                                    <input type="text" id="rut-usuario" class="input-campo input-readonly" readonly>
+                                    <span class="texto-ayuda">El RUT no puede ser modificado por seguridad.</span>
+                                    <span id="error-rut" class="texto-peligro"></span>
                                 </div>
-                                <div class="campo-formulario campo-completo">
-                                    <label for="nombre-usuario">Nombre <span aria-hidden="true">*</span></label>
-                                    <input id="nombre-usuario" name="nombre" type="text" value="Perfil" maxlength="100" required>
+
+                                <div class="grupo-input col-completa">
+                                    <label class="label-campo" for="nombre-usuario">Nombre <span class="asterisco">*</span></label>
+                                    <input type="text" id="nombre-usuario" class="input-campo">
+                                    <span class="texto-ayuda">Obligatorio. Máximo 50 caracteres.</span>
+                                    <span id="error-nombre-usu" class="texto-peligro"></span>
                                 </div>
-                                <div class="campo-formulario">
-                                    <label for="apellidop-usuario">Apellido paterno <span aria-hidden="true">*</span></label>
-                                    <input id="apellidop-usuario" name="apellidoPaterno" type="text" value="Administración" maxlength="100" required>
+
+                                <div class="grupo-input">
+                                    <label class="label-campo" for="apellidop-usuario">Apellido Paterno <span class="asterisco">*</span></label>
+                                    <input type="text" id="apellidop-usuario" class="input-campo">
+                                    <span id="error-apellidop-usu" class="texto-peligro"></span>
                                 </div>
-                                <div class="campo-formulario">
-                                    <label for="apellidom-usuario">Apellido materno (opcional)</label>
-                                    <input id="apellidom-usuario" name="apellidoMaterno" type="text" maxlength="100">
+
+                                <div class="grupo-input">
+                                    <label class="label-campo" for="apellidom-usuario">Apellido Materno (Opcional)</label>
+                                    <input type="text" id="apellidom-usuario" class="input-campo">
+                                    <span id="error-apellidom-usu" class="texto-peligro"></span>
                                 </div>
                             </div>
                         </fieldset>
 
-                        <fieldset class="grupo-campos">
-                            <legend>Contacto y credenciales</legend>
-                            <div class="grilla-campos">
-                                <div class="campo-formulario">
-                                    <label for="correo-usuario">Correo electrónico <span aria-hidden="true">*</span></label>
-                                    <input id="correo-usuario" name="correo" type="email" value="admin@example.com" maxlength="150" required>
+                        <!-- Sección 2: Contacto y credenciales -->
+                        <fieldset class="seccion-fieldset espaciado-seccion">
+                            <legend class="titulo-legend">Contacto y Credenciales</legend>
+                            <div class="linea-separadora"></div>
+
+                            <div class="grilla-formulario">
+                                <div class="grupo-input">
+                                    <label class="label-campo" for="telefono-usuario">Teléfono (Opcional)</label>
+                                    <input type="tel" id="telefono-usuario" class="input-campo" pattern="[0-9]{9}">
+                                    <span class="texto-ayuda">Opcional. 9 dígitos numéricos.</span>
+                                    <span id="error-telefono" class="texto-peligro"></span>
                                 </div>
-                                <div class="campo-formulario">
-                                    <label for="telefono-usuario">Teléfono (opcional)</label>
-                                    <input id="telefono-usuario" name="telefono" type="tel" inputmode="tel" placeholder="Ej.: 912345678">
+
+                                <div class="grupo-input">
+                                    <label class="label-campo" for="correo-usuario">Correo Electrónico <span class="asterisco">*</span></label>
+                                    <input type="email" id="correo-usuario" class="input-campo">
+                                    <span class="texto-ayuda">Solo correos con @duoc.cl, @profesor.duoc.cl y @gmail.com</span>
+                                    <span id="error-correo-usu" class="texto-peligro"></span>
                                 </div>
-                                <div class="campo-formulario campo-completo">
-                                    <label for="password-usuario">Nueva contraseña (opcional)</label>
-                                    <input id="password-usuario" name="password" type="password" minlength="8" maxlength="64" autocomplete="new-password" placeholder="Dejar vacío para mantener la actual">
-                                    <small>No se muestra ninguna contraseña existente. La actualización se incorporará con JavaScript.</small>
+
+                                <div class="grupo-input col-completa">
+                                    <label class="label-campo" for="password-usuario">Cambiar Contraseña (Opcional)</label>
+                                    <input type="password" id="password-usuario" placeholder="Ingresar nueva contraseña" class="input-campo" minlength="4">
+                                    <span class="texto-ayuda">Dejar en blanco para mantener la actual. Entre 4 a 10 caracteres.</span>
+                                    <span id="error-pass" class="texto-peligro"></span>
                                 </div>
                             </div>
                         </fieldset>
 
-                        <fieldset class="grupo-campos">
-                            <legend>Dirección</legend>
-                            <div class="grilla-campos">
-                                <div class="campo-formulario">
-                                    <label for="region-admin">Región <span aria-hidden="true">*</span></label>
-                                    <select id="region-admin" name="region" required>
-                                        <option value="nuble" selected>Región de Ñuble</option>
+                        <!-- Sección 3: Dirección -->
+                        <fieldset class="seccion-fieldset espaciado-seccion">
+                            <legend class="titulo-legend">Dirección</legend>
+                            <div class="linea-separadora"></div>
+
+                            <div class="grilla-formulario">
+                                <div class="grupo-input">
+                                    <label class="label-campo" for="region-admin">Región <span class="asterisco">*</span></label>
+                                    <select id="region-admin" class="input-campo select-campo" required>
+                                        <option value="" disabled>-- Seleccione región --</option>
+                                        <option value="nuble">Región de Ñuble</option>
                                         <option value="biobio">Región del Biobío</option>
                                     </select>
+                                    <span id="error-region-admin" class="texto-peligro mensaje-error-input"></span> 
                                 </div>
-                                <div class="campo-formulario">
-                                    <label for="comuna-admin">Comuna <span aria-hidden="true">*</span></label>
-                                    <select id="comuna-admin" name="comuna" required disabled>
-                                        <option value="chillan" selected>Chillán (demostración)</option>
+
+                                <div class="grupo-input">
+                                    <label class="label-campo" for="comuna-admin">Comuna <span class="asterisco">*</span></label>
+                                    <select id="comuna-admin" class="input-campo select-campo" required>
+                                        <option value="" disabled>Seleccione comuna</option>
                                     </select>
-                                    <small>La selección dependiente de región estará disponible con JavaScript.</small>
+                                    <span id="error-comuna-admin" class="texto-peligro mensaje-error-input"></span> 
                                 </div>
-                                <div class="campo-formulario campo-completo">
-                                    <label for="direccion-usuario">Calle y número <span aria-hidden="true">*</span></label>
-                                    <input id="direccion-usuario" name="direccion" type="text" maxlength="300" placeholder="Dirección pendiente" required>
+
+                                <div class="grupo-input col-completa">
+                                    <label class="label-campo" for="direccion-usuario">Calle y Número <span class="asterisco">*</span></label>
+                                    <input type="text" id="direccion-usuario" class="input-campo">
+                                    <span class="texto-ayuda">Obligatorio. Máximo 300 caracteres.</span>
+                                    <span id="error-direccion" class="texto-peligro"></span>
                                 </div>
                             </div>
                         </fieldset>
 
-                        <fieldset class="grupo-campos">
-                            <legend>Rol del sistema</legend>
-                            <div class="grilla-campos">
-                                <div class="campo-formulario campo-completo">
-                                    <label for="rol-usuario">Tipo de usuario <span aria-hidden="true">*</span></label>
-                                    <select id="rol-usuario" name="rol" required>
-                                        <option value="cliente">Cliente</option>
-                                        <option value="vendedor">Vendedor</option>
-                                        <option value="administrador" selected>Administrador</option>
+                        <!-- Sección 4: Rol del sistema -->
+                        <fieldset class="seccion-fieldset espaciado-seccion">
+                            <legend class="titulo-legend">Rol del Sistema</legend>
+                            <div class="linea-separadora"></div>
+
+                            <div class="grilla-formulario">
+                                <div class="grupo-input col-completa">
+                                    <label class="label-campo" for="rol-usuario">Tipo de Usuario <span class="asterisco">*</span></label>
+                                    <select id="rol-usuario" class="input-campo select-campo" required>
+                                        <option value="" disabled>-- Seleccione el perfil de acceso --</option>
+                                        <option value="cliente">Cliente (Acceso solo a la tienda)</option>
+                                        <option value="vendedor">Vendedor (Gestión básica)</option>
+                                        <option value="administrador">Administrador (Acceso total)</option>
                                     </select>
+                                    <span id="error-rol-usuario" class="texto-peligro"></span>
+                                    <span class="texto-ayuda">Obligatorio. Define los permisos y vistas a las que tendrá acceso el usuario.</span>
                                 </div>
                             </div>
                         </fieldset>
 
-                        <!-- El guardado se habilitará durante la etapa de lógica -->
-                        <div id="mensaje-usuario" class="mensaje-formulario" role="status">La edición de usuarios estará disponible en una próxima etapa.</div>
-                        <div class="acciones-formulario">
-                            <button type="submit" class="boton-guardar" disabled>Guardar cambios</button>
+                        <!-- Contenedor para mensajes de validación -->
+                        <div id="mensaje-usuario" class="mensaje-final"></div>
+
+                        <!-- Acciones finales del formulario -->
+                        <div class="acciones-registro">
+                            <button type="submit" class="boton-guardar">Guardar Cambios</button>
                         </div>
+
                     </form>
                 </section>
-            </main>
-        </div>
+
+            </div>
+        </main>
+
+        <!-- Validadores estructurales e inserción de datos para la edición de registros -->
+        <script defer src="assets/js/data/productosData.js"></script>
+        <script defer src="assets/js/data/usuariosData.js"></script>
+        <script defer src="assets/js/data/sucursalesData.js"></script>
+        <script defer src="assets/js/services/almacenamiento-local.js"></script>
+        <script defer src="assets/js/utils/validaciones.js"></script>
+        <script defer src="assets/js/utils/ubicaciones.js"></script>
+        <script defer src="assets/js/admin/admin-formularios.js"></script>
     </body>
 </html>
