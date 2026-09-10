@@ -3,115 +3,173 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Información general sobre términos y condiciones y privacidad de Gas El Volcán.">
         <title>Gas El Volcán | Términos y Políticas</title>
-        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-                <link rel="stylesheet" href="assets/css/layout.css">
-        <link rel="stylesheet" href="assets/css/utils/botones.css">
-        <link rel="stylesheet" href="assets/css/pages/legales.css">
-        <link rel="stylesheet" href="assets/css/utils/footer.css">
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+        
+        <!-- Hojas de estilos principales -->
+        <link rel="stylesheet" href="assets/css/layout.css" />
+        <link rel="stylesheet" href="assets/css/pages/legales.css" />
     </head>
     <body>
-        <!-- Cabecera inicial de los documentos legales -->
-        <header class="legales-cabecera">
-            <div class="contenedor legales-cabecera-contenido">
-                <a href="index.html" class="legales-enlace-logo" aria-label="Ir al inicio de Gas El Volcán">
-                    <img src="assets/images/logo-volcan.svg" alt="Gas El Volcán" width="180">
-                </a>
-                <nav aria-label="Navegación de políticas">
-                    <a href="#terminos">Términos</a>
-                    <a href="#privacidad">Privacidad</a>
-                </nav>
+        <!-- Control del menú móvil -->
+        <input type="checkbox" id="menu-hamburguesa" class="toggle-hamburguesa">
+
+        <!-- Cabecera principal -->
+        <header class="cabecera-principal">
+            <div class="barra-superior">
+                <div class="contenedor contenido-barra-superior">
+                    <span>Atención al Cliente: <strong>800 50 9000</strong></span>
+                    <span class="texto-peligro">Emergencia: <strong>800 50 9111</strong></span>
+                </div>
             </div>
+
+            <nav class="barra-navegacion contenedor">
+                <a href="index.html" class="enlace-logo">
+                    <img src="assets/images/logo-volcan.svg" alt="Logo Gas El Volcán" class="logo-navegacion" />
+                </a>
+                
+                <label for="menu-hamburguesa" class="icono-hamburguesa">
+                    <span class="icono-abrir">&#9776;</span>
+                    <span class="icono-cerrar">&#10005;</span>
+                </label>
+                
+                <ul class="enlaces-navegacion">
+                    <li class="grupo-navegacion-principal">
+                        <ul class="enlaces-principales">
+                            <li><a href="index.html">INICIO</a></li>
+                            <li><a href="catalogo.html">PRODUCTOS</a></li>
+                            <li><a href="sucursales.html">SUCURSALES</a></li>
+                            <li><a href="nosotros.html">NOSOTROS</a></li>
+                            <li><a href="blogs.html">BLOGS</a></li>
+                            <li><a href="contacto.html">CONTACTO</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-desplegable ocultar-en-movil">
+                        <input type="checkbox" id="activar-sucursal" class="toggle-desplegable">
+                        <label for="activar-sucursal" class="boton boton-oscuro">SUCURSAL VIRTUAL</label>
+                        <ul class="sub-menu">
+                            <li><a href="login.html">Iniciar Sesión</a></li>
+                            <li class="divisor"></li>
+                            <li><a href="registro.html">Registrarse</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="ocultar-en-pc"><a href="login.html">INICIAR SESIÓN</a></li>
+                    <li class="ocultar-en-pc"><a href="registro.html">REGISTRARSE</a></li>
+                    
+                    <li><a href="carrito.html" class="icono-carrito fw-bold">CARRITO (0)</a></li>
+                </ul>
+            </nav>
         </header>
 
+        <!-- Contenido principal -->
         <main>
-            <!-- Presentación de términos y políticas -->
-            <section class="legales-portada" aria-labelledby="titulo-legales">
-                <div class="contenedor">
-                    <h1 id="titulo-legales">Términos y Políticas</h1>
-                    <p>Conoce las condiciones generales del servicio y el cuidado de la información de nuestros clientes.</p>
+            <!-- Hero de legales -->
+            <section class="legales-hero">
+                <div class="legales-hero-fondo">
+                    <div class="legales-hero-contenido limite-ancho">
+                        <h1 class="texto-blanco fw-bold">Términos y Políticas</h1>
+                        <p class="texto-blanco">Transparencia, seguridad y compromiso en cada uno de nuestros servicios.</p>
+                    </div>
                 </div>
             </section>
 
-            <!-- Aviso de contenido provisional -->
-            <div class="contenedor">
-                <p class="legales-aviso">Contenido preliminar del proyecto académico. Estos textos deberán revisarse antes de publicar el servicio.</p>
-            </div>
+            <!-- Contenedor general de textos legales -->
+            <section class="seccion-legales contenedor">
+                
+                <!-- Sección de términos y condiciones -->
+                <article id="terminos" class="bloque-legal">
+                    <h2 class="titulo-legal fw-bold">Términos y Condiciones de Uso</h2>
+                    <p class="fecha-actualizacion">Última actualización: 10 de Septiembre de 2026</p>
+                    
+                    <h3>1. Introducción y Aceptación</h3>
+                    <p>Las presentes condiciones generales (en adelante, los “Términos y Condiciones”) regulan el acceso, navegación y uso de los portales de Internet, aplicaciones y Sucursal Virtual pertenecientes a Distribuidora de Gas El Volcán (en adelante, “Gas El Volcán” o la “Empresa”). Al acceder a nuestro sitio web, registrarte en la Sucursal Virtual o solicitar nuestros productos, adquieres la condición de "Usuario" o "Cliente", declarando expresamente haber leído, entendido y aceptado en su totalidad el presente documento.</p>
+                    <p>Estos Términos y Condiciones se rigen e interpretan de acuerdo con la legislación vigente en la República de Chile, especialmente por la Ley N° 19.496 sobre Protección de los Derechos de los Consumidores y sus modificaciones posteriores. Si no estás de acuerdo con estos términos, deberás abstenerte de utilizar nuestra plataforma.</p>
 
-            <!-- Primer documento: términos y condiciones -->
-            <section class="legales-contenido contenedor" aria-label="Documentos informativos">
-                <article id="terminos" class="bloque-legal" aria-labelledby="titulo-terminos">
-                    <h2 id="titulo-terminos">Términos y Condiciones de Uso</h2>
-                    <p class="legales-introduccion">Esta sección presenta una versión inicial de las condiciones de uso de la plataforma Gas El Volcán.</p>
+                    <h3>2. Registro en la Sucursal Virtual</h3>
+                    <p>Para acceder a funcionalidades avanzadas y crear solicitudes de despacho, el Cliente deberá registrarse en nuestra Sucursal Virtual proporcionando datos exactos, veraces y actualizados (RUT, nombre, domicilio en Chillán o comunas aledañas, teléfono y correo electrónico). Gas El Volcán se reserva el derecho de suspender temporal o definitivamente las cuentas cuyos datos resulten falsos o incompletos.</p>
+                    <p>La clave de acceso es personal e intransferible. Cualquier operación realizada desde la cuenta será imputable a su titular, eximiendo a Gas El Volcán de cualquier responsabilidad por el mal uso, extravío o entrega de credenciales a terceros.</p>
 
-                    <h3>1. Uso del sitio web</h3>
-                    <p>El sitio está destinado a consultar información sobre cilindros de gas, conocer las zonas de atención y acceder a los canales de contacto de la empresa. Las funcionalidades de compra y de la Sucursal Virtual se incorporarán durante el desarrollo.</p>
-                    <p>El usuario deberá proporcionar información veraz en los formularios disponibles y utilizar los canales de atención de manera respetuosa. Las condiciones de registro y acceso a cuentas se precisarán antes de habilitar la Sucursal Virtual.</p>
-
-                    <h3>2. Productos y disponibilidad</h3>
-                    <p>El catálogo presenta cilindros y otros artículos relacionados con su utilización. La disponibilidad de cada producto y las condiciones de despacho deberán confirmarse al realizar un pedido.</p>
-                    <p>Las fichas de producto permitirán consultar características, presentación y precios. Las imágenes tendrán carácter referencial y no sustituirán las indicaciones de uso y seguridad de cada producto.</p>
-
-                    <h3>3. Precios y solicitudes de compra</h3>
-                    <p>Los precios se muestran en pesos chilenos. Antes de confirmar una solicitud, el cliente deberá revisar los productos elegidos, sus cantidades y el total informado por el sistema.</p>
-                    <p>La gestión del carrito contemplará la revisión del subtotal y del monto final antes de continuar. Las condiciones de despacho, promociones y medios de pago disponibles deberán informarse durante el proceso de compra.</p>
+                    <h3>3. Servicios y Productos</h3>
+                    <p>Gas El Volcán se dedica a la distribución de gas licuado a domicilio de manera exclusiva en cilindros de 5 kg, 11 kg y 15 kg, operando bajo las estrictas normativas de la Superintendencia de Electricidad y Combustibles (SEC) dentro de la ciudad de Chillán y la Región de Ñuble.</p>
+                    <p>Nuestra plataforma permite a los clientes:</p>
                     <ul>
-                        <li>El cliente podrá revisar el detalle de los productos seleccionados antes de confirmar una solicitud.</li>
-                        <li>La disponibilidad y la cobertura de despacho se verificarán de acuerdo con la zona de atención.</li>
-                        <li>Los medios de pago y sus condiciones se comunicarán cuando el proceso de compra esté habilitado.</li>
+                        <li>Explorar nuestro catálogo de cilindros de gas licuado de manera digital e interactiva.</li>
+                        <li>Gestionar un carrito de compras y visualizar el subtotal de su pedido antes de confirmar la solicitud.</li>
+                        <li>Revisar el historial de compras y el estado de su pedido desde la Sucursal Virtual.</li>
                     </ul>
 
-                    <h3>4. Atención al cliente</h3>
-                    <p>Para realizar consultas sobre productos, atención o pedidos, el usuario puede visitar la <a href="contacto.html">página de Contacto</a> y consultar los canales disponibles.</p>
+                    <h3>4. Precios, Despacho y Medios de Pago</h3>
+                    <p>Los precios publicados en la plataforma están expresados en pesos chilenos e incluyen IVA. Dichos valores pueden variar según la zona de despacho (tarifas residenciales o comerciales) y las promociones vigentes al momento de la solicitud.</p>
+                    <p><strong>Medios de pago:</strong> De acuerdo con nuestras políticas operativas, el pago puede realizarse <strong>en efectivo al momento de la entrega</strong> del producto en el domicilio. Adicionalmente, nuestra plataforma web ofrece la opción de <strong>pago online</strong> integrado (Visa, Mastercard, American Express) durante el proceso del carrito de compras para mayor comodidad y rapidez en el servicio.</p>
+                    <p>El despacho se realizará mediante nuestra flota de camiones repartidores. Los tiempos de entrega están sujetos a la asignación de rutas por parte de nuestra central y a las condiciones de tránsito en la ciudad.</p>
 
-                    <h3>5. Entrega y seguridad de los productos</h3>
-                    <p>Los pedidos estarán sujetos a las zonas de cobertura y a la coordinación del despacho. La fecha y las condiciones de entrega deberán comunicarse al cliente antes de confirmar la solicitud.</p>
-                    <p>Al recibir un cilindro de gas, el cliente deberá verificar visualmente su estado y sus sellos. Si detecta una anomalía, no deberá manipular el producto y tendrá que comunicarse con el canal de atención correspondiente.</p>
+                    <h3>5. Limitación de Responsabilidad</h3>
+                    <p>Gas El Volcán garantiza que los cilindros despachados cumplen con los estándares de llenado y sellado de seguridad exigidos por la normativa vigente. Es responsabilidad del Cliente revisar el estado del sello de seguridad al momento de la recepción. En caso de detectar anomalías, el Cliente no debe manipular el producto y debe contactar de inmediato a nuestro Operador o al servicio de Emergencias (800 50 9111) para su sustitución inmediata y sin costo.</p>
+                    <p>En la máxima extensión permitida por la ley, Gas El Volcán no será responsable por daños, lucro cesante o perjuicios derivados de interrupciones técnicas de la plataforma web o por la mala manipulación de los cilindros por parte del usuario final en sus instalaciones domiciliarias.</p>
 
-                    <h3>6. Contenido y propiedad intelectual</h3>
-                    <p>Los textos, imágenes, elementos gráficos y demás contenidos presentados en este sitio se utilizan para informar sobre los servicios de Gas El Volcán. Su reproducción o distribución deberá respetar los derechos de sus respectivos titulares.</p>
-                    <p>Antes de la publicación definitiva se revisarán las condiciones de uso de la plataforma y su concordancia con la normativa chilena aplicable.</p>
+                    <h3>6. Propiedad Intelectual</h3>
+                    <p>Todo el contenido de la plataforma, incluyendo el diseño de la interfaz, la estructura HTML/CSS, la lógica interactiva en JavaScript, textos, gráficos y logotipos, pertenece a Distribuidora de Gas El Volcán y está protegido por la Ley N° 17.336 de Propiedad Intelectual de Chile. Queda expresamente prohibida su copia, reproducción o distribución sin previa autorización por escrito.</p>
                 </article>
 
-                <div class="legales-separador" aria-hidden="true"></div>
+                <!-- Divisor visual -->
+                <div class="separador-legal"></div>
 
-                <!-- Segundo documento: política de privacidad -->
-                <article id="privacidad" class="bloque-legal" aria-labelledby="titulo-privacidad">
-                    <h2 id="titulo-privacidad">Política de Privacidad y Tratamiento de Datos</h2>
-                    <p class="legales-introduccion">Este apartado reúne los puntos que deberá contemplar la política de privacidad definitiva de la plataforma.</p>
+                <!-- Sección de políticas de privacidad -->
+                <article id="privacidad" class="bloque-legal">
+                    <h2 class="titulo-legal fw-bold">Política de Privacidad y Tratamiento de Datos</h2>
+                    <p class="fecha-actualizacion">Última actualización: 10 de Septiembre de 2026</p>
 
-                    <h3>1. Información solicitada</h3>
-                    <p>Las futuras funciones de registro, contacto y compra podrán requerir datos como nombre, correo electrónico, teléfono y dirección de entrega, según el trámite realizado.</p>
-                    <p>En el caso de las solicitudes de compra también podrán utilizarse datos del pedido, como productos seleccionados, cantidades y zona de despacho.</p>
+                    <p>Distribuidora de Gas El Volcán respeta tu privacidad y se compromete a resguardar la seguridad de la información de sus clientes y personal interno. Esta Política de Privacidad explica de manera estricta y transparente cómo recopilamos, utilizamos, almacenamos y compartimos tus datos, en pleno cumplimiento con lo establecido en la Ley N° 19.628 sobre Protección de la Vida Privada vigente en la República de Chile.</p>
+                    
+                    <h3>1. Responsable del Tratamiento de Datos</h3>
+                    <p>El responsable legal del tratamiento de los datos es Distribuidora de Gas El Volcán, con domicilio en Chillán, Región de Ñuble, Chile. Ante cualquier requerimiento legal o consulta sobre el tratamiento de tus datos, puedes comunicarte con nosotros a través del formulario de Contacto o al correo ayuda@gaselvolcan.cl.</p>
 
-                    <h3>2. Finalidad de la información</h3>
-                    <p>La política definitiva deberá explicar cómo se utilizará la información necesaria para responder consultas, gestionar cuentas y atender solicitudes de productos.</p>
+                    <h3>2. ¿Qué datos personales recopilamos?</h3>
+                    <p>Recopilamos información únicamente cuando es estrictamente necesaria para la gestión de la plataforma y la atención de solicitudes. Los datos que tratamos incluyen:</p>
                     <ul>
-                        <li>Atender consultas ingresadas mediante el formulario de Contacto.</li>
-                        <li>Gestionar las cuentas y los pedidos cuando esas funciones estén disponibles.</li>
-                        <li>Facilitar la comunicación con el cliente sobre sus solicitudes de atención y despacho.</li>
+                        <li><strong>Datos de clientes:</strong> RUT, nombre completo, teléfono, correo electrónico y dirección al momento de registrarte en el sistema o utilizar el formulario de contacto.</li>
+                        <li><strong>Datos transaccionales:</strong> Preferencias de productos, historial de pedidos, artículos añadidos al carrito de compras y registros de inicio de sesión.</li>
+                        <li><strong>Datos de navegación:</strong> Información de sesión gestionada de manera local en el navegador del usuario para mantener la persistencia del carrito y la identidad.</li>
                     </ul>
 
-                    <h3>3. Almacenamiento y protección</h3>
-                    <p>Antes de habilitar formularios que almacenen datos personales, se deberán definir las medidas de protección aplicables, los responsables del tratamiento y los plazos de conservación.</p>
-                    <p>La futura implementación también deberá informar cuando se utilice almacenamiento local del navegador para mantener el carrito o las preferencias de la interfaz.</p>
+                    <h3>3. ¿Para qué finalidades utilizamos tus datos?</h3>
+                    <p>Tus datos son tratados por nuestra plataforma web con los siguientes propósitos exclusivos y limitados:</p>
+                    <ul>
+                        <li>Para gestionar tu identidad en la plataforma y mantener tu sesión activa de manera segura.</li>
+                        <li>Para administrar tu carrito de compras y asegurar que los productos seleccionados no se pierdan al cambiar de página.</li>
+                        <li>Para que nuestro <strong>Operador</strong> asigne tu pedido y pueda recibir tus mensajes a través del formulario de contacto.</li>
+                        <li>Para que el <strong>Administrador</strong> pueda gestionar el catálogo de productos y visualizar los perfiles registrados en el panel de control.</li>
+                    </ul>
 
-                    <h3>4. Consultas sobre datos personales</h3>
-                    <p>La versión definitiva deberá indicar cómo los usuarios podrán realizar consultas o solicitudes relacionadas con sus datos personales a través de los canales de atención.</p>
+                    <h3>4. Infraestructura y Almacenamiento</h3>
+                    <p>Para operar nuestra plataforma web de manera ágil y eficiente, tus datos son procesados mediante la siguiente estructura:</p>
+                    
+                    <ul>
+                        <li><strong>Persistencia Local:</strong> Utilizamos el almacenamiento nativo del navegador (LocalStorage) para guardar de manera temporal tu carrito de compras, tu sesión activa y las preferencias de la interfaz. Esta tecnología permite una navegación fluida sin comprometer tu privacidad.</li>
+                        <li><strong>Infraestructura Web:</strong> Los archivos de la plataforma están alojados en servidores seguros, garantizando que el diseño y las funcionalidades estén siempre disponibles cuando necesites realizar una consulta.</li>
+                    </ul>
+                    
+                    <p>Gas El Volcán asegura por obligación legal que no vende ni comercializa tu información a terceros para fines publicitarios. Tus datos solo son accesibles mediante validación de seguridad por el personal interno debidamente autorizado.</p>
 
-                    <h3>5. Derechos de las personas</h3>
-                    <p>La política definitiva deberá explicar los mecanismos para consultar y solicitar la corrección o eliminación de datos personales, cuando corresponda conforme a la legislación vigente.</p>
-                    <p>Las solicitudes relacionadas con la información del cliente deberán contar con un canal de atención identificable y un procedimiento de respuesta claramente informado.</p>
+                    <h3>5. Ejercicio de los Derechos ARCO</h3>
+                    <p>De conformidad con la Ley N° 19.628, como titular de los datos personales te asisten de forma irrenunciable los derechos de Acceso, Rectificación, Cancelación y Oposición (Derechos ARCO). Puedes ejercerlos formalmente en cualquier momento para:</p>
+                    <ul>
+                        <li><strong>Derecho de Acceso:</strong> Solicitar y obtener información gratuita sobre los datos personales que poseemos sobre ti, su procedencia y la finalidad de su almacenamiento.</li>
+                        <li><strong>Derecho de Rectificación:</strong> Actualizar o modificar tu información de contacto, RUT o dirección en caso de que los datos almacenados sean erróneos, inexactos o incompletos.</li>
+                        <li><strong>Derecho de Cancelación:</strong> Solicitar la eliminación definitiva de tu cuenta cuando su almacenamiento carezca de fundamento legal o haya caducado la finalidad para la cual fueron recopilados.</li>
+                        <li><strong>Derecho de Oposición:</strong> Negarte a que tus datos sean utilizados para fines específicos o estadísticos no relacionados directamente con la distribución de gas licuado.</li>
+                    </ul>
 
-                    <h3>6. Acceso y seguridad de la información</h3>
-                    <p>El acceso a la información de clientes y pedidos deberá limitarse a las personas autorizadas según sus funciones. La plataforma contemplará validaciones y controles de acceso para las vistas administrativas.</p>
-                    <p>Las medidas técnicas y organizativas de protección se documentarán y revisarán antes de poner en funcionamiento las herramientas de registro, gestión de usuarios y compras.</p>
+                    <h3>6. Seguridad de la Información</h3>
+                    <p>Implementamos rigurosas medidas de validación en nuestros formularios y controles de acceso en la interfaz para asegurar que las vistas administrativas del sistema no estén accesibles sin la debida autorización. La arquitectura modular de nuestra plataforma garantiza que el manejo de la información se realice de forma controlada y resguardada frente a usos indebidos.</p>
                 </article>
+
             </section>
         </main>
 
-        <!-- Pie de página corporativo compartido -->
+        <!-- Pie de página -->
         <footer class="pie-pagina">
             <div class="contenedor grilla-pie">
                 <div class="pie-columna">
@@ -143,23 +201,30 @@
                         <li><a href="legales.html#privacidad">Política de Privacidad</a></li>
                     </ul>
                 </div>
+                
                 <div class="pie-columna pie-boletin">
                     <h6>Suscríbete para recibir ofertas exclusivas.</h6>
-                    <div class="buscador-footer">
-                        <input type="email" placeholder="Ingresa tu correo" aria-label="Correo para suscripción">
-                        <a href="registro.html" class="boton boton-naranja texto-blanco">Suscríbete</a>
-                    </div>
+                    <form class="buscador-footer" data-formulario-suscripcion novalidate>
+                        <input type="email" name="correoSuscripcion" placeholder="Ingresa tu correo" aria-label="Correo para suscribirse" aria-describedby="mensaje-suscripcion" maxlength="100" required>
+                        <button type="submit" class="boton boton-naranja texto-blanco">Suscríbete</button>
+                    </form>
+                    <p id="mensaje-suscripcion" class="mensaje-estado-formulario error mensaje-suscripcion" role="alert" aria-live="polite"></p>
+                    
                     <h6>Medios de Pago</h6>
                     <div class="pie-pagos">
-                        <img src="assets/images/pagos/visa.svg" alt="Visa" class="pago-icono">
-                        <img src="assets/images/pagos/mastercard.svg" alt="Mastercard" class="pago-icono">
-                        <img src="assets/images/pagos/amex.svg" alt="AMEX" class="pago-icono">
+                        <img src="assets/images/pagos/visa.svg" alt="Visa" class="pago-icono" />
+                        <img src="assets/images/pagos/mastercard.svg" alt="Mastercard" class="pago-icono" />
+                        <img src="assets/images/pagos/amex.svg" alt="AMEX" class="pago-icono" />
                     </div>
                 </div>
             </div>
+            
             <div class="contenedor pie-copyright">
-                <p>© 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
+                <p>&copy; 2026 Distribuidora de Gas El Volcán. Chillán, Región de Ñuble.</p>
             </div>
         </footer>
+
+        <!-- Carga del JavaScript principal -->
+        <script defer src="assets/js/app.js"></script>
     </body>
 </html>

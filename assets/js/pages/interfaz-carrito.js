@@ -16,7 +16,7 @@ if (contenedorCarrito) {
         contenedorCarrito.innerHTML = "";
         const divAccionesGlobales = document.querySelector(".acciones-globales-carrito");
         
-        // Retorna un estado vacío si la longitud del arreglo es cero
+        // Estado del carrito cuando no hay productos
         if (carritoVirtual.length === 0) {
             contenedorCarrito.innerHTML = "<div class='mensaje-carrito-vacio'><p>Tu carrito está vacío.</p></div>";
             montoTotalDOM.textContent = "$ 0";
@@ -37,7 +37,7 @@ if (contenedorCarrito) {
             let claseAlertaStock = "";
             let textoAlertaStock = `${producto.stock} disponibles`;
             
-            if (producto.stock <= 20) {
+            if (producto.stock <= obtenerStockCritico(producto)) {
                 claseAlertaStock = "texto-peligro fw-bold";
                 textoAlertaStock = `¡Últimas ${producto.stock} unidades!`;
             }

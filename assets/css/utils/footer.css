@@ -66,6 +66,18 @@
     flex: 0 0 auto;
     border-radius: 0.3125rem;
     color: var(--volcan-blanco);
+    line-height: inherit;
+}
+
+/* El aviso de suscripción aparece solo cuando hay un error */
+.pie-boletin .mensaje-suscripcion {
+    max-width: 32rem;
+    overflow-wrap: break-word;
+}
+
+.pie-boletin .mensaje-suscripcion.activo {
+    margin-bottom: 1.25rem;
+    text-align: justify;
 }
 
 .pie-pagos {
