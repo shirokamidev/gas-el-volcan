@@ -1,11 +1,11 @@
-/* Información de bienvenida */
+/* Estructura y contenedores principales */
 .panel-bienvenida {
-    background-color: #ffffff;
+    background-color: var(--volcan-blanco);
     padding: 2.5rem;
     border-radius: 0.6rem;
     box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.03);
     margin-bottom: 2.5rem;
-    text-align: justify
+    text-align: justify;
 }
 
 .panel-bienvenida h1 {
@@ -16,37 +16,36 @@
 }
 
 .panel-bienvenida p {
-    color: #555555;
+    color: var(--volcan-gris);
     line-height: 1.6;
     font-size: 1.05rem;
 }
 
-/* Organización de las tarjetas numéricas */
 .grilla-estadisticas {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
     gap: 1.5rem;
 }
 
 .tarjeta-stat {
-    background-color: #ffffff;
+    background-color: var(--volcan-blanco);
     padding: 1.8rem;
     border-radius: 0.6rem;
     box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.03);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid var(--volcan-borde);
+    border: 0.0625rem solid var(--volcan-borde);
     transition: transform 0.3s ease;
 }
 
 .tarjeta-stat:hover {
-    transform: translateY(-3px);
+    transform: scale(1.02);
 }
 
 .stat-info h3 {
     font-size: 1rem;
-    color: #777777;
+    color: var(--volcan-gris-claro);
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
@@ -58,7 +57,7 @@
     line-height: 1;
 }
 
-/* Gráficos y elementos visuales menores */
+/* Clases utilitarias y estilos reutilizables */
 .stat-icono {
     width: 4.5rem;
     height: 4.5rem;
@@ -76,7 +75,7 @@
     color: var(--volcan-azul);
 }
 
-/* Media queries para móviles */
+/* Adaptabilidad para dispositivos moviles (Celulares) */
 @media (max-width: 48rem) {
     .panel-bienvenida {
         padding: 1.5rem;

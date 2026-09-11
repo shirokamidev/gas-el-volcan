@@ -6,15 +6,17 @@
         <title>Gas El Volcán | Panel de Administración</title>
         <link rel="icon" type="image/svg+xml" href="assets/img/favicon-volcan.svg" />
         
+        <!-- Fuentes de Google -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
         
+        <!-- Hojas de estilos principales -->
         <link rel="stylesheet" href="assets/css/admin-layout.css" />
         <link rel="stylesheet" href="assets/css/admin-index.css" />
     </head>
     <body>
-        <!-- Control oculto para el menú hamburguesa -->
+        <!-- Checkbox para controlar el estado del menú en móviles -->
         <input type="checkbox" id="toggle-menu" class="toggle-menu-checkbox">
 
         <!-- Cabecera principal -->
@@ -27,10 +29,10 @@
                         <line x1="3" y1="18" x2="21" y2="18"></line>
                     </svg>
                 </label>
-                <div class="logo-admin">
+                <a href="admin-index.html" class="logo-admin">
                     <img src="assets/img/favicon-volcan.svg" alt="Icono Gas El Volcán">
                     <span>Admin Volcán</span>
-                </div>
+                </a>
             </div>
             
             <div class="cabecera-der">
@@ -65,11 +67,11 @@
             </nav>
         </aside>
 
-        <!-- Contenido dinámico -->
+        <!-- Contenido dinámico principal -->
         <main class="admin-main">
             <div class="contenedor-vista">
                 
-                <!-- Presentación -->
+                <!-- Sección de presentación -->
                 <section class="panel-bienvenida">
                     <h1>Bienvenido al Panel de Administración</h1>
                     <p>Este es el panel de control central de Gas El Volcán. Desde aquí puedes gestionar de manera rápida y segura el inventario de productos, administrar las cuentas de los usuarios y supervisar el funcionamiento de la sucursal virtual.</p>
@@ -109,5 +111,9 @@
 
             </div>
         </main>
+
+        <!-- Scripts -->
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/admin.js"></script>
     </body>
 </html>
