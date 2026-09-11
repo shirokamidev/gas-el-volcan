@@ -6,15 +6,17 @@
         <title>Gas El Volcán | Nuevo Usuario</title>
         <link rel="icon" type="image/svg+xml" href="assets/img/favicon-volcan.svg" />
 
+        <!-- Fuentes de Google -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
+        <!-- Hojas de estilos principales -->
         <link rel="stylesheet" href="assets/css/admin-layout.css" />
         <link rel="stylesheet" href="assets/css/admin-nuevo-usuario.css" />
     </head>
     <body>
-        <!-- Control oculto para el menú hamburguesa -->
+        <!-- Checkbox para controlar el estado del menú en móviles -->
         <input type="checkbox" id="toggle-menu" class="toggle-menu-checkbox">
 
         <!-- Cabecera principal -->
@@ -27,10 +29,10 @@
                         <line x1="3" y1="18" x2="21" y2="18"></line>
                     </svg>
                 </label>
-                <div class="logo-admin">
+                <a href="admin-index.html" class="logo-admin">
                     <img src="assets/img/favicon-volcan.svg" alt="Icono Gas El Volcán">
                     <span>Admin Volcán</span>
-                </div>
+                </a>
             </div>
 
             <div class="cabecera-der">
@@ -69,6 +71,7 @@
         <main class="admin-main">
             <div class="contenedor-vista">
 
+                <!-- Cabecera del módulo -->
                 <div class="cabecera-modulo">
                     <h1>Crear Nuevo Usuario</h1>
                     <a href="admin-lista-usuarios.html" class="btn-secundario">
@@ -76,10 +79,11 @@
                     </a>
                 </div>
 
+                <!-- Contenedor del formulario -->
                 <section class="caja-formulario-admin">
                     <form id="form-nuevo-usuario" action="#" class="formulario-generico" novalidate>
 
-                        <!-- Seccion de Datos Personales -->
+                        <!-- Sección 1: Datos personales -->
                         <fieldset class="seccion-fieldset">
                             <legend class="titulo-legend">Datos Personales</legend>
                             <div class="linea-separadora"></div>
@@ -113,7 +117,7 @@
                             </div>
                         </fieldset>
 
-                        <!-- Seccion de Contacto y Seguridad -->
+                        <!-- Sección 2: Contacto y credenciales -->
                         <fieldset class="seccion-fieldset espaciado-seccion">
                             <legend class="titulo-legend">Contacto y Credenciales</legend>
                             <div class="linea-separadora"></div>
@@ -141,7 +145,7 @@
                             </div>
                         </fieldset>
 
-                        <!-- Seccion de Direccion -->
+                        <!-- Sección 3: Dirección -->
                         <fieldset class="seccion-fieldset espaciado-seccion">
                             <legend class="titulo-legend">Dirección</legend>
                             <div class="linea-separadora"></div>
@@ -172,7 +176,7 @@
                             </div>
                         </fieldset>
 
-                        <!-- Seccion de Rol del Sistema -->
+                        <!-- Sección 4: Rol del sistema -->
                         <fieldset class="seccion-fieldset espaciado-seccion">
                             <legend class="titulo-legend">Rol del Sistema</legend>
                             <div class="linea-separadora"></div>
@@ -194,7 +198,7 @@
                         <!-- Contenedor para mensajes de validación -->
                         <div id="mensaje-usuario" class="mensaje-final"></div>
 
-                        <!-- Acciones finales -->
+                        <!-- Acciones finales del formulario -->
                         <div class="acciones-registro">
                             <button type="submit" class="boton-guardar">Guardar Usuario</button>
                         </div>

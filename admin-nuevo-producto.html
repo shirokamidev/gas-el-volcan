@@ -6,15 +6,17 @@
         <title>Gas El Volcán | Nuevo Producto</title>
         <link rel="icon" type="image/svg+xml" href="assets/img/favicon-volcan.svg" />
 
+        <!-- Fuentes de Google -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
+        <!-- Hojas de estilos principales -->
         <link rel="stylesheet" href="assets/css/admin-layout.css" />
         <link rel="stylesheet" href="assets/css/admin-nuevo-producto.css" />
     </head>
     <body>
-        <!-- Control oculto para el menú hamburguesa -->
+        <!-- Checkbox para controlar el estado del menú en móviles -->
         <input type="checkbox" id="toggle-menu" class="toggle-menu-checkbox">
 
         <!-- Cabecera principal -->
@@ -27,10 +29,10 @@
                         <line x1="3" y1="18" x2="21" y2="18"></line>
                     </svg>
                 </label>
-                <div class="logo-admin">
+                <a href="admin-index.html" class="logo-admin">
                     <img src="assets/img/favicon-volcan.svg" alt="Icono Gas El Volcán">
                     <span>Admin Volcán</span>
-                </div>
+                </a>
             </div>
 
             <div class="cabecera-der">
@@ -69,6 +71,7 @@
         <main class="admin-main">
             <div class="contenedor-vista">
 
+                <!-- Cabecera del módulo -->
                 <div class="cabecera-modulo">
                     <h1>Crear Nuevo Producto</h1>
                     <a href="admin-lista-productos.html" class="btn-secundario">
@@ -76,10 +79,11 @@
                     </a>
                 </div>
 
+                <!-- Contenedor del formulario -->
                 <section class="caja-formulario-admin">
                     <form id="form-nuevo-producto" action="#" class="formulario-generico" novalidate>
 
-                        <!-- Sección 1: Información Básica -->
+                        <!-- Sección 1: Información básica -->
                         <fieldset class="seccion-fieldset">
                             <legend class="titulo-legend">Información General</legend>
                             <div class="linea-separadora"></div>
@@ -125,7 +129,7 @@
                             </div>
                         </fieldset>
 
-                        <!-- Sección 2: Tarifas e Inventario -->
+                        <!-- Sección 2: Tarifas e inventario -->
                         <fieldset class="seccion-fieldset espaciado-seccion">
                             <legend class="titulo-legend">Tarifas e Inventario</legend>
                             <div class="linea-separadora"></div>
@@ -160,7 +164,7 @@
                             </div>
                         </fieldset>
 
-                        <!-- Sección 3: Detalles y Multimedia -->
+                        <!-- Sección 3: Detalles y multimedia -->
                         <fieldset class="seccion-fieldset espaciado-seccion">
                             <legend class="titulo-legend">Detalles y Multimedia</legend>
                             <div class="linea-separadora"></div>
@@ -183,7 +187,7 @@
                         <!-- Contenedor para mensajes de validación -->
                         <div id="mensaje-producto" class="mensaje-final"></div>
 
-                        <!-- Acciones finales -->
+                        <!-- Acciones finales del formulario -->
                         <div class="acciones-registro">
                             <button type="submit" class="boton-guardar">Guardar Producto</button>
                         </div>

@@ -1,4 +1,4 @@
-/* Cabecera del modulo */
+/* Cabecera y barra de navegacion principal */
 .cabecera-modulo {
     display: flex;
     justify-content: space-between;
@@ -12,9 +12,10 @@
     font-weight: 700;
 }
 
+/* Estilos de botones generales */
 .btn-nuevo-registro {
     background-color: var(--volcan-oscuro);
-    color: #ffffff;
+    color: var(--volcan-blanco);
     text-decoration: none;
     padding: 0.8rem 1.5rem;
     border-radius: 0.4rem;
@@ -27,40 +28,37 @@
     background-color: var(--volcan-naranja);
 }
 
-/* Caja blanca que envuelve la tabla */
+/* Estructura y contenedores principales */
 .caja-tabla-admin {
-    background-color: #ffffff;
+    background-color: var(--volcan-blanco);
     border-radius: 0.6rem;
     box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.03);
-    border: 1px solid var(--volcan-borde);
+    border: 0.0625rem solid var(--volcan-borde);
     padding: 1.5rem;
 }
 
-/* Contenedor con scroll forzado para que no se apilen columnas en pantallas chicas */
 .tabla-responsiva {
     width: 100%;
     overflow-x: auto;
 }
 
-/* Estilos de la tabla de datos */
 .tabla-datos {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
 }
 
-/* Garantiza que todo el contenido se mantenga en una sola linea */
 .tabla-datos th, 
 .tabla-datos td {
     padding: 1.2rem 1rem;
-    border-bottom: 1px solid var(--volcan-borde);
+    border-bottom: 0.0625rem solid var(--volcan-borde);
     vertical-align: middle;
     font-size: 0.95rem;
     white-space: nowrap; 
 }
 
 .tabla-datos th {
-    background-color: #f8f9fa;
+    background-color: var(--volcan-fondo);
     color: var(--volcan-oscuro);
     font-weight: 700;
     font-size: 0.85rem;
@@ -72,14 +70,9 @@
     background-color: #fbfcfd;
 }
 
-/* Clases de apoyo para los textos de la tabla */
-.fw-bold {
-    font-weight: 600;
-    color: var(--volcan-azul);
-}
-
+/* Clases utilitarias y estilos reutilizables */
 .texto-secundario {
-    color: #888888;
+    color: var(--volcan-gris-claro);
     font-size: 0.9rem;
 }
 
@@ -87,7 +80,6 @@
     text-align: center;
 }
 
-/* Etiquetas visuales para los roles */
 .etiqueta-rol {
     display: inline-block;
     padding: 0.3rem 0.8rem;
@@ -109,15 +101,14 @@
 }
 
 .rol-cliente {
-    background-color: #f1f3f5;
-    color: #495057;
+    background-color: var(--volcan-fondo);
+    color: var(--volcan-gris);
 }
 
-/* Botones SVG para editar y eliminar */
 .celda-acciones {
     text-align: center;
     vertical-align: middle;
-    min-width: 100px;
+    min-width: 6.25rem;
 }
 
 .btn-accion {
@@ -142,14 +133,14 @@
 }
 
 .btn-eliminar {
-    color: #dc3545;
+    color: var(--volcan-rojo);
 }
 
 .btn-eliminar:hover {
     background-color: rgba(220, 53, 69, 0.1);
 }
 
-/* Media queries para adaptar vista en celulares */
+/* Adaptabilidad para dispositivos moviles (Celulares) */
 @media (max-width: 48rem) {
     .cabecera-modulo {
         flex-direction: column;

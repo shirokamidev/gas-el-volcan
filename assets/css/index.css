@@ -1,6 +1,6 @@
-/* Hero section */
+/* Portada principal de inicio */
 .seccion-hero {
-    background-color: #ffffff;
+    background-color: var(--volcan-blanco);
     width: 100%;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .hero-titulo {
-    color: #ffffff;
+    color: var(--volcan-blanco);
     font-size: 3.2rem;
     font-weight: 700;
     text-shadow: 0 0.25rem 0.625rem rgba(0,0,0,0.5);
@@ -29,13 +29,13 @@
 }
 
 .hero-bajada {
-    color: #ffffff;
+    color: var(--volcan-blanco);
     font-size: 1.1rem;
     font-weight: 600;
     text-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.5);
 }
 
-/* Contenedor central del buscador en el Hero */
+/* Componente de búsqueda en cabecera */
 .contenedor-tarjeta-hero {
     display: flex;
     align-items: center;
@@ -44,13 +44,12 @@
     width: 100%;
     padding: 0 1.25rem; 
     z-index: 10;
-    position: relative;
 }
 
 .tarjeta-hero {
     background: rgba(0, 75, 135, 0.95); 
     border-radius: 0.8rem; 
-    color: #ffffff;
+    color: var(--volcan-blanco);
     padding: 2rem 2.5rem;
     box-shadow: 0 0.625rem 1.875rem rgba(0,0,0,0.15);
     display: flex;
@@ -86,6 +85,7 @@
     border-radius: 0.3125rem 0 0 0.3125rem;
     outline: none;
     font-family: inherit;
+    font-size: 1rem;
 }
 
 .buscador-principal input:focus {
@@ -107,14 +107,13 @@
     flex: 1;
 }
 
-/* Separador para posicionar la grilla de productos debajo del hero */
 .separador-gris {
     background-color: var(--volcan-claro); 
     width: 100%;
     padding-bottom: 11rem; 
 }
 
-/* Grilla de productos */
+/* Catálogo de productos destacados */
 .seccion-productos {
     padding: 3.75rem 1.25rem; 
     text-align: center;
@@ -134,8 +133,8 @@
 }
 
 .tarjeta-producto {
-    background: #ffffff;
-    border: 1px solid #eeeeee;
+    background: var(--volcan-blanco);
+    border: 0.0625rem solid var(--volcan-borde-claro);
     border-radius: 0.625rem;
     padding: 1.875rem 1.25rem;
     box-shadow: 0 0.3125rem 1rem rgba(0,0,0,0.05);
@@ -179,7 +178,7 @@
 }
 
 .producto-detalle {
-    color: #666666;
+    color: var(--volcan-gris);
     font-size: 0.9rem;
     flex-grow: 1;
     margin-bottom: 1.25rem;
@@ -192,12 +191,11 @@
 }
 
 .precio-secundario {
-    color: #888888;
+    color: var(--volcan-gris-claro);
     font-size: 1rem;
     font-weight: 600;
 }
 
-/* Control de cantidad para agregar al carrito */
 .producto-controles {
     width: 100%;
     display: flex;
@@ -209,7 +207,7 @@
 .control-cantidad {
     display: flex;
     align-items: stretch;
-    border: 1px solid #e0e0e0;
+    border: 0.0625rem solid var(--volcan-borde-medio);
     border-radius: 0.3125rem;
     overflow: hidden;
     height: 2.8rem;
@@ -217,7 +215,7 @@
 
 .btn-restar,
 .btn-sumar {
-    background-color: #f8f9fa;
+    background-color: var(--volcan-claro);
     border: none;
     width: 2.8rem;
     flex-shrink: 0; 
@@ -233,7 +231,7 @@
 
 .btn-restar:hover,
 .btn-sumar:hover {
-    background-color: #e2e6ea;
+    background-color: var(--volcan-borde-claro);
 }
 
 .input-cantidad {
@@ -241,8 +239,8 @@
     min-width: 0; 
     text-align: center;
     border: none;
-    border-left: 1px solid #e0e0e0;
-    border-right: 1px solid #e0e0e0;
+    border-left: 0.0625rem solid var(--volcan-borde-medio);
+    border-right: 0.0625rem solid var(--volcan-borde-medio);
     font-weight: 700;
     font-size: 1.1rem;
     color: var(--volcan-texto);
@@ -254,9 +252,9 @@
     margin: 0;
 }
 
-/* Sección de Promociones y Noticias (Blogs) */
+/* Sección de novedades y promociones */
 .seccion-noticias {
-    background-color: #f8f9fa; 
+    background-color: var(--volcan-claro); 
     width: 100%;
     padding: 4rem 1.25rem; 
     transition: padding 0.4s ease;
@@ -270,7 +268,7 @@
     border-radius: 1rem; 
     padding: 4.5rem 1.25rem;
     text-align: center;
-    color: #ffffff;
+    color: var(--volcan-blanco);
     transition: max-width 0.4s ease, border-radius 0.4s ease, padding 0.4s ease;
 }
 
@@ -302,7 +300,7 @@
 }
 
 .promo-borde {
-    border-right: 1px solid rgba(255,255,255,0.4);
+    border-right: 0.0625rem solid rgba(255,255,255,0.4);
     padding-right: 3rem; 
 }
 
@@ -325,11 +323,10 @@
     text-align: right; 
 }
 
-/* Media Queries exclusivas del Index */
+/* Adaptabilidad para pantallas medianas (Tablets) */
 @media (max-width: 64rem) {
     .tarjeta-hero {
         width: calc(100% - 4.5rem);
-        
     }
 
     .seccion-noticias {
@@ -342,10 +339,10 @@
     }
 }
 
+/* Adaptabilidad para dispositivos móviles (Celulares) */
 @media (max-width: 48rem) { 
     .tarjeta-hero {
         width: calc(100% - 0.5rem);
-        
     }
 
     .hero-fondo {
@@ -393,7 +390,7 @@
 
     .promo-borde {
         border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.3);
+        border-bottom: 0.0625rem solid rgba(255,255,255,0.3);
         padding-right: 0;
         padding-bottom: 2.5rem;
         margin-bottom: 2.5rem; 

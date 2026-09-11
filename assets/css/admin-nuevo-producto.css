@@ -1,4 +1,4 @@
-/* Cabecera del modulo */
+/* Cabecera y barra de navegacion principal */
 .cabecera-modulo {
     display: flex;
     justify-content: space-between;
@@ -12,37 +12,37 @@
     font-weight: 700;
 }
 
-/* Boton secundario */
+/* Estilos de botones generales */
 .btn-secundario {
-    background-color: #ffffff;
+    background-color: var(--volcan-blanco);
     color: var(--volcan-oscuro);
     text-decoration: none;
     padding: 0.8rem 1.5rem;
     border-radius: 0.4rem;
     font-size: 0.95rem;
     font-weight: 600;
-    border: 1px solid var(--volcan-borde);
-    transition: all 0.3s ease;
+    border: 0.0625rem solid var(--volcan-borde);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
 }
 
 .btn-secundario:hover {
-    background-color: #f8f9fa;
-    border-color: #d1d1d1;
+    background-color: var(--volcan-fondo);
+    border-color: var(--volcan-borde-oscuro);
 }
 
-/* Contenedor principal del formulario */
+/* Estructura y contenedores principales */
 .caja-formulario-admin {
-    background-color: #ffffff;
+    background-color: var(--volcan-blanco);
     border-radius: 0.6rem;
     box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.03);
-    border: 1px solid var(--volcan-borde);
+    border: 0.0625rem solid var(--volcan-borde);
     padding: 2.5rem;
 }
 
-/* Formulario generico y fieldsets */
+/* Configuracion de formularios y campos de entrada */
 .formulario-generico {
     display: flex;
     flex-direction: column;
@@ -67,7 +67,7 @@
 }
 
 .linea-separadora {
-    height: 1px;
+    height: 0.0625rem;
     background-color: var(--volcan-borde);
     width: 100%;
     margin-bottom: 1.5rem;
@@ -75,12 +75,12 @@
 
 .texto-obligatorio {
     font-size: 0.9rem;
-    color: #666666;
+    color: var(--volcan-gris);
     margin-bottom: 1.5rem;
     font-weight: 500;
+    text-align: justify;
 }
 
-/* Grilla del formulario */
 .grilla-formulario {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -96,7 +96,6 @@
     flex-direction: column;
 }
 
-/* Etiquetas e inputs */
 .label-campo {
     font-size: 0.95rem;
     font-weight: 600;
@@ -105,18 +104,18 @@
 }
 
 .asterisco {
-    color: #dc3545;
+    color: var(--volcan-rojo);
 }
 
 .input-campo {
     width: 100%;
     padding: 0.9rem 1rem;
-    border: 1px solid #d1d1d1;
+    border: 0.0625rem solid var(--volcan-borde-oscuro);
     border-radius: 0.3125rem;
     font-family: inherit;
     font-size: 1rem;
     color: var(--volcan-texto);
-    background-color: #ffffff;
+    background-color: var(--volcan-blanco);
     transition: border-color 0.3s ease, background-color 0.3s ease;
     outline: none;
 }
@@ -127,10 +126,9 @@
 }
 
 .input-campo::placeholder {
-    color: #a0a0a0;
+    color: var(--volcan-gris-claro);
 }
 
-/* Selector estilizado */
 .select-campo {
     cursor: pointer;
     appearance: none;
@@ -143,53 +141,62 @@
 
 .textarea-campo {
     resize: vertical;
-    min-height: 100px;
+    min-height: 6.25rem;
     line-height: 1.5;
 }
 
-/* Textos de ayuda debajo de los inputs */
 .texto-ayuda {
     font-size: 0.8rem;
-    color: #888888;
+    color: var(--volcan-gris-claro);
     margin-top: 0.4rem;
     font-weight: 500;
+    text-align: justify;
 }
 
-/* Mensajes de validacion inyectados por js */
+/* Alertas de estados en los formularios */
 .texto-peligro {
-    color: #dc3545;
+    color: var(--volcan-rojo);
     font-size: 0.85rem;
+    font-weight: 600;
+    display: none;
+}
+
+.texto-peligro:not(:empty) {
     display: block;
     margin-top: 0.4rem;
 }
 
 .mensaje-final {
     text-align: center;
-    margin-top: 2.5rem;
-    margin-bottom: 1.5rem;
     font-size: 1.05rem;
-    font-weight: 600;
+    font-weight: 700;
+    display: none;
+}
+
+.mensaje-final:not(:empty) {
+    display: block;
+    margin-top: 2.5rem;
 }
 
 .mensaje-error {
-    color: #dc3545;
+    color: var(--volcan-rojo);
 }
 
 .mensaje-exito {
     color: var(--volcan-azul);
 }
 
-/* Acciones finales del formulario */
 .acciones-registro {
     display: flex;
     justify-content: flex-end;
     padding-top: 1.5rem;
-    border-top: 1px solid var(--volcan-borde);
+    margin-top: 2rem;
+    border-top: 0.0625rem solid var(--volcan-borde);
 }
 
 .boton-guardar {
     background-color: var(--volcan-naranja);
-    color: #ffffff;
+    color: var(--volcan-blanco);
     border: none;
     padding: 1rem 2.5rem;
     border-radius: 0.3125rem;
@@ -201,10 +208,10 @@
 }
 
 .boton-guardar:hover {
-    background-color: #e06015;
+    background-color: var(--volcan-naranja-oscuro);
 }
 
-/* Media queries para adaptar vista en celulares y tablets */
+/* Adaptabilidad para pantallas medianas (Tablets) */
 @media (max-width: 64rem) {
     .grilla-formulario {
         grid-template-columns: 1fr;
@@ -216,6 +223,7 @@
     }
 }
 
+/* Adaptabilidad para dispositivos moviles (Celulares) */
 @media (max-width: 48rem) {
     .cabecera-modulo {
         flex-direction: column;
