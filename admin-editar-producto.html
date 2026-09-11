@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Gas El Volcán | Nuevo Producto</title>
+        <title>Gas El Volcán | Editar Producto</title>
         <link rel="icon" type="image/svg+xml" href="assets/img/favicon-volcan.svg" />
 
         <!-- Fuentes de Google -->
@@ -13,7 +13,7 @@
 
         <!-- Hojas de estilos principales -->
         <link rel="stylesheet" href="assets/css/admin-layout.css" />
-        <link rel="stylesheet" href="assets/css/admin-nuevo-producto.css" />
+        <link rel="stylesheet" href="assets/css/admin-editar-producto.css" />
     </head>
     <body>
         <!-- Checkbox para controlar el estado del menú en móviles -->
@@ -52,13 +52,12 @@
         <aside class="admin-sidebar">
             <nav class="nav-lateral">
                 <ul>
-                    <li>
-                        <a href="admin-index.html">Inicio</a>
-                    </li>
+                    <li><a href="admin-index.html">Inicio</a></li>
 
                     <li class="separador">Módulo Productos</li>
                     <li><a href="admin-lista-productos.html">Listar productos</a></li>
-                    <li><a href="admin-nuevo-producto.html" class="activo">Nuevo producto</a></li>
+                    <li><a href="admin-nuevo-producto.html">Nuevo producto</a></li>
+                    <li><a href="#" class="activo">Editar producto</a></li>
 
                     <li class="separador">Módulo Usuarios</li>
                     <li><a href="admin-lista-usuarios.html">Listar usuarios</a></li>
@@ -73,7 +72,7 @@
 
                 <!-- Cabecera del módulo -->
                 <div class="cabecera-modulo">
-                    <h1>Crear Nuevo Producto</h1>
+                    <h1>Editar Producto</h1>
                     <a href="admin-lista-productos.html" class="btn-secundario">
                         <span>&larr;</span> Volver a la lista
                     </a>
@@ -81,26 +80,29 @@
 
                 <!-- Contenedor del formulario -->
                 <section class="caja-formulario-admin">
-                    <form id="form-nuevo-producto" action="#" class="formulario-generico" novalidate>
+                    <form id="form-editar-producto" action="#" class="formulario-generico" novalidate>
+                        
+                        <!-- ID Oculto para identificar el registro -->
+                        <input type="hidden" id="producto-id">
 
                         <!-- Sección 1: Información básica -->
                         <fieldset class="seccion-fieldset">
                             <legend class="titulo-legend">Información General</legend>
                             <div class="linea-separadora"></div>
 
-                            <p class="texto-obligatorio">* Completa la información solicitada a continuación:</p>
+                            <p class="texto-obligatorio">* Modifica la información solicitada a continuación:</p>
 
                             <div class="grilla-formulario">
                                 <div class="grupo-input col-completa">
                                     <label class="label-campo">Código del Producto <span class="asterisco">*</span></label>
-                                    <input type="text" id="codigo-producto" placeholder="Ej: CL001" class="input-campo">
+                                    <input type="text" id="codigo-producto" class="input-campo">
                                     <span class="texto-ayuda">Obligatorio. Mínimo 3 caracteres. No tiene límite de máximo.</span>
                                     <span id="error-codigo" class="texto-peligro"></span>
                                 </div>
 
                                 <div class="grupo-input col-completa">
                                     <label class="label-campo">Nombre del Producto <span class="asterisco">*</span></label>
-                                    <input type="text" id="nombre-producto" placeholder="Ej: Cilindro GLP 15 kg" class="input-campo">
+                                    <input type="text" id="nombre-producto" class="input-campo" maxlength="100">
                                     <span class="texto-ayuda">Obligatorio. Máximo 100 caracteres.</span>
                                     <span id="error-nombre" class="texto-peligro"></span>
                                 </div>
@@ -108,7 +110,7 @@
                                 <div class="grupo-input col-completa">
                                     <label class="label-campo">Categoría <span class="asterisco">*</span></label>
                                     <select id="categoria-producto" class="input-campo select-campo" required>
-                                        <option value="" disabled selected>-- Seleccione una categoría --</option>
+                                        <option value="" disabled>-- Seleccione una categoría --</option>
                                         <option value="cilindros">Cilindros de Gas</option>
                                         <option value="reguladores">Reguladores</option>
                                         <option value="mangueras">Mangueras y Conexiones</option>
@@ -127,21 +129,21 @@
                             <div class="grilla-formulario">
                                 <div class="grupo-input">
                                     <label class="label-campo">Precio Residencial (CLP) <span class="asterisco">*</span></label>
-                                    <input type="number" id="precio-residencial" placeholder="Ej: 16000" class="input-campo">
+                                    <input type="number" id="precio-residencial" class="input-campo">
                                     <span class="texto-ayuda">Obligatorio. Mínimo 0. Precio para cliente final.</span>
                                     <span id="error-precio-res" class="texto-peligro"></span>
                                 </div>
 
                                 <div class="grupo-input">
                                     <label class="label-campo">Precio Comercial (CLP) <span class="asterisco">*</span></label>
-                                    <input type="number" id="precio-comercial" placeholder="Ej: 14500" class="input-campo">
+                                    <input type="number" id="precio-comercial" class="input-campo">
                                     <span class="texto-ayuda">Obligatorio. Mínimo 0. Precio para empresas/locales.</span>
                                     <span id="error-precio-com" class="texto-peligro"></span>
                                 </div>
 
                                 <div class="grupo-input">
                                     <label class="label-campo">Stock Actual <span class="asterisco">*</span></label>
-                                    <input type="number" id="stock-actual" placeholder="Ej: 80" class="input-campo">
+                                    <input type="number" id="stock-actual" class="input-campo">
                                     <span class="texto-ayuda">Obligatorio. Solo números enteros. Mínimo 0.</span>
                                     <span id="error-stock" class="texto-peligro"></span>
                                 </div>
@@ -156,14 +158,14 @@
                             <div class="grilla-formulario">
                                 <div class="grupo-input col-completa">
                                     <label class="label-campo">Descripción del Producto (Opcional)</label>
-                                    <textarea id="descripcion-producto" placeholder="Describe brevemente las características del producto..." class="input-campo textarea-campo"></textarea>
+                                    <textarea id="descripcion-producto" class="input-campo textarea-campo" maxlength="500"></textarea>
                                     <span class="texto-ayuda">Opcional. Máximo 500 caracteres.</span>
                                     <span id="error-descripcion" class="texto-peligro"></span>
                                 </div>
 
                                 <div class="grupo-input col-completa">
                                     <label class="label-campo">Ruta de Imagen (Opcional)</label>
-                                    <input type="text" id="imagen-producto" placeholder="Ej: assets/img/productos/nuevo.svg" class="input-campo">
+                                    <input type="text" id="imagen-producto" class="input-campo">
                                     <span class="texto-ayuda">Opcional. Ruta relativa de la imagen del producto.</span>
                                 </div>
                             </div>
@@ -174,7 +176,7 @@
 
                         <!-- Acciones finales del formulario -->
                         <div class="acciones-registro">
-                            <button type="submit" class="boton-guardar">Guardar Producto</button>
+                            <button type="submit" class="boton-guardar">Guardar Cambios</button>
                         </div>
 
                     </form>
@@ -183,7 +185,7 @@
             </div>
         </main>
 
-        <!-- Validadores estructurales e inserción de datos para nuevos registros -->
+        <!-- Validadores estructurales e inserción de datos para la edición de registros -->
         <script src="assets/js/main.js"></script>
         <script src="assets/js/data.js"></script>
         <script src="assets/js/admin-formularios.js"></script>

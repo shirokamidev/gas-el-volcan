@@ -1,0 +1,255 @@
+/* Cabecera y barra de navegación principal */
+.cabecera-modulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.cabecera-modulo h1 {
+    color: var(--volcan-oscuro);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Estilos de botones generales */
+.btn-secundario {
+    background-color: var(--volcan-blanco);
+    color: var(--volcan-oscuro);
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 0.0625rem solid var(--volcan-borde);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-secundario:hover {
+    background-color: var(--volcan-fondo);
+    border-color: var(--volcan-borde-oscuro);
+}
+
+/* Estructura y contenedores principales */
+.caja-formulario-admin {
+    background-color: var(--volcan-blanco);
+    border-radius: 0.6rem;
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.03);
+    border: 0.0625rem solid var(--volcan-borde);
+    padding: 2.5rem;
+}
+
+/* Configuración de formularios y campos de entrada */
+.formulario-generico {
+    display: flex;
+    flex-direction: column;
+}
+
+.seccion-fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.espaciado-seccion {
+    margin-top: 2.5rem;
+}
+
+.titulo-legend {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--volcan-oscuro);
+    margin-bottom: 0.8rem;
+    width: 100%;
+}
+
+.linea-separadora {
+    height: 0.0625rem;
+    background-color: var(--volcan-borde);
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.texto-obligatorio {
+    font-size: 0.9rem;
+    color: var(--volcan-gris);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    text-align: justify;
+}
+
+.grilla-formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 2rem;
+}
+
+.col-completa {
+    grid-column: span 2;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.label-campo {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--volcan-texto);
+    margin-bottom: 0.5rem;
+}
+
+.asterisco {
+    color: var(--volcan-rojo);
+}
+
+.input-campo {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 0.0625rem solid var(--volcan-borde-oscuro);
+    border-radius: 0.3125rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--volcan-texto);
+    background-color: var(--volcan-blanco);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    outline: none;
+}
+
+.input-campo:focus {
+    border-color: var(--volcan-azul);
+    background-color: #fbfcfd;
+}
+
+.input-campo::placeholder {
+    color: var(--volcan-gris-claro);
+}
+
+.select-campo {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23333333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    padding-right: 2.5rem;
+}
+
+.textarea-campo {
+    resize: vertical;
+    min-height: 6.25rem;
+    line-height: 1.5;
+}
+
+.texto-ayuda {
+    font-size: 0.8rem;
+    color: var(--volcan-gris-claro);
+    margin-top: 0.4rem;
+    font-weight: 500;
+    text-align: justify;
+}
+
+/* Alertas de estados en los formularios */
+.texto-peligro {
+    color: var(--volcan-rojo);
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: none;
+}
+
+.texto-peligro:not(:empty) {
+    display: block;
+    margin-top: 0.4rem;
+}
+
+.mensaje-final {
+    text-align: center;
+    font-size: 1.05rem;
+    font-weight: 700;
+    display: none;
+}
+
+.mensaje-final:not(:empty) {
+    display: block;
+    margin-top: 2.5rem;
+}
+
+.mensaje-error {
+    color: var(--volcan-rojo);
+}
+
+.mensaje-exito {
+    color: var(--volcan-azul);
+}
+
+.acciones-registro {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+    border-top: 0.0625rem solid var(--volcan-borde);
+}
+
+.boton-guardar {
+    background-color: var(--volcan-naranja);
+    color: var(--volcan-blanco);
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 0.3125rem;
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-guardar:hover {
+    background-color: var(--volcan-naranja-oscuro);
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (max-width: 64rem) {
+    .grilla-formulario {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .col-completa {
+        grid-column: span 1;
+    }
+}
+
+/* Adaptabilidad para dispositivos móviles (Celulares) */
+@media (max-width: 48rem) {
+    .cabecera-modulo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .cabecera-modulo h1 {
+        font-size: 1.6rem;
+    }
+    
+    .btn-secundario {
+        align-self: flex-start;
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .caja-formulario-admin {
+        padding: 1.5rem;
+    }
+    
+    .acciones-registro {
+        justify-content: center;
+    }
+    
+    .boton-guardar {
+        width: 100%;
+    }
+}
