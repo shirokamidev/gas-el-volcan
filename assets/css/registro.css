@@ -38,14 +38,14 @@
 }
 
 .texto-obligatorio {
-    color: var(--volcan-gris-oscuro);
+    color: var(--volcan-gris);
     font-size: 0.95rem;
     margin-bottom: 0.8rem;
     text-align: justify;
 }
 
 .texto-intro-registro {
-    color: var(--volcan-gris-oscuro);
+    color: var(--volcan-gris);
     font-size: 0.95rem;
     line-height: 1.5;
     margin-bottom: 1.8rem;

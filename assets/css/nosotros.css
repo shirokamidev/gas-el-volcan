@@ -200,10 +200,11 @@
     border: 0.0625rem solid var(--volcan-borde-claro);
     box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.03);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+    height: 100%;
 }
 
 .tarjeta-miembro:hover {
-    transform: scale(0.95);
+    transform: none;
     box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.08);
 }
 
@@ -239,7 +240,14 @@
     color: var(--volcan-naranja);
     font-weight: 600;
     font-size: 0.95rem;
-    margin-bottom: 1rem;
+    width: 13rem;
+    max-width: 100%;
+    margin: 0 auto 0.5rem;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .miembro-desc {
