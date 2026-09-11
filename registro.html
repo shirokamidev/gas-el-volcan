@@ -52,25 +52,30 @@
                             
                             <div class="grilla-formulario">
                                 <div class="grupo-input col-completa">
-                                    <input type="text" id="rut-registro" placeholder="Rut" class="input-campo">
-                                    <span class="texto-ayuda">Sin puntos ni guion, Ej: 19011022K</span>
+                                    <label class="label-campo">RUT <span class="asterisco">*</span></label>
+                                    <input type="text" id="rut-registro" placeholder="Ej: 19011022K" class="input-campo">
+                                    <span class="texto-ayuda">Sin puntos ni guion.</span>
                                     <span id="error-rut-registro" class="texto-peligro mensaje-error-input"></span>
                                 </div>
                                 
                                 <div class="grupo-input col-completa">
-                                    <input type="text" id="nombre-registro" placeholder="Nombre" class="input-campo">
+                                    <label class="label-campo">Nombre <span class="asterisco">*</span></label>
+                                    <input type="text" id="nombre-registro" placeholder="Ej: Rocío" class="input-campo">
                                     <span id="error-nombre-registro" class="texto-peligro mensaje-error-input"></span>
                                 </div>
                                 
                                 <div class="grupo-input">
-                                    <input type="text" id="apellido-p-registro" placeholder="Apellido Paterno" class="input-campo">
+                                    <label class="label-campo">Apellido Paterno</label>
+                                    <input type="text" id="apellido-p-registro" placeholder="Ej: Contreras" class="input-campo">
                                 </div>
                                 
                                 <div class="grupo-input">
-                                    <input type="text" id="apellido-m-registro" placeholder="Apellido Materno" class="input-campo">
+                                    <label class="label-campo">Apellido Materno</label>
+                                    <input type="text" id="apellido-m-registro" placeholder="Ej: Águila" class="input-campo">
                                 </div>
                                 
                                 <div class="grupo-input">
+                                    <label class="label-campo">Contraseña <span class="asterisco">*</span></label>
                                     <div class="caja-input-flex">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icono-izquierdo">
                                             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
@@ -90,6 +95,7 @@
                                 </div>
 
                                 <div class="grupo-input">
+                                    <label class="label-campo">Repetir Contraseña <span class="asterisco">*</span></label>
                                     <div class="caja-input-flex">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icono-izquierdo">
                                             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
@@ -117,18 +123,23 @@
                             
                             <div class="grilla-formulario">
                                 <div class="grupo-input col-completa">
-                                    <input type="tel" id="telefono-registro" placeholder="Teléfono (Opcional)" pattern="[0-9]{9}" class="input-campo">
+                                    <label class="label-campo">Teléfono (Opcional)</label>
+                                    <input type="tel" id="telefono-registro" placeholder="Ej: 912345678" class="input-campo">
                                     <span class="texto-ayuda">Ej: 912345678</span>
+                                    <span id="error-telefono-registro" class="texto-peligro mensaje-error-input"></span>
                                 </div>
                                 
                                 <div class="grupo-input col-completa">
+                                    <label class="label-campo">Correo Electrónico <span class="asterisco">*</span></label>
                                     <input type="email" id="correo-registro" placeholder="E-mail" class="input-campo">
                                     <span class="texto-ayuda">Solo correos con @duoc.cl, @profesor.duoc.cl y @gmail.com</span>
+                                    <span id="error-correo-registro" class="texto-peligro mensaje-error-input"></span>
                                 </div>
                                 
                                 <div class="grupo-input col-completa">
+                                    <label class="label-campo">Repetir Correo <span class="asterisco">*</span></label>
                                     <input type="email" id="correo-confirm-registro" placeholder="Repetir e-mail" class="input-campo">
-                                    <span id="error-correo-registro" class="texto-peligro mensaje-error-input"></span>
+                                    <span id="error-correo-confirm-registro" class="texto-peligro mensaje-error-input"></span>
                                 </div>
                             </div>
                         </fieldset>
@@ -140,6 +151,7 @@
                             
                             <div class="grilla-formulario">
                                 <div class="grupo-input">
+                                    <label class="label-campo">Región <span class="asterisco">*</span></label>
                                     <select id="region-registro" class="input-campo select-campo">
                                         <option value="" disabled selected>Seleccione región</option>
                                         <option value="nuble">Región de Ñuble</option>
@@ -148,6 +160,7 @@
                                 </div>
                                 
                                 <div class="grupo-input">
+                                    <label class="label-campo">Comuna <span class="asterisco">*</span></label>
                                     <select id="comuna-registro" class="input-campo select-campo">
                                         <option value="" disabled selected>Seleccione comuna</option>
                                         <option value="chillan">Chillán</option>
@@ -161,7 +174,10 @@
                                 </div>
                                 
                                 <div class="grupo-input col-completa">
-                                    <input type="text" id="calle-registro" placeholder="Calle y Número (Ej: Los Puelches 123)" class="input-campo">
+                                    <label class="label-campo">Calle y Número <span class="asterisco">*</span></label>
+                                    <input type="text" id="calle-registro" placeholder="Ej: Caupolicán 450, Depto 3B" class="input-campo">
+                                    <span class="texto-ayuda">Obligatorio. Máximo 300 caracteres.</span>
+                                    <span id="error-calle-registro" class="texto-peligro mensaje-error-input"></span>
                                 </div>
                             </div>
                         </fieldset>
@@ -207,7 +223,7 @@
             
         </main>
 
-        <!-- Variables globales, control de menú y validadores de autenticación -->
+        <!-- Scripts -->
         <script src="assets/js/main.js"></script>
         <script src="assets/js/data.js"></script>
         <script src="assets/js/carrito.js"></script>

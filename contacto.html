@@ -111,37 +111,40 @@
                             
                             <form id="form-contacto" class="formulario-contacto" novalidate>
                                 <div class="form-grupo">
-                                    <label for="nombre-contacto">Nombre Completo *</label>
-                                    <input type="text" id="nombre-contacto" placeholder="Ej: Juan Pérez">
+                                    <label for="nombre-contacto">Nombre Completo <span class="asterisco">*</span></label>
+                                    <input type="text" id="nombre-contacto" placeholder="Ej: Juan Pérez" class="input-campo">
                                     <span id="error-nombre-contacto" class="texto-peligro mensaje-error-input"></span>
                                 </div>
                             
                                 <div class="form-grupo">
-                                    <label for="correo-contacto">Correo Electrónico *</label>
-                                    <input type="email" id="correo-contacto" placeholder="Ej: usuario@gmail.com">
-                                    <p class="texto-ayuda">Solo se admiten dominios @gmail.com, @duocuc.cl y @profesor.duoc.cl</p>
+                                    <label for="correo-contacto">Correo Electrónico <span class="asterisco">*</span></label>
+                                    <input type="email" id="correo-contacto" placeholder="Ej: usuario@gmail.com" class="input-campo">
+                                    <p class="texto-ayuda">Solo se admiten dominios @gmail.com, @duoc.cl y @profesor.duoc.cl</p>
                                     <span id="error-correo-contacto" class="texto-peligro mensaje-error-input"></span>
                                 </div>
                             
                                 <div class="form-grupo">
-                                    <label for="telefono">Teléfono</label>
-                                    <input type="tel" id="telefono" name="telefono" placeholder="Ej: 912345678" pattern="[0-9]{9}">
+                                    <label for="telefono-contacto">Teléfono (Opcional)</label>
+                                    <input type="tel" id="telefono-contacto" placeholder="Ej: 912345678" class="input-campo">
+                                    <span class="texto-ayuda">Opcional. 9 dígitos numéricos.</span>
+                                    <span id="error-telefono-contacto" class="texto-peligro mensaje-error-input"></span>
                                 </div>
                             
                                 <div class="form-grupo">
-                                    <label for="asunto">Asunto *</label>
-                                    <select id="asunto" required>
+                                    <label for="asunto">Asunto <span class="asterisco">*</span></label>
+                                    <select id="asunto" class="input-campo">
                                         <option value="" disabled selected>Selecciona un asunto...</option>
                                         <option value="consulta">Consulta General</option>
                                         <option value="pedido">Problema con mi pedido</option>
                                         <option value="reclamo">Reclamo</option>
                                         <option value="felicitacion">Felicitación</option>
                                     </select>
+                                    <span id="error-asunto-contacto" class="texto-peligro mensaje-error-input"></span>
                                 </div>
                             
                                 <div class="form-grupo">
-                                    <label for="comentario-contacto">Mensaje *</label>
-                                    <textarea id="comentario-contacto" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+                                    <label for="comentario-contacto">Mensaje <span class="asterisco">*</span></label>
+                                    <textarea id="comentario-contacto" rows="4" placeholder="Escribe tu mensaje aquí..." class="input-campo"></textarea>
                                     <span id="error-comentario-contacto" class="texto-peligro mensaje-error-input"></span>
                                 </div>
                             

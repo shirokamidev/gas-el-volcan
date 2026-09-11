@@ -147,6 +147,8 @@
 .boton-buscador-accion {
     border-radius: 0 0.3125rem 0.3125rem 0;
     margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .boton-imprimir {

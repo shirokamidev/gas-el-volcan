@@ -5,10 +5,14 @@ if (formContacto) {
     const nombreContacto = document.getElementById("nombre-contacto");
     const correoContacto = document.getElementById("correo-contacto");
     const comentarioContacto = document.getElementById("comentario-contacto");
+    const telefonoContacto = document.getElementById("telefono-contacto");
+    const asuntoContacto = document.getElementById("asunto");
 
     const errorNombreContacto = document.getElementById("error-nombre-contacto");
     const errorCorreoContacto = document.getElementById("error-correo-contacto");
     const errorComentarioContacto = document.getElementById("error-comentario-contacto");
+    const errorTelefonoContacto = document.getElementById("error-telefono-contacto");
+    const errorAsuntoContacto = document.getElementById("error-asunto-contacto");
     const mensajeContacto = document.getElementById("mensaje-contacto");
 
     function validarNombreContacto() {
@@ -63,10 +67,41 @@ if (formContacto) {
         return true;
     }
 
+    function validarTelefonoContacto() {
+        const telefono = telefonoContacto.value.trim();
+        if (telefono !== "") {
+            const regexTel = /^[0-9]{9}$/;
+            if (!regexTel.test(telefono)) {
+                errorTelefonoContacto.textContent = "Debe contener exactamente 9 dígitos numéricos.";
+                errorTelefonoContacto.classList.add("activo");
+                return false;
+            }
+        }
+        errorTelefonoContacto.textContent = "";
+        errorTelefonoContacto.classList.remove("activo");
+        return true;
+    }
+
+    function validarAsuntoContacto() {
+        if (asuntoContacto.value === "") {
+            errorAsuntoContacto.textContent = "Debe seleccionar un asunto.";
+            errorAsuntoContacto.classList.add("activo");
+            return false;
+        }
+        errorAsuntoContacto.textContent = "";
+        errorAsuntoContacto.classList.remove("activo");
+        return true;
+    }
+
     // Validación continua mediante listener directo
     nombreContacto.addEventListener("input", validarNombreContacto);
     correoContacto.addEventListener("input", validarCorreoContacto);
     comentarioContacto.addEventListener("input", validarComentarioContacto);
+    asuntoContacto.addEventListener("change", validarAsuntoContacto);
+    
+    if (telefonoContacto) {
+        telefonoContacto.addEventListener("input", validarTelefonoContacto);
+    }
 
     formContacto.addEventListener("submit", (event) => {
         event.preventDefault();
@@ -74,14 +109,18 @@ if (formContacto) {
         const nombreValido = validarNombreContacto();
         const correoValido = validarCorreoContacto();
         const comentarioValido = validarComentarioContacto();
+        const telefonoValido = validarTelefonoContacto();
+        const asuntoValido = validarAsuntoContacto();
 
-        if (nombreValido && correoValido && comentarioValido) {
+        if (nombreValido && correoValido && comentarioValido && telefonoValido && asuntoValido) {
             mensajeContacto.textContent = "Mensaje enviado correctamente. Gracias por contactarnos.";
             mensajeContacto.className = "mensaje-estado-formulario activo exito";
             formContacto.reset();
             errorNombreContacto.classList.remove("activo");
             errorCorreoContacto.classList.remove("activo");
             errorComentarioContacto.classList.remove("activo");
+            errorAsuntoContacto.classList.remove("activo");
+            if (errorTelefonoContacto) errorTelefonoContacto.classList.remove("activo");
         } else {
             mensajeContacto.textContent = "Revise los campos marcados antes de enviar.";
             mensajeContacto.className = "mensaje-estado-formulario activo error";
