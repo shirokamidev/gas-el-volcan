@@ -15,3 +15,11 @@ window.productosBD = [
     { id: 13, codigo: "AC002", nombre: "Tapa protectora para válvula", categoria: "accesorios", descripcion: "Tapa de plástico ABS para proteger la válvula del cilindro durante el transporte.", precioResidencial: 1490, precioComercial: 1200, stock: 60, imagen: "assets/img/productos/accesorios/tapa-valvula.svg" },
     { id: 14, codigo: "AC003", nombre: "Detector de gas a batería", categoria: "accesorios", descripcion: "Sensor electroquímico. Alarma sonora y visual ante fuga de gas GLP o metano.", precioResidencial: 19990, precioComercial: 17000, stock: 8, imagen: "assets/img/productos/accesorios/detector-gas.svg" }
 ];
+
+// Arreglo estático que contiene la información predeterminada de los usuarios del sistema
+window.usuariosBD = [
+    { id: 1, rut: "21849302K", nombre: "Rocío", apellidoP: "Contreras", apellidoM: "Águila", correo: "roc.contreras@profesor.duoc.cl", telefono: "984710293", region: "biobio", comuna: "concepcion", direccion: "Caupolicán 450, Depto 3B", rol: "administrador" },
+    { id: 2, rut: "213847192", nombre: "Sebastián", apellidoP: "Muñoz", apellidoM: "Castro", correo: "seb.munoz@gmail.com", telefono: "938471029", region: "nuble", comuna: "chillan-viejo", direccion: "Av. O'Higgins 890", rol: "vendedor" },
+    { id: 3, rut: "225810295", nombre: "Camila", apellidoP: "Soto", apellidoM: "Miranda", correo: "csoto.miranda@gmail.com", telefono: "971283940", region: "nuble", comuna: "chillan", direccion: "Los Puelches 123", rol: "cliente" },
+    { id: 4, rut: "219348103", nombre: "Matías", apellidoP: "Reyes", apellidoM: "Vargas", correo: "matias.reyes@duoc.cl", telefono: "962837401", region: "biobio", comuna: "los-angeles", direccion: "Colo Colo 102", rol: "cliente" }
+];
