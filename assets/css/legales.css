@@ -63,7 +63,7 @@
 }
 
 .bloque-legal p {
-    color: var(--volcan-gris-oscuro);
+    color: var(--volcan-gris);
     font-size: 1.05rem;
     line-height: 1.8;
     text-align: justify;
@@ -71,15 +71,16 @@
 }
 
 .bloque-legal ul {
-    margin: 0.5rem 0 1.5rem 2rem;
+    margin: 0 0 0 2rem;
     padding: 0;
 }
 
 .bloque-legal li {
-    color: var(--volcan-gris-oscuro);
+    color: var(--volcan-gris);
     font-size: 1.05rem;
     line-height: 1.8;
-    margin-bottom: 0.8rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0;
     text-align: justify;
 }
 
