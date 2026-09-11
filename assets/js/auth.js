@@ -91,12 +91,17 @@ if (formRegistro) {
     const correoConfirmRegistro = document.getElementById("correo-confirm-registro");
     const passwordRegistro = document.getElementById("password-registro");
     const passwordConfirmRegistro = document.getElementById("password-confirm-registro");
+    const telefonoRegistro = document.getElementById("telefono-registro");
+    const calleRegistro = document.getElementById("calle-registro");
     const terminosRegistro = document.getElementById("terminos-registro");
     
     const errorRutRegistro = document.getElementById("error-rut-registro");
     const errorNombreRegistro = document.getElementById("error-nombre-registro");
     const errorCorreoRegistro = document.getElementById("error-correo-registro");
+    const errorCorreoConfirmRegistro = document.getElementById("error-correo-confirm-registro");
     const errorPasswordRegistro = document.getElementById("error-password-registro");
+    const errorTelefonoRegistro = document.getElementById("error-telefono-registro");
+    const errorCalleRegistro = document.getElementById("error-calle-registro");
     const errorTerminosRegistro = document.getElementById("error-terminos-registro");
     const mensajeRegistro = document.getElementById("mensaje-registro");
 
@@ -144,17 +149,20 @@ if (formRegistro) {
         }
 
         const errorCorreo = window.validarFormatoCorreo(correoRegistro.value);
+        
+        errorCorreoRegistro.textContent = "";
+        errorCorreoRegistro.classList.remove("activo");
+        errorCorreoConfirmRegistro.textContent = "";
+        errorCorreoConfirmRegistro.classList.remove("activo");
+
         if (errorCorreo !== "") {
             errorCorreoRegistro.textContent = errorCorreo;
             errorCorreoRegistro.classList.add("activo");
             formularioValido = false;
         } else if (correoRegistro.value !== correoConfirmRegistro.value) {
-            errorCorreoRegistro.textContent = "Los correos electrónicos no coinciden.";
-            errorCorreoRegistro.classList.add("activo");
+            errorCorreoConfirmRegistro.textContent = "Los correos electrónicos no coinciden.";
+            errorCorreoConfirmRegistro.classList.add("activo");
             formularioValido = false;
-        } else {
-            errorCorreoRegistro.textContent = "";
-            errorCorreoRegistro.classList.remove("activo");
         }
 
         if (passwordRegistro.value.length < 4 || passwordRegistro.value.length > 10) {
@@ -168,6 +176,30 @@ if (formRegistro) {
         } else {
             errorPasswordRegistro.textContent = "";
             errorPasswordRegistro.classList.remove("activo");
+        }
+
+        if (telefonoRegistro && telefonoRegistro.value.trim() !== "") {
+            const regexTel = /^[0-9]{9}$/;
+            if (!regexTel.test(telefonoRegistro.value.trim())) {
+                errorTelefonoRegistro.textContent = "Debe contener exactamente 9 dígitos numéricos.";
+                errorTelefonoRegistro.classList.add("activo");
+                formularioValido = false;
+            } else {
+                errorTelefonoRegistro.textContent = "";
+                errorTelefonoRegistro.classList.remove("activo");
+            }
+        } else if (errorTelefonoRegistro) {
+            errorTelefonoRegistro.textContent = "";
+            errorTelefonoRegistro.classList.remove("activo");
+        }
+
+        if (calleRegistro.value.trim() === "" || calleRegistro.value.trim().length > 300) {
+            errorCalleRegistro.textContent = "Obligatorio. Máximo 300 caracteres.";
+            errorCalleRegistro.classList.add("activo");
+            formularioValido = false;
+        } else {
+            errorCalleRegistro.textContent = "";
+            errorCalleRegistro.classList.remove("activo");
         }
 
         if (!terminosRegistro.checked) {

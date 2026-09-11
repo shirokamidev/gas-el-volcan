@@ -53,6 +53,10 @@ body {
     color: var(--volcan-rojo);
 }
 
+.asterisco {
+    color: var(--volcan-rojo);
+}
+
 .texto-bloque {
     display: block;
 }
