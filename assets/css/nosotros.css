@@ -1,0 +1,376 @@
+/* Posicionamiento de anclajes de sección */
+#quienes-somos,
+#mision-vision {
+    scroll-margin-top: 7.8rem; 
+}
+
+/* Estilos principales de la portada de la empresa */
+.nosotros-hero-fondo {
+    width: 100%;
+    min-height: 28rem; 
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/nosotros/hero-nosotros.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--volcan-azul);
+}
+
+.nosotros-hero-contenido h1 {
+    font-size: 3.5rem;
+    text-shadow: 0 0.25rem 0.625rem rgba(0,0,0,0.5);
+}
+
+/* Módulo de historia corporativa */
+.seccion-quienes-somos {
+    padding: 6rem 1.25rem;
+}
+
+.grilla-quienes-somos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.quienes-somos-texto h2 {
+    color: var(--volcan-azul);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.quienes-somos-texto p {
+    color: var(--volcan-oscuro);
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.quienes-somos-imagen {
+    width: 100%;
+    height: 100%;
+}
+
+.quienes-somos-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.1);
+}
+
+/* Contenedor interactivo de propósito y valores */
+.seccion-proposito {
+    background-color: var(--volcan-claro);
+    padding: 5rem 0;
+}
+
+.grilla-proposito {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.tarjeta-mv {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: 26rem;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.1);
+}
+
+.mv-checkbox {
+    display: none;
+}
+
+.mv-label {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1fr) auto;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    cursor: default; 
+}
+
+/* Superposición de elementos visuales de las tarjetas */
+.mv-fondo,
+.mv-capa-color {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+}
+
+.mv-fondo {
+    object-fit: cover;
+    z-index: 1;
+    transition: filter 0.6s ease-out;
+}
+
+.mv-capa-color {
+    background: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,0.7) 100%);
+    z-index: 2;
+    transition: background 0.6s ease-out;
+}
+
+.mv-contenido {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: end;
+    width: 100%;
+    min-height: 0;
+    padding: 2rem;
+    z-index: 3;
+    text-align: center;
+}
+
+.mv-contenido h3 {
+    font-size: 2rem; 
+    color: var(--volcan-blanco);
+    margin: 0;
+    text-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.6);
+}
+
+.ver-mas {
+    display: none; 
+}
+
+.mv-texto {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #f1f1f1;
+    text-align: justify;
+    margin: 0;
+    max-height: 0; 
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-out, opacity 0.6s ease-out, margin-top 0.6s ease-out;
+}
+
+/* Comportamiento interactivo de las tarjetas en escritorio */
+.tarjeta-mv:hover .mv-fondo {
+    filter: blur(0.1875rem); 
+}
+
+.tarjeta-mv:hover .mv-capa-color {
+    background: linear-gradient(rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%);
+}
+
+.tarjeta-mv:hover .mv-texto {
+    max-height: 9.5rem; 
+    opacity: 1;
+    margin-top: 1rem; 
+}
+
+/* Módulo de presentación del equipo corporativo */
+.seccion-equipo {
+    background-color: var(--volcan-blanco);
+    padding: 5rem 1.25rem;
+}
+
+.seccion-equipo .titulo-centrado {
+    margin-bottom: 1rem;
+}
+
+.subtitulo-centrado {
+    text-align: center;
+    color: var(--volcan-gris);
+    margin-top: 0; 
+    margin-bottom: 4rem;
+    font-size: 1.1rem;
+}
+
+.grilla-equipo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.tarjeta-miembro {
+    text-align: center;
+    background-color: var(--volcan-blanco);
+    padding: 2.5rem 1.5rem;
+    border-radius: 0.8rem;
+    border: 0.0625rem solid var(--volcan-borde-claro);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.03);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    height: 100%;
+}
+
+.tarjeta-miembro:hover {
+    transform: none;
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.08);
+}
+
+.miembro-foto-contenedor {
+    width: 10rem;
+    height: 10rem;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 0.25rem solid var(--volcan-claro);
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
+}
+
+.foto-perfil {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tarjeta-miembro h3 {
+    color: var(--volcan-oscuro);
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+}
+
+.miembro-nombre {
+    color: var(--volcan-gris);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}
+
+.miembro-rol {
+    color: var(--volcan-naranja);
+    font-weight: 600;
+    font-size: 0.95rem;
+    width: 13rem;
+    max-width: 100%;
+    margin: 0 auto 0.5rem;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.miembro-desc {
+    color: var(--volcan-gris);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (max-width: 64rem) {
+    #quienes-somos,
+    #mision-vision {
+        scroll-margin-top: 4rem; 
+    }
+
+    .grilla-quienes-somos {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .quienes-somos-imagen {
+        order: -1; 
+    }
+    
+    .grilla-proposito {
+        grid-template-columns: 1fr;
+    }
+
+    .grilla-equipo {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .nosotros-hero-contenido h1 {
+        font-size: 2.8rem;
+    }
+}
+
+/* Adaptabilidad para dispositivos móviles (Celulares) */
+@media (max-width: 48rem) {
+    .nosotros-hero-fondo {
+        min-height: 20rem;
+    }
+
+    .nosotros-hero-contenido h1 {
+        font-size: 2.2rem;
+    }
+
+    .seccion-quienes-somos,
+    .seccion-equipo {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    .seccion-proposito {
+        padding: 4rem 1.25rem;
+    }
+
+    .grilla-proposito {
+        grid-template-columns: 1fr; 
+        gap: 2rem;
+    }
+
+    .tarjeta-mv {
+        height: 28rem;
+    }
+
+    .mv-label {
+        cursor: pointer; 
+    }
+
+    .mv-contenido {
+        padding: 1.5rem;
+    }
+
+    .mv-contenido h3 {
+        font-size: 1.8rem;
+    }
+
+    .ver-mas {
+        display: block;
+        color: var(--volcan-blanco);
+        font-size: 1rem;
+        font-weight: 600;
+        margin-top: 0.3rem; 
+        max-height: 2rem;
+        opacity: 1;
+        overflow: hidden;
+        transition: max-height 0.6s ease-out, opacity 0.6s ease-out, margin-top 0.6s ease-out;
+    }
+
+    /* Desactiva el comportamiento de escritorio en dispositivos móviles */
+    .tarjeta-mv:hover .mv-fondo {
+        filter: none;
+    }
+
+    .tarjeta-mv:hover .mv-capa-color {
+        background: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,0.7) 100%);
+    }
+
+    .tarjeta-mv:hover .mv-texto {
+        max-height: 0;
+        opacity: 0;
+        margin-top: 0;
+    }
+
+    .mv-checkbox:checked ~ .mv-label .mv-fondo {
+        filter: blur(0.1875rem); 
+    }
+
+    .mv-checkbox:checked ~ .mv-label .mv-capa-color {
+        background: linear-gradient(rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.9) 100%);
+    }
+
+    .mv-checkbox:checked ~ .mv-label .mv-texto {
+        max-height: 16rem; 
+        opacity: 1;
+        margin-top: 1rem; 
+    }
+
+    .mv-checkbox:checked ~ .mv-label .ver-mas {
+        max-height: 0;
+        opacity: 0;
+        margin-top: 0;
+    }
+}

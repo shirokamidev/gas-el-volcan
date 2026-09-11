@@ -1,0 +1,52 @@
+/* Entorno de la tarjeta corporativa de acceso */
+.escena-tarjeta {
+    max-width: 32rem; 
+}
+
+.tarjeta-ingreso {
+    width: 100%;
+    background-color: var(--volcan-blanco);
+    border-radius: 0.8rem;
+    box-shadow: 0 0.8rem 2.5rem rgba(0, 0, 0, 0.08);
+    padding: 3.5rem; 
+}
+
+.subtitulo-acceso {
+    color: var(--volcan-gris);
+    font-size: 1.05rem;
+}
+
+/* Enlaces secundarios de control */
+.enlace-recuperar {
+    color: var(--volcan-naranja);
+    font-size: 0.95rem;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 0.2rem;
+}
+
+.enlace-recuperar:hover {
+    text-decoration: underline;
+}
+
+.boton-grande {
+    padding: 0.9rem;
+    font-size: 1.1rem;
+    border-radius: 0.4rem;
+}
+
+/* Adaptabilidad para dispositivos móviles (Celulares) */
+@media (max-width: 48rem) {
+    .navegacion-superior {
+        padding: 1.5rem;
+    }
+
+    .tarjeta-ingreso {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .titulo-acceso {
+        font-size: 1.6rem;
+    }
+}

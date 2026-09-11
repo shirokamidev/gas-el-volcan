@@ -1,0 +1,233 @@
+/* Variables globales y paleta de colores corporativos */
+:root {
+    --volcan-naranja: #e06015;
+    --volcan-naranja-oscuro: #c24f0e;
+    --volcan-azul: #004c97;
+    --volcan-azul-oscuro: #003366;
+    --volcan-oscuro: #212529;
+    --volcan-texto: #333333;
+    --volcan-blanco: #ffffff;
+    --volcan-rojo: #dc3545;
+    --volcan-fondo: #f4f6f9;
+    --volcan-borde: #e9ecef;
+    --volcan-borde-oscuro: #cccccc;
+    --volcan-gris: #666666;
+    --volcan-gris-claro: #888888;
+    --alto-cabecera-admin: 4rem;
+}
+
+/* Reseteo general de estilos del navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--volcan-fondo);
+    color: var(--volcan-texto);
+    overflow-x: hidden;
+}
+
+/* Clases utilitarias y estilos reutilizables */
+.toggle-menu-checkbox {
+    display: none;
+}
+
+.fw-bold {
+    font-weight: 600;
+    color: var(--volcan-azul);
+}
+
+/* Cabecera y barra de navegacion principal */
+.admin-cabecera {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--alto-cabecera-admin);
+    background-color: var(--volcan-oscuro);
+    color: var(--volcan-blanco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    z-index: 1000;
+}
+
+.cabecera-izq,
+.cabecera-der {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.btn-hamburguesa {
+    background-color: transparent;
+    color: var(--volcan-blanco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s ease;
+}
+
+.btn-hamburguesa:hover {
+    opacity: 0.8;
+}
+
+.logo-admin {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--volcan-blanco);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logo-admin img {
+    height: 1.5rem;
+}
+
+.saludo-admin {
+    font-size: 0.95rem;
+}
+
+/* Estilos de botones generales */
+.btn-salir {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 0.0625rem solid var(--volcan-blanco);
+    border-radius: 2rem;
+    padding: 0.4rem 1rem;
+    color: var(--volcan-blanco);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-salir:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estructura y contenedores principales */
+.admin-sidebar {
+    position: fixed;
+    top: var(--alto-cabecera-admin);
+    left: 0;
+    width: 16.25rem;
+    height: calc(100vh - var(--alto-cabecera-admin));
+    background-color: var(--volcan-blanco);
+    border-right: 0.0625rem solid var(--volcan-borde);
+    transition: clip-path 0.3s ease;
+    overflow-y: auto;
+    z-index: 999;
+}
+
+.nav-lateral ul {
+    list-style: none;
+    padding: 1.5rem 0;
+}
+
+.nav-lateral li a {
+    display: block;
+    padding: 0.9rem 1.5rem;
+    color: var(--volcan-texto);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.nav-lateral li a:hover,
+.nav-lateral li a.activo {
+    background-color: var(--volcan-fondo);
+    color: var(--volcan-naranja);
+    border-right: 0.25rem solid var(--volcan-naranja);
+}
+
+.separador {
+    padding: 1.5rem 1.5rem 0.5rem;
+    font-size: 0.75rem;
+    color: var(--volcan-gris-claro);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.admin-main {
+    margin-left: 16.25rem;
+    margin-top: var(--alto-cabecera-admin);
+    padding: 2rem;
+    transition: margin-left 0.3s ease;
+}
+
+.contenedor-vista {
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+/* Control del menu lateral */
+.toggle-menu-checkbox:checked ~ .admin-sidebar {
+    clip-path: inset(0 100% 0 0);
+}
+
+.toggle-menu-checkbox:checked ~ .admin-main {
+    margin-left: 0;
+}
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (max-width: 64rem) {
+    .saludo-admin {
+        display: none;
+    }
+
+    .admin-sidebar {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    .admin-main {
+        margin-left: 0;
+        padding: 1.5rem;
+    }
+
+    .toggle-menu-checkbox:checked ~ .admin-sidebar {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+/* Adaptabilidad para dispositivos moviles (Celulares) */
+@media (max-width: 48rem) {
+    .admin-cabecera {
+        padding: 0 0.8rem;
+    }
+
+    .cabecera-izq,
+    .cabecera-der {
+        gap: 0.5rem;
+    }
+
+    .logo-admin {
+        font-size: 1rem;
+    }
+
+    .logo-admin img {
+        height: 1.3rem;
+    }
+
+    .btn-salir {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .admin-sidebar {
+        width: 100%;
+        border-right: none;
+    }
+}

@@ -1,0 +1,311 @@
+/* Cabecera y ambiente visual */
+.seccion-banner-gris {
+    background-color: var(--volcan-claro);
+    padding: 3rem 0;
+}
+
+.imagen-banner {
+    width: 100%;
+    height: auto;
+    border-radius: 0.625rem;
+}
+
+/* Buscador de localizaciones y sucursales */
+.seccion-buscador {
+    padding: 2.5rem 1.25rem 1.5rem;
+}
+
+#seccion-busqueda {
+    scroll-margin-top: 7.8rem;
+}
+
+.titulo-buscador {
+    color: var(--volcan-oscuro);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.formulario-buscador {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 1.5rem;
+    background-color: var(--volcan-blanco);
+    padding: 2rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.05);
+    border: 0.0625rem solid var(--volcan-borde-medio);
+}
+
+.grupo-select select {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: 0.0625rem solid var(--volcan-borde-oscuro);
+    border-radius: 0.3125rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--volcan-texto);
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    cursor: pointer;
+    background-color: var(--volcan-blanco);
+}
+
+.grupo-select select:focus {
+    outline: none;
+    border-color: var(--volcan-azul);
+    box-shadow: 0 0 0 0.2rem rgba(0, 75, 135, 0.1);
+}
+
+.boton-buscar {
+    padding: 0.9rem 2.5rem;
+    font-size: 1.05rem;
+}
+
+/* Módulo de red de mapas y direcciones */
+.seccion-mapa-directorio {
+    padding-bottom: 3rem;
+}
+
+.grilla-directorio {
+    display: grid;
+    grid-template-columns: 1fr 24rem;
+    gap: 2.5rem;
+    align-items: stretch;
+}
+
+.columna-mapa {
+    background-color: var(--volcan-borde-medio);
+    border-radius: 0.625rem;
+    overflow: hidden;
+    border: 0.0625rem solid var(--volcan-borde-oscuro);
+    display: flex;
+    flex-direction: column;
+}
+
+.columna-mapa iframe {
+    width: 100%;
+    flex: 1;
+    min-height: 100%;
+    border: 0;
+}
+
+.columna-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.radio-oculto {
+    display: none;
+}
+
+/* Visualización resumida por tarjeta */
+.vista-lista-general {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tarjeta-resumen {
+    display: block;
+    background-color: var(--volcan-blanco);
+    border: 0.0625rem solid var(--volcan-borde-medio);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta-resumen:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.06);
+    border-color: var(--volcan-naranja);
+}
+
+.titulo-naranja {
+    color: var(--volcan-naranja);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.texto-direccion {
+    color: var(--volcan-gris);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Renderizado dinámico para información extendida */
+.vistas-detalles {
+    display: none;
+}
+
+.detalle-card {
+    display: none;
+    background-color: var(--volcan-blanco);
+    border: 0.0625rem solid var(--volcan-borde-medio);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.05);
+}
+
+.tarjeta-detalle-encabezado {
+    background-color: #fcfcfc;
+    padding: 1.5rem;
+    border-bottom: 0.0625rem solid var(--volcan-borde-claro);
+}
+
+.tarjeta-detalle-cuerpo {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tarjeta-detalle-cuerpo h4 {
+    color: var(--volcan-oscuro);
+    font-size: 1.05rem;
+    margin-bottom: 0.2rem;
+}
+
+.dato-despacho {
+    color: #555555;
+    font-size: 0.95rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dato-despacho::before {
+    content: "•";
+    color: var(--volcan-naranja);
+    font-weight: bold;
+}
+
+.info-contacto-detalle {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 0.0625rem dashed var(--volcan-borde-oscuro);
+    font-style: normal;
+}
+
+.enlace-azul {
+    color: var(--volcan-azul);
+    font-weight: 700;
+    text-decoration: underline;
+    font-size: 0.95rem;
+}
+
+.texto-naranja {
+    color: var(--volcan-naranja);
+    font-size: 0.95rem;
+}
+
+.texto-rojo {
+    color: var(--volcan-rojo);
+    font-size: 0.95rem;
+}
+
+.btn-atras {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: var(--volcan-azul);
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.btn-atras:hover {
+    color: var(--volcan-naranja);
+}
+
+#suc-1:checked ~ .vista-lista-general,
+#suc-2:checked ~ .vista-lista-general,
+#suc-3:checked ~ .vista-lista-general,
+#suc-4:checked ~ .vista-lista-general,
+#suc-5:checked ~ .vista-lista-general {
+    display: none;
+}
+
+#suc-1:checked ~ .vistas-detalles,
+#suc-2:checked ~ .vistas-detalles,
+#suc-3:checked ~ .vistas-detalles,
+#suc-4:checked ~ .vistas-detalles,
+#suc-5:checked ~ .vistas-detalles {
+    display: block;
+}
+
+#suc-1:checked ~ .vistas-detalles #detalle-1 { display: block; }
+#suc-2:checked ~ .vistas-detalles #detalle-2 { display: block; }
+#suc-3:checked ~ .vistas-detalles #detalle-3 { display: block; }
+#suc-4:checked ~ .vistas-detalles #detalle-4 { display: block; }
+#suc-5:checked ~ .vistas-detalles #detalle-5 { display: block; }
+
+/* Adaptabilidad para pantallas medianas (Tablets) */
+@media (max-width: 64rem) {
+    #seccion-busqueda {
+        scroll-margin-top: 5.5rem;
+    }
+
+    .formulario-buscador {
+        grid-template-columns: 1fr;
+    }
+    
+    .grilla-directorio {
+        grid-template-columns: 1fr;
+    }
+
+    .columna-mapa {
+        min-height: 25rem;
+        order: 2; 
+    }
+
+    .columna-lista {
+        order: 1;
+    }
+}
+
+/* Adaptabilidad para dispositivos móviles (Celulares) */
+@media (max-width: 48rem) {
+    .seccion-banner-gris {
+        padding: 0;
+    }
+
+    .seccion-banner-gris .contenedor {
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .imagen-banner {
+        width: 100%;
+        height: 10rem;
+        object-fit: fill; 
+        border-radius: 0; 
+    }
+
+    .seccion-buscador {
+        padding: 3rem 1.25rem 2rem;
+    }
+
+    .titulo-buscador {
+        font-size: 1.6rem;
+    }
+
+    .formulario-buscador {
+        padding: 1.5rem;
+    }
+
+    .columna-mapa {
+        min-height: 20rem;
+    }
+}

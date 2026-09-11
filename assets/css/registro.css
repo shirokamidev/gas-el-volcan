@@ -1,0 +1,206 @@
+/* Entorno de la tarjeta corporativa de registro */
+.escena-tarjeta {
+    max-width: 52rem; 
+}
+
+.tarjeta-registro {
+    width: 100%;
+    background-color: var(--volcan-blanco);
+    border-radius: 0.8rem;
+    box-shadow: 0 0.8rem 2.5rem rgba(0, 0, 0, 0.08);
+    padding: 3.5rem 4rem;
+}
+
+/* Secciones de campo en formulario dual */
+.seccion-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.espaciado-seccion {
+    margin-top: 1rem;
+}
+
+.titulo-legend {
+    color: var(--volcan-azul);
+    font-size: 1.3rem;
+    font-weight: 700;
+    width: 100%;
+    padding-bottom: 0.5rem;
+}
+
+.linea-separadora {
+    width: 100%;
+    height: 0.0625rem;
+    background-color: #f0f0f0;
+    margin-bottom: 1.25rem;
+}
+
+.texto-obligatorio {
+    color: var(--volcan-gris);
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    text-align: justify;
+}
+
+.texto-intro-registro {
+    color: var(--volcan-gris);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.8rem;
+    text-align: justify;
+}
+
+.grilla-formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 1.25rem; 
+}
+
+.col-completa {
+    grid-column: span 2;
+}
+
+/* Modulo de términos y políticas del negocio */
+.caja-informacion {
+    background-color: #f4f8fc; 
+    border: 0.0625rem solid #c2dbf4;
+    border-radius: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    margin-top: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.titulo-info {
+    color: var(--volcan-azul);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+.titulo-info svg, 
+.titulo-info i {
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+}
+
+.texto-info {
+    color: var(--volcan-texto);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    text-align: justify;
+    word-break: break-word;
+}
+
+.grupo-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.grupo-checkbox input[type="checkbox"] {
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.grupo-checkbox label {
+    font-size: 0.9rem;
+    color: #555555;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+.grupo-checkbox a {
+    color: var(--volcan-azul);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Acciones inferiores */
+.acciones-registro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.enlace-volver-login {
+    color: var(--volcan-oscuro);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.3s;
+}
+
+.enlace-volver-login:hover {
+    color: var(--volcan-naranja);
+}
+
+.boton-grande {
+    padding: 0.9rem;
+    font-size: 1.1rem;
+    border-radius: 0.4rem;
+}
+
+.acciones-registro .boton {
+    width: 15rem;
+}
+
+/* Adaptabilidad para dispositivos móviles (Celulares) */
+@media (max-width: 48rem) {
+    .escena-tarjeta {
+        padding: 1.5rem 1.25rem 3rem; 
+    }
+
+    .tarjeta-registro {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .titulo-acceso {
+        font-size: 1.6rem;
+    }
+
+    .grilla-formulario {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .col-completa {
+        grid-column: 1; 
+    }
+    
+    .grupo-input {
+        min-width: 0;
+    }
+    
+    .acciones-registro {
+        flex-direction: column-reverse;
+        gap: 1.5rem;
+    }
+    
+    .acciones-registro .boton {
+        width: 100%;
+    }
+
+    .grupo-checkbox {
+        align-items: flex-start; 
+    }
+    
+    .grupo-checkbox input[type="checkbox"] {
+        margin-top: 0.15rem; 
+    }
+}
